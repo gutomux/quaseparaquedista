@@ -1,0 +1,5117 @@
+{
+  "meta": {
+    "title": "Skydiving Glossary",
+    "version": "2.0.0",
+    "updated": "2026-09-27",
+    "sources": [
+      "USPA Instructional Rating Manual 2026",
+      "General skydiving knowledge"
+    ],
+    "locales": [
+      "en_US",
+      "pt_BR"
+    ],
+    "defaultLocale": "en_US"
+  },
+  "entries": [
+    {
+      "id": "acronym-aad",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "AAD",
+          "expansion": "Automatic Activation Device",
+          "definition": "Electronic unit that fires the reserve if the jumper is still falling fast at a set altitude.",
+          "aliases": [
+            "AAD"
+          ]
+        },
+        "pt_BR": {
+          "term": "AAD",
+          "expansion": "Automatic Activation Device (dispositivo de acionamento automático)",
+          "definition": "Aparelho eletrônico que abre o reserva se o paraquedista ainda estiver caindo rápido numa altitude definida.",
+          "aliases": [
+            "AAD"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-aff",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "AFF",
+          "expansion": "Accelerated Freefall",
+          "definition": "Student method with freefall from the first jump, held by one or two instructors.",
+          "aliases": [
+            "AFF"
+          ]
+        },
+        "pt_BR": {
+          "term": "AFF",
+          "expansion": "Accelerated Freefall (queda livre acelerada)",
+          "definition": "Método de aluno com queda livre desde o primeiro salto, acompanhado por um ou dois instrutores.",
+          "aliases": [
+            "AFF"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-aff-i-affi",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "AFF-I / AFFI",
+          "expansion": "AFF Instructor",
+          "definition": "USPA rating to teach and jump with AFF students.",
+          "aliases": [
+            "AFF-I",
+            "AFFI"
+          ]
+        },
+        "pt_BR": {
+          "term": "AFF-I / AFFI",
+          "expansion": "AFF Instructor (instrutor de AFF)",
+          "definition": "Credencial da USPA para ensinar e saltar com alunos de AFF.",
+          "aliases": [
+            "AFF-I",
+            "AFFI"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-agl",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "AGL",
+          "expansion": "Above Ground Level",
+          "definition": "Altitude measured from the landing area; the default for skydiving altitudes.",
+          "aliases": [
+            "AGL"
+          ]
+        },
+        "pt_BR": {
+          "term": "AGL",
+          "expansion": "Above Ground Level (acima do nível do solo)",
+          "definition": "Altitude medida a partir da área de pouso; o padrão para altitudes no paraquedismo.",
+          "aliases": [
+            "AGL"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-aic",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "AIC",
+          "expansion": "Advanced Instructor Course",
+          "definition": "Historical predecessor of the USPA Examiner Rating Course.",
+          "aliases": [
+            "AIC"
+          ]
+        },
+        "pt_BR": {
+          "term": "AIC",
+          "expansion": "Advanced Instructor Course (curso avançado de instrutor)",
+          "definition": "Antecessor histórico do curso de examinador da USPA.",
+          "aliases": [
+            "AIC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-apt",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "APT",
+          "expansion": "Altitude, Position, Traffic",
+          "definition": "Canopy-check routine: check altitude, position over the ground, and nearby canopy traffic.",
+          "aliases": [
+            "APT"
+          ]
+        },
+        "pt_BR": {
+          "term": "APT",
+          "expansion": "Altitude, Position, Traffic (altitude, posição, tráfego)",
+          "definition": "Rotina de checagem sob velame: altitude, posição sobre o solo e velames próximos.",
+          "aliases": [
+            "APT"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-atc",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "ATC",
+          "expansion": "Air Traffic Control",
+          "definition": "FAA controllers who clear jump aircraft to drop jumpers.",
+          "aliases": [
+            "ATC"
+          ]
+        },
+        "pt_BR": {
+          "term": "ATC",
+          "expansion": "Air Traffic Control (controle de tráfego aéreo)",
+          "definition": "Controladores que liberam a aeronave para o lançamento dos paraquedistas.",
+          "aliases": [
+            "ATC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-base",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "BASE",
+          "expansion": "Building, Antenna, Span, Earth",
+          "definition": "Parachuting from fixed objects; related to but separate from skydiving.",
+          "aliases": [
+            "BASE"
+          ]
+        },
+        "pt_BR": {
+          "term": "BASE",
+          "expansion": "Building, Antenna, Span, Earth (prédio, antena, vão, terra)",
+          "definition": "Saltos a partir de objetos fixos; ligado ao paraquedismo, mas uma atividade à parte.",
+          "aliases": [
+            "BASE"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-boc",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "BOC",
+          "expansion": "Bottom of Container",
+          "definition": "Standard location of the hand-deploy pilot-chute pouch.",
+          "aliases": [
+            "BOC"
+          ]
+        },
+        "pt_BR": {
+          "term": "BOC",
+          "expansion": "Bottom of Container (fundo do container)",
+          "definition": "Posição padrão do bolso do extrator de mão (hand deploy).",
+          "aliases": [
+            "BOC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-bpa",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "BPA",
+          "expansion": "British Parachute Association",
+          "definition": "Former name of British Skydiving, the UK governing body.",
+          "aliases": [
+            "BPA"
+          ]
+        },
+        "pt_BR": {
+          "term": "BPA",
+          "expansion": "British Parachute Association (associação britânica de paraquedismo)",
+          "definition": "Antigo nome da British Skydiving, entidade que rege o esporte no Reino Unido.",
+          "aliases": [
+            "BPA"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-bsr",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "BSR",
+          "expansion": "Basic Safety Requirements",
+          "definition": "USPA's mandatory safety rules, published in the SIM.",
+          "aliases": [
+            "BSR"
+          ]
+        },
+        "pt_BR": {
+          "term": "BSR",
+          "expansion": "Basic Safety Requirements (requisitos básicos de segurança)",
+          "definition": "Regras de segurança obrigatórias da USPA, publicadas no SIM.",
+          "aliases": [
+            "BSR"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-c1-c2",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "C1 / C2",
+          "expansion": "Coach rating course codes",
+          "definition": "Labels for USPA Coach rating material and evaluations.",
+          "aliases": [
+            "C1",
+            "C2"
+          ]
+        },
+        "pt_BR": {
+          "term": "C1 / C2",
+          "expansion": "Coach rating course codes (códigos do curso de coach)",
+          "definition": "Identificação do material e das avaliações do curso de coach da USPA.",
+          "aliases": [
+            "C1",
+            "C2"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-c-i",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "C/I",
+          "expansion": "Coach / Instructor",
+          "definition": "Initials box on USPA training records.",
+          "aliases": [
+            "C/I"
+          ]
+        },
+        "pt_BR": {
+          "term": "C/I",
+          "expansion": "Coach / Instructor (coach / instrutor)",
+          "definition": "Campo de rubrica nas fichas de treinamento da USPA.",
+          "aliases": [
+            "C/I"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-c-p",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "C/P",
+          "expansion": "Clear and Pull",
+          "definition": "Student's first self-deployed jump without instructor contact.",
+          "aliases": [
+            "C/P"
+          ]
+        },
+        "pt_BR": {
+          "term": "C/P",
+          "expansion": "Clear and Pull (liberar e comandar)",
+          "definition": "Primeiro salto em que o aluno comanda sozinho, sem contato com o instrutor.",
+          "aliases": [
+            "C/P"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-cat-cat-a-h",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "CAT (Cat-A…H)",
+          "expansion": "Category",
+          "definition": "One of the eight ISP student-progression stages, A through H.",
+          "aliases": [
+            "CAT",
+            "Cat-A…H"
+          ]
+        },
+        "pt_BR": {
+          "term": "CAT (Cat-A…H)",
+          "expansion": "Category (categoria)",
+          "definition": "Uma das oito etapas de progressão do aluno no ISP, de A a H.",
+          "aliases": [
+            "CAT",
+            "Cat-A…H"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-cep",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "CEP",
+          "expansion": "Canopy-Flight Emergency Procedure",
+          "definition": "Planned responses to canopy problems such as collisions or obstacles.",
+          "aliases": [
+            "CEP"
+          ]
+        },
+        "pt_BR": {
+          "term": "CEP",
+          "expansion": "Canopy-Flight Emergency Procedure (procedimento de emergência sob velame)",
+          "definition": "Respostas planejadas a problemas sob velame, como colisões ou obstáculos.",
+          "aliases": [
+            "CEP"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-cg",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "CG",
+          "expansion": "Center of Gravity",
+          "definition": "Aircraft balance point; affects loading order and movement in the plane.",
+          "aliases": [
+            "CG"
+          ]
+        },
+        "pt_BR": {
+          "term": "CG",
+          "expansion": "Center of Gravity (centro de gravidade)",
+          "definition": "Ponto de equilíbrio da aeronave; influencia a ordem de embarque e a movimentação a bordo.",
+          "aliases": [
+            "CG"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-coa",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "COA",
+          "expansion": "Circle of Awareness",
+          "definition": "Freefall check of heading, altitude and the instructor's signals.",
+          "aliases": [
+            "COA"
+          ]
+        },
+        "pt_BR": {
+          "term": "COA",
+          "expansion": "Circle of Awareness (círculo de atenção)",
+          "definition": "Checagem em queda livre de proa, altitude e sinais do instrutor.",
+          "aliases": [
+            "COA"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-crw",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "CRW",
+          "expansion": "Canopy Relative Work",
+          "definition": "Old name for canopy formation flying (CF).",
+          "aliases": [
+            "CRW"
+          ]
+        },
+        "pt_BR": {
+          "term": "CRW",
+          "expansion": "Canopy Relative Work (trabalho relativo de velame)",
+          "definition": "Nome antigo do voo em formação de velames (CF); no Brasil também chamado de TRV.",
+          "aliases": [
+            "CRW"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-cf",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "CF",
+          "expansion": "Canopy Formation",
+          "definition": "Discipline where jumpers dock their open canopies together.",
+          "aliases": [
+            "CF"
+          ]
+        },
+        "pt_BR": {
+          "term": "CF",
+          "expansion": "Canopy Formation (formação de velames)",
+          "definition": "Modalidade em que os paraquedistas se acoplam com os velames abertos.",
+          "aliases": [
+            "CF"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-cypres",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "CYPRES",
+          "expansion": "Cybernetic Parachute Release System",
+          "definition": "Widely used AAD brand by Airtec.",
+          "aliases": [
+            "CYPRES"
+          ]
+        },
+        "pt_BR": {
+          "term": "CYPRES",
+          "expansion": "Cybernetic Parachute Release System",
+          "definition": "Marca de AAD muito usada, fabricada pela Airtec.",
+          "aliases": [
+            "CYPRES"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-dz",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "DZ",
+          "expansion": "Drop Zone",
+          "definition": "The skydiving center or the landing area itself.",
+          "aliases": [
+            "DZ"
+          ]
+        },
+        "pt_BR": {
+          "term": "DZ",
+          "expansion": "Drop Zone (área de salto)",
+          "definition": "O centro de paraquedismo ou a própria área de pouso.",
+          "aliases": [
+            "DZ"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-dzo",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "DZO",
+          "expansion": "Drop Zone Owner / Operator",
+          "definition": "Person who runs the skydiving center.",
+          "aliases": [
+            "DZO"
+          ]
+        },
+        "pt_BR": {
+          "term": "DZO",
+          "expansion": "Drop Zone Owner / Operator (dono / operador da área de salto)",
+          "definition": "Pessoa que administra o centro de paraquedismo.",
+          "aliases": [
+            "DZO"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-dzm",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "DZM",
+          "expansion": "Drop Zone Manager",
+          "definition": "Day-to-day manager of DZ operations.",
+          "aliases": [
+            "DZM"
+          ]
+        },
+        "pt_BR": {
+          "term": "DZM",
+          "expansion": "Drop Zone Manager (gerente da área de salto)",
+          "definition": "Responsável pela operação do dia a dia da DZ.",
+          "aliases": [
+            "DZM"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-ep",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "EP",
+          "expansion": "Emergency Procedure",
+          "definition": "Trained actions for malfunctions and other emergencies.",
+          "aliases": [
+            "EP"
+          ]
+        },
+        "pt_BR": {
+          "term": "EP",
+          "expansion": "Emergency Procedure (procedimento de emergência)",
+          "definition": "Ações treinadas para panes e outras emergências.",
+          "aliases": [
+            "EP"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-erc",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "ERC",
+          "expansion": "Examiner Rating Course",
+          "definition": "USPA course that certifies examiners.",
+          "aliases": [
+            "ERC"
+          ]
+        },
+        "pt_BR": {
+          "term": "ERC",
+          "expansion": "Examiner Rating Course (curso de examinador)",
+          "definition": "Curso da USPA que certifica examinadores.",
+          "aliases": [
+            "ERC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-faa",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "FAA",
+          "expansion": "Federal Aviation Administration",
+          "definition": "US aviation regulator; skydiving falls under FAR Part 105.",
+          "aliases": [
+            "FAA"
+          ]
+        },
+        "pt_BR": {
+          "term": "FAA",
+          "expansion": "Federal Aviation Administration",
+          "definition": "Autoridade de aviação dos EUA; o paraquedismo segue a FAR Parte 105.",
+          "aliases": [
+            "FAA"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-far",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "FAR",
+          "expansion": "Federal Aviation Regulation",
+          "definition": "US aviation rules; Part 105 covers parachute operations.",
+          "aliases": [
+            "FAR"
+          ]
+        },
+        "pt_BR": {
+          "term": "FAR",
+          "expansion": "Federal Aviation Regulation (regulamento federal de aviação)",
+          "definition": "Regras de aviação dos EUA; a Parte 105 trata de operações de paraquedismo.",
+          "aliases": [
+            "FAR"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-fai",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "FAI",
+          "expansion": "Fédération Aéronautique Internationale",
+          "definition": "World air sports federation; sanctions records and world meets.",
+          "aliases": [
+            "FAI"
+          ]
+        },
+        "pt_BR": {
+          "term": "FAI",
+          "expansion": "Fédération Aéronautique Internationale",
+          "definition": "Federação mundial de esportes aéreos; homologa recordes e campeonatos mundiais.",
+          "aliases": [
+            "FAI"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-faz",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "FAZ",
+          "expansion": "Final-Approach Zone",
+          "definition": "Buffer zone near a target (e.g., a coach) used when practicing freefall approaches.",
+          "aliases": [
+            "FAZ"
+          ]
+        },
+        "pt_BR": {
+          "term": "FAZ",
+          "expansion": "Final-Approach Zone (zona de aproximação final)",
+          "definition": "Área de segurança perto de um alvo (ex.: o coach) usada ao treinar aproximações em queda livre.",
+          "aliases": [
+            "FAZ"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-fjc",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "FJC",
+          "expansion": "First-Jump Course",
+          "definition": "Ground training that prepares a student for a first jump.",
+          "aliases": [
+            "FJC"
+          ]
+        },
+        "pt_BR": {
+          "term": "FJC",
+          "expansion": "First-Jump Course (curso de primeiro salto)",
+          "definition": "Treinamento em solo que prepara o aluno para o primeiro salto.",
+          "aliases": [
+            "FJC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-ff",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "FF",
+          "expansion": "Freefly",
+          "definition": "Freefall in head-up, head-down and other non-belly orientations.",
+          "aliases": [
+            "FF"
+          ]
+        },
+        "pt_BR": {
+          "term": "FF",
+          "expansion": "Freefly",
+          "definition": "Queda livre em pé, de cabeça para baixo e em outras posições fora do belly.",
+          "aliases": [
+            "FF"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-fs",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "FS",
+          "expansion": "Formation Skydiving",
+          "definition": "Belly-to-earth group formations; formerly RW.",
+          "aliases": [
+            "FS"
+          ]
+        },
+        "pt_BR": {
+          "term": "FS",
+          "expansion": "Formation Skydiving (formação em queda livre)",
+          "definition": "Formações em grupo de barriga para a terra; antes chamado de RW, no Brasil TR.",
+          "aliases": [
+            "FS"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-gps",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "GPS",
+          "expansion": "Global Positioning System",
+          "definition": "Satellite navigation used to find the spot and exit point.",
+          "aliases": [
+            "GPS"
+          ]
+        },
+        "pt_BR": {
+          "term": "GPS",
+          "expansion": "Global Positioning System",
+          "definition": "Navegação por satélite usada para achar o spot e o ponto de saída.",
+          "aliases": [
+            "GPS"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-haalr",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "HAALR",
+          "expansion": "Heading, Altitude, Arch, Legs, Relax",
+          "definition": "Student freefall self-check sequence.",
+          "aliases": [
+            "HAALR"
+          ]
+        },
+        "pt_BR": {
+          "term": "HAALR",
+          "expansion": "Heading, Altitude, Arch, Legs, Relax (proa, altitude, arch, pernas, relaxar)",
+          "definition": "Sequência de autochecagem do aluno em queda livre.",
+          "aliases": [
+            "HAALR"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-hd",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "HD",
+          "expansion": "Head Down",
+          "definition": "Freefly orientation, falling head-first toward the ground.",
+          "aliases": [
+            "HD"
+          ]
+        },
+        "pt_BR": {
+          "term": "HD",
+          "expansion": "Head Down (de cabeça para baixo)",
+          "definition": "Posição de freefly caindo de cabeça em direção ao solo.",
+          "aliases": [
+            "HD"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-hu",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "HU",
+          "expansion": "Head Up",
+          "definition": "Freefly orientation, sitting or standing in the airflow.",
+          "aliases": [
+            "HU"
+          ]
+        },
+        "pt_BR": {
+          "term": "HU",
+          "expansion": "Head Up (em pé)",
+          "definition": "Posição de freefly sentado ou em pé no fluxo de ar.",
+          "aliases": [
+            "HU"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-hp",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "HP",
+          "expansion": "High Performance",
+          "definition": "Canopy type or landing style focused on speed and swooping.",
+          "aliases": [
+            "HP"
+          ]
+        },
+        "pt_BR": {
+          "term": "HP",
+          "expansion": "High Performance (alta performance)",
+          "definition": "Tipo de velame ou estilo de pouso focado em velocidade e swoop.",
+          "aliases": [
+            "HP"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-iad",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "IAD",
+          "expansion": "Instructor-Assisted Deployment",
+          "definition": "Student method where the instructor throws the pilot chute as the student exits.",
+          "aliases": [
+            "IAD"
+          ]
+        },
+        "pt_BR": {
+          "term": "IAD",
+          "expansion": "Instructor-Assisted Deployment (abertura assistida pelo instrutor)",
+          "definition": "Método de aluno em que o instrutor lança o extrator no momento da saída.",
+          "aliases": [
+            "IAD"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-iaw",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "IAW",
+          "expansion": "In Accordance With",
+          "definition": "Common phrase in USPA regulation text.",
+          "aliases": [
+            "IAW"
+          ]
+        },
+        "pt_BR": {
+          "term": "IAW",
+          "expansion": "In Accordance With (de acordo com)",
+          "definition": "Expressão comum nos textos de regulamento da USPA.",
+          "aliases": [
+            "IAW"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-icc",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "ICC",
+          "expansion": "Instructor Certification Course",
+          "definition": "Historical USPA instructor course launched in 1970.",
+          "aliases": [
+            "ICC"
+          ]
+        },
+        "pt_BR": {
+          "term": "ICC",
+          "expansion": "Instructor Certification Course (curso de certificação de instrutor)",
+          "definition": "Curso histórico de instrutor da USPA, lançado em 1970.",
+          "aliases": [
+            "ICC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-im-safe",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "IM SAFE",
+          "expansion": "Illness, Medication, Stress, Alcohol, Fatigue, Emotion/Eating",
+          "definition": "Personal fitness-to-jump checklist borrowed from aviation.",
+          "aliases": [
+            "IM SAFE"
+          ]
+        },
+        "pt_BR": {
+          "term": "IM SAFE",
+          "expansion": "Illness, Medication, Stress, Alcohol, Fatigue, Emotion/Eating (doença, medicação, estresse, álcool, fadiga, emoção/alimentação)",
+          "definition": "Checklist pessoal de aptidão para saltar, herdado da aviação.",
+          "aliases": [
+            "IM SAFE"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-irm",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "IRM",
+          "expansion": "Instructional Rating Manual",
+          "definition": "USPA manual for instructors and rating candidates.",
+          "aliases": [
+            "IRM"
+          ]
+        },
+        "pt_BR": {
+          "term": "IRM",
+          "expansion": "Instructional Rating Manual (manual de credenciais de instrução)",
+          "definition": "Manual da USPA para instrutores e candidatos a credenciais.",
+          "aliases": [
+            "IRM"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-isp",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "ISP",
+          "expansion": "Integrated Student Program",
+          "definition": "USPA's student syllabus leading to the A license.",
+          "aliases": [
+            "ISP"
+          ]
+        },
+        "pt_BR": {
+          "term": "ISP",
+          "expansion": "Integrated Student Program (programa integrado do aluno)",
+          "definition": "Currículo de aluno da USPA que leva à licença A.",
+          "aliases": [
+            "ISP"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-jcc",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "JCC",
+          "expansion": "Jumpmaster Certification Course",
+          "definition": "Historical USPA course launched in 1970.",
+          "aliases": [
+            "JCC"
+          ]
+        },
+        "pt_BR": {
+          "term": "JCC",
+          "expansion": "Jumpmaster Certification Course (curso de certificação de jumpmaster)",
+          "definition": "Curso histórico da USPA, lançado em 1970.",
+          "aliases": [
+            "JCC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-jm",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "JM",
+          "expansion": "Jumpmaster",
+          "definition": "Person in charge of jumpers in the aircraft; older rating title.",
+          "aliases": [
+            "JM"
+          ]
+        },
+        "pt_BR": {
+          "term": "JM",
+          "expansion": "Jumpmaster (mestre de salto)",
+          "definition": "Responsável pelos paraquedistas a bordo; título de credencial antigo.",
+          "aliases": [
+            "JM"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-lz",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "LZ",
+          "expansion": "Landing Zone",
+          "definition": "Area designated for landing.",
+          "aliases": [
+            "LZ"
+          ]
+        },
+        "pt_BR": {
+          "term": "LZ",
+          "expansion": "Landing Zone (área de pouso)",
+          "definition": "Área designada para o pouso.",
+          "aliases": [
+            "LZ"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-mard",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "MARD",
+          "expansion": "Main-Assisted Reserve Deployment",
+          "definition": "Device (e.g., Skyhook) that uses the cut-away main to extract the reserve.",
+          "aliases": [
+            "MARD"
+          ]
+        },
+        "pt_BR": {
+          "term": "MARD",
+          "expansion": "Main-Assisted Reserve Deployment (abertura do reserva assistida pelo principal)",
+          "definition": "Dispositivo (ex.: Skyhook) que usa o principal desconectado para extrair o reserva.",
+          "aliases": [
+            "MARD"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-msl",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "MSL",
+          "expansion": "Mean Sea Level",
+          "definition": "Altitude measured from sea level; used by pilots and ATC.",
+          "aliases": [
+            "MSL"
+          ]
+        },
+        "pt_BR": {
+          "term": "MSL",
+          "expansion": "Mean Sea Level (nível médio do mar)",
+          "definition": "Altitude medida a partir do nível do mar; usada por pilotos e pelo controle de tráfego.",
+          "aliases": [
+            "MSL"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-notam",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "NOTAM",
+          "expansion": "Notice to Air Missions",
+          "definition": "FAA notice that announces active jump operations.",
+          "aliases": [
+            "NOTAM"
+          ]
+        },
+        "pt_BR": {
+          "term": "NOTAM",
+          "expansion": "Notice to Air Missions (aviso aos aeronavegantes)",
+          "definition": "Aviso oficial que informa operações de paraquedismo ativas.",
+          "aliases": [
+            "NOTAM"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-npjra",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "NPJRA",
+          "expansion": "National Parachute Jumpers-Riggers Association",
+          "definition": "Early US parachuting body, predecessor of USPA.",
+          "aliases": [
+            "NPJRA"
+          ]
+        },
+        "pt_BR": {
+          "term": "NPJRA",
+          "expansion": "National Parachute Jumpers-Riggers Association",
+          "definition": "Entidade pioneira do paraquedismo nos EUA, antecessora da USPA.",
+          "aliases": [
+            "NPJRA"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-pc",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "PC",
+          "expansion": "Pilot Chute",
+          "definition": "Small parachute that extracts the main or reserve.",
+          "aliases": [
+            "PC"
+          ]
+        },
+        "pt_BR": {
+          "term": "PC",
+          "expansion": "Pilot Chute (extrator)",
+          "definition": "Pequeno paraquedas que extrai o principal ou o reserva.",
+          "aliases": [
+            "PC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-pca",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "PCA",
+          "expansion": "Parachute Club of America",
+          "definition": "Earlier name of the organization that became USPA.",
+          "aliases": [
+            "PCA"
+          ]
+        },
+        "pt_BR": {
+          "term": "PCA",
+          "expansion": "Parachute Club of America",
+          "definition": "Nome anterior da organização que se tornou a USPA.",
+          "aliases": [
+            "PCA"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-pic",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "PIC",
+          "expansion": "Parachutist in Command / Pilot in Command",
+          "definition": "Tandem rating holder responsible for the jump; or the aircraft pilot.",
+          "aliases": [
+            "PIC"
+          ]
+        },
+        "pt_BR": {
+          "term": "PIC",
+          "expansion": "Parachutist in Command / Pilot in Command (paraquedista em comando / piloto em comando)",
+          "definition": "Instrutor de salto duplo responsável pelo salto; ou o piloto da aeronave.",
+          "aliases": [
+            "PIC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-plf",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "PLF",
+          "expansion": "Parachute Landing Fall",
+          "definition": "Roll technique that spreads landing impact across the body.",
+          "aliases": [
+            "PLF"
+          ]
+        },
+        "pt_BR": {
+          "term": "PLF",
+          "expansion": "Parachute Landing Fall (rolamento de pouso)",
+          "definition": "Técnica de rolamento que distribui o impacto do pouso pelo corpo.",
+          "aliases": [
+            "PLF"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-plp",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "PLP",
+          "expansion": "Projected Landing Point",
+          "definition": "Spot on the ground where a canopy will land if nothing changes.",
+          "aliases": [
+            "PLP"
+          ]
+        },
+        "pt_BR": {
+          "term": "PLP",
+          "expansion": "Projected Landing Point (ponto de pouso projetado)",
+          "definition": "Ponto no solo onde o velame vai pousar se nada mudar.",
+          "aliases": [
+            "PLP"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-ppct",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "PPCT",
+          "expansion": "Practice Pilot-Chute Throw",
+          "definition": "Rehearsed reach to the hand-deploy pilot chute before exit or in freefall.",
+          "aliases": [
+            "PPCT"
+          ]
+        },
+        "pt_BR": {
+          "term": "PPCT",
+          "expansion": "Practice Pilot-Chute Throw (treino de lançamento do extrator)",
+          "definition": "Movimento ensaiado até o extrator de mão, antes da saída ou em queda livre.",
+          "aliases": [
+            "PPCT"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-prcp",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "PRCP",
+          "expansion": "Practice Ripcord Pull",
+          "definition": "Rehearsed reach to a ripcord-style handle.",
+          "aliases": [
+            "PRCP"
+          ]
+        },
+        "pt_BR": {
+          "term": "PRCP",
+          "expansion": "Practice Ripcord Pull (treino de puxada do punho)",
+          "definition": "Movimento ensaiado até um punho do tipo ripcord.",
+          "aliases": [
+            "PRCP"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-rsl",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "RSL",
+          "expansion": "Reserve Static Line",
+          "definition": "Lanyard that opens the reserve container automatically after a cutaway.",
+          "aliases": [
+            "RSL"
+          ]
+        },
+        "pt_BR": {
+          "term": "RSL",
+          "expansion": "Reserve Static Line (linha estática do reserva)",
+          "definition": "Fita que abre o container do reserva automaticamente após o cutaway.",
+          "aliases": [
+            "RSL"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-rw",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "RW",
+          "expansion": "Relative Work",
+          "definition": "Old name for formation skydiving (FS).",
+          "aliases": [
+            "RW"
+          ]
+        },
+        "pt_BR": {
+          "term": "RW",
+          "expansion": "Relative Work (trabalho relativo)",
+          "definition": "Nome antigo da formação em queda livre (FS); no Brasil, TR.",
+          "aliases": [
+            "RW"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-s-and-ta",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "S&TA",
+          "expansion": "Safety & Training Advisor",
+          "definition": "USPA-appointed safety representative at a drop zone.",
+          "aliases": [
+            "S&TA"
+          ]
+        },
+        "pt_BR": {
+          "term": "S&TA",
+          "expansion": "Safety & Training Advisor (consultor de segurança e treinamento)",
+          "definition": "Representante de segurança nomeado pela USPA em uma área de salto.",
+          "aliases": [
+            "S&TA"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-scs",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "SCS",
+          "expansion": "Start-Coast-Stop",
+          "definition": "Technique to control freefall turns: start, let the turn coast, then stop.",
+          "aliases": [
+            "SCS"
+          ]
+        },
+        "pt_BR": {
+          "term": "SCS",
+          "expansion": "Start-Coast-Stop (iniciar, deixar girar, parar)",
+          "definition": "Técnica para controlar giros em queda livre: iniciar, deixar o giro correr e parar.",
+          "aliases": [
+            "SCS"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-shagg",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "SHAGG",
+          "expansion": "Shoes, Helmet, Altimeter, Goggles, Gloves",
+          "definition": "Personal equipment check before boarding.",
+          "aliases": [
+            "SHAGG"
+          ]
+        },
+        "pt_BR": {
+          "term": "SHAGG",
+          "expansion": "Shoes, Helmet, Altimeter, Goggles, Gloves (tênis, capacete, altímetro, óculos, luvas)",
+          "definition": "Checagem do equipamento pessoal antes de embarcar.",
+          "aliases": [
+            "SHAGG"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-sim",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "SIM",
+          "expansion": "Skydiver's Information Manual",
+          "definition": "USPA's core manual containing the BSRs and ISP.",
+          "aliases": [
+            "SIM"
+          ]
+        },
+        "pt_BR": {
+          "term": "SIM",
+          "expansion": "Skydiver's Information Manual (manual de informações do paraquedista)",
+          "definition": "Manual principal da USPA, com os BSRs e o ISP.",
+          "aliases": [
+            "SIM"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-sl",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "SL",
+          "expansion": "Static Line",
+          "definition": "Student method where a line attached to the aircraft deploys the parachute.",
+          "aliases": [
+            "SL"
+          ]
+        },
+        "pt_BR": {
+          "term": "SL",
+          "expansion": "Static Line (linha estática)",
+          "definition": "Método de aluno em que uma fita presa à aeronave abre o paraquedas.",
+          "aliases": [
+            "SL"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-sop",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "SOP",
+          "expansion": "Standard Operating Procedure",
+          "definition": "Written procedure, often used by military or DZ operations.",
+          "aliases": [
+            "SOP"
+          ]
+        },
+        "pt_BR": {
+          "term": "SOP",
+          "expansion": "Standard Operating Procedure (procedimento operacional padrão)",
+          "definition": "Procedimento escrito, comum em operações militares ou de DZ.",
+          "aliases": [
+            "SOP"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-space",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "SPACE",
+          "expansion": "Skydivers, Planes, Airport, Clouds, Exit light",
+          "definition": "Acronym for what to check when clearing airspace before exiting.",
+          "aliases": [
+            "SPACE"
+          ]
+        },
+        "pt_BR": {
+          "term": "SPACE",
+          "expansion": "Skydivers, Planes, Airport, Clouds, Exit light (paraquedistas, aviões, aeroporto, nuvens, luz de saída)",
+          "definition": "O que checar ao liberar o espaço aéreo antes da saída.",
+          "aliases": [
+            "SPACE"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-ti-tm",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "TI / TM",
+          "expansion": "Tandem Instructor / Tandem Master",
+          "definition": "Rated jumper who flies the tandem system.",
+          "aliases": [
+            "TI",
+            "TM"
+          ]
+        },
+        "pt_BR": {
+          "term": "TI / TM",
+          "expansion": "Tandem Instructor / Tandem Master (instrutor de salto duplo)",
+          "definition": "Paraquedista credenciado que pilota o equipamento de salto duplo.",
+          "aliases": [
+            "TI",
+            "TM"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-tso",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "TSO",
+          "expansion": "Technical Standard Order",
+          "definition": "FAA certification standard for parachute components.",
+          "aliases": [
+            "TSO"
+          ]
+        },
+        "pt_BR": {
+          "term": "TSO",
+          "expansion": "Technical Standard Order (norma técnica padrão)",
+          "definition": "Padrão de certificação da FAA para componentes de paraquedas.",
+          "aliases": [
+            "TSO"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-uspa",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "USPA",
+          "expansion": "United States Parachute Association",
+          "definition": "US membership organization for skydiving.",
+          "aliases": [
+            "USPA"
+          ]
+        },
+        "pt_BR": {
+          "term": "USPA",
+          "expansion": "United States Parachute Association (associação de paraquedismo dos EUA)",
+          "definition": "Associação de membros do paraquedismo nos EUA.",
+          "aliases": [
+            "USPA"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-vfs",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "VFS",
+          "expansion": "Vertical Formation Skydiving",
+          "definition": "Competitive freefly formation discipline.",
+          "aliases": [
+            "VFS"
+          ]
+        },
+        "pt_BR": {
+          "term": "VFS",
+          "expansion": "Vertical Formation Skydiving (formação vertical)",
+          "definition": "Modalidade competitiva de formações em freefly.",
+          "aliases": [
+            "VFS"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-vr",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "VR",
+          "expansion": "Virtual Reality",
+          "definition": "Canopy simulators used for training.",
+          "aliases": [
+            "VR"
+          ]
+        },
+        "pt_BR": {
+          "term": "VR",
+          "expansion": "Virtual Reality (realidade virtual)",
+          "definition": "Simuladores de velame usados no treinamento.",
+          "aliases": [
+            "VR"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-woop",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "WOOP",
+          "expansion": "Wish, Outcome, Obstacle, Plan",
+          "definition": "Goal-setting framework used in instruction.",
+          "aliases": [
+            "WOOP"
+          ]
+        },
+        "pt_BR": {
+          "term": "WOOP",
+          "expansion": "Wish, Outcome, Obstacle, Plan (desejo, resultado, obstáculo, plano)",
+          "definition": "Método de definição de metas usado na instrução.",
+          "aliases": [
+            "WOOP"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-ws",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "WS",
+          "expansion": "Wingsuit",
+          "definition": "Suit with fabric wings for horizontal flight.",
+          "aliases": [
+            "WS"
+          ]
+        },
+        "pt_BR": {
+          "term": "WS",
+          "expansion": "Wingsuit",
+          "definition": "Macacão com asas de tecido para voo horizontal.",
+          "aliases": [
+            "WS"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-a-license",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "A license",
+          "definition": "First USPA skydiving license, earned after completing the ISP and at least 25 jumps.",
+          "aliases": [
+            "A license"
+          ]
+        },
+        "pt_BR": {
+          "term": "Licença A",
+          "definition": "Primeira licença de paraquedismo da USPA, obtida após concluir o ISP e fazer pelo menos 25 saltos.",
+          "aliases": [
+            "Licença A",
+            "Brevê A"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-accuracy",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Accuracy",
+          "definition": "Discipline and skill of landing on a precise target; competition uses a small dead-center pad.",
+          "aliases": [
+            "Accuracy"
+          ]
+        },
+        "pt_BR": {
+          "term": "Precisão",
+          "definition": "Modalidade e habilidade de pousar num alvo exato; em competição se usa um pequeno disco no centro.",
+          "aliases": [
+            "Precisão",
+            "Accuracy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-altimeter",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Altimeter",
+          "definition": "Instrument showing altitude; worn on the wrist or chest (visual) or in the helmet (audible).",
+          "aliases": [
+            "Altimeter"
+          ]
+        },
+        "pt_BR": {
+          "term": "Altímetro",
+          "definition": "Instrumento que mostra a altitude; usado no pulso ou no peito (visual) ou no capacete (sonoro).",
+          "aliases": [
+            "Altímetro"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-angle-flying",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Angle flying",
+          "definition": "Freefly discipline flying on a steep diagonal path, with horizontal movement.",
+          "aliases": [
+            "Angle flying"
+          ]
+        },
+        "pt_BR": {
+          "term": "Angle",
+          "definition": "Modalidade de freefly em trajetória diagonal inclinada, com deslocamento horizontal.",
+          "aliases": [
+            "Angle",
+            "Voo em ângulo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-arch",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Arch",
+          "definition": "Belly-to-earth body position with hips forward and back curved, giving stability.",
+          "aliases": [
+            "Arch"
+          ]
+        },
+        "pt_BR": {
+          "term": "Arch",
+          "definition": "Posição de barriga para a terra com o quadril à frente e as costas arqueadas, que dá estabilidade.",
+          "aliases": [
+            "Arch",
+            "Arqueamento"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-assisted-exit",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Assisted exit",
+          "definition": "Exit in which an instructor holds or assists the student leaving the aircraft.",
+          "aliases": [
+            "Assisted exit"
+          ]
+        },
+        "pt_BR": {
+          "term": "Saída assistida",
+          "definition": "Saída em que um instrutor segura ou ajuda o aluno a deixar a aeronave.",
+          "aliases": [
+            "Saída assistida"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-audible-altimeter",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Audible altimeter",
+          "definition": "Device in the helmet that beeps at preset altitudes.",
+          "aliases": [
+            "Audible altimeter"
+          ]
+        },
+        "pt_BR": {
+          "term": "Altímetro sonoro",
+          "definition": "Aparelho no capacete que apita em altitudes programadas.",
+          "aliases": [
+            "Altímetro sonoro",
+            "Bip"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-b-license",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "B license",
+          "definition": "Second USPA license; requires 50 jumps and further skills and canopy training.",
+          "aliases": [
+            "B license"
+          ]
+        },
+        "pt_BR": {
+          "term": "Licença B",
+          "definition": "Segunda licença da USPA; exige 50 saltos e mais treinamento de habilidades e de velame.",
+          "aliases": [
+            "Licença B",
+            "Brevê B"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-backfly",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Backfly",
+          "definition": "Flying stable on your back, facing the sky.",
+          "aliases": [
+            "Backfly"
+          ]
+        },
+        "pt_BR": {
+          "term": "Backfly",
+          "definition": "Voar estável de costas, olhando para o céu.",
+          "aliases": [
+            "Backfly",
+            "Voo de costas"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-bag-lock",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Bag lock",
+          "definition": "Malfunction where the canopy stays inside the deployment bag; requires reserve procedures.",
+          "aliases": [
+            "Bag lock"
+          ]
+        },
+        "pt_BR": {
+          "term": "Bag lock",
+          "definition": "Pane em que o velame fica preso dentro do bag; exige procedimentos de reserva.",
+          "aliases": [
+            "Bag lock"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-base",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Base",
+          "definition": "Anchor person or group that others build a formation on.",
+          "aliases": [
+            "Base"
+          ]
+        },
+        "pt_BR": {
+          "term": "Base",
+          "definition": "Pessoa ou grupo de referência sobre o qual os outros montam a formação.",
+          "aliases": [
+            "Base"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-belly-flying",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Belly flying",
+          "definition": "Falling face-to-earth; the first orientation students learn.",
+          "aliases": [
+            "Belly flying"
+          ]
+        },
+        "pt_BR": {
+          "term": "Belly",
+          "definition": "Cair de barriga para a terra; a primeira posição que o aluno aprende.",
+          "aliases": [
+            "Belly",
+            "Voo de barriga"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-boogie",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Boogie",
+          "definition": "Skydiving event or festival, often with special aircraft and organizers.",
+          "aliases": [
+            "Boogie"
+          ]
+        },
+        "pt_BR": {
+          "term": "Boogie",
+          "definition": "Evento ou festival de paraquedismo, geralmente com aeronaves e organizadores especiais.",
+          "aliases": [
+            "Boogie"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-box-position",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Box position",
+          "definition": "Neutral, symmetric belly position with arms and legs bent at about 90°.",
+          "aliases": [
+            "Box position"
+          ]
+        },
+        "pt_BR": {
+          "term": "Posição box",
+          "definition": "Posição neutra e simétrica de barriga, com braços e pernas dobrados a cerca de 90°.",
+          "aliases": [
+            "Posição box",
+            "Box"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-brakes",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Brakes",
+          "definition": "Toggle position that slows the canopy; also the setting the toggles are stowed in before deployment.",
+          "aliases": [
+            "Brakes"
+          ]
+        },
+        "pt_BR": {
+          "term": "Freios",
+          "definition": "Posição dos batedores que desacelera o velame; também a posição em que os batedores ficam presos antes da abertura.",
+          "aliases": [
+            "Freios"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-breakoff",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Breakoff",
+          "definition": "Planned altitude and signal at which a group separates and tracks apart before deploying.",
+          "aliases": [
+            "Breakoff"
+          ]
+        },
+        "pt_BR": {
+          "term": "Breakoff",
+          "definition": "Altitude e sinal combinados em que o grupo se separa e faz tracking antes de abrir.",
+          "aliases": [
+            "Breakoff",
+            "Separação"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-bridle",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Bridle",
+          "definition": "Line connecting the pilot chute to the deployment bag and canopy.",
+          "aliases": [
+            "Bridle"
+          ]
+        },
+        "pt_BR": {
+          "term": "Bridle",
+          "definition": "Fita que liga o extrator ao bag e ao velame.",
+          "aliases": [
+            "Bridle",
+            "Cordão do extrator"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-burble",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Burble",
+          "definition": "Turbulent, low-pressure wake behind a falling body; can trap a pilot chute.",
+          "aliases": [
+            "Burble"
+          ]
+        },
+        "pt_BR": {
+          "term": "Burble",
+          "definition": "Esteira de ar turbulento e de baixa pressão atrás de um corpo em queda; pode prender o extrator.",
+          "aliases": [
+            "Burble",
+            "Vácuo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-c-license",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "C license",
+          "definition": "Third USPA license; requires 200 jumps.",
+          "aliases": [
+            "C license"
+          ]
+        },
+        "pt_BR": {
+          "term": "Licença C",
+          "definition": "Terceira licença da USPA; exige 200 saltos.",
+          "aliases": [
+            "Licença C",
+            "Brevê C"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-canopy",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Canopy",
+          "definition": "The parachute wing. Main canopy is used normally; reserve for emergencies.",
+          "aliases": [
+            "Canopy"
+          ]
+        },
+        "pt_BR": {
+          "term": "Velame",
+          "definition": "A asa do paraquedas. O principal é usado normalmente; o reserva, em emergências.",
+          "aliases": [
+            "Velame",
+            "Canopy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-canopy-check",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Canopy check",
+          "definition": "Look up after opening to confirm the canopy is square, stable and controllable.",
+          "aliases": [
+            "Canopy check"
+          ]
+        },
+        "pt_BR": {
+          "term": "Checagem do velame",
+          "definition": "Olhar para cima após a abertura e confirmar que o velame está retangular, estável e controlável.",
+          "aliases": [
+            "Checagem do velame"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-canopy-collision",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Canopy collision",
+          "definition": "Two jumpers' canopies or bodies making contact under canopy; a serious hazard.",
+          "aliases": [
+            "Canopy collision"
+          ]
+        },
+        "pt_BR": {
+          "term": "Colisão de velames",
+          "definition": "Contato entre velames ou corpos de dois paraquedistas sob velame; um risco grave.",
+          "aliases": [
+            "Colisão de velames"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-canopy-course",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Canopy course",
+          "definition": "Formal canopy-piloting training beyond student level.",
+          "aliases": [
+            "Canopy course"
+          ]
+        },
+        "pt_BR": {
+          "term": "Curso de velame",
+          "definition": "Treinamento formal de pilotagem de velame além do nível de aluno.",
+          "aliases": [
+            "Curso de velame",
+            "Curso de pilotagem"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-cascade",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Cascade",
+          "definition": "Point where several suspension lines join into one before reaching the riser.",
+          "aliases": [
+            "Cascade"
+          ]
+        },
+        "pt_BR": {
+          "term": "Cascata",
+          "definition": "Ponto em que várias linhas de suspensão se juntam em uma antes de chegar ao tirante.",
+          "aliases": [
+            "Cascata"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-chest-strap",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Chest strap",
+          "definition": "Harness strap across the chest; adjusts canopy handling and holds the harness in place.",
+          "aliases": [
+            "Chest strap"
+          ]
+        },
+        "pt_BR": {
+          "term": "Barrigueira",
+          "definition": "Tira do arnês que cruza o peito; ajusta a resposta do velame e mantém o arnês no lugar.",
+          "aliases": [
+            "Barrigueira",
+            "Chest strap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-chop",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Chop",
+          "definition": "Slang for a cutaway.",
+          "aliases": [
+            "Chop"
+          ]
+        },
+        "pt_BR": {
+          "term": "Chop",
+          "definition": "Gíria para cutaway.",
+          "aliases": [
+            "Chop"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-circle-of-awareness",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Circle of awareness",
+          "definition": "Freefall check of heading, altitude and instructor signals (COA).",
+          "aliases": [
+            "Circle of awareness"
+          ]
+        },
+        "pt_BR": {
+          "term": "Círculo de atenção",
+          "definition": "Checagem em queda livre de proa, altitude e sinais do instrutor (COA).",
+          "aliases": [
+            "Círculo de atenção"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-clear-and-pull",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Clear and pull",
+          "definition": "First unassisted self-deployment for a student (C/P).",
+          "aliases": [
+            "Clear and pull"
+          ]
+        },
+        "pt_BR": {
+          "term": "Clear and pull",
+          "definition": "Primeiro comando do aluno sem nenhuma assistência (C/P).",
+          "aliases": [
+            "Clear and pull",
+            "Comando sem apoio"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-climbout",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Climbout",
+          "definition": "Moving from the seat to the door or exit position before leaving the aircraft.",
+          "aliases": [
+            "Climbout"
+          ]
+        },
+        "pt_BR": {
+          "term": "Climbout",
+          "definition": "Sair do banco e ir até a porta ou posição de saída antes de deixar a aeronave.",
+          "aliases": [
+            "Climbout",
+            "Posicionamento na porta"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-closing-loop",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Closing loop",
+          "definition": "Small loop of cord that holds the container flaps closed around the closing pin.",
+          "aliases": [
+            "Closing loop"
+          ]
+        },
+        "pt_BR": {
+          "term": "Loop de fechamento",
+          "definition": "Pequena alça de cordão que mantém as abas do container fechadas em volta do pino.",
+          "aliases": [
+            "Loop de fechamento",
+            "Loop"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-closing-pin",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Closing pin",
+          "definition": "Metal pin that passes through the closing loop to keep the container closed.",
+          "aliases": [
+            "Closing pin"
+          ]
+        },
+        "pt_BR": {
+          "term": "Pino de fechamento",
+          "definition": "Pino metálico que passa pelo loop para manter o container fechado.",
+          "aliases": [
+            "Pino de fechamento",
+            "Pino"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-coach",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Coach",
+          "definition": "USPA rating allowing a jumper to teach and jump with students from Category E onward.",
+          "aliases": [
+            "Coach"
+          ]
+        },
+        "pt_BR": {
+          "term": "Coach",
+          "definition": "Credencial da USPA que permite ensinar e saltar com alunos a partir da Categoria E.",
+          "aliases": [
+            "Coach"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-container",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Container",
+          "definition": "Part of the rig that holds the packed main and reserve canopies.",
+          "aliases": [
+            "Container"
+          ]
+        },
+        "pt_BR": {
+          "term": "Container",
+          "definition": "Parte do equipamento que guarda o principal e o reserva dobrados.",
+          "aliases": [
+            "Container",
+            "Mochila"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-crabbing",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Crabbing",
+          "definition": "Flying a canopy at an angle to the wind to track over the ground.",
+          "aliases": [
+            "Crabbing"
+          ]
+        },
+        "pt_BR": {
+          "term": "Crabbing",
+          "definition": "Voar o velame em ângulo com o vento para seguir uma linha sobre o solo.",
+          "aliases": [
+            "Crabbing",
+            "Voo caranguejo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-crossbraced-wing",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Crossbraced wing",
+          "definition": "High-performance canopy with diagonal internal ribs for a stiffer, faster wing.",
+          "aliases": [
+            "Crossbraced wing"
+          ]
+        },
+        "pt_BR": {
+          "term": "Velame crossbraced",
+          "definition": "Velame de alta performance com nervuras diagonais internas, que deixam a asa mais rígida e rápida.",
+          "aliases": [
+            "Velame crossbraced",
+            "Crossbraced"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-crossover",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Crossover",
+          "definition": "Student switching from one training method (e.g., tandem) to another (e.g., AFF).",
+          "aliases": [
+            "Crossover"
+          ]
+        },
+        "pt_BR": {
+          "term": "Transição de método",
+          "definition": "Aluno que troca de um método de treinamento (ex.: salto duplo) para outro (ex.: AFF).",
+          "aliases": [
+            "Transição de método",
+            "Crossover"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-crosswind-leg",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Crosswind leg",
+          "definition": "Pattern segment flown perpendicular to the wind between downwind and final.",
+          "aliases": [
+            "Crosswind leg"
+          ]
+        },
+        "pt_BR": {
+          "term": "Perna base",
+          "definition": "Trecho do circuito voado perpendicular ao vento, entre a perna do vento e a final.",
+          "aliases": [
+            "Perna base",
+            "Perna de través"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-currency",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Currency",
+          "definition": "Being recently active; jumpers who have not jumped for a while need currency training.",
+          "aliases": [
+            "Currency"
+          ]
+        },
+        "pt_BR": {
+          "term": "Currency",
+          "definition": "Estar saltando com regularidade; quem fica tempo sem saltar precisa de treinamento de atualização.",
+          "aliases": [
+            "Currency",
+            "Estar em dia",
+            "recência"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-cutaway",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Cutaway",
+          "definition": "Releasing a malfunctioning main canopy, usually by pulling the cutaway handle.",
+          "aliases": [
+            "Cutaway"
+          ]
+        },
+        "pt_BR": {
+          "term": "Cutaway",
+          "definition": "Soltar um velame principal em pane, normalmente puxando o punho de cutaway.",
+          "aliases": [
+            "Cutaway",
+            "Desconexão"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-cutaway-handle",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Cutaway handle",
+          "definition": "Handle (often red, on the right) that releases the main canopy via the 3-ring system.",
+          "aliases": [
+            "Cutaway handle"
+          ]
+        },
+        "pt_BR": {
+          "term": "Punho de cutaway",
+          "definition": "Punho (geralmente vermelho, à direita) que solta o principal pelo sistema de 3 argolas.",
+          "aliases": [
+            "Punho de cutaway",
+            "Punho de desconexão"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-d-license",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "D license",
+          "definition": "Highest USPA license; requires 500 jumps.",
+          "aliases": [
+            "D license"
+          ]
+        },
+        "pt_BR": {
+          "term": "Licença D",
+          "definition": "Licença mais alta da USPA; exige 500 saltos.",
+          "aliases": [
+            "Licença D",
+            "Brevê D"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-dead-center",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Dead center",
+          "definition": "Exact center of an accuracy target.",
+          "aliases": [
+            "Dead center"
+          ]
+        },
+        "pt_BR": {
+          "term": "Centro do alvo",
+          "definition": "Centro exato de um alvo de precisão.",
+          "aliases": [
+            "Centro do alvo",
+            "Dead center"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-decision-altitude",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Decision altitude",
+          "definition": "Altitude by which a jumper must decide to cut away or deploy the reserve.",
+          "aliases": [
+            "Decision altitude"
+          ]
+        },
+        "pt_BR": {
+          "term": "Altitude de decisão",
+          "definition": "Altitude até a qual o paraquedista precisa decidir entre fazer cutaway ou abrir o reserva.",
+          "aliases": [
+            "Altitude de decisão"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-deep-brakes",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Deep brakes",
+          "definition": "Toggles pulled far down, slowing the canopy close to a stall.",
+          "aliases": [
+            "Deep brakes"
+          ]
+        },
+        "pt_BR": {
+          "term": "Freio profundo",
+          "definition": "Batedores bem abaixados, desacelerando o velame perto do estol.",
+          "aliases": [
+            "Freio profundo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-delta",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Delta",
+          "definition": "Head-low belly position with arms swept back, used to dive forward and gain speed.",
+          "aliases": [
+            "Delta"
+          ]
+        },
+        "pt_BR": {
+          "term": "Delta",
+          "definition": "Posição de barriga com a cabeça baixa e os braços para trás, usada para mergulhar e ganhar velocidade.",
+          "aliases": [
+            "Delta"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-demo-jump",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Demo jump",
+          "definition": "Exhibition jump into a venue such as a stadium or event.",
+          "aliases": [
+            "Demo jump"
+          ]
+        },
+        "pt_BR": {
+          "term": "Salto de demonstração",
+          "definition": "Salto de exibição em local como estádio ou evento.",
+          "aliases": [
+            "Salto de demonstração",
+            "Salto demo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-deployment",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Deployment",
+          "definition": "Sequence from pulling the pilot chute to the canopy opening.",
+          "aliases": [
+            "Deployment"
+          ]
+        },
+        "pt_BR": {
+          "term": "Abertura",
+          "definition": "Sequência desde o lançamento do extrator até o velame aberto.",
+          "aliases": [
+            "Abertura",
+            "Deployment"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-deployment-bag-d-bag",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Deployment bag (D-bag)",
+          "definition": "Bag that holds the packed canopy and controls the opening sequence.",
+          "aliases": [
+            "Deployment bag",
+            "D-bag"
+          ]
+        },
+        "pt_BR": {
+          "term": "Bag",
+          "definition": "Saco que guarda o velame dobrado e controla a sequência de abertura.",
+          "aliases": [
+            "Bag",
+            "D-bag",
+            "saco de abertura"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-dirt-dive",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Dirt dive",
+          "definition": "Walking through a planned group skydive on the ground before boarding.",
+          "aliases": [
+            "Dirt dive"
+          ]
+        },
+        "pt_BR": {
+          "term": "Dirt dive",
+          "definition": "Ensaiar no chão o salto em grupo planejado antes de embarcar.",
+          "aliases": [
+            "Dirt dive",
+            "Treino em solo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-discovery-flight",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Discovery flight",
+          "definition": "Tandem jump that is purely an experience, not formal training.",
+          "aliases": [
+            "Discovery flight"
+          ]
+        },
+        "pt_BR": {
+          "term": "Salto duplo de experiência",
+          "definition": "Salto duplo feito só pela experiência, sem treinamento formal.",
+          "aliases": [
+            "Salto duplo de experiência",
+            "Salto de batismo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-dive-flow",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Dive flow",
+          "definition": "Planned sequence of actions for a jump, rehearsed on the ground.",
+          "aliases": [
+            "Dive flow"
+          ]
+        },
+        "pt_BR": {
+          "term": "Dive flow",
+          "definition": "Sequência planejada de ações de um salto, ensaiada em solo.",
+          "aliases": [
+            "Dive flow",
+            "Roteiro do salto"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-dock",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Dock",
+          "definition": "Taking a grip on another jumper to join a formation.",
+          "aliases": [
+            "Dock"
+          ]
+        },
+        "pt_BR": {
+          "term": "Dock",
+          "definition": "Fazer a pegada em outro paraquedista para entrar na formação.",
+          "aliases": [
+            "Dock",
+            "Pegada"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-downwind-leg",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Downwind leg",
+          "definition": "Pattern segment flown with the wind, parallel to the landing direction.",
+          "aliases": [
+            "Downwind leg"
+          ]
+        },
+        "pt_BR": {
+          "term": "Perna do vento",
+          "definition": "Trecho do circuito voado a favor do vento, paralelo à direção de pouso.",
+          "aliases": [
+            "Perna do vento",
+            "Downwind"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-drift",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Drift",
+          "definition": "Horizontal distance a jumper is carried by wind, in freefall or under canopy.",
+          "aliases": [
+            "Drift"
+          ]
+        },
+        "pt_BR": {
+          "term": "Deriva",
+          "definition": "Distância horizontal em que o vento leva o paraquedista, em queda livre ou sob velame.",
+          "aliases": [
+            "Deriva",
+            "Drift"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-drogue",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Drogue",
+          "definition": "Small parachute deployed on a tandem to slow freefall speed.",
+          "aliases": [
+            "Drogue"
+          ]
+        },
+        "pt_BR": {
+          "term": "Drogue",
+          "definition": "Pequeno paraquedas aberto no salto duplo para reduzir a velocidade de queda livre.",
+          "aliases": [
+            "Drogue"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-drop-zone",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Drop zone",
+          "definition": "The skydiving center; also the target landing area (DZ).",
+          "aliases": [
+            "Drop zone"
+          ]
+        },
+        "pt_BR": {
+          "term": "Área de salto",
+          "definition": "O centro de paraquedismo; também a área-alvo de pouso (DZ).",
+          "aliases": [
+            "Área de salto",
+            "DZ",
+            "centro de paraquedismo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-elliptical-canopy",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Elliptical canopy",
+          "definition": "Wing with a tapered planform; faster and more responsive than a rectangular canopy.",
+          "aliases": [
+            "Elliptical canopy"
+          ]
+        },
+        "pt_BR": {
+          "term": "Velame elíptico",
+          "definition": "Asa com planta afunilada; mais rápida e responsiva que um velame retangular.",
+          "aliases": [
+            "Velame elíptico"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-emergency-procedures",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Emergency procedures",
+          "definition": "Trained responses to malfunctions, aircraft emergencies and landing hazards (EPs).",
+          "aliases": [
+            "Emergency procedures"
+          ]
+        },
+        "pt_BR": {
+          "term": "Procedimentos de emergência",
+          "definition": "Respostas treinadas a panes, emergências na aeronave e riscos no pouso (EPs).",
+          "aliases": [
+            "Procedimentos de emergência"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-end-cell-closure",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "End cell closure",
+          "definition": "Canopy end cells not inflating after opening; usually cleared by pumping brakes.",
+          "aliases": [
+            "End cell closure"
+          ]
+        },
+        "pt_BR": {
+          "term": "Células das pontas fechadas",
+          "definition": "Células das pontas do velame que não inflam após a abertura; geralmente se resolve bombeando os freios.",
+          "aliases": [
+            "Células das pontas fechadas",
+            "End cell closure"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-examiner",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Examiner",
+          "definition": "Highest USPA instructional rating level; runs rating courses.",
+          "aliases": [
+            "Examiner"
+          ]
+        },
+        "pt_BR": {
+          "term": "Examinador",
+          "definition": "Nível mais alto de credencial de instrução da USPA; conduz os cursos de credencial.",
+          "aliases": [
+            "Examinador"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-exit",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Exit",
+          "definition": "Leaving the aircraft; also the specific technique used (poised, dive, linked).",
+          "aliases": [
+            "Exit"
+          ]
+        },
+        "pt_BR": {
+          "term": "Saída",
+          "definition": "Deixar a aeronave; também a técnica usada (posicionada, em mergulho, em conjunto).",
+          "aliases": [
+            "Saída"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-exit-order",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Exit order",
+          "definition": "Sequence in which groups leave the aircraft, based on fall rate and discipline.",
+          "aliases": [
+            "Exit order"
+          ]
+        },
+        "pt_BR": {
+          "term": "Ordem de saída",
+          "definition": "Sequência em que os grupos deixam a aeronave, conforme a velocidade de queda e a modalidade.",
+          "aliases": [
+            "Ordem de saída"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-exit-separation",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Exit separation",
+          "definition": "Time or distance between groups exiting, so they open far apart.",
+          "aliases": [
+            "Exit separation"
+          ]
+        },
+        "pt_BR": {
+          "term": "Separação de saída",
+          "definition": "Tempo ou distância entre a saída dos grupos, para que abram bem afastados.",
+          "aliases": [
+            "Separação de saída"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-exit-weight",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Exit weight",
+          "definition": "Jumper's total weight including gear; used to calculate wing loading.",
+          "aliases": [
+            "Exit weight"
+          ]
+        },
+        "pt_BR": {
+          "term": "Peso de saída",
+          "definition": "Peso total do paraquedista com o equipamento; usado para calcular a carga alar.",
+          "aliases": [
+            "Peso de saída"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-final-approach",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Final approach",
+          "definition": "Last pattern leg, flown into the wind toward the landing target.",
+          "aliases": [
+            "Final approach"
+          ]
+        },
+        "pt_BR": {
+          "term": "Final",
+          "definition": "Última perna do circuito, voada contra o vento em direção ao alvo.",
+          "aliases": [
+            "Final",
+            "Reta final"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-firing-altitude",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Firing altitude",
+          "definition": "Altitude at which an AAD activates the reserve.",
+          "aliases": [
+            "Firing altitude"
+          ]
+        },
+        "pt_BR": {
+          "term": "Altitude de disparo",
+          "definition": "Altitude em que o AAD aciona o reserva.",
+          "aliases": [
+            "Altitude de disparo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-flare",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Flare",
+          "definition": "Pulling both toggles (or risers) near the ground to slow descent and speed for landing.",
+          "aliases": [
+            "Flare"
+          ]
+        },
+        "pt_BR": {
+          "term": "Flare",
+          "definition": "Abaixar os dois batedores (ou tirantes) perto do solo para reduzir a descida e a velocidade no pouso.",
+          "aliases": [
+            "Flare",
+            "Arredondamento"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-floater",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Floater",
+          "definition": "Jumper who exits before the base and flies up to the formation; also an outside exit position.",
+          "aliases": [
+            "Floater"
+          ]
+        },
+        "pt_BR": {
+          "term": "Floater",
+          "definition": "Paraquedista que sai antes da base e voa até a formação; também uma posição de saída por fora.",
+          "aliases": [
+            "Floater"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-formation-skydiving",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Formation skydiving",
+          "definition": "Belly-to-earth group flying to build shapes or sequences (FS).",
+          "aliases": [
+            "Formation skydiving"
+          ]
+        },
+        "pt_BR": {
+          "term": "Formação em queda livre",
+          "definition": "Voo em grupo de barriga para a terra para montar figuras ou sequências (FS).",
+          "aliases": [
+            "Formação em queda livre",
+            "TR",
+            "trabalho relativo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-freefall",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Freefall",
+          "definition": "Portion of the jump before the parachute opens.",
+          "aliases": [
+            "Freefall"
+          ]
+        },
+        "pt_BR": {
+          "term": "Queda livre",
+          "definition": "Parte do salto antes de o paraquedas abrir.",
+          "aliases": [
+            "Queda livre",
+            "Freefall"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-freefly",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Freefly",
+          "definition": "Flying in any orientation, including head-up, head-down and transitions (FF).",
+          "aliases": [
+            "Freefly"
+          ]
+        },
+        "pt_BR": {
+          "term": "Freefly",
+          "definition": "Voar em qualquer posição, incluindo em pé, de cabeça para baixo e transições (FF).",
+          "aliases": [
+            "Freefly"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-front-riser",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Front riser",
+          "definition": "Front straps connecting the canopy to the harness; pulling them dives the canopy.",
+          "aliases": [
+            "Front riser"
+          ]
+        },
+        "pt_BR": {
+          "term": "Tirante dianteiro",
+          "definition": "Fitas da frente que ligam o velame ao arnês; puxá-las faz o velame mergulhar.",
+          "aliases": [
+            "Tirante dianteiro"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-full-flight",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Full flight",
+          "definition": "Canopy flying with toggles all the way up; fastest steady speed.",
+          "aliases": [
+            "Full flight"
+          ]
+        },
+        "pt_BR": {
+          "term": "Voo pleno",
+          "definition": "Velame voando com os batedores totalmente em cima; a maior velocidade estável.",
+          "aliases": [
+            "Voo pleno",
+            "Full flight"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-funnel",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Funnel",
+          "definition": "Formation collapsing due to a poor dock or instability.",
+          "aliases": [
+            "Funnel"
+          ]
+        },
+        "pt_BR": {
+          "term": "Funil",
+          "definition": "Formação que desmancha por uma pegada ruim ou por instabilidade.",
+          "aliases": [
+            "Funil",
+            "Funnel"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-glide-ratio",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Glide ratio",
+          "definition": "Horizontal distance traveled per unit of height lost under canopy.",
+          "aliases": [
+            "Glide ratio"
+          ]
+        },
+        "pt_BR": {
+          "term": "Razão de planeio",
+          "definition": "Distância horizontal percorrida para cada unidade de altura perdida sob velame.",
+          "aliases": [
+            "Razão de planeio",
+            "Planeio"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-gear-check",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Gear check",
+          "definition": "Inspection of a jumper's equipment before boarding and before exit.",
+          "aliases": [
+            "Gear check"
+          ]
+        },
+        "pt_BR": {
+          "term": "Checagem de equipamento",
+          "definition": "Inspeção do equipamento do paraquedista antes do embarque e antes da saída.",
+          "aliases": [
+            "Checagem de equipamento",
+            "Check de equipamento"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-ground-school",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Ground school",
+          "definition": "Classroom or online training for skydiving students.",
+          "aliases": [
+            "Ground school"
+          ]
+        },
+        "pt_BR": {
+          "term": "Curso teórico",
+          "definition": "Treinamento em sala de aula ou online para alunos de paraquedismo.",
+          "aliases": [
+            "Curso teórico",
+            "Escola de solo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-grips",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Grips",
+          "definition": "Handholds on jumpsuits used for docking in formation skydiving.",
+          "aliases": [
+            "Grips"
+          ]
+        },
+        "pt_BR": {
+          "term": "Grips",
+          "definition": "Pontos de pegada nos macacões usados para os docks em formação.",
+          "aliases": [
+            "Grips",
+            "Pegadas"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-hand-deploy-pilot-chute",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Hand-deploy pilot chute",
+          "definition": "Pilot chute thrown by hand from a pouch, usually at the BOC.",
+          "aliases": [
+            "Hand-deploy pilot chute"
+          ]
+        },
+        "pt_BR": {
+          "term": "Extrator de mão",
+          "definition": "Extrator lançado com a mão a partir de um bolso, geralmente no BOC.",
+          "aliases": [
+            "Extrator de mão",
+            "Hand deploy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-hard-deck",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Hard deck",
+          "definition": "Minimum altitude for a planned action; the cutaway hard deck is the lowest altitude to cut away.",
+          "aliases": [
+            "Hard deck"
+          ]
+        },
+        "pt_BR": {
+          "term": "Hard deck",
+          "definition": "Altitude mínima para uma ação planejada; o hard deck de cutaway é a altitude mais baixa para desconectar.",
+          "aliases": [
+            "Hard deck",
+            "Altitude limite"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-hard-opening",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Hard opening",
+          "definition": "Unusually abrupt canopy opening that can injure the jumper.",
+          "aliases": [
+            "Hard opening"
+          ]
+        },
+        "pt_BR": {
+          "term": "Abertura forte",
+          "definition": "Abertura do velame anormalmente brusca, que pode machucar o paraquedista.",
+          "aliases": [
+            "Abertura forte",
+            "Abertura dura"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-hard-pull",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Hard pull",
+          "definition": "Stuck or hard-to-extract pilot chute or handle.",
+          "aliases": [
+            "Hard pull"
+          ]
+        },
+        "pt_BR": {
+          "term": "Comando duro",
+          "definition": "Extrator ou punho preso ou difícil de puxar.",
+          "aliases": [
+            "Comando duro",
+            "Hard pull"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-harness",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Harness",
+          "definition": "Webbing that secures the jumper to the parachute system.",
+          "aliases": [
+            "Harness"
+          ]
+        },
+        "pt_BR": {
+          "term": "Arnês",
+          "definition": "Fitas que prendem o paraquedista ao equipamento.",
+          "aliases": [
+            "Arnês",
+            "Harness"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-harness-hold",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Harness-hold",
+          "definition": "AFF technique where instructors hold the student's harness during freefall.",
+          "aliases": [
+            "Harness-hold"
+          ]
+        },
+        "pt_BR": {
+          "term": "Pegada no arnês",
+          "definition": "Técnica de AFF em que os instrutores seguram o arnês do aluno durante a queda livre.",
+          "aliases": [
+            "Pegada no arnês",
+            "Harness hold"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-heading",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Heading",
+          "definition": "Direction a jumper faces or flies; maintaining heading is a core skill.",
+          "aliases": [
+            "Heading"
+          ]
+        },
+        "pt_BR": {
+          "term": "Proa",
+          "definition": "Direção para onde o paraquedista está virado ou voando; manter a proa é uma habilidade básica.",
+          "aliases": [
+            "Proa",
+            "Heading"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-holding-area",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Holding area",
+          "definition": "Area upwind of the landing zone where a canopy pilot waits before entering the pattern.",
+          "aliases": [
+            "Holding area"
+          ]
+        },
+        "pt_BR": {
+          "term": "Área de espera",
+          "definition": "Área a favor do vento da área de pouso onde o piloto de velame aguarda antes de entrar no circuito.",
+          "aliases": [
+            "Área de espera"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-hook-knife",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Hook knife",
+          "definition": "Small blade carried to cut lines in an entanglement.",
+          "aliases": [
+            "Hook knife"
+          ]
+        },
+        "pt_BR": {
+          "term": "Faca de gancho",
+          "definition": "Pequena lâmina carregada para cortar linhas em caso de enrosco.",
+          "aliases": [
+            "Faca de gancho",
+            "Canivete"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-hook-turn",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Hook turn",
+          "definition": "Low, sharp canopy turn toward the ground; a leading cause of landing injuries.",
+          "aliases": [
+            "Hook turn"
+          ]
+        },
+        "pt_BR": {
+          "term": "Hook turn",
+          "definition": "Curva de velame baixa e fechada em direção ao solo; uma das principais causas de lesões no pouso.",
+          "aliases": [
+            "Hook turn",
+            "Curva baixa"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-hop-and-pop",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Hop and pop",
+          "definition": "Exit followed by deployment within a few seconds, with little or no freefall.",
+          "aliases": [
+            "Hop and pop"
+          ]
+        },
+        "pt_BR": {
+          "term": "Hop and pop",
+          "definition": "Saída seguida de abertura em poucos segundos, com pouca ou nenhuma queda livre.",
+          "aliases": [
+            "Hop and pop"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-horseshoe",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Horseshoe",
+          "definition": "Malfunction where part of the system is out but still attached to the jumper, forming a U.",
+          "aliases": [
+            "Horseshoe"
+          ]
+        },
+        "pt_BR": {
+          "term": "Ferradura",
+          "definition": "Pane em que parte do sistema sai mas continua presa ao paraquedista, formando um U.",
+          "aliases": [
+            "Ferradura",
+            "Horseshoe"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-hybrid",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Hybrid",
+          "definition": "Formation mixing belly and freefly orientations.",
+          "aliases": [
+            "Hybrid"
+          ]
+        },
+        "pt_BR": {
+          "term": "Híbrido",
+          "definition": "Formação que mistura posições de barriga e de freefly.",
+          "aliases": [
+            "Híbrido",
+            "Hybrid"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-jump-run",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Jump run",
+          "definition": "Straight aircraft flight path over the exit point during exits.",
+          "aliases": [
+            "Jump run"
+          ]
+        },
+        "pt_BR": {
+          "term": "Jump run",
+          "definition": "Trajetória reta da aeronave sobre o ponto de saída durante as saídas.",
+          "aliases": [
+            "Jump run",
+            "Corrida de lançamento"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-jumpmaster",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Jumpmaster",
+          "definition": "Person who supervises jumpers and spots from the aircraft.",
+          "aliases": [
+            "Jumpmaster"
+          ]
+        },
+        "pt_BR": {
+          "term": "Jumpmaster",
+          "definition": "Pessoa que supervisiona os paraquedistas e faz o spot a bordo.",
+          "aliases": [
+            "Jumpmaster",
+            "Mestre de salto"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-jumpsuit",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Jumpsuit",
+          "definition": "Suit worn for protection and to tune fall rate; also has grips for formation work.",
+          "aliases": [
+            "Jumpsuit"
+          ]
+        },
+        "pt_BR": {
+          "term": "Macacão",
+          "definition": "Roupa usada para proteção e para ajustar a velocidade de queda; tem grips para trabalho em formação.",
+          "aliases": [
+            "Macacão",
+            "Jumpsuit"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-knife",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Knife",
+          "definition": "Short for hook knife.",
+          "aliases": [
+            "Knife"
+          ]
+        },
+        "pt_BR": {
+          "term": "Faca",
+          "definition": "Forma curta de faca de gancho.",
+          "aliases": [
+            "Faca"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-landing-pattern",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Landing pattern",
+          "definition": "Planned flight path to land: downwind, base and final legs.",
+          "aliases": [
+            "Landing pattern"
+          ]
+        },
+        "pt_BR": {
+          "term": "Circuito de pouso",
+          "definition": "Trajetória planejada para o pouso: perna do vento, perna base e final.",
+          "aliases": [
+            "Circuito de pouso",
+            "Circuito"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-landing-priorities",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Landing priorities",
+          "definition": "Ordered rules for landing: land clear, flare properly, and perform a PLF.",
+          "aliases": [
+            "Landing priorities"
+          ]
+        },
+        "pt_BR": {
+          "term": "Prioridades de pouso",
+          "definition": "Regras em ordem para o pouso: pousar em área livre, fazer o flare corretamente e executar o PLF.",
+          "aliases": [
+            "Prioridades de pouso"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-leg-straps",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Leg straps",
+          "definition": "Harness straps around the thighs.",
+          "aliases": [
+            "Leg straps"
+          ]
+        },
+        "pt_BR": {
+          "term": "Perneiras",
+          "definition": "Tiras do arnês em volta das coxas.",
+          "aliases": [
+            "Perneiras",
+            "Tiras de perna"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-line-over",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Line over",
+          "definition": "Malfunction where a line passes over the top of the canopy, distorting it.",
+          "aliases": [
+            "Line over"
+          ]
+        },
+        "pt_BR": {
+          "term": "Line over",
+          "definition": "Pane em que uma linha passa por cima do velame, deformando-o.",
+          "aliases": [
+            "Line over"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-line-twists",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Line twists",
+          "definition": "Suspension lines twisted after opening; kick out if the canopy is flying straight.",
+          "aliases": [
+            "Line twists"
+          ]
+        },
+        "pt_BR": {
+          "term": "Twist",
+          "definition": "Linhas de suspensão torcidas após a abertura; desfaça pedalando se o velame estiver voando reto.",
+          "aliases": [
+            "Twist",
+            "Linhas torcidas"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-linked-exit",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Linked exit",
+          "definition": "Exit where jumpers hold grips on each other as they leave the aircraft.",
+          "aliases": [
+            "Linked exit"
+          ]
+        },
+        "pt_BR": {
+          "term": "Saída em conjunto",
+          "definition": "Saída em que os paraquedistas se seguram pelas pegadas ao deixar a aeronave.",
+          "aliases": [
+            "Saída em conjunto",
+            "Saída linkada"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-load",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Load",
+          "definition": "One aircraft full of jumpers; also a group on the manifest.",
+          "aliases": [
+            "Load"
+          ]
+        },
+        "pt_BR": {
+          "term": "Decolagem",
+          "definition": "Uma aeronave cheia de paraquedistas; também um grupo no manifesto.",
+          "aliases": [
+            "Decolagem",
+            "Load"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-lock-on",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Lock on",
+          "definition": "Student looking at the instructor or target to confirm readiness.",
+          "aliases": [
+            "Lock on"
+          ]
+        },
+        "pt_BR": {
+          "term": "Lock on",
+          "definition": "Aluno olhando para o instrutor ou alvo para confirmar que está pronto.",
+          "aliases": [
+            "Lock on",
+            "Contato visual"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-logbook",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Logbook",
+          "definition": "Record of each jump, signed as proof for licenses and ratings.",
+          "aliases": [
+            "Logbook"
+          ]
+        },
+        "pt_BR": {
+          "term": "Caderneta de saltos",
+          "definition": "Registro de cada salto, assinado como comprovante para licenças e credenciais.",
+          "aliases": [
+            "Caderneta de saltos",
+            "Logbook"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-low-pull",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Low pull",
+          "definition": "Deploying below the planned altitude; a safety violation.",
+          "aliases": [
+            "Low pull"
+          ]
+        },
+        "pt_BR": {
+          "term": "Comando baixo",
+          "definition": "Abrir abaixo da altitude planejada; uma infração de segurança.",
+          "aliases": [
+            "Comando baixo",
+            "Low pull"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-main-canopy",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Main canopy",
+          "definition": "The primary parachute used on normal jumps.",
+          "aliases": [
+            "Main canopy"
+          ]
+        },
+        "pt_BR": {
+          "term": "Velame principal",
+          "definition": "O paraquedas usado em saltos normais.",
+          "aliases": [
+            "Velame principal",
+            "Principal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-malfunction",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Malfunction",
+          "definition": "Any failure of the main to open or fly correctly (a \"mal\").",
+          "aliases": [
+            "Malfunction"
+          ]
+        },
+        "pt_BR": {
+          "term": "Pane",
+          "definition": "Qualquer falha do principal em abrir ou voar corretamente.",
+          "aliases": [
+            "Pane",
+            "Mal",
+            "malfunction"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-manifest",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Manifest",
+          "definition": "Office that books jumpers onto loads; also the load list itself.",
+          "aliases": [
+            "Manifest"
+          ]
+        },
+        "pt_BR": {
+          "term": "Manifesto",
+          "definition": "Setor que coloca os paraquedistas nas decolagens; também a lista da decolagem.",
+          "aliases": [
+            "Manifesto",
+            "Manifest"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-mockup",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Mockup",
+          "definition": "Aircraft or equipment replica used for ground training.",
+          "aliases": [
+            "Mockup"
+          ]
+        },
+        "pt_BR": {
+          "term": "Mockup",
+          "definition": "Réplica de aeronave ou equipamento usada no treinamento em solo.",
+          "aliases": [
+            "Mockup",
+            "Maquete"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-night-jump",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Night jump",
+          "definition": "Jump made between sunset and sunrise; requires lights and extra training.",
+          "aliases": [
+            "Night jump"
+          ]
+        },
+        "pt_BR": {
+          "term": "Salto noturno",
+          "definition": "Salto feito entre o pôr e o nascer do sol; exige luzes e treinamento extra.",
+          "aliases": [
+            "Salto noturno"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-off-landing",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Off-landing",
+          "definition": "Landing outside the planned landing area.",
+          "aliases": [
+            "Off-landing"
+          ]
+        },
+        "pt_BR": {
+          "term": "Pouso fora",
+          "definition": "Pouso fora da área de pouso planejada.",
+          "aliases": [
+            "Pouso fora",
+            "Pouso fora da área"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-opening-altitude",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Opening altitude",
+          "definition": "Planned altitude to deploy the main canopy.",
+          "aliases": [
+            "Opening altitude"
+          ]
+        },
+        "pt_BR": {
+          "term": "Altitude de abertura",
+          "definition": "Altitude planejada para abrir o velame principal.",
+          "aliases": [
+            "Altitude de abertura",
+            "Altitude de comando"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-opening-point",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Opening point",
+          "definition": "Point over the ground where a jumper plans to open.",
+          "aliases": [
+            "Opening point"
+          ]
+        },
+        "pt_BR": {
+          "term": "Ponto de abertura",
+          "definition": "Ponto sobre o solo onde o paraquedista pretende abrir.",
+          "aliases": [
+            "Ponto de abertura"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-organizer",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Organizer",
+          "definition": "Experienced jumper who plans and leads group jumps.",
+          "aliases": [
+            "Organizer"
+          ]
+        },
+        "pt_BR": {
+          "term": "Organizador",
+          "definition": "Paraquedista experiente que planeja e lidera saltos em grupo.",
+          "aliases": [
+            "Organizador",
+            "Organizer"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-out-landing",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Out landing",
+          "definition": "Same as off-landing.",
+          "aliases": [
+            "Out landing"
+          ]
+        },
+        "pt_BR": {
+          "term": "Pouso fora da área",
+          "definition": "O mesmo que pouso fora.",
+          "aliases": [
+            "Pouso fora da área",
+            "Out landing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-packer",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Packer",
+          "definition": "Person who packs main canopies; reserves need an FAA-certificated rigger.",
+          "aliases": [
+            "Packer"
+          ]
+        },
+        "pt_BR": {
+          "term": "Dobrador",
+          "definition": "Pessoa que dobra velames principais; reservas exigem um rigger certificado.",
+          "aliases": [
+            "Dobrador",
+            "Packer"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-packing-data-card",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Packing data card",
+          "definition": "Card in the reserve showing when and by whom it was last packed.",
+          "aliases": [
+            "Packing data card"
+          ]
+        },
+        "pt_BR": {
+          "term": "Cartão de dobragem",
+          "definition": "Cartão no reserva que mostra quando e por quem ele foi dobrado pela última vez.",
+          "aliases": [
+            "Cartão de dobragem",
+            "Data card"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-pilot-chute-hesitation",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Pilot chute hesitation",
+          "definition": "Pilot chute caught in the burble and failing to inflate or extract the bag.",
+          "aliases": [
+            "Pilot chute hesitation"
+          ]
+        },
+        "pt_BR": {
+          "term": "Hesitação do extrator",
+          "definition": "Extrator preso no burble que não infla ou não extrai o bag.",
+          "aliases": [
+            "Hesitação do extrator",
+            "PC hesitation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-pilot-chute-in-tow",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Pilot chute in tow",
+          "definition": "Malfunction where the pilot chute is out but the container stays closed.",
+          "aliases": [
+            "Pilot chute in tow"
+          ]
+        },
+        "pt_BR": {
+          "term": "Extrator em reboque",
+          "definition": "Pane em que o extrator saiu, mas o container continua fechado.",
+          "aliases": [
+            "Extrator em reboque",
+            "Pilot chute in tow"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-pin-check",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Pin check",
+          "definition": "Verification that the closing pin is fully seated and the loop in good condition.",
+          "aliases": [
+            "Pin check"
+          ]
+        },
+        "pt_BR": {
+          "term": "Checagem de pinos",
+          "definition": "Verificar se o pino está totalmente encaixado e o loop em bom estado.",
+          "aliases": [
+            "Checagem de pinos",
+            "Pin check"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-poised-exit",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Poised exit",
+          "definition": "Exit from a stable, set position in the door.",
+          "aliases": [
+            "Poised exit"
+          ]
+        },
+        "pt_BR": {
+          "term": "Saída posicionada",
+          "definition": "Saída a partir de uma posição estável e definida na porta.",
+          "aliases": [
+            "Saída posicionada"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-premature-opening",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Premature opening",
+          "definition": "Container opening before the jumper intends it, often in the aircraft.",
+          "aliases": [
+            "Premature opening"
+          ]
+        },
+        "pt_BR": {
+          "term": "Abertura prematura",
+          "definition": "Container que abre antes da hora, muitas vezes ainda dentro da aeronave.",
+          "aliases": [
+            "Abertura prematura"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-projected-landing-point",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Projected landing point",
+          "definition": "Where the canopy will land if flown straight (PLP).",
+          "aliases": [
+            "Projected landing point"
+          ]
+        },
+        "pt_BR": {
+          "term": "Ponto de pouso projetado",
+          "definition": "Onde o velame vai pousar se for voado em linha reta (PLP).",
+          "aliases": [
+            "Ponto de pouso projetado"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-pull-up-cord",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Pull-up cord",
+          "definition": "Cord used to draw the closing loop through the grommets when packing.",
+          "aliases": [
+            "Pull-up cord"
+          ]
+        },
+        "pt_BR": {
+          "term": "Cordão de fechamento",
+          "definition": "Cordão usado para puxar o loop pelos ilhoses ao dobrar.",
+          "aliases": [
+            "Cordão de fechamento",
+            "Pull-up cord"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-rear-riser",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Rear riser",
+          "definition": "Back straps of the canopy; can steer or flare when toggles fail.",
+          "aliases": [
+            "Rear riser"
+          ]
+        },
+        "pt_BR": {
+          "term": "Tirante traseiro",
+          "definition": "Fitas de trás do velame; podem ser usadas para direcionar ou fazer flare se os batedores falharem.",
+          "aliases": [
+            "Tirante traseiro"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-relative-work",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Relative work",
+          "definition": "Old name for formation skydiving (RW).",
+          "aliases": [
+            "Relative work"
+          ]
+        },
+        "pt_BR": {
+          "term": "Trabalho relativo",
+          "definition": "Nome antigo da formação em queda livre (RW).",
+          "aliases": [
+            "Trabalho relativo",
+            "TR"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-reserve",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Reserve",
+          "definition": "Backup canopy packed by a rigger for emergencies.",
+          "aliases": [
+            "Reserve"
+          ]
+        },
+        "pt_BR": {
+          "term": "Reserva",
+          "definition": "Velame de emergência, dobrado por um rigger.",
+          "aliases": [
+            "Reserva",
+            "Velame reserva"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-reserve-handle",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Reserve handle",
+          "definition": "Handle (often silver, on the left) that deploys the reserve.",
+          "aliases": [
+            "Reserve handle"
+          ]
+        },
+        "pt_BR": {
+          "term": "Punho do reserva",
+          "definition": "Punho (geralmente prateado, à esquerda) que abre o reserva.",
+          "aliases": [
+            "Punho do reserva"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-rig",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Rig",
+          "definition": "Complete parachute system: harness, container, main, reserve and AAD.",
+          "aliases": [
+            "Rig"
+          ]
+        },
+        "pt_BR": {
+          "term": "Equipamento",
+          "definition": "Sistema completo: arnês, container, principal, reserva e AAD.",
+          "aliases": [
+            "Equipamento",
+            "Rig"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-rigger",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Rigger",
+          "definition": "FAA-certificated person who packs reserves and repairs equipment.",
+          "aliases": [
+            "Rigger"
+          ]
+        },
+        "pt_BR": {
+          "term": "Rigger",
+          "definition": "Pessoa certificada que dobra reservas e faz reparos no equipamento.",
+          "aliases": [
+            "Rigger",
+            "Dobrador de reserva"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-ripcord",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Ripcord",
+          "definition": "Handle and cable that release a spring-loaded pilot chute.",
+          "aliases": [
+            "Ripcord"
+          ]
+        },
+        "pt_BR": {
+          "term": "Punho de abertura",
+          "definition": "Punho e cabo que liberam um extrator com mola.",
+          "aliases": [
+            "Punho de abertura",
+            "Ripcord"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-risers",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Risers",
+          "definition": "Webbing straps connecting the suspension lines to the harness.",
+          "aliases": [
+            "Risers"
+          ]
+        },
+        "pt_BR": {
+          "term": "Tirantes",
+          "definition": "Fitas que ligam as linhas de suspensão ao arnês.",
+          "aliases": [
+            "Tirantes",
+            "Risers"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-rookie",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Rookie",
+          "definition": "New or inexperienced jumper, especially at events.",
+          "aliases": [
+            "Rookie"
+          ]
+        },
+        "pt_BR": {
+          "term": "Novato",
+          "definition": "Paraquedista novo ou com pouca experiência, principalmente em eventos.",
+          "aliases": [
+            "Novato",
+            "Rookie"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-safety-and-training-advisor",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Safety & Training Advisor",
+          "definition": "USPA-appointed safety representative at a DZ (S&TA).",
+          "aliases": [
+            "Safety & Training Advisor"
+          ]
+        },
+        "pt_BR": {
+          "term": "Consultor de segurança e treinamento",
+          "definition": "Representante de segurança nomeado pela USPA numa DZ (S&TA).",
+          "aliases": [
+            "Consultor de segurança e treinamento",
+            "S&TA"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-separation",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Separation",
+          "definition": "Horizontal distance kept between jumpers or groups in freefall and under canopy.",
+          "aliases": [
+            "Separation"
+          ]
+        },
+        "pt_BR": {
+          "term": "Separação",
+          "definition": "Distância horizontal mantida entre paraquedistas ou grupos em queda livre e sob velame.",
+          "aliases": [
+            "Separação"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-sit-flying",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Sit flying",
+          "definition": "Freefly orientation in a seated, head-up position.",
+          "aliases": [
+            "Sit flying"
+          ]
+        },
+        "pt_BR": {
+          "term": "Sit fly",
+          "definition": "Posição de freefly sentado, em pé no fluxo.",
+          "aliases": [
+            "Sit fly",
+            "Sentado"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-skyhook",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Skyhook",
+          "definition": "Brand of MARD system that uses the main to extract the reserve.",
+          "aliases": [
+            "Skyhook"
+          ]
+        },
+        "pt_BR": {
+          "term": "Skyhook",
+          "definition": "Marca de sistema MARD que usa o principal para extrair o reserva.",
+          "aliases": [
+            "Skyhook"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-slider",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Slider",
+          "definition": "Rectangular fabric panel on the lines that slows canopy inflation.",
+          "aliases": [
+            "Slider"
+          ]
+        },
+        "pt_BR": {
+          "term": "Slider",
+          "definition": "Painel retangular de tecido nas linhas que desacelera a abertura do velame.",
+          "aliases": [
+            "Slider"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-spot",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Spot",
+          "definition": "Choosing the exit point so jumpers can reach the landing area; also \"spotting.\"",
+          "aliases": [
+            "Spot"
+          ]
+        },
+        "pt_BR": {
+          "term": "Spot",
+          "definition": "Escolher o ponto de saída para que os paraquedistas alcancem a área de pouso.",
+          "aliases": [
+            "Spot",
+            "Ponto de saída"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-stability",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Stability",
+          "definition": "Controlled, steady body position in freefall.",
+          "aliases": [
+            "Stability"
+          ]
+        },
+        "pt_BR": {
+          "term": "Estabilidade",
+          "definition": "Posição corporal controlada e estável em queda livre.",
+          "aliases": [
+            "Estabilidade"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-stall",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Stall",
+          "definition": "Loss of lift when a canopy is slowed too much; it collapses or backs up.",
+          "aliases": [
+            "Stall"
+          ]
+        },
+        "pt_BR": {
+          "term": "Estol",
+          "definition": "Perda de sustentação quando o velame é desacelerado demais; ele colapsa ou voa para trás.",
+          "aliases": [
+            "Estol",
+            "Stall"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-stall-point",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Stall point",
+          "definition": "Toggle position at which a canopy begins to stall; found at safe altitude.",
+          "aliases": [
+            "Stall point"
+          ]
+        },
+        "pt_BR": {
+          "term": "Ponto de estol",
+          "definition": "Posição dos batedores em que o velame começa a estolar; identificada em altitude segura.",
+          "aliases": [
+            "Ponto de estol"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-static-line",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Static line",
+          "definition": "Line from aircraft to the parachute that deploys it on exit (SL).",
+          "aliases": [
+            "Static line"
+          ]
+        },
+        "pt_BR": {
+          "term": "Linha estática",
+          "definition": "Fita da aeronave ao paraquedas que o abre na saída (SL).",
+          "aliases": [
+            "Linha estática",
+            "Static line"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-steering-lines",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Steering lines",
+          "definition": "Lines from the toggles to the trailing edge of the canopy.",
+          "aliases": [
+            "Steering lines"
+          ]
+        },
+        "pt_BR": {
+          "term": "Linhas de comando",
+          "definition": "Linhas que vão dos batedores ao bordo de fuga do velame.",
+          "aliases": [
+            "Linhas de comando",
+            "Linhas de freio"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-student",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Student",
+          "definition": "Any jumper who has not earned an A license.",
+          "aliases": [
+            "Student"
+          ]
+        },
+        "pt_BR": {
+          "term": "Aluno",
+          "definition": "Qualquer paraquedista que ainda não obteve a licença A.",
+          "aliases": [
+            "Aluno"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-suspension-lines",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Suspension lines",
+          "definition": "Lines connecting the canopy to the risers.",
+          "aliases": [
+            "Suspension lines"
+          ]
+        },
+        "pt_BR": {
+          "term": "Linhas de suspensão",
+          "definition": "Linhas que ligam o velame aos tirantes.",
+          "aliases": [
+            "Linhas de suspensão",
+            "Linhas"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-sweet-spot",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Sweet spot",
+          "definition": "Toggle position giving the best glide or lowest descent for that canopy.",
+          "aliases": [
+            "Sweet spot"
+          ]
+        },
+        "pt_BR": {
+          "term": "Sweet spot",
+          "definition": "Posição dos batedores que dá o melhor planeio ou a menor razão de descida daquele velame.",
+          "aliases": [
+            "Sweet spot",
+            "Ponto ideal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-swoop",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Swoop",
+          "definition": "High-speed landing that turns dive energy into a long horizontal plane-out.",
+          "aliases": [
+            "Swoop"
+          ]
+        },
+        "pt_BR": {
+          "term": "Swoop",
+          "definition": "Pouso em alta velocidade que transforma a energia do mergulho num longo planeio rente ao solo.",
+          "aliases": [
+            "Swoop"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-tandem",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Tandem",
+          "definition": "Jump where a student is harnessed to a tandem instructor under one large canopy.",
+          "aliases": [
+            "Tandem"
+          ]
+        },
+        "pt_BR": {
+          "term": "Salto duplo",
+          "definition": "Salto em que o aluno vai preso a um instrutor sob um único velame grande.",
+          "aliases": [
+            "Salto duplo",
+            "Tandem"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-tandem-student-passenger",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Tandem student-passenger",
+          "definition": "Unlicensed jumper on a tandem discovery flight.",
+          "aliases": [
+            "Tandem student-passenger"
+          ]
+        },
+        "pt_BR": {
+          "term": "Passageiro de salto duplo",
+          "definition": "Pessoa sem licença num salto duplo de experiência.",
+          "aliases": [
+            "Passageiro de salto duplo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-tandem-student-skydiver",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Tandem student-skydiver",
+          "definition": "Unlicensed jumper on a tandem training jump toward a license.",
+          "aliases": [
+            "Tandem student-skydiver"
+          ]
+        },
+        "pt_BR": {
+          "term": "Aluno de salto duplo",
+          "definition": "Pessoa sem licença num salto duplo de treinamento rumo à licença.",
+          "aliases": [
+            "Aluno de salto duplo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-terminal-velocity",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Terminal velocity",
+          "definition": "Steady top freefall speed, about 120 mph (190 km/h) belly-to-earth.",
+          "aliases": [
+            "Terminal velocity"
+          ]
+        },
+        "pt_BR": {
+          "term": "Velocidade terminal",
+          "definition": "Velocidade máxima estável em queda livre, cerca de 190 km/h (120 mph) de barriga.",
+          "aliases": [
+            "Velocidade terminal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-three-ring-release",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Three-ring release",
+          "definition": "Riser release system of three interlocking rings used for cutaways.",
+          "aliases": [
+            "Three-ring release"
+          ]
+        },
+        "pt_BR": {
+          "term": "Sistema de 3 argolas",
+          "definition": "Sistema de soltura dos tirantes com três argolas encadeadas, usado no cutaway.",
+          "aliases": [
+            "Sistema de 3 argolas",
+            "3 argolas",
+            "three-ring"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-toggles",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Toggles",
+          "definition": "Handles on the steering lines used to turn and flare.",
+          "aliases": [
+            "Toggles"
+          ]
+        },
+        "pt_BR": {
+          "term": "Batedores",
+          "definition": "Punhos nas linhas de comando usados para fazer curvas e flare.",
+          "aliases": [
+            "Batedores",
+            "Toggles"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-tracking",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Tracking",
+          "definition": "Body position that produces fast horizontal movement, used at breakoff.",
+          "aliases": [
+            "Tracking"
+          ]
+        },
+        "pt_BR": {
+          "term": "Tracking",
+          "definition": "Posição do corpo que gera deslocamento horizontal rápido, usada no breakoff.",
+          "aliases": [
+            "Tracking",
+            "Deslocamento"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-tunnel",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Tunnel",
+          "definition": "Vertical wind tunnel used for freefall training.",
+          "aliases": [
+            "Tunnel"
+          ]
+        },
+        "pt_BR": {
+          "term": "Túnel",
+          "definition": "Túnel de vento vertical usado para treinar queda livre.",
+          "aliases": [
+            "Túnel",
+            "Túnel de vento"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-turbulence",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Turbulence",
+          "definition": "Irregular air that can collapse or disturb a canopy, especially near obstacles.",
+          "aliases": [
+            "Turbulence"
+          ]
+        },
+        "pt_BR": {
+          "term": "Turbulência",
+          "definition": "Ar irregular que pode fechar ou perturbar o velame, principalmente perto de obstáculos.",
+          "aliases": [
+            "Turbulência"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-twin-canopies",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Twin canopies",
+          "definition": "Two canopies out at once, such as a main and reserve (\"two out\").",
+          "aliases": [
+            "Twin canopies"
+          ]
+        },
+        "pt_BR": {
+          "term": "Dois velames abertos",
+          "definition": "Dois velames abertos ao mesmo tempo, como principal e reserva.",
+          "aliases": [
+            "Dois velames abertos",
+            "Two out"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-upwind",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Upwind",
+          "definition": "Direction the wind is coming from; landings are normally into the wind.",
+          "aliases": [
+            "Upwind"
+          ]
+        },
+        "pt_BR": {
+          "term": "Contra o vento",
+          "definition": "Direção de onde o vento vem; normalmente se pousa contra o vento.",
+          "aliases": [
+            "Contra o vento",
+            "Upwind",
+            "barlavento"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-wave-off",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Wave off",
+          "definition": "Arm signal given before deploying to warn others nearby.",
+          "aliases": [
+            "Wave off"
+          ]
+        },
+        "pt_BR": {
+          "term": "Wave off",
+          "definition": "Sinal com os braços antes de abrir para avisar quem está por perto.",
+          "aliases": [
+            "Wave off",
+            "Aceno"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-wind-limits",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Wind limits",
+          "definition": "Maximum ground winds allowed; USPA students are limited to 14 mph.",
+          "aliases": [
+            "Wind limits"
+          ]
+        },
+        "pt_BR": {
+          "term": "Limites de vento",
+          "definition": "Vento máximo permitido no solo; alunos da USPA têm limite de 14 mph (cerca de 22 km/h).",
+          "aliases": [
+            "Limites de vento"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-wind-tunnel",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Wind tunnel",
+          "definition": "Same as tunnel.",
+          "aliases": [
+            "Wind tunnel"
+          ]
+        },
+        "pt_BR": {
+          "term": "Túnel de vento",
+          "definition": "O mesmo que túnel.",
+          "aliases": [
+            "Túnel de vento",
+            "Túnel"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-winds-aloft",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Winds aloft",
+          "definition": "Wind speeds and directions at altitude, used to plan the spot.",
+          "aliases": [
+            "Winds aloft"
+          ]
+        },
+        "pt_BR": {
+          "term": "Ventos em altitude",
+          "definition": "Velocidade e direção do vento em altitude, usadas para planejar o spot.",
+          "aliases": [
+            "Ventos em altitude",
+            "Winds aloft"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-wing-loading",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Wing loading",
+          "definition": "Exit weight divided by canopy area (lb/sq ft); higher loading means faster canopy flight.",
+          "aliases": [
+            "Wing loading"
+          ]
+        },
+        "pt_BR": {
+          "term": "Carga alar",
+          "definition": "Peso de saída dividido pela área do velame (lb/pé²); carga maior significa voo mais rápido.",
+          "aliases": [
+            "Carga alar",
+            "Wing loading"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-wingsuit",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Wingsuit",
+          "definition": "Suit with fabric wings that produces lift for horizontal flight (WS).",
+          "aliases": [
+            "Wingsuit"
+          ]
+        },
+        "pt_BR": {
+          "term": "Wingsuit",
+          "definition": "Macacão com asas de tecido que gera sustentação para voo horizontal (WS).",
+          "aliases": [
+            "Wingsuit"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-wuffo",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Wuffo",
+          "definition": "Slang for a non-skydiver (from \"What do you jump for?\").",
+          "aliases": [
+            "Wuffo"
+          ]
+        },
+        "pt_BR": {
+          "term": "Wuffo",
+          "definition": "Gíria para quem não é paraquedista (de \"What do you jump for?\").",
+          "aliases": [
+            "Wuffo",
+            "Leigo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-zone",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Zone",
+          "definition": "The landing area or DZ; also the sector a jumper stays in during a group jump.",
+          "aliases": [
+            "Zone"
+          ]
+        },
+        "pt_BR": {
+          "term": "Zona",
+          "definition": "A área de pouso ou a DZ; também o setor que cada um ocupa num salto em grupo.",
+          "aliases": [
+            "Zona",
+            "Área"
+          ]
+        }
+      }
+    }
+  ]
+}

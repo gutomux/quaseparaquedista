@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "lang": "en-US",
+    "title": "Skydiving Glossary",
+    "description": "Search skydiving acronyms and terms in English or Portuguese, from AAD to wing loading."
+  },
+  "languages": {
+    "en_US": "English",
+    "pt_BR": "Portuguese"
+  },
+  "heading": {
+    "line1": "Skydiving",
+    "line2": "glossary"
+  },
+  "intro": "Look up any skydiving acronym or term, from AAD to wing loading. Search in English or Portuguese.",
+  "search": {
+    "label": "Search the glossary",
+    "placeholder": "Type an acronym or term",
+    "clear": "Clear",
+    "suggestionsLabel": "Suggestions",
+    "noMatch": "No match for “{query}”. Try a shorter word or check the spelling.",
+    "noMatchStatus": "No matches",
+    "count": {
+      "one": "{count} suggestion",
+      "other": "{count} suggestions"
+    }
+  },
+  "examples": {
+    "label": "Try",
+    "items": ["PLF", "Burble", "SHAGG", "Hook turn", "Wing loading"]
+  },
+  "entry": {
+    "type": {
+      "acronym": "Acronym",
+      "term": "Term"
+    },
+    "inLanguage": "In {language}: {term}",
+    "seeAlso": "See also"
+  },
+  "error": {
+    "title": "Glossary unavailable",
+    "body": "The glossary data could not be loaded. Refresh the page, or check that the data and i18n folders are published next to index.html."
+  },
+  "footer": "Based on the USPA Instructional Rating Manual 2026 and general skydiving knowledge. Rules and numbers follow USPA norms and vary by country and drop zone."
+}

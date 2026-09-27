@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "lang": "pt-BR",
+    "title": "Glossário de Paraquedismo",
+    "description": "Pesquise siglas e termos de paraquedismo em português ou inglês, de AAD a carga alar."
+  },
+  "languages": {
+    "en_US": "inglês",
+    "pt_BR": "português"
+  },
+  "heading": {
+    "line1": "Glossário de",
+    "line2": "paraquedismo"
+  },
+  "intro": "Encontre qualquer sigla ou termo de paraquedismo, de AAD a carga alar. Pesquise em português ou inglês.",
+  "search": {
+    "label": "Pesquisar no glossário",
+    "placeholder": "Digite uma sigla ou termo",
+    "clear": "Limpar",
+    "suggestionsLabel": "Sugestões",
+    "noMatch": "Nada encontrado para “{query}”. Tente uma palavra mais curta ou confira a grafia.",
+    "noMatchStatus": "Nenhum resultado",
+    "count": {
+      "one": "{count} sugestão",
+      "other": "{count} sugestões"
+    }
+  },
+  "examples": {
+    "label": "Experimente",
+    "items": ["PLF", "Velame", "Pane", "Batedores", "Carga alar"]
+  },
+  "entry": {
+    "type": {
+      "acronym": "Sigla",
+      "term": "Termo"
+    },
+    "inLanguage": "Em {language}: {term}",
+    "seeAlso": "Veja também"
+  },
+  "error": {
+    "title": "Glossário indisponível",
+    "body": "Não foi possível carregar os dados do glossário. Recarregue a página ou confira se as pastas data e i18n estão publicadas junto do index.html."
+  },
+  "footer": "Baseado no Instructional Rating Manual 2026 da USPA e em conhecimento geral de paraquedismo. Regras e números seguem as normas da USPA e variam conforme o país e a área de salto."
+}

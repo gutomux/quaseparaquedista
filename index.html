@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Search skydiving acronyms and terms in English or Portuguese." data-i18n-attr="content: meta.description">
+  <title>Skydiving Glossary</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪂</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
+  <main>
+    <h1><span data-i18n="heading.line1">Skydiving</span><br><span data-i18n="heading.line2">glossary</span></h1>
+    <p class="intro" id="intro" data-i18n="intro"></p>
+
+    <div class="search">
+      <div class="field">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.8-4.8"/></svg>
+        <label class="sr" for="q" data-i18n="search.label">Search the glossary</label>
+        <input id="q" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"
+               role="combobox" aria-expanded="false" aria-controls="list" aria-autocomplete="list"
+               aria-describedby="intro" data-i18n-attr="placeholder: search.placeholder">
+        <button id="clear" type="button" data-i18n="search.clear">Clear</button>
+      </div>
+      <ul id="list" role="listbox" hidden data-i18n-attr="aria-label: search.suggestionsLabel"></ul>
+    </div>
+
+    <div class="try" id="try"></div>
+
+    <section id="result" aria-live="polite"></section>
+    <p class="sr" id="status" aria-live="polite"></p>
+  </main>
+
+  <footer data-i18n="footer"></footer>
+
+  <noscript><p class="noscript">This glossary needs JavaScript to search. / Este glossário precisa de JavaScript para funcionar.</p></noscript>
+</body>
+</html>
