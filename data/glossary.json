@@ -1,10 +1,11 @@
 {
   "meta": {
     "title": "Skydiving Glossary",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "updated": "2026-09-27",
     "sources": [
       "USPA Instructional Rating Manual 2026",
+      "CBPq – Apostila do Aluno, Curso AFF (2023)",
       "General skydiving knowledge"
     ],
     "locales": [
@@ -28,10 +29,11 @@
         },
         "pt_BR": {
           "term": "AAD",
-          "expansion": "Automatic Activation Device (dispositivo de acionamento automático)",
-          "definition": "Aparelho eletrônico que abre o reserva se o paraquedista ainda estiver caindo rápido numa altitude definida.",
+          "expansion": "Automatic Activation Device (DAA – disparador de abertura automática do reserva)",
+          "definition": "Dispositivo que abre o reserva sozinho: lê a pressão e a velocidade de queda e, abaixo de uma altura-limite em alta velocidade, corta o loop de fechamento do reserva. Deve ser ligado no solo, no local e no dia do salto. Ex.: Vigil, Cypres, FXC, Astra.",
           "aliases": [
-            "AAD"
+            "AAD",
+            "DAA"
           ]
         }
       }
@@ -51,7 +53,7 @@
         "pt_BR": {
           "term": "AFF",
           "expansion": "Accelerated Freefall (queda livre acelerada)",
-          "definition": "Método de aluno com queda livre desde o primeiro salto, acompanhado por um ou dois instrutores.",
+          "definition": "Método de aluno com queda livre desde o primeiro salto, acompanhado por um ou dois mestres de salto (MS). Na CBPq são sete níveis, seguidos do Nível VIII (Space Program) até a Categoria A.",
           "aliases": [
             "AFF"
           ]
@@ -77,7 +79,8 @@
           "definition": "Credencial da USPA para ensinar e saltar com alunos de AFF.",
           "aliases": [
             "AFF-I",
-            "AFFI"
+            "AFFI",
+            "Instrutor AFF"
           ]
         }
       }
@@ -100,6 +103,28 @@
           "definition": "Altitude medida a partir da área de pouso; o padrão para altitudes no paraquedismo.",
           "aliases": [
             "AGL"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-ai",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "AI",
+          "expansion": "Aluno em Instrução (student in training)",
+          "definition": "CBPq category for student skydivers, until they reach Category A.",
+          "aliases": [
+            "AI"
+          ]
+        },
+        "pt_BR": {
+          "term": "AI",
+          "expansion": "Aluno em Instrução",
+          "definition": "Categoria da CBPq do paraquedista em curso, sob supervisão dos instrutores, até a Categoria A.",
+          "aliases": [
+            "AI"
           ]
         }
       }
@@ -149,6 +174,28 @@
       }
     },
     {
+      "id": "acronym-asl",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "ASL",
+          "expansion": "Accelerated Static Line",
+          "definition": "Static-line student program used in Brazil as an alternative to AFF.",
+          "aliases": [
+            "ASL"
+          ]
+        },
+        "pt_BR": {
+          "term": "ASL",
+          "expansion": "Accelerated Static Line (linha estática acelerada)",
+          "definition": "Método de aluno com linha estática usado no Brasil, alternativo ao AFF.",
+          "aliases": [
+            "ASL"
+          ]
+        }
+      }
+    },
+    {
       "id": "acronym-atc",
       "type": "acronym",
       "translations": {
@@ -188,6 +235,50 @@
           "definition": "Saltos a partir de objetos fixos; ligado ao paraquedismo, mas uma atividade à parte.",
           "aliases": [
             "BASE"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-bbf",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "BBF",
+          "expansion": "Basic Body Flight",
+          "definition": "CBPq program that prepares a new jumper to skydive with other people; part of the Category A requirements.",
+          "aliases": [
+            "BBF"
+          ]
+        },
+        "pt_BR": {
+          "term": "BBF",
+          "expansion": "Basic Body Flight (voo corporal básico)",
+          "definition": "Programa da CBPq que prepara o paraquedista para saltar com outras pessoas; faz parte dos requisitos da Categoria A.",
+          "aliases": [
+            "BBF"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-bcf",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "BCF",
+          "expansion": "Basic Canopy Flight",
+          "definition": "CBPq canopy survival and control course, required to move from Category A to B.",
+          "aliases": [
+            "BCF"
+          ]
+        },
+        "pt_BR": {
+          "term": "BCF",
+          "expansion": "Basic Canopy Flight (pilotagem básica de velame)",
+          "definition": "Curso de sobrevivência e controle de velame da CBPq, obrigatório para passar da Categoria A para a B.",
+          "aliases": [
+            "BCF"
           ]
         }
       }
@@ -259,30 +350,6 @@
       }
     },
     {
-      "id": "acronym-c1-c2",
-      "type": "acronym",
-      "translations": {
-        "en_US": {
-          "term": "C1 / C2",
-          "expansion": "Coach rating course codes",
-          "definition": "Labels for USPA Coach rating material and evaluations.",
-          "aliases": [
-            "C1",
-            "C2"
-          ]
-        },
-        "pt_BR": {
-          "term": "C1 / C2",
-          "expansion": "Coach rating course codes (códigos do curso de coach)",
-          "definition": "Identificação do material e das avaliações do curso de coach da USPA.",
-          "aliases": [
-            "C1",
-            "C2"
-          ]
-        }
-      }
-    },
-    {
       "id": "acronym-c-i",
       "type": "acronym",
       "translations": {
@@ -327,6 +394,30 @@
       }
     },
     {
+      "id": "acronym-c1-c2",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "C1 / C2",
+          "expansion": "Coach rating course codes",
+          "definition": "Labels for USPA Coach rating material and evaluations.",
+          "aliases": [
+            "C1",
+            "C2"
+          ]
+        },
+        "pt_BR": {
+          "term": "C1 / C2",
+          "expansion": "Coach rating course codes (códigos do curso de coach)",
+          "definition": "Identificação do material e das avaliações do curso de coach da USPA.",
+          "aliases": [
+            "C1",
+            "C2"
+          ]
+        }
+      }
+    },
+    {
       "id": "acronym-cat-cat-a-h",
       "type": "acronym",
       "translations": {
@@ -342,10 +433,34 @@
         "pt_BR": {
           "term": "CAT (Cat-A…H)",
           "expansion": "Category (categoria)",
-          "definition": "Uma das oito etapas de progressão do aluno no ISP, de A a H.",
+          "definition": "Uma das oito etapas de progressão do aluno no ISP da USPA, de A a H. Não confundir com as categorias da CBPq (AI, A, B, C e D).",
           "aliases": [
             "CAT",
             "Cat-A…H"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-cbpq",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "CBPq",
+          "expansion": "Confederação Brasileira de Paraquedismo (Brazilian Parachuting Confederation)",
+          "definition": "Brazil's governing body for sport skydiving; issues licenses and categories and publishes the Sporting Code.",
+          "aliases": [
+            "CBPq",
+            "CBPQ"
+          ]
+        },
+        "pt_BR": {
+          "term": "CBPq",
+          "expansion": "Confederação Brasileira de Paraquedismo",
+          "definition": "Entidade que rege o paraquedismo esportivo no Brasil; emite licenças e categorias e publica o Código Esportivo.",
+          "aliases": [
+            "CBPq",
+            "CBPQ"
           ]
         }
       }
@@ -373,6 +488,29 @@
       }
     },
     {
+      "id": "acronym-cf",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "CF",
+          "expansion": "Canopy Formation",
+          "definition": "Discipline where jumpers dock their open canopies together.",
+          "aliases": [
+            "CF"
+          ]
+        },
+        "pt_BR": {
+          "term": "CF",
+          "expansion": "Canopy Formation (trabalho relativo de velames – TRV)",
+          "definition": "Modalidade em que os paraquedistas se acoplam com os velames abertos.",
+          "aliases": [
+            "CF",
+            "TRV"
+          ]
+        }
+      }
+    },
+    {
       "id": "acronym-cg",
       "type": "acronym",
       "translations": {
@@ -387,7 +525,7 @@
         "pt_BR": {
           "term": "CG",
           "expansion": "Center of Gravity (centro de gravidade)",
-          "definition": "Ponto de equilíbrio da aeronave; influencia a ordem de embarque e a movimentação a bordo.",
+          "definition": "Ponto de equilíbrio da aeronave, que influencia a ordem de embarque. Na queda livre, também o centro de gravidade do corpo, que se projeta para baixo ao selar.",
           "aliases": [
             "CG"
           ]
@@ -408,8 +546,8 @@
         },
         "pt_BR": {
           "term": "COA",
-          "expansion": "Circle of Awareness (círculo de atenção)",
-          "definition": "Checagem em queda livre de proa, altitude e sinais do instrutor.",
+          "expansion": "Circle of Awareness (círculo de conscientização)",
+          "definition": "Na CBPq, sequência logo após a saída: referência avião, altímetro, posição, check MS2, check MS1 e referência no horizonte.",
           "aliases": [
             "COA"
           ]
@@ -433,29 +571,8 @@
           "expansion": "Canopy Relative Work (trabalho relativo de velame)",
           "definition": "Nome antigo do voo em formação de velames (CF); no Brasil também chamado de TRV.",
           "aliases": [
-            "CRW"
-          ]
-        }
-      }
-    },
-    {
-      "id": "acronym-cf",
-      "type": "acronym",
-      "translations": {
-        "en_US": {
-          "term": "CF",
-          "expansion": "Canopy Formation",
-          "definition": "Discipline where jumpers dock their open canopies together.",
-          "aliases": [
-            "CF"
-          ]
-        },
-        "pt_BR": {
-          "term": "CF",
-          "expansion": "Canopy Formation (formação de velames)",
-          "definition": "Modalidade em que os paraquedistas se acoplam com os velames abertos.",
-          "aliases": [
-            "CF"
+            "CRW",
+            "TRV"
           ]
         }
       }
@@ -505,28 +622,6 @@
       }
     },
     {
-      "id": "acronym-dzo",
-      "type": "acronym",
-      "translations": {
-        "en_US": {
-          "term": "DZO",
-          "expansion": "Drop Zone Owner / Operator",
-          "definition": "Person who runs the skydiving center.",
-          "aliases": [
-            "DZO"
-          ]
-        },
-        "pt_BR": {
-          "term": "DZO",
-          "expansion": "Drop Zone Owner / Operator (dono / operador da área de salto)",
-          "definition": "Pessoa que administra o centro de paraquedismo.",
-          "aliases": [
-            "DZO"
-          ]
-        }
-      }
-    },
-    {
       "id": "acronym-dzm",
       "type": "acronym",
       "translations": {
@@ -549,6 +644,28 @@
       }
     },
     {
+      "id": "acronym-dzo",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "DZO",
+          "expansion": "Drop Zone Owner / Operator",
+          "definition": "Person who runs the skydiving center.",
+          "aliases": [
+            "DZO"
+          ]
+        },
+        "pt_BR": {
+          "term": "DZO",
+          "expansion": "Drop Zone Owner / Operator (dono / operador da área de salto)",
+          "definition": "Pessoa que administra o centro de paraquedismo.",
+          "aliases": [
+            "DZO"
+          ]
+        }
+      }
+    },
+    {
       "id": "acronym-ep",
       "type": "acronym",
       "translations": {
@@ -562,10 +679,11 @@
         },
         "pt_BR": {
           "term": "EP",
-          "expansion": "Emergency Procedure (procedimento de emergência)",
-          "definition": "Ações treinadas para panes e outras emergências.",
+          "expansion": "Emergency Procedure (procedimento de emergência – PE)",
+          "definition": "Ações treinadas para panes: olhar e pegar o punho vermelho com as duas mãos, olhar o punho de metal, desconectar e acionar o reserva. Só pode ser feito uma vez, com calma e precisão.",
           "aliases": [
-            "EP"
+            "EP",
+            "PE"
           ]
         }
       }
@@ -615,28 +733,6 @@
       }
     },
     {
-      "id": "acronym-far",
-      "type": "acronym",
-      "translations": {
-        "en_US": {
-          "term": "FAR",
-          "expansion": "Federal Aviation Regulation",
-          "definition": "US aviation rules; Part 105 covers parachute operations.",
-          "aliases": [
-            "FAR"
-          ]
-        },
-        "pt_BR": {
-          "term": "FAR",
-          "expansion": "Federal Aviation Regulation (regulamento federal de aviação)",
-          "definition": "Regras de aviação dos EUA; a Parte 105 trata de operações de paraquedismo.",
-          "aliases": [
-            "FAR"
-          ]
-        }
-      }
-    },
-    {
       "id": "acronym-fai",
       "type": "acronym",
       "translations": {
@@ -654,6 +750,28 @@
           "definition": "Federação mundial de esportes aéreos; homologa recordes e campeonatos mundiais.",
           "aliases": [
             "FAI"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-far",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "FAR",
+          "expansion": "Federal Aviation Regulation",
+          "definition": "US aviation rules; Part 105 covers parachute operations.",
+          "aliases": [
+            "FAR"
+          ]
+        },
+        "pt_BR": {
+          "term": "FAR",
+          "expansion": "Federal Aviation Regulation (regulamento federal de aviação)",
+          "definition": "Regras de aviação dos EUA; a Parte 105 trata de operações de paraquedismo.",
+          "aliases": [
+            "FAR"
           ]
         }
       }
@@ -681,28 +799,6 @@
       }
     },
     {
-      "id": "acronym-fjc",
-      "type": "acronym",
-      "translations": {
-        "en_US": {
-          "term": "FJC",
-          "expansion": "First-Jump Course",
-          "definition": "Ground training that prepares a student for a first jump.",
-          "aliases": [
-            "FJC"
-          ]
-        },
-        "pt_BR": {
-          "term": "FJC",
-          "expansion": "First-Jump Course (curso de primeiro salto)",
-          "definition": "Treinamento em solo que prepara o aluno para o primeiro salto.",
-          "aliases": [
-            "FJC"
-          ]
-        }
-      }
-    },
-    {
       "id": "acronym-ff",
       "type": "acronym",
       "translations": {
@@ -725,6 +821,28 @@
       }
     },
     {
+      "id": "acronym-fjc",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "FJC",
+          "expansion": "First-Jump Course",
+          "definition": "Ground training that prepares a student for a first jump.",
+          "aliases": [
+            "FJC"
+          ]
+        },
+        "pt_BR": {
+          "term": "FJC",
+          "expansion": "First-Jump Course (curso de primeiro salto)",
+          "definition": "Treinamento em solo que prepara o aluno para o primeiro salto.",
+          "aliases": [
+            "FJC"
+          ]
+        }
+      }
+    },
+    {
       "id": "acronym-fs",
       "type": "acronym",
       "translations": {
@@ -738,10 +856,12 @@
         },
         "pt_BR": {
           "term": "FS",
-          "expansion": "Formation Skydiving (formação em queda livre)",
+          "expansion": "Formation Skydiving (formação em queda livre – FQL / TR)",
           "definition": "Formações em grupo de barriga para a terra; antes chamado de RW, no Brasil TR.",
           "aliases": [
-            "FS"
+            "FS",
+            "FQL",
+            "TR"
           ]
         }
       }
@@ -813,28 +933,6 @@
       }
     },
     {
-      "id": "acronym-hu",
-      "type": "acronym",
-      "translations": {
-        "en_US": {
-          "term": "HU",
-          "expansion": "Head Up",
-          "definition": "Freefly orientation, sitting or standing in the airflow.",
-          "aliases": [
-            "HU"
-          ]
-        },
-        "pt_BR": {
-          "term": "HU",
-          "expansion": "Head Up (em pé)",
-          "definition": "Posição de freefly sentado ou em pé no fluxo de ar.",
-          "aliases": [
-            "HU"
-          ]
-        }
-      }
-    },
-    {
       "id": "acronym-hp",
       "type": "acronym",
       "translations": {
@@ -852,6 +950,28 @@
           "definition": "Tipo de velame ou estilo de pouso focado em velocidade e swoop.",
           "aliases": [
             "HP"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-hu",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "HU",
+          "expansion": "Head Up",
+          "definition": "Freefly orientation, sitting or standing in the airflow.",
+          "aliases": [
+            "HU"
+          ]
+        },
+        "pt_BR": {
+          "term": "HU",
+          "expansion": "Head Up (em pé)",
+          "definition": "Posição de freefly sentado ou em pé no fluxo de ar.",
+          "aliases": [
+            "HU"
           ]
         }
       }
@@ -1033,6 +1153,28 @@
       }
     },
     {
+      "id": "acronym-lpu",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "LPU",
+          "expansion": "Life Preserver Unit",
+          "definition": "Inflatable flotation device worn when jumping near the sea, rivers or lakes.",
+          "aliases": [
+            "LPU"
+          ]
+        },
+        "pt_BR": {
+          "term": "LPU",
+          "expansion": "Life Preserver Unit (colete flutuador)",
+          "definition": "Equipamento de flutuação inflável; use sempre que saltar perto do mar, rios ou lagos e acione antes do pouso na água.",
+          "aliases": [
+            "LPU"
+          ]
+        }
+      }
+    },
+    {
       "id": "acronym-lz",
       "type": "acronym",
       "translations": {
@@ -1071,7 +1213,30 @@
           "expansion": "Main-Assisted Reserve Deployment (abertura do reserva assistida pelo principal)",
           "definition": "Dispositivo (ex.: Skyhook) que usa o principal desconectado para extrair o reserva.",
           "aliases": [
-            "MARD"
+            "MARD",
+            "Skyhook"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-ms",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "MS",
+          "expansion": "Mestre de Salto (AFF jumpmaster)",
+          "definition": "CBPq name for the instructor who jumps with AFF students; MS1 is on the right and MS2 on the left.",
+          "aliases": [
+            "MS"
+          ]
+        },
+        "pt_BR": {
+          "term": "MS",
+          "expansion": "Mestre de Salto",
+          "definition": "Instrutor que salta com o aluno de AFF; MS1 fica à direita e MS2 à esquerda.",
+          "aliases": [
+            "MS"
           ]
         }
       }
@@ -1156,10 +1321,11 @@
         },
         "pt_BR": {
           "term": "PC",
-          "expansion": "Pilot Chute (extrator)",
+          "expansion": "Pilot Chute (pilotinho / extrator)",
           "definition": "Pequeno paraquedas que extrai o principal ou o reserva.",
           "aliases": [
-            "PC"
+            "PC",
+            "Pilotinho"
           ]
         }
       }
@@ -1222,10 +1388,12 @@
         },
         "pt_BR": {
           "term": "PLF",
-          "expansion": "Parachute Landing Fall (rolamento de pouso)",
+          "expansion": "Parachute Landing Fall (rolamento de pouso em 5 pontos)",
           "definition": "Técnica de rolamento que distribui o impacto do pouso pelo corpo.",
           "aliases": [
-            "PLF"
+            "PLF",
+            "Rolamento",
+            "Pouso em 5 pontos"
           ]
         }
       }
@@ -1266,10 +1434,11 @@
         },
         "pt_BR": {
           "term": "PPCT",
-          "expansion": "Practice Pilot-Chute Throw (treino de lançamento do extrator)",
-          "definition": "Movimento ensaiado até o extrator de mão, antes da saída ou em queda livre.",
+          "expansion": "Practice Pilot-Chute Throw (simulação de comando)",
+          "definition": "Na CBPq, o \"toca e volta\": levar a mão direita ao punho compensando com a esquerda e voltar à posição, sempre olhando a referência.",
           "aliases": [
-            "PPCT"
+            "PPCT",
+            "Simulação de comando"
           ]
         }
       }
@@ -1297,6 +1466,50 @@
       }
     },
     {
+      "id": "acronym-ps",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "PS",
+          "expansion": "Ponto de Saída (exit point)",
+          "definition": "Brazilian abbreviation for the exit point over the ground.",
+          "aliases": [
+            "PS"
+          ]
+        },
+        "pt_BR": {
+          "term": "PS",
+          "expansion": "Ponto de Saída",
+          "definition": "Ponto sobre o solo onde os paraquedistas deixam a aeronave.",
+          "aliases": [
+            "PS"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-ql",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "QL",
+          "expansion": "Queda Livre (freefall)",
+          "definition": "Brazilian abbreviation for freefall.",
+          "aliases": [
+            "QL"
+          ]
+        },
+        "pt_BR": {
+          "term": "QL",
+          "expansion": "Queda Livre",
+          "definition": "Parte do salto antes da abertura do paraquedas.",
+          "aliases": [
+            "QL"
+          ]
+        }
+      }
+    },
+    {
       "id": "acronym-rsl",
       "type": "acronym",
       "translations": {
@@ -1310,10 +1523,33 @@
         },
         "pt_BR": {
           "term": "RSL",
-          "expansion": "Reserve Static Line (linha estática do reserva)",
-          "definition": "Fita que abre o container do reserva automaticamente após o cutaway.",
+          "expansion": "Reserve Static Line (RSL / Stevens)",
+          "definition": "Fita com mosquetão presa ao tirante que, após a desconexão completa, puxa o pino do reserva e inicia a abertura. É desativada em alguns procedimentos, como pouso na água e dois velames abertos.",
           "aliases": [
-            "RSL"
+            "RSL",
+            "Stevens"
+          ]
+        }
+      }
+    },
+    {
+      "id": "acronym-rta",
+      "type": "acronym",
+      "translations": {
+        "en_US": {
+          "term": "RTA",
+          "expansion": "Responsável Técnico da Atividade (DZ technical supervisor)",
+          "definition": "Brazilian role responsible for safety at the jump operation; can suspend jumping at any time.",
+          "aliases": [
+            "RTA"
+          ]
+        },
+        "pt_BR": {
+          "term": "RTA",
+          "expansion": "Responsável Técnico da Atividade (ou da Área)",
+          "definition": "Responsável pela segurança da operação de salto; pode suspender a atividade a qualquer momento.",
+          "aliases": [
+            "RTA"
           ]
         }
       }
@@ -1335,7 +1571,8 @@
           "expansion": "Relative Work (trabalho relativo)",
           "definition": "Nome antigo da formação em queda livre (FS); no Brasil, TR.",
           "aliases": [
-            "RW"
+            "RW",
+            "TR"
           ]
         }
       }
@@ -1599,7 +1836,7 @@
         "pt_BR": {
           "term": "VR",
           "expansion": "Virtual Reality (realidade virtual)",
-          "definition": "Simuladores de velame usados no treinamento.",
+          "definition": "Simuladores de velame usados no treinamento. Atenção: no Brasil, VR também é a sigla de vento relativo.",
           "aliases": [
             "VR"
           ]
@@ -1663,10 +1900,31 @@
         },
         "pt_BR": {
           "term": "Licença A",
-          "definition": "Primeira licença de paraquedismo da USPA, obtida após concluir o ISP e fazer pelo menos 25 saltos.",
+          "definition": "Primeira licença da USPA: ISP concluído e pelo menos 25 saltos. Equivale à Categoria A da CBPq, que também exige 25 saltos, 10 min de queda livre e 5 pousos num alvo de 50 m sem rádio.",
           "aliases": [
             "Licença A",
-            "Brevê A"
+            "Brevê A",
+            "Categoria A"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-abnormality",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Abnormality",
+          "definition": "CBPq term for a canopy problem you can fix or live with, such as a high slider, up to two closed cells or a loose toggle, as long as the canopy passes the controllability check.",
+          "aliases": [
+            "Abnormality"
+          ]
+        },
+        "pt_BR": {
+          "term": "Anormalidade",
+          "definition": "Situação irregular com o velame que, a princípio, dá para resolver ou conviver: slider alto abaixo da metade, até duas células fechadas, batoque solto, pilotinho no bordo de ataque. Faça o check funcional; se não passar, é pane.",
+          "aliases": [
+            "Anormalidade"
           ]
         }
       }
@@ -1688,6 +1946,31 @@
           "aliases": [
             "Precisão",
             "Accuracy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-aff-levels",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "AFF levels",
+          "definition": "The CBPq AFF course has seven levels (I to VII), from exits held by two jumpmasters to solo dive exits, loops and tracking; Level VIII is the Space Program.",
+          "aliases": [
+            "AFF levels",
+            "Level I",
+            "Level VII"
+          ]
+        },
+        "pt_BR": {
+          "term": "Níveis do AFF",
+          "definition": "O curso AFF da CBPq tem sete níveis (I a VII), da saída gripada com dois MS à saída de mergulho solo com looping e track; o Nível VIII é o Space Program.",
+          "aliases": [
+            "Níveis do AFF",
+            "Nível",
+            "Nível I",
+            "Nível VII"
           ]
         }
       }
@@ -1745,9 +2028,11 @@
           ]
         },
         "pt_BR": {
-          "term": "Arch",
-          "definition": "Posição de barriga para a terra com o quadril à frente e as costas arqueadas, que dá estabilidade.",
+          "term": "Selar",
+          "definition": "Projetar o quadril (CG) para a frente e arquear as costas, o que dá estabilidade. Na CBPq, \"selar\" é a primeira resposta a qualquer perda de estabilidade.",
           "aliases": [
+            "Selar",
+            "Selado",
             "Arch",
             "Arqueamento"
           ]
@@ -1808,10 +2093,54 @@
         },
         "pt_BR": {
           "term": "Licença B",
-          "definition": "Segunda licença da USPA; exige 50 saltos e mais treinamento de habilidades e de velame.",
+          "definition": "Segunda licença da USPA; exige 50 saltos. Na CBPq, a Categoria B exige 50 saltos, 40 min de queda livre e 15 pousos a até 20 m do alvo.",
           "aliases": [
             "Licença B",
-            "Brevê B"
+            "Brevê B",
+            "Categoria B"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-back-loop",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Back loop",
+          "definition": "Backward somersault in freefall: arms forward, knees to chest, head back, then arch to recover.",
+          "aliases": [
+            "Back loop"
+          ]
+        },
+        "pt_BR": {
+          "term": "Back looping",
+          "definition": "Cambalhota para trás: levar os braços à frente, empurrar o vento relativo, trazer os joelhos ao peito e jogar a cabeça para trás; ao ver o solo, selar.",
+          "aliases": [
+            "Back looping",
+            "Back loop",
+            "Looping"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-back-slide",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Back slide",
+          "definition": "Moving backward in freefall by extending the arms forward and/or bending the legs.",
+          "aliases": [
+            "Back slide"
+          ]
+        },
+        "pt_BR": {
+          "term": "Back slide",
+          "definition": "Deslocamento para trás em queda livre, esticando os braços para a frente e/ou encolhendo as pernas.",
+          "aliases": [
+            "Back slide",
+            "Deslocamento para trás"
           ]
         }
       }
@@ -1829,9 +2158,10 @@
         },
         "pt_BR": {
           "term": "Backfly",
-          "definition": "Voar estável de costas, olhando para o céu.",
+          "definition": "Voar estável de costas, olhando para o céu. Na CBPq, \"dorso\" é cair de costas para o solo.",
           "aliases": [
             "Backfly",
+            "Dorso",
             "Voo de costas"
           ]
         }
@@ -1850,9 +2180,31 @@
         },
         "pt_BR": {
           "term": "Bag lock",
-          "definition": "Pane em que o velame fica preso dentro do bag; exige procedimentos de reserva.",
+          "definition": "Pane de alta velocidade: linhas estendidas, mas o velame não sai da bolsa. Faça o procedimento de emergência.",
           "aliases": [
             "Bag lock"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-barrel-roll",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Barrel roll",
+          "definition": "A 360° roll around the body's long axis, passing through the back and returning to the box.",
+          "aliases": [
+            "Barrel roll"
+          ]
+        },
+        "pt_BR": {
+          "term": "Touneau",
+          "definition": "Giro de 360° sobre o eixo longitudinal do corpo, passando pelo dorso e voltando à box.",
+          "aliases": [
+            "Touneau",
+            "Tonneau",
+            "Barrel roll"
           ]
         }
       }
@@ -1899,6 +2251,26 @@
       }
     },
     {
+      "id": "term-biplane",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Biplane",
+          "definition": "Two canopies out, one in front of the other. Release the front canopy's brakes, steer gently, do not flare, and prepare to PLF.",
+          "aliases": [
+            "Biplane"
+          ]
+        },
+        "pt_BR": {
+          "term": "Biplano",
+          "definition": "Dois velames inflados, um na frente do outro: soltar os batoques do velame da frente, navegar com pequenas correções, não fazer flare e preparar o rolamento.",
+          "aliases": [
+            "Biplano"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-boogie",
       "type": "term",
       "translations": {
@@ -1931,10 +2303,11 @@
         },
         "pt_BR": {
           "term": "Posição box",
-          "definition": "Posição neutra e simétrica de barriga, com braços e pernas dobrados a cerca de 90°.",
+          "definition": "Posição básica de queda livre: corpo selado, cabeça erguida, pernas abertas na largura dos ombros, braços a 90° do tronco, antebraços a 90° dos braços e joelhos dobrados a cerca de 45°.",
           "aliases": [
             "Posição box",
-            "Box"
+            "Box",
+            "Box position"
           ]
         }
       }
@@ -1952,9 +2325,11 @@
         },
         "pt_BR": {
           "term": "Freios",
-          "definition": "Posição dos batedores que desacelera o velame; também a posição em que os batedores ficam presos antes da abertura.",
+          "definition": "Posição dos batoques que desacelera o velame. Meio freio: batoques na altura do ombro; freio total: totalmente puxados. Também a posição em que os batoques ficam presos antes da abertura.",
           "aliases": [
-            "Freios"
+            "Freios",
+            "Meio freio",
+            "Freio total"
           ]
         }
       }
@@ -2002,6 +2377,26 @@
       }
     },
     {
+      "id": "term-briefing",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Briefing",
+          "definition": "Preparation before a jump: checklist, objectives, extra training and rehearsing the dive flow.",
+          "aliases": [
+            "Briefing"
+          ]
+        },
+        "pt_BR": {
+          "term": "Briefing",
+          "definition": "Preparação antes do salto: check list, objetivos, treinamento adicional e repetição da sequência até o aluno estar confiante.",
+          "aliases": [
+            "Briefing"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-burble",
       "type": "term",
       "translations": {
@@ -2014,7 +2409,7 @@
         },
         "pt_BR": {
           "term": "Burble",
-          "definition": "Esteira de ar turbulento e de baixa pressão atrás de um corpo em queda; pode prender o extrator.",
+          "definition": "Esteira de ar turbulento e de baixa pressão atrás do corpo em queda; pode prender o pilotinho (\"pilotinho no vácuo\").",
           "aliases": [
             "Burble",
             "Vácuo"
@@ -2035,10 +2430,33 @@
         },
         "pt_BR": {
           "term": "Licença C",
-          "definition": "Terceira licença da USPA; exige 200 saltos.",
+          "definition": "Terceira licença da USPA; exige 200 saltos. Na CBPq, a Categoria C exige 200 saltos, 2 h de queda livre e 10 pousos a até 10 m do alvo.",
           "aliases": [
             "Licença C",
-            "Brevê C"
+            "Brevê C",
+            "Categoria C"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-camera-flyer",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Camera flyer",
+          "definition": "Skydiver who jumps with photo or video equipment.",
+          "aliases": [
+            "Camera flyer",
+            "Cameraman"
+          ]
+        },
+        "pt_BR": {
+          "term": "Cameraman",
+          "definition": "Paraquedista que salta com equipamento de foto ou vídeo; na CBPq, filmar outros saltos exige Categoria C.",
+          "aliases": [
+            "Cameraman",
+            "Câmera man"
           ]
         }
       }
@@ -2076,9 +2494,10 @@
           ]
         },
         "pt_BR": {
-          "term": "Checagem do velame",
-          "definition": "Olhar para cima após a abertura e confirmar que o velame está retangular, estável e controlável.",
+          "term": "Check visual",
+          "definition": "Logo após a abertura (contagem \"mil e um, mil e dois, mil e três\"): velame retangular com células infladas, linhas esticadas e desembaraçadas, slider baixo e batoques presos.",
           "aliases": [
+            "Check visual",
             "Checagem do velame"
           ]
         }
@@ -2097,7 +2516,7 @@
         },
         "pt_BR": {
           "term": "Colisão de velames",
-          "definition": "Contato entre velames ou corpos de dois paraquedistas sob velame; um risco grave.",
+          "definition": "Contato entre velames ou corpos de dois paraquedistas sob velame. Na CBPq: em rota de colisão, curva de 90° à direita; se inevitável, posição de impacto e avaliar se houve entrelaçamento.",
           "aliases": [
             "Colisão de velames"
           ]
@@ -2146,6 +2565,48 @@
       }
     },
     {
+      "id": "term-cbpq-category",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "CBPq category",
+          "definition": "Brazilian skill level for skydivers: AI (student), then A, B, C and D, each with jump-count, freefall-time and landing-accuracy requirements.",
+          "aliases": [
+            "CBPq category"
+          ]
+        },
+        "pt_BR": {
+          "term": "Categoria",
+          "definition": "Nível do paraquedista na CBPq: AI, A (25 saltos), B (50), C (200) e D (500), com exigências de tempo de queda livre, precisão de pouso e treinamentos.",
+          "aliases": [
+            "Categoria",
+            "Categorias da CBPq"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-checklist",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Checklist",
+          "definition": "Review before the day's first jump covering the jump, safety, emergency and canopy procedures; mandatory for students in Brazil.",
+          "aliases": [
+            "Checklist"
+          ]
+        },
+        "pt_BR": {
+          "term": "Check list",
+          "definition": "Revisão obrigatória antes do primeiro salto do dia: salto, segurança, procedimentos de emergência e navegação.",
+          "aliases": [
+            "Check list",
+            "Checklist"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-chest-strap",
       "type": "term",
       "translations": {
@@ -2157,9 +2618,10 @@
           ]
         },
         "pt_BR": {
-          "term": "Barrigueira",
+          "term": "Tirante de peito",
           "definition": "Tira do arnês que cruza o peito; ajusta a resposta do velame e mantém o arnês no lugar.",
           "aliases": [
+            "Tirante de peito",
             "Barrigueira",
             "Chest strap"
           ]
@@ -2187,6 +2649,26 @@
       }
     },
     {
+      "id": "term-cigar",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Cigar",
+          "definition": "Brazilian name for a malfunction where the canopy leaves the bag but stays in an irregular, cigar-like shape with no lift.",
+          "aliases": [
+            "Cigar"
+          ]
+        },
+        "pt_BR": {
+          "term": "Charuto",
+          "definition": "Pane de alta velocidade: linhas estendidas, velame fora da bolsa, com formato irregular e sem sustentação.",
+          "aliases": [
+            "Charuto"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-circle-of-awareness",
       "type": "term",
       "translations": {
@@ -2198,9 +2680,10 @@
           ]
         },
         "pt_BR": {
-          "term": "Círculo de atenção",
-          "definition": "Checagem em queda livre de proa, altitude e sinais do instrutor (COA).",
+          "term": "Círculo de conscientização",
+          "definition": "Na CBPq, sequência logo após a saída: referência avião, altímetro, posição, check MS2, check MS1 e referência no horizonte (COA).",
           "aliases": [
+            "Círculo de conscientização",
             "Círculo de atenção"
           ]
         }
@@ -2332,6 +2815,26 @@
       }
     },
     {
+      "id": "term-controllability-check",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Controllability check",
+          "definition": "Test after opening: flare for about 5 seconds, then a 90° turn each way, looking before each turn.",
+          "aliases": [
+            "Controllability check"
+          ]
+        },
+        "pt_BR": {
+          "term": "Check funcional",
+          "definition": "Após o check visual: puxar os batoques até o fim (flare) por 5 s e soltar devagar em dois tempos; depois, curva de 90° à esquerda e à direita, sempre olhando antes.",
+          "aliases": [
+            "Check funcional"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-crabbing",
       "type": "term",
       "translations": {
@@ -2395,6 +2898,26 @@
       }
     },
     {
+      "id": "term-crosswind",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Crosswind",
+          "definition": "Wind coming from one side of the jumper.",
+          "aliases": [
+            "Crosswind"
+          ]
+        },
+        "pt_BR": {
+          "term": "Vento de través",
+          "definition": "Vento vindo de uma das laterais.",
+          "aliases": [
+            "Vento de través"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-crosswind-leg",
       "type": "term",
       "translations": {
@@ -2427,12 +2950,13 @@
           ]
         },
         "pt_BR": {
-          "term": "Currency",
-          "definition": "Estar saltando com regularidade; quem fica tempo sem saltar precisa de treinamento de atualização.",
+          "term": "Readaptação",
+          "definition": "Estar saltando com regularidade. Na CBPq, aluno com mais de 30 dias sem saltar faz readaptação no solo e saltos de readaptação; após 180 dias, refaz o curso.",
           "aliases": [
+            "Readaptação",
+            "Reciclagem",
             "Currency",
-            "Estar em dia",
-            "recência"
+            "Estar em dia"
           ]
         }
       }
@@ -2449,11 +2973,12 @@
           ]
         },
         "pt_BR": {
-          "term": "Cutaway",
-          "definition": "Soltar um velame principal em pane, normalmente puxando o punho de cutaway.",
+          "term": "Desconexão",
+          "definition": "Soltar o velame principal em pane puxando o punho vermelho (punho de desconexão), que libera os tirantes pelo sistema 3 argolas.",
           "aliases": [
-            "Cutaway",
-            "Desconexão"
+            "Desconexão",
+            "Desconectar",
+            "Cutaway"
           ]
         }
       }
@@ -2470,11 +2995,12 @@
           ]
         },
         "pt_BR": {
-          "term": "Punho de cutaway",
-          "definition": "Punho (geralmente vermelho, à direita) que solta o principal pelo sistema de 3 argolas.",
+          "term": "Punho de desconexão",
+          "definition": "Punho vermelho, normalmente à direita, que solta o principal pelo sistema 3 argolas. No PE, é pego com as duas mãos.",
           "aliases": [
-            "Punho de cutaway",
-            "Punho de desconexão"
+            "Punho de desconexão",
+            "Punho vermelho",
+            "Punho de cutaway"
           ]
         }
       }
@@ -2492,10 +3018,31 @@
         },
         "pt_BR": {
           "term": "Licença D",
-          "definition": "Licença mais alta da USPA; exige 500 saltos.",
+          "definition": "Licença mais alta da USPA; exige 500 saltos. Na CBPq, a Categoria D exige 500 saltos e 6 h de queda livre.",
           "aliases": [
             "Licença D",
-            "Brevê D"
+            "Brevê D",
+            "Categoria D"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-de-arch",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "De-arch",
+          "definition": "Pushing the hips up and the limbs down; the body becomes unstable and tends to flip onto its back.",
+          "aliases": [
+            "De-arch"
+          ]
+        },
+        "pt_BR": {
+          "term": "Desselar",
+          "definition": "Projetar o CG para cima e/ou empurrar o vento relativo para baixo com os membros; o corpo fica instável e tende a virar de dorso.",
+          "aliases": [
+            "Desselar"
           ]
         }
       }
@@ -2517,6 +3064,26 @@
           "aliases": [
             "Centro do alvo",
             "Dead center"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-debriefing",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Debriefing",
+          "definition": "Review of a finished jump with the instructors, with video when possible, and notes in the logbook.",
+          "aliases": [
+            "Debriefing"
+          ]
+        },
+        "pt_BR": {
+          "term": "Debriefing",
+          "definition": "Revisão completa do salto com os MS, com vídeo quando possível, e anotações na caderneta e na ficha de progressão.",
+          "aliases": [
+            "Debriefing"
           ]
         }
       }
@@ -2614,9 +3181,12 @@
           ]
         },
         "pt_BR": {
-          "term": "Abertura",
-          "definition": "Sequência desde o lançamento do extrator até o velame aberto.",
+          "term": "Comando",
+          "definition": "Acionar a abertura do paraquedas: sinalizar, pegar o punho, puxar e lançar o pilotinho. Na CBPq, \"comandar\" é o verbo usado para abrir o paraquedas.",
           "aliases": [
+            "Comando",
+            "Comandar",
+            "Acionamento",
             "Abertura",
             "Deployment"
           ]
@@ -2636,12 +3206,12 @@
           ]
         },
         "pt_BR": {
-          "term": "Bag",
+          "term": "Bolsa",
           "definition": "Saco que guarda o velame dobrado e controla a sequência de abertura.",
           "aliases": [
+            "Bolsa",
             "Bag",
-            "D-bag",
-            "saco de abertura"
+            "D-bag"
           ]
         }
       }
@@ -2689,6 +3259,26 @@
       }
     },
     {
+      "id": "term-dive-exit",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Dive exit",
+          "definition": "Leaving the aircraft head-first into the relative wind; part of the last AFF level.",
+          "aliases": [
+            "Dive exit"
+          ]
+        },
+        "pt_BR": {
+          "term": "Saída de mergulho",
+          "definition": "Deixar a aeronave mergulhando de frente para o vento relativo; objetivo do Nível VII do AFF.",
+          "aliases": [
+            "Saída de mergulho"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-dive-flow",
       "type": "term",
       "translations": {
@@ -2726,6 +3316,26 @@
           "aliases": [
             "Dock",
             "Pegada"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-downplane",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Downplane",
+          "definition": "Two canopies out pointing toward the ground; cut away the main immediately.",
+          "aliases": [
+            "Downplane"
+          ]
+        },
+        "pt_BR": {
+          "term": "Downplane",
+          "definition": "Dois velames abertos apontando para o solo: desconectar imediatamente.",
+          "aliases": [
+            "Downplane"
           ]
         }
       }
@@ -2846,10 +3456,11 @@
           ]
         },
         "pt_BR": {
-          "term": "Procedimentos de emergência",
-          "definition": "Respostas treinadas a panes, emergências na aeronave e riscos no pouso (EPs).",
+          "term": "Procedimento de emergência",
+          "definition": "Na CBPq: olhar o punho vermelho, pegá-lo com as duas mãos, olhar o punho de metal, puxar o vermelho até o fim, puxar o de metal e selar. Em caso de dúvida, faça o procedimento de emergência.",
           "aliases": [
-            "Procedimentos de emergência"
+            "Procedimento de emergência",
+            "PE"
           ]
         }
       }
@@ -2866,11 +3477,12 @@
           ]
         },
         "pt_BR": {
-          "term": "Células das pontas fechadas",
-          "definition": "Células das pontas do velame que não inflam após a abertura; geralmente se resolve bombeando os freios.",
+          "term": "Células fechadas",
+          "definition": "Células que não inflam após a abertura. Até duas: anormalidade, faça o check funcional. Mais de duas (menos de 7 infladas): pane de baixa velocidade.",
           "aliases": [
+            "Células fechadas",
             "Células das pontas fechadas",
-            "End cell closure"
+            "Células desinfladas"
           ]
         }
       }
@@ -2987,9 +3599,10 @@
           ]
         },
         "pt_BR": {
-          "term": "Final",
-          "definition": "Última perna do circuito, voada contra o vento em direção ao alvo.",
+          "term": "Final para pouso",
+          "definition": "Última perna do circuito, a partir do ponto C (cerca de 300 pés): vento de nariz, pequenas correções e voo total.",
           "aliases": [
+            "Final para pouso",
             "Final",
             "Reta final"
           ]
@@ -3012,6 +3625,26 @@
           "definition": "Altitude em que o AAD aciona o reserva.",
           "aliases": [
             "Altitude de disparo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-five-second-rule",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Five-second rule",
+          "definition": "From AFF Level III on, a solo jumper who is unstable has 5 seconds to regain stability in the X position; if not, pull immediately in whatever position.",
+          "aliases": [
+            "Five-second rule"
+          ]
+        },
+        "pt_BR": {
+          "term": "Regra dos 5 segundos",
+          "definition": "A partir do Nível III, se estiver sozinho e instável, tente recuperar a estabilidade por 5 s na posição X; se não conseguir, comande imediatamente. Comandar é mais importante do que ficar estável.",
+          "aliases": [
+            "Regra dos 5 segundos"
           ]
         }
       }
@@ -3073,8 +3706,31 @@
           "definition": "Voo em grupo de barriga para a terra para montar figuras ou sequências (FS).",
           "aliases": [
             "Formação em queda livre",
+            "FQL",
             "TR",
-            "trabalho relativo"
+            "Trabalho relativo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-forward-movement",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Forward movement",
+          "definition": "Controlled forward movement in freefall by extending the legs (and/or sweeping the arms back); used for short approaches.",
+          "aliases": [
+            "Forward movement",
+            "Front slide"
+          ]
+        },
+        "pt_BR": {
+          "term": "Movimento à frente",
+          "definition": "Deslocamento horizontal controlado para aproximações curtas: manter a box e esticar totalmente as pernas.",
+          "aliases": [
+            "Movimento à frente",
+            "Front slide"
           ]
         }
       }
@@ -3095,6 +3751,7 @@
           "definition": "Parte do salto antes de o paraquedas abrir.",
           "aliases": [
             "Queda livre",
+            "QL",
             "Freefall"
           ]
         }
@@ -3116,6 +3773,28 @@
           "definition": "Voar em qualquer posição, incluindo em pé, de cabeça para baixo e transições (FF).",
           "aliases": [
             "Freefly"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-front-loop",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Front loop",
+          "definition": "Forward somersault in freefall: legs straight, fold the torso forward with arms in, then arch to recover.",
+          "aliases": [
+            "Front loop"
+          ]
+        },
+        "pt_BR": {
+          "term": "Front looping",
+          "definition": "Cambalhota para a frente: esticar as pernas, dobrar o tronco com os braços junto ao corpo; ao ver o solo, selar.",
+          "aliases": [
+            "Front looping",
+            "Front loop",
+            "Looping"
           ]
         }
       }
@@ -3183,6 +3862,27 @@
       }
     },
     {
+      "id": "term-gear-check",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Gear check",
+          "definition": "Inspection of a jumper's equipment before boarding and before exit.",
+          "aliases": [
+            "Gear check"
+          ]
+        },
+        "pt_BR": {
+          "term": "Checagem de equipamento",
+          "definition": "Inspeção do equipamento do paraquedista antes do embarque e antes da saída.",
+          "aliases": [
+            "Checagem de equipamento",
+            "Check de equipamento"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-glide-ratio",
       "type": "term",
       "translations": {
@@ -3204,22 +3904,24 @@
       }
     },
     {
-      "id": "term-gear-check",
+      "id": "term-grips",
       "type": "term",
       "translations": {
         "en_US": {
-          "term": "Gear check",
-          "definition": "Inspection of a jumper's equipment before boarding and before exit.",
+          "term": "Grips",
+          "definition": "Handholds on jumpsuits used for docking in formation skydiving.",
           "aliases": [
-            "Gear check"
+            "Grips"
           ]
         },
         "pt_BR": {
-          "term": "Checagem de equipamento",
-          "definition": "Inspeção do equipamento do paraquedista antes do embarque e antes da saída.",
+          "term": "Grips",
+          "definition": "Contato físico durante o salto; também as saliências do macacão feitas para facilitar essa pegada.",
           "aliases": [
-            "Checagem de equipamento",
-            "Check de equipamento"
+            "Grips",
+            "Grip",
+            "Pegadas",
+            "Gripar"
           ]
         }
       }
@@ -3246,27 +3948,6 @@
       }
     },
     {
-      "id": "term-grips",
-      "type": "term",
-      "translations": {
-        "en_US": {
-          "term": "Grips",
-          "definition": "Handholds on jumpsuits used for docking in formation skydiving.",
-          "aliases": [
-            "Grips"
-          ]
-        },
-        "pt_BR": {
-          "term": "Grips",
-          "definition": "Pontos de pegada nos macacões usados para os docks em formação.",
-          "aliases": [
-            "Grips",
-            "Pegadas"
-          ]
-        }
-      }
-    },
-    {
       "id": "term-hand-deploy-pilot-chute",
       "type": "term",
       "translations": {
@@ -3278,11 +3959,12 @@
           ]
         },
         "pt_BR": {
-          "term": "Extrator de mão",
-          "definition": "Extrator lançado com a mão a partir de um bolso, geralmente no BOC.",
+          "term": "Hand deploy",
+          "definition": "Sistema de abertura em que o paraquedista puxa o pilotinho do bolso no BOC e o lança ao vento. Na CBPq, a transição para hand deploy é requisito da Categoria A.",
           "aliases": [
-            "Extrator de mão",
-            "Hand deploy"
+            "Hand deploy",
+            "Pilotinho",
+            "Extrator de mão"
           ]
         }
       }
@@ -3341,9 +4023,10 @@
           ]
         },
         "pt_BR": {
-          "term": "Comando duro",
-          "definition": "Extrator ou punho preso ou difícil de puxar.",
+          "term": "Punho duro",
+          "definition": "Punho preso ou difícil de puxar. Na CBPq: selar, tentar mais uma vez e, se não sair, fazer o procedimento de emergência (pane de alta velocidade).",
           "aliases": [
+            "Punho duro",
             "Comando duro",
             "Hard pull"
           ]
@@ -3384,9 +4067,10 @@
         },
         "pt_BR": {
           "term": "Pegada no arnês",
-          "definition": "Técnica de AFF em que os instrutores seguram o arnês do aluno durante a queda livre.",
+          "definition": "Técnica de AFF em que os mestres de salto seguram (gripam) o aluno na saída e na queda livre nos primeiros níveis.",
           "aliases": [
             "Pegada no arnês",
+            "Saída gripada",
             "Harness hold"
           ]
         }
@@ -3414,6 +4098,46 @@
       }
     },
     {
+      "id": "term-headwind",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Headwind",
+          "definition": "Wind coming from in front of the jumper; landings are made into a headwind.",
+          "aliases": [
+            "Headwind"
+          ]
+        },
+        "pt_BR": {
+          "term": "Vento de nariz",
+          "definition": "Estar de frente para o vento, \"contra o vento\"; o pouso é feito com vento de nariz.",
+          "aliases": [
+            "Vento de nariz"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-high-speed-malfunction",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "High-speed malfunction",
+          "definition": "Malfunction where the canopy does not start to open or has no lift: nothing out, hard pull, pilot chute in tow, bag lock, streamer. Requires emergency procedures.",
+          "aliases": [
+            "High-speed malfunction"
+          ]
+        },
+        "pt_BR": {
+          "term": "Pane de alta velocidade",
+          "definition": "O velame não entra em processo de abertura ou não passa no check visual: nada saiu, punho duro, bag lock, charuto, streamer. Exige procedimento de emergência.",
+          "aliases": [
+            "Pane de alta velocidade"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-holding-area",
       "type": "term",
       "translations": {
@@ -3426,7 +4150,7 @@
         },
         "pt_BR": {
           "term": "Área de espera",
-          "definition": "Área a favor do vento da área de pouso onde o piloto de velame aguarda antes de entrar no circuito.",
+          "definition": "Área a favor do vento do alvo (no \"positivo\"), onde o paraquedista aguarda até cerca de 1.100 pés antes de entrar no circuito; o vento tende a levá-lo para a área de pouso.",
           "aliases": [
             "Área de espera"
           ]
@@ -3517,6 +4241,27 @@
       }
     },
     {
+      "id": "term-hover",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Hover",
+          "definition": "Falling straight down with no horizontal movement, as if inside a column of air.",
+          "aliases": [
+            "Hover"
+          ]
+        },
+        "pt_BR": {
+          "term": "Hover",
+          "definition": "Cair numa coluna imaginária de ar, sem deslocamento horizontal.",
+          "aliases": [
+            "Hover",
+            "Hover control"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-hybrid",
       "type": "term",
       "translations": {
@@ -3570,11 +4315,13 @@
           ]
         },
         "pt_BR": {
-          "term": "Jumpmaster",
-          "definition": "Pessoa que supervisiona os paraquedistas e faz o spot a bordo.",
+          "term": "Mestre de salto",
+          "definition": "Na CBPq, instrutor habilitado a saltar com alunos de AFF (MS1 e MS2). Também quem supervisiona os paraquedistas a bordo.",
           "aliases": [
+            "Mestre de salto",
+            "MS",
             "Jumpmaster",
-            "Mestre de salto"
+            "Jump master"
           ]
         }
       }
@@ -3621,6 +4368,48 @@
       }
     },
     {
+      "id": "term-landing-arrow",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Landing arrow",
+          "definition": "Ground marker showing the day's landing direction; if it differs from the windsock, follow the arrow.",
+          "aliases": [
+            "Landing arrow"
+          ]
+        },
+        "pt_BR": {
+          "term": "Seta de pouso",
+          "definition": "Marcação no solo que indica a direção de pouso do dia; havendo divergência com a biruta, siga a seta.",
+          "aliases": [
+            "Seta de pouso",
+            "Seta"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-brace-position",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Landing brace position",
+          "definition": "Emergency-landing position: toggles at chest height, chin tucked, elbows in, knees and ankles together, legs slightly bent, ready for a PLF.",
+          "aliases": [
+            "Landing brace position",
+            "Brace position"
+          ]
+        },
+        "pt_BR": {
+          "term": "Posição preparatória",
+          "definition": "Posição para pouso em emergência: batoques na altura do peito, queixo no peito, cotovelos junto ao tronco, joelhos e tornozelos juntos, pernas levemente flexionadas, pronto para o pouso em 5 pontos.",
+          "aliases": [
+            "Posição preparatória"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-landing-pattern",
       "type": "term",
       "translations": {
@@ -3633,10 +4422,12 @@
         },
         "pt_BR": {
           "term": "Circuito de pouso",
-          "definition": "Trajetória planejada para o pouso: perna do vento, perna base e final.",
+          "definition": "Na CBPq, entrar abaixo de 1.000 pés com o alvo à esquerda: ponto A (cerca de 1.000 pés), ponto B (600), ponto C (300) e final. A seta indica a direção de pouso.",
           "aliases": [
             "Circuito de pouso",
-            "Circuito"
+            "Circuito",
+            "Tráfego padrão",
+            "Tráfego padrão para pouso"
           ]
         }
       }
@@ -3662,6 +4453,26 @@
       }
     },
     {
+      "id": "term-leading-edge",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Leading edge",
+          "definition": "Front edge of the canopy, where the cells open to the air.",
+          "aliases": [
+            "Leading edge"
+          ]
+        },
+        "pt_BR": {
+          "term": "Bordo de ataque",
+          "definition": "Borda da frente do velame, onde as células recebem o ar.",
+          "aliases": [
+            "Bordo de ataque"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-leg-straps",
       "type": "term",
       "translations": {
@@ -3673,11 +4484,11 @@
           ]
         },
         "pt_BR": {
-          "term": "Perneiras",
+          "term": "Tirantes de perna",
           "definition": "Tiras do arnês em volta das coxas.",
           "aliases": [
-            "Perneiras",
-            "Tiras de perna"
+            "Tirantes de perna",
+            "Perneiras"
           ]
         }
       }
@@ -3715,7 +4526,7 @@
         },
         "pt_BR": {
           "term": "Twist",
-          "definition": "Linhas de suspensão torcidas após a abertura; desfaça pedalando se o velame estiver voando reto.",
+          "definition": "Linhas torcidas após a abertura. Na CBPq é anormalidade especial: separar os tirantes e pedalar no sentido contrário, sem puxar os batoques, até 2.500 pés; abaixo disso, é pane: faça o PE.",
           "aliases": [
             "Twist",
             "Linhas torcidas"
@@ -3739,7 +4550,8 @@
           "definition": "Saída em que os paraquedistas se seguram pelas pegadas ao deixar a aeronave.",
           "aliases": [
             "Saída em conjunto",
-            "Saída linkada"
+            "Saída linkada",
+            "Saída gripada"
           ]
         }
       }
@@ -3802,6 +4614,7 @@
           "definition": "Registro de cada salto, assinado como comprovante para licenças e credenciais.",
           "aliases": [
             "Caderneta de saltos",
+            "Caderneta",
             "Logbook"
           ]
         }
@@ -3824,6 +4637,26 @@
           "aliases": [
             "Comando baixo",
             "Low pull"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-low-speed-malfunction",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Low-speed malfunction",
+          "definition": "Canopy is open but not safe to land: non-rectangular shape, more than two closed cells, broken line, tear, or line twists below the decision altitude.",
+          "aliases": [
+            "Low-speed malfunction"
+          ]
+        },
+        "pt_BR": {
+          "term": "Pane de baixa velocidade",
+          "definition": "Velame aberto que não passa no check visual ou funcional: formato não retangular, mais de duas células fechadas, linha rompida, rasgo ou twist abaixo de 2.500 pés.",
+          "aliases": [
+            "Pane de baixa velocidade"
           ]
         }
       }
@@ -3862,7 +4695,7 @@
         },
         "pt_BR": {
           "term": "Pane",
-          "definition": "Qualquer falha do principal em abrir ou voar corretamente.",
+          "definition": "Na CBPq: ocorrência que exige procedimento de emergência imediato, pois o paraquedas não tem condições de pouso seguro. Pode ser de alta ou de baixa velocidade. Na dúvida, é pane.",
           "aliases": [
             "Pane",
             "Mal",
@@ -3934,6 +4767,27 @@
       }
     },
     {
+      "id": "term-no-contact",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "No contact",
+          "definition": "Flying close to another jumper in freefall without touching.",
+          "aliases": [
+            "No contact"
+          ]
+        },
+        "pt_BR": {
+          "term": "No contact",
+          "definition": "Em queda livre, permanecer próximo de outro paraquedista, porém sem contato físico.",
+          "aliases": [
+            "No contact",
+            "Sem contato"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-off-landing",
       "type": "term",
       "translations": {
@@ -3946,10 +4800,11 @@
         },
         "pt_BR": {
           "term": "Pouso fora",
-          "definition": "Pouso fora da área de pouso planejada.",
+          "definition": "Pouso fora da área planejada. Na CBPq, decida até 2.500 pés se pousa na área oficial ou numa área alternativa livre de obstáculos.",
           "aliases": [
             "Pouso fora",
-            "Pouso fora da área"
+            "Pouso fora da área",
+            "Área alternativa"
           ]
         }
       }
@@ -3967,10 +4822,11 @@
         },
         "pt_BR": {
           "term": "Altitude de abertura",
-          "definition": "Altitude planejada para abrir o velame principal.",
+          "definition": "Altura planejada para abrir o principal. Mínimas da CBPq: salto duplo 5.500 pés, aluno 5.000 (no AFF, 5.500), A 4.000, B 3.500, C e D 2.500.",
           "aliases": [
             "Altitude de abertura",
-            "Altitude de comando"
+            "Altura de comando",
+            "Altura de abertura"
           ]
         }
       }
@@ -4091,9 +4947,10 @@
           ]
         },
         "pt_BR": {
-          "term": "Hesitação do extrator",
-          "definition": "Extrator preso no burble que não infla ou não extrai o bag.",
+          "term": "Pilotinho no vácuo",
+          "definition": "Pilotinho preso no burble, sem inflar ou sem extrair a bolsa. Se nada abrir em cerca de 5 s, faça o procedimento de emergência.",
           "aliases": [
+            "Pilotinho no vácuo",
             "Hesitação do extrator",
             "PC hesitation"
           ]
@@ -4113,10 +4970,11 @@
         },
         "pt_BR": {
           "term": "Extrator em reboque",
-          "definition": "Pane em que o extrator saiu, mas o container continua fechado.",
+          "definition": "Pane de alta velocidade: o pilotinho saiu, mas o container continua fechado. Faça o procedimento de emergência.",
           "aliases": [
-            "Extrator em reboque",
-            "Pilot chute in tow"
+            "Pilot chute in tow",
+            "Pilotinho em reboque",
+            "Extrator em reboque"
           ]
         }
       }
@@ -4175,7 +5033,7 @@
         },
         "pt_BR": {
           "term": "Abertura prematura",
-          "definition": "Container que abre antes da hora, muitas vezes ainda dentro da aeronave.",
+          "definition": "Container que abre antes da hora. Na aeronave com a porta fechada: recolher e abraçar a parte exposta, afastar-se da porta, desligar o DAA e pousar com o avião. Se algo sair pela porta, saltar imediatamente.",
           "aliases": [
             "Abertura prematura"
           ]
@@ -4244,6 +5102,27 @@
       }
     },
     {
+      "id": "term-relative-wind",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Relative wind",
+          "definition": "Airflow a moving body meets, opposite to its direction of travel. Students exit facing the relative wind, not necessarily the ground.",
+          "aliases": [
+            "Relative wind"
+          ]
+        },
+        "pt_BR": {
+          "term": "Vento relativo",
+          "definition": "Deslocamento de ar criado por um corpo em movimento. Na saída, o aluno deve cair de frente para o vento relativo, e não necessariamente para o solo.",
+          "aliases": [
+            "Vento relativo",
+            "VR"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-relative-work",
       "type": "term",
       "translations": {
@@ -4259,7 +5138,8 @@
           "definition": "Nome antigo da formação em queda livre (RW).",
           "aliases": [
             "Trabalho relativo",
-            "TR"
+            "TR",
+            "FQL"
           ]
         }
       }
@@ -4297,10 +5177,12 @@
           ]
         },
         "pt_BR": {
-          "term": "Punho do reserva",
-          "definition": "Punho (geralmente prateado, à esquerda) que abre o reserva.",
+          "term": "Punho de acionamento do reserva",
+          "definition": "Punho de metal (geralmente à esquerda) que abre o reserva. No PE, é puxado com as duas mãos até o fim.",
           "aliases": [
-            "Punho do reserva"
+            "Punho de acionamento do reserva",
+            "Punho do reserva",
+            "Punho de metal"
           ]
         }
       }
@@ -4402,9 +5284,10 @@
         },
         "pt_BR": {
           "term": "Novato",
-          "definition": "Paraquedista novo ou com pouca experiência, principalmente em eventos.",
+          "definition": "Paraquedista com pouca experiência; no Brasil, também \"manicaca\".",
           "aliases": [
             "Novato",
+            "Manicaca",
             "Rookie"
           ]
         }
@@ -4447,6 +5330,27 @@
           "definition": "Distância horizontal mantida entre paraquedistas ou grupos em queda livre e sob velame.",
           "aliases": [
             "Separação"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-side-by-side",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Side by side",
+          "definition": "Two canopies out next to each other: keep brakes stowed, hold where the canopies meet and fly them to landing; cut away if they go into a downplane.",
+          "aliases": [
+            "Side by side"
+          ]
+        },
+        "pt_BR": {
+          "term": "Side by side",
+          "definition": "Dois velames inflados lado a lado: manter os batoques presos, segurar na junção em X e voar até o pouso; se entrarem em downplane, desconectar.",
+          "aliases": [
+            "Side by side",
+            "Lado a lado"
           ]
         }
       }
@@ -4513,6 +5417,28 @@
       }
     },
     {
+      "id": "term-space-program",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Space Program",
+          "definition": "CBPq post-graduation phase (Level VIII): solo jumps, BBF, packing course and canopy training until Category A.",
+          "aliases": [
+            "Space Program"
+          ]
+        },
+        "pt_BR": {
+          "term": "Space Program",
+          "definition": "Fase pós-graduação da CBPq (Nível VIII): saltos solo, BBF, curso de dobragem e treinamento de velame até a Categoria A.",
+          "aliases": [
+            "Space Program",
+            "Nível VIII",
+            "Pós-graduação"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-spot",
       "type": "term",
       "translations": {
@@ -4566,7 +5492,7 @@
         },
         "pt_BR": {
           "term": "Estol",
-          "definition": "Perda de sustentação quando o velame é desacelerado demais; ele colapsa ou voa para trás.",
+          "definition": "Perda de sustentação por freio prolongado (na CBPq, mais de cerca de 3 s, conforme o velame; velames student não estolam).",
           "aliases": [
             "Estol",
             "Stall"
@@ -4627,11 +5553,32 @@
           ]
         },
         "pt_BR": {
-          "term": "Linhas de comando",
+          "term": "Linhas direcionais",
           "definition": "Linhas que vão dos batedores ao bordo de fuga do velame.",
           "aliases": [
+            "Linhas direcionais",
             "Linhas de comando",
             "Linhas de freio"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-streamer",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Streamer",
+          "definition": "Malfunction where the canopy leaves the bag but does not inflate, with the slider stuck high near the canopy.",
+          "aliases": [
+            "Streamer"
+          ]
+        },
+        "pt_BR": {
+          "term": "Streamer",
+          "definition": "Pane de alta velocidade: linhas estendidas ou torcidas, velame fora da bolsa sem sustentação e slider muito alto, junto ao velame.",
+          "aliases": [
+            "Streamer"
           ]
         }
       }
@@ -4648,10 +5595,32 @@
           ]
         },
         "pt_BR": {
-          "term": "Aluno",
-          "definition": "Qualquer paraquedista que ainda não obteve a licença A.",
+          "term": "Aluno em instrução",
+          "definition": "Paraquedista ainda sob supervisão dos instrutores, até obter a Categoria A (CBPq) ou a licença A (USPA).",
           "aliases": [
-            "Aluno"
+            "Aluno em instrução",
+            "Aluno",
+            "AI"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-subterminal-velocity",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Subterminal velocity",
+          "definition": "The first seconds of freefall (about 12) while the jumper is still accelerating; the first 1,000 ft take about 15 seconds.",
+          "aliases": [
+            "Subterminal velocity"
+          ]
+        },
+        "pt_BR": {
+          "term": "Velocidade subterminal",
+          "definition": "Primeiros cerca de 12 s de queda livre, em que o paraquedista ainda acelera; os primeiros 1.000 pés levam cerca de 15 s.",
+          "aliases": [
+            "Velocidade subterminal"
           ]
         }
       }
@@ -4714,6 +5683,26 @@
           "definition": "Pouso em alta velocidade que transforma a energia do mergulho num longo planeio rente ao solo.",
           "aliases": [
             "Swoop"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-tailwind",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Tailwind",
+          "definition": "Wind from behind the jumper, increasing speed over the ground.",
+          "aliases": [
+            "Tailwind"
+          ]
+        },
+        "pt_BR": {
+          "term": "Vento de cauda",
+          "definition": "A favor do vento, ou seja, de costas para ele.",
+          "aliases": [
+            "Vento de cauda"
           ]
         }
       }
@@ -4792,7 +5781,7 @@
         },
         "pt_BR": {
           "term": "Velocidade terminal",
-          "definition": "Velocidade máxima estável em queda livre, cerca de 190 km/h (120 mph) de barriga.",
+          "definition": "Velocidade máxima estável em queda livre, cerca de 200 km/h de barriga. É atingida após uns 12 s; a partir daí, cada 1.000 pés leva cerca de 5 s.",
           "aliases": [
             "Velocidade terminal"
           ]
@@ -4811,12 +5800,13 @@
           ]
         },
         "pt_BR": {
-          "term": "Sistema de 3 argolas",
-          "definition": "Sistema de soltura dos tirantes com três argolas encadeadas, usado no cutaway.",
+          "term": "Sistema 3 argolas",
+          "definition": "A argola maior fica no equipamento e as duas menores no tirante; o cabo de desconexão prende a menor por um loop. Ao puxar o punho vermelho, as argolas se soltam e o principal é desconectado.",
           "aliases": [
+            "Sistema 3 argolas",
             "Sistema de 3 argolas",
             "3 argolas",
-            "three-ring"
+            "Three-ring"
           ]
         }
       }
@@ -4833,9 +5823,10 @@
           ]
         },
         "pt_BR": {
-          "term": "Batedores",
-          "definition": "Punhos nas linhas de comando usados para fazer curvas e flare.",
+          "term": "Batoques",
+          "definition": "Punhos nas linhas direcionais usados para fazer curvas, frear e fazer o flare.",
           "aliases": [
+            "Batoques",
             "Batedores",
             "Toggles"
           ]
@@ -4855,10 +5846,53 @@
         },
         "pt_BR": {
           "term": "Tracking",
-          "definition": "Posição do corpo que gera deslocamento horizontal rápido, usada no breakoff.",
+          "definition": "Posição de grande deslocamento horizontal, usada para separar antes do comando: braços retos para trás a cerca de 45° e pernas esticadas. A CBPq chama de track / delta.",
           "aliases": [
             "Tracking",
+            "Track",
             "Deslocamento"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-trailing-edge",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Trailing edge",
+          "definition": "Rear edge of the canopy, pulled down by the steering lines to turn and flare.",
+          "aliases": [
+            "Trailing edge"
+          ]
+        },
+        "pt_BR": {
+          "term": "Bordo de fuga",
+          "definition": "Borda de trás do velame, puxada pelas linhas direcionais nas curvas e no flare.",
+          "aliases": [
+            "Bordo de fuga"
+          ]
+        }
+      }
+    },
+    {
+      "id": "term-tumble",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Tumble",
+          "definition": "Losing stability in freefall and flipping over.",
+          "aliases": [
+            "Tumble",
+            "Tumbling"
+          ]
+        },
+        "pt_BR": {
+          "term": "Capotar",
+          "definition": "Perder a estabilidade durante a queda livre.",
+          "aliases": [
+            "Capotar",
+            "Capotagem"
           ]
         }
       }
@@ -4917,7 +5951,7 @@
         },
         "pt_BR": {
           "term": "Dois velames abertos",
-          "definition": "Dois velames abertos ao mesmo tempo, como principal e reserva.",
+          "definition": "Principal e reserva abertos ao mesmo tempo. A CBPq classifica em biplano, side by side e downplane: manter a calma, identificar os velames e desativar o RSL.",
           "aliases": [
             "Dois velames abertos",
             "Two out"
@@ -4941,8 +5975,9 @@
           "definition": "Direção de onde o vento vem; normalmente se pousa contra o vento.",
           "aliases": [
             "Contra o vento",
+            "Vento de nariz",
             "Upwind",
-            "barlavento"
+            "Barlavento"
           ]
         }
       }
@@ -4959,11 +5994,12 @@
           ]
         },
         "pt_BR": {
-          "term": "Wave off",
-          "definition": "Sinal com os braços antes de abrir para avisar quem está por perto.",
+          "term": "Sinalizar",
+          "definition": "Sinal com os braços antes de comandar, avisando que vai abrir. No AFF da CBPq, feito a 6.000 pés abrindo e fechando os antebraços.",
           "aliases": [
-            "Wave off",
-            "Aceno"
+            "Sinalizar",
+            "Sinalização",
+            "Wave off"
           ]
         }
       }
@@ -4981,7 +6017,7 @@
         },
         "pt_BR": {
           "term": "Limites de vento",
-          "definition": "Vento máximo permitido no solo; alunos da USPA têm limite de 14 mph (cerca de 22 km/h).",
+          "definition": "Vento máximo no solo. CBPq: AI 10 nós (22 km/h), A 12 nós (26 km/h), B 14 nós (30 km/h), C 18 nós (33 km/h); acima de 20 nós (37 km/h) toda atividade é suspensa.",
           "aliases": [
             "Limites de vento"
           ]
@@ -5031,6 +6067,26 @@
       }
     },
     {
+      "id": "term-windsock",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Windsock",
+          "definition": "Cone-shaped fabric tube that shows wind direction and strength at the landing area.",
+          "aliases": [
+            "Windsock"
+          ]
+        },
+        "pt_BR": {
+          "term": "Biruta",
+          "definition": "Cone de tecido que indica a direção e a intensidade do vento na área de pouso. Se ela divergir da seta, siga a seta.",
+          "aliases": [
+            "Biruta"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-wing-loading",
       "type": "term",
       "translations": {
@@ -5043,7 +6099,7 @@
         },
         "pt_BR": {
           "term": "Carga alar",
-          "definition": "Peso de saída dividido pela área do velame (lb/pé²); carga maior significa voo mais rápido.",
+          "definition": "Peso de saída (lb) dividido pela área do velame (pé²). Limites da CBPq: AI de 0,5 a 1,0; A até 1,1; B até 1,3; C até 1,5; D sem limite.",
           "aliases": [
             "Carga alar",
             "Wing loading"
