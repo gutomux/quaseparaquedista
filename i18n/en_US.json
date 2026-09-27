@@ -50,8 +50,7 @@
   "feedback": {
     "hint": "Missing a term or spotted a mistake?",
     "button": "Suggest an entry or correction",
-    "subject": "Skydiving glossary: suggestion or correction",
-    "body": "Is this a new entry or a correction?\n\nTerm or acronym:\n\nLanguage (English, Portuguese or both):\n\nYour suggestion:\n\n"
+    "newTab": "(opens in a new tab)"
   },
   "calculator": {
     "wingLoading": {

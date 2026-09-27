@@ -36,9 +36,12 @@
     <p class="sr" id="status" aria-live="polite"></p>
   </main>
 
-  <aside class="feedback">
+  <aside class="feedback" hidden>
     <p data-i18n="feedback.hint">Missing a term or spotted a mistake?</p>
-    <a id="feedback" class="feedback-btn" href="#" data-i18n="feedback.button">Suggest an entry or correction</a>
+    <a id="feedback" class="feedback-btn" href="#" target="_blank" rel="noopener noreferrer">
+      <span data-i18n="feedback.button">Suggest an entry or correction</span>
+      <span class="sr" data-i18n="feedback.newTab">(opens in a new tab)</span>
+    </a>
   </aside>
 
   <footer data-i18n="footer"></footer>

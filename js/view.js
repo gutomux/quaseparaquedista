@@ -39,6 +39,7 @@ export class GlossaryView {
     this.status = root.querySelector('#status');
     this.searchBox = root.querySelector('.search');
     this.feedbackLink = root.querySelector('#feedback');
+    this.feedbackBox = root.querySelector('.feedback');
   }
 
   /**
@@ -329,9 +330,11 @@ export class GlossaryView {
 
   /* ---------- Feedback ---------- */
 
-  /** Point the "Suggest an entry or correction" button at a mailto: link. */
+  /** Point the "Suggest an entry or correction" button at the feedback form, or hide it. */
   setFeedbackLink(href) {
-    if (this.feedbackLink) this.feedbackLink.href = href;
+    if (!this.feedbackLink || !this.feedbackBox) return;
+    if (href) this.feedbackLink.href = href;
+    this.feedbackBox.hidden = !href;
   }
 
   /* ---------- Accessibility ---------- */

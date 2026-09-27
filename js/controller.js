@@ -8,7 +8,7 @@
  */
 import { search, highlightSegments, findRelated, normalize } from './search.js';
 import { localizeEntry } from './data.js';
-import { buildMailto } from './contact.js';
+import { isFeedbackFormUrl } from './feedback.js';
 import { computeWingLoading, classifyWingLoading, WING_LOADING_LIMITS } from './calculators.js';
 
 export class GlossaryController {
@@ -36,10 +36,8 @@ export class GlossaryController {
   start() {
     this.view.applyTranslations();
     this.view.renderExamples(this.t.raw('examples.items') || []);
-    this.view.setFeedbackLink(buildMailto(this.config.contactEmail, {
-      subject: this.t('feedback.subject'),
-      body: this.t('feedback.body'),
-    }));
+    const formUrl = this.config.feedbackFormUrl;
+    this.view.setFeedbackLink(isFeedbackFormUrl(formUrl) ? formUrl.trim() : '');
     this.view.bind({
       onInput: (value) => this.handleInput(value),
       onKey: (key, event) => this.handleKey(key, event),

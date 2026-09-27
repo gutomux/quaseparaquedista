@@ -50,8 +50,7 @@
   "feedback": {
     "hint": "Falta algum termo ou encontrou um erro?",
     "button": "Sugerir um termo ou correção",
-    "subject": "Glossário de paraquedismo: sugestão ou correção",
-    "body": "É um termo novo ou uma correção?\n\nTermo ou sigla:\n\nIdioma (português, inglês ou ambos):\n\nSua sugestão:\n\n"
+    "newTab": "(abre em uma nova aba)"
   },
   "calculator": {
     "wingLoading": {

@@ -1,6 +1,6 @@
 {
   "name": "skydiving-glossary",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Single-page searchable glossary of skydiving terms and acronyms (en_US + pt_BR).",
   "private": true,
   "type": "module",

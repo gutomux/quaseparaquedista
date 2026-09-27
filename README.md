@@ -28,7 +28,7 @@ js/data.js            Loads, validates and localizes glossary.json
 js/search.js          Search logic across all locales: pure functions, no DOM
 js/view.js            View: all DOM rendering and event listening
 js/calculators.js     Entry calculators (wing loading): pure functions, no DOM
-js/contact.js         Builds the suggestion/correction email link
+js/feedback.js        Checks the suggestion/correction form link
 js/controller.js      Connects search logic and view, holds UI state
 js/main.js            Entry point: detects locale, loads files, starts the app
 tests/                Unit tests for search, data validation and i18n
@@ -89,7 +89,9 @@ Change the wording in `i18n/en_US.json` or `i18n/pt_BR.json`. Both files must ha
 
 ## Suggestions and corrections
 
-The "Suggest an entry or correction" button opens the visitor's email app with a message to the address in `contactEmail` (`js/config.js`). The subject and a short fill-in template come from `feedback` in each i18n file, so they appear in the visitor's language. To change where suggestions go, edit `contactEmail`.
+The "Suggest an entry or correction" button opens a Google Form in a new tab. Visitors don't need any account, and every response lands in the form's Google Sheet.
+
+To connect your form, paste its link into `feedbackFormUrl` in `js/config.js` (use the link from **Send → link icon**, e.g. `https://forms.gle/...`). While the setting is empty, or isn't a Google Forms link, the button stays hidden. The button text lives under `feedback` in each i18n file.
 
 ## Running locally
 

@@ -135,3 +135,4 @@ footer{max-width:44rem;margin:0 auto;padding:0 1.25rem 2.5rem;font-size:.85rem;c
 .limits-note{margin:.5rem 0 0;font-size:.85rem;color:var(--ink-soft)}
 .calc-match{margin-top:.35rem;font-weight:700;color:var(--ink)}
 .calc-match-note{font-size:.9rem;color:var(--ink-soft)}
+.feedback[hidden]{display:none}
