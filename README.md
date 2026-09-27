@@ -27,6 +27,7 @@ js/i18n.js            Locale detection, loading interface text, translating keys
 js/data.js            Loads, validates and localizes glossary.json
 js/search.js          Search logic across all locales: pure functions, no DOM
 js/view.js            View: all DOM rendering and event listening
+js/calculators.js     Entry calculators (wing loading): pure functions, no DOM
 js/contact.js         Builds the suggestion/correction email link
 js/controller.js      Connects search logic and view, holds UI state
 js/main.js            Entry point: detects locale, loads files, starts the app
@@ -62,6 +63,18 @@ Edit `data/glossary.json`. Every entry needs a block for each locale:
 - `type` is `"acronym"` or `"term"`.
 - Acronyms also need an `expansion` in every locale (in pt_BR, the English expansion with the Portuguese meaning in parentheses).
 - `aliases` lists every spelling people might search for in that language, including local jargon.
+
+## Calculators on entries
+
+An entry can show a calculator under its definition by adding a `calculator` field in `data/glossary.json`. Today the only one is `"wing-loading"`, used by *Wing loading / Carga alar*:
+
+```
+wing loading = (body weight kg + equipment weight kg) × 2.2 ÷ canopy size (sq ft)
+```
+
+The entry also shows the CBPq limits per category and highlights the lowest category allowed for the user's result. Those limits are defined once, in `WING_LOADING_LIMITS` in `js/calculators.js`; the table and the category match both read from it, so update the numbers there if CBPq changes them.
+
+The math lives in `js/calculators.js` (tested in `tests/calculators.test.js`), the fields are drawn by `view.js`, and all labels and messages are under `calculator.wingLoading` in the i18n files. Numbers accept a comma or a dot as the decimal mark, and the result is shown in the reader's number format.
 
 ## Editing interface text
 

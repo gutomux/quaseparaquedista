@@ -108,3 +108,9 @@ test('CBPq vocabulary finds the right entries', () => {
   assert.ok(terms('anormalidade').includes('Abnormality'));
   assert.ok(terms('biruta').includes('Windsock'));
 });
+
+test('validation rejects an unknown calculator', () => {
+  const entry = { id: 'x', type: 'term', calculator: 'nope', translations: {
+    en_US: { term: 'X', definition: 'd', aliases: ['X'] }, pt_BR: { term: 'X', definition: 'd', aliases: ['X'] } } };
+  assert.match(validateEntry(entry, LOCALES).join(), /unknown "calculator"/);
+});

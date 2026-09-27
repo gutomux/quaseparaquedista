@@ -5,6 +5,8 @@
  *   { id, type, translations: { en_US: {term, expansion?, definition, aliases}, pt_BR: {...} } }
  */
 
+import { CALCULATORS } from './calculators.js';
+
 const ENTRY_TYPES = new Set(['acronym', 'term']);
 const isText = (v) => typeof v === 'string' && v.trim().length > 0;
 
@@ -21,6 +23,9 @@ export function validateEntry(entry, locales) {
 
   if (!isText(entry.id)) problems.push(`${label}: "id" is missing.`);
   if (!ENTRY_TYPES.has(entry.type)) problems.push(`${label}: "type" must be "acronym" or "term".`);
+  if ('calculator' in entry && !CALCULATORS.includes(entry.calculator)) {
+    problems.push(`${label}: unknown "calculator" "${entry.calculator}" (known: ${CALCULATORS.join(', ')}).`);
+  }
   if (!entry.translations || typeof entry.translations !== 'object') {
     problems.push(`${label}: "translations" is missing.`);
     return problems;
@@ -73,7 +78,13 @@ export function validateGlossary(data, locales) {
  */
 export function localizeEntry(entry, locale, fallbackLocale) {
   const usedLocale = entry.translations[locale] ? locale : fallbackLocale;
-  return { id: entry.id, type: entry.type, locale: usedLocale, ...entry.translations[usedLocale] };
+  return {
+    id: entry.id,
+    type: entry.type,
+    calculator: entry.calculator,
+    locale: usedLocale,
+    ...entry.translations[usedLocale],
+  };
 }
 
 /**

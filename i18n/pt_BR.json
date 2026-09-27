@@ -53,5 +53,45 @@
     "subject": "Glossário de paraquedismo: sugestão ou correção",
     "body": "É um termo novo ou uma correção?\n\nTermo ou sigla:\n\nIdioma (português, inglês ou ambos):\n\nSua sugestão:\n\n"
   },
+  "calculator": {
+    "wingLoading": {
+      "body": "Peso corporal (kg)",
+      "gear": "Peso do equipamento (kg)",
+      "canopy": "Tamanho do velame (pés²)",
+      "bodyPlaceholder": "ex.: 80",
+      "gearPlaceholder": "ex.: 12",
+      "canopyPlaceholder": "ex.: 190",
+      "result": "Sua carga alar: {value}",
+      "formula": "({body} + {gear}) × 2,2 ÷ {canopy}",
+      "missing": "Preencha os três campos para ver sua carga alar.",
+      "invalid": "Use números maiores que zero.",
+      "label": "Calculadora de carga alar",
+      "limits": {
+        "caption": "Limites da CBPq por categoria",
+        "category": "Categoria",
+        "loading": "Carga alar",
+        "canopy": "Velame",
+        "between": "{min} a {max}",
+        "upTo": "até {max}",
+        "recommendedUpTo": "recomendada até {recommended}, nunca acima de {max}",
+        "unlimited": "sem limite",
+        "canopies": {
+          "AI": "Retangular",
+          "A": "Retangular ou semielíptico, iniciante",
+          "B": "Retangular ou semielíptico, intermediário",
+          "C": "Semielíptico ou elíptico, avançado",
+          "D": "Elíptico ou cross braced, expert"
+        },
+        "footnote": "Na Categoria C, acima de {recommended} exige pelo menos 100 saltos com carga até {recommended} em velame semelhante. Redução de velame: no máximo 20 pés² por troca, com assinatura do instrutor na caderneta."
+      },
+      "match": {
+        "from": "Permitida a partir da Categoria {category}.",
+        "aboveRecommended": "Permitida a partir da Categoria {category}, acima do recomendado para ela ({recommended}).",
+        "onlyD": "Apenas para a Categoria D.",
+        "experienceC": "Na Categoria C, exige pelo menos 100 saltos com carga até {recommended} em velame semelhante.",
+        "belowStudentMin": "Abaixo de {min}, o mínimo para alunos (AI)."
+      }
+    }
+  },
   "footer": "Baseado no Instructional Rating Manual 2026 da USPA, na Apostila do Aluno do Curso AFF da CBPq (2023) e em conhecimento geral de paraquedismo. Regras e números variam conforme o país e a área de salto; no Brasil, valem as normas da CBPq."
 }

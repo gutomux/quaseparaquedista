@@ -6089,17 +6089,18 @@
     {
       "id": "term-wing-loading",
       "type": "term",
+      "calculator": "wing-loading",
       "translations": {
         "en_US": {
           "term": "Wing loading",
-          "definition": "Exit weight divided by canopy area (lb/sq ft); higher loading means faster canopy flight.",
+          "definition": "The ratio of the jumper's total weight (body weight + equipment weight) to the total canopy area. Brazil's CBPq sets limits per category, shown in the table below. You can calculate it like this:",
           "aliases": [
             "Wing loading"
           ]
         },
         "pt_BR": {
           "term": "Carga alar",
-          "definition": "Peso de saída (lb) dividido pela área do velame (pé²). Limites da CBPq: AI de 0,5 a 1,0; A até 1,1; B até 1,3; C até 1,5; D sem limite.",
+          "definition": "É a relação do peso total do paraquedista (peso corporal + peso do equipamento) com a área total do velame (paraquedas). A CBPq define limites por categoria, mostrados na tabela abaixo. Pode ser calculada assim:",
           "aliases": [
             "Carga alar",
             "Wing loading"

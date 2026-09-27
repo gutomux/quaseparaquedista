@@ -75,6 +75,7 @@ export class GlossaryView {
    * @param {(query: string) => void} handlers.onExample An example chip was clicked.
    * @param {() => void} handlers.onClear
    * @param {() => void} handlers.onDismiss Click outside the search box.
+   * @param {(values: {body: string, gear: string, canopy: string}) => void} handlers.onCalculatorInput
    */
   bind(handlers) {
     this.input.addEventListener('input', () => handlers.onInput(this.input.value));
@@ -91,6 +92,11 @@ export class GlossaryView {
     this.list.addEventListener('mousemove', (e) => {
       const option = e.target.closest('[data-index]');
       if (option) handlers.onHover(Number(option.dataset.index));
+    });
+
+    // The calculator is re-created with each card, so listen on the result area.
+    this.result.addEventListener('input', (e) => {
+      if (e.target.closest('.calc')) handlers.onCalculatorInput(this.readCalculator());
     });
 
     document.addEventListener('click', (e) => {
@@ -199,8 +205,11 @@ export class GlossaryView {
    * @param {object} entry Localized entry to show.
    * @param {Array<{language: string, term: string}>} otherNames Names in other locales that differ.
    * @param {Array<object>} related Localized related entries.
+   * @param {object} [extras]
+   * @param {{caption: string, headers: string[], rows: Array<{category: string, cells: string[]}>, footnote: string}} [extras.limits]
+   *   Ready-to-show limits table for entries with a calculator.
    */
-  renderEntry(entry, otherNames, related) {
+  renderEntry(entry, otherNames, related, extras = {}) {
     const card = el('article', 'card');
     card.lang = this.t('meta.lang');
     card.append(this.typeBadge(entry.type), el('h2', '', entry.term));
@@ -209,6 +218,8 @@ export class GlossaryView {
       card.append(el('p', 'other-lang', this.t('entry.inLanguage', { language, term })));
     }
     card.append(el('p', 'def', entry.definition));
+    if (entry.calculator === 'wing-loading') card.append(this.buildWingLoadingCalculator());
+    if (extras.limits) card.append(this.buildLimitsTable(extras.limits));
 
     if (related.length) {
       const also = el('div', 'also');
@@ -222,6 +233,86 @@ export class GlossaryView {
       card.append(also);
     }
     this.result.replaceChildren(card);
+  }
+
+  /** Build the three wing-loading fields and the result line. */
+  buildWingLoadingCalculator() {
+    const key = (k) => this.t(`calculator.wingLoading.${k}`);
+    const form = el('div', 'calc');
+    form.setAttribute('role', 'group');
+    form.setAttribute('aria-label', key('label'));
+
+    for (const name of ['body', 'gear', 'canopy']) {
+      const id = `calc-${name}`;
+      const label = el('label', 'calc-field');
+      label.htmlFor = id;
+      const input = el('input');
+      Object.assign(input, { id, name, type: 'text', inputMode: 'decimal', autocomplete: 'off', placeholder: key(`${name}Placeholder`) });
+      label.append(el('span', '', key(name)), input);
+      form.append(label);
+    }
+    const output = el('output', 'calc-result', key('missing'));
+    output.setAttribute('aria-live', 'polite');
+    output.htmlFor = 'calc-body calc-gear calc-canopy';
+    form.append(output);
+    return form;
+  }
+
+  /** Build a small table (caption, header row, rows, footnote). Rows carry data-category for highlighting. */
+  buildLimitsTable({ caption, headers, rows, footnote }) {
+    const wrap = el('div', 'limits');
+    const table = el('table');
+    table.append(el('caption', '', caption));
+    const head = el('tr');
+    headers.forEach((h) => { const th = el('th', '', h); th.scope = 'col'; head.append(th); });
+    table.append(el('thead'));
+    table.tHead.append(head);
+    const body = el('tbody');
+    for (const { category, cells } of rows) {
+      const tr = el('tr');
+      tr.dataset.category = category;
+      cells.forEach((c, i) => {
+        const cell = el(i === 0 ? 'th' : 'td', '', c);
+        if (i === 0) cell.scope = 'row';
+        tr.append(cell);
+      });
+      body.append(tr);
+    }
+    table.append(body);
+    wrap.append(table);
+    if (footnote) wrap.append(el('p', 'limits-note', footnote));
+    return wrap;
+  }
+
+  /** Current text in the calculator fields. */
+  readCalculator() {
+    const value = (name) => this.result.querySelector(`#calc-${name}`)?.value ?? '';
+    return { body: value('body'), gear: value('gear'), canopy: value('canopy') };
+  }
+
+  /**
+   * Show the calculator outcome.
+   * @param {string} message Main line (result or guidance).
+   * @param {string} [detail] Secondary line, e.g. the worked formula.
+   * @param {boolean} [ok] Whether this is a real result (styled more strongly).
+   * @param {object} [match]
+   * @param {string[]} [match.lines] Category match sentences.
+   * @param {string} [match.category] Limits-table row to highlight.
+   */
+  setCalculatorResult(message, detail = '', ok = false, match = {}) {
+    const output = this.result.querySelector('.calc-result');
+    if (!output) return;
+    output.classList.toggle('has-value', ok);
+    output.replaceChildren(el('strong', '', message));
+    if (detail) output.append(el('span', 'calc-formula', detail));
+    (match.lines || []).forEach((line, i) => output.append(el('span', i === 0 ? 'calc-match' : 'calc-match-note', line)));
+
+    this.result.querySelectorAll('.limits tr[data-category]').forEach((tr) => {
+      const hit = tr.dataset.category === match.category;
+      tr.classList.toggle('is-match', hit);
+      if (hit) tr.setAttribute('aria-current', 'true');
+      else tr.removeAttribute('aria-current');
+    });
   }
 
   clearResult() {

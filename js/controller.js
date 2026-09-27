@@ -9,6 +9,7 @@
 import { search, highlightSegments, findRelated, normalize } from './search.js';
 import { localizeEntry } from './data.js';
 import { buildMailto } from './contact.js';
+import { computeWingLoading, classifyWingLoading, WING_LOADING_LIMITS } from './calculators.js';
 
 export class GlossaryController {
   /**
@@ -47,6 +48,7 @@ export class GlossaryController {
       onExample: (query) => this.selectBestMatch(query),
       onClear: () => this.clear(),
       onDismiss: () => this.closeSuggestions(),
+      onCalculatorInput: (values) => this.updateWingLoading(values),
     });
   }
 
@@ -160,7 +162,68 @@ export class GlossaryController {
     this.view.setQuery(shown.term);
     this.closeSuggestions();
     this.view.setExamplesVisible(false);
-    this.view.renderEntry(shown, otherNames, related);
+    const extras = shown.calculator === 'wing-loading' ? { limits: this.wingLoadingLimitsTable() } : {};
+    this.view.renderEntry(shown, otherNames, related, extras);
+  }
+
+  /** Format a number in the reader's locale with a fixed number of decimals. */
+  formatNumber(n, digits) {
+    return n.toLocaleString(this.t('meta.lang'), { minimumFractionDigits: digits, maximumFractionDigits: digits });
+  }
+
+  /** Turn WING_LOADING_LIMITS into translated, formatted table rows. */
+  wingLoadingLimitsTable() {
+    const key = (k, params) => this.t(`calculator.wingLoading.limits.${k}`, params);
+    const f = (n) => this.formatNumber(n, Number.isInteger(n * 10) ? 1 : 2);
+    const range = ({ min, max, recommended }) => {
+      if (max === Infinity) return key('unlimited');
+      if (min !== undefined) return key('between', { min: f(min), max: f(max) });
+      if (recommended !== undefined) return key('recommendedUpTo', { recommended: f(recommended), max: f(max) });
+      return key('upTo', { max: f(max) });
+    };
+    const c = WING_LOADING_LIMITS.find((l) => l.category === 'C');
+    return {
+      caption: key('caption'),
+      headers: [key('category'), key('loading'), key('canopy')],
+      rows: WING_LOADING_LIMITS.map((limit) => ({
+        category: limit.category,
+        cells: [limit.category, range(limit), key(`canopies.${limit.category}`)],
+      })),
+      footnote: key('footnote', { recommended: f(c.recommended) }),
+    };
+  }
+
+  /** Sentences saying which CBPq category a wing loading matches. */
+  wingLoadingMatch(value) {
+    const key = (k, params) => this.t(`calculator.wingLoading.match.${k}`, params);
+    const f = (n) => this.formatNumber(n, 1);
+    const result = classifyWingLoading(value);
+    const lines = [];
+    if (result.category === 'D') lines.push(key('onlyD'));
+    else if (result.aboveRecommended) lines.push(key('aboveRecommended', { category: result.category, recommended: f(result.recommended) }));
+    else lines.push(key('from', { category: result.category }));
+    if (result.category === 'C') lines.push(key('experienceC', { recommended: f(result.recommended) }));
+    const studentMin = WING_LOADING_LIMITS[0].min;
+    if (value < studentMin) lines.push(key('belowStudentMin', { min: f(studentMin) }));
+    return { lines, category: result.category };
+  }
+
+  /** Recalculate wing loading and show it, formatted for the current locale. */
+  updateWingLoading(values) {
+    const key = (k, params) => this.t(`calculator.wingLoading.${k}`, params);
+    const outcome = computeWingLoading(values);
+    if (outcome.error) {
+      this.view.setCalculatorResult(key(outcome.error), '', false, {});
+      return;
+    }
+    const lang = this.t('meta.lang');
+    const fmt = (n, digits) => n.toLocaleString(lang, { maximumFractionDigits: digits });
+    this.view.setCalculatorResult(
+      key('result', { value: outcome.value.toLocaleString(lang, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) }),
+      key('formula', { body: fmt(outcome.body, 1), gear: fmt(outcome.gear, 1), canopy: fmt(outcome.canopy, 0) }),
+      true,
+      this.wingLoadingMatch(outcome.value),
+    );
   }
 
   selectBestMatch(query) {

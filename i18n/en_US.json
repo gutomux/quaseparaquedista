@@ -53,5 +53,45 @@
     "subject": "Skydiving glossary: suggestion or correction",
     "body": "Is this a new entry or a correction?\n\nTerm or acronym:\n\nLanguage (English, Portuguese or both):\n\nYour suggestion:\n\n"
   },
+  "calculator": {
+    "wingLoading": {
+      "body": "Body weight (kg)",
+      "gear": "Equipment weight (kg)",
+      "canopy": "Canopy size (sq ft)",
+      "bodyPlaceholder": "e.g. 80",
+      "gearPlaceholder": "e.g. 12",
+      "canopyPlaceholder": "e.g. 190",
+      "result": "Your wing loading: {value}",
+      "formula": "({body} + {gear}) × 2.2 ÷ {canopy}",
+      "missing": "Fill in all three fields to see your wing loading.",
+      "invalid": "Use numbers greater than zero.",
+      "label": "Wing loading calculator",
+      "limits": {
+        "caption": "CBPq limits by category",
+        "category": "Category",
+        "loading": "Wing loading",
+        "canopy": "Canopy",
+        "between": "{min} to {max}",
+        "upTo": "up to {max}",
+        "recommendedUpTo": "recommended up to {recommended}, never above {max}",
+        "unlimited": "no limit",
+        "canopies": {
+          "AI": "Rectangular",
+          "A": "Rectangular or semi-elliptical, beginner",
+          "B": "Rectangular or semi-elliptical, intermediate",
+          "C": "Semi-elliptical or elliptical, advanced",
+          "D": "Elliptical or cross-braced, expert"
+        },
+        "footnote": "Category C above {recommended} requires at least 100 jumps at up to {recommended} on a similar canopy. Downsizing: at most 20 sq ft per change, with an instructor's signature in the logbook."
+      },
+      "match": {
+        "from": "Allowed from Category {category} up.",
+        "aboveRecommended": "Allowed from Category {category} up, above the recommended {recommended} for that category.",
+        "onlyD": "Only Category D.",
+        "experienceC": "In Category C this needs at least 100 jumps at up to {recommended} on a similar canopy.",
+        "belowStudentMin": "Below {min}, which is the minimum for students (AI)."
+      }
+    }
+  },
   "footer": "Based on the USPA Instructional Rating Manual 2026, the CBPq AFF student handbook (2023) and general skydiving knowledge. Rules and numbers vary by country and drop zone; Brazilian limits follow CBPq."
 }
