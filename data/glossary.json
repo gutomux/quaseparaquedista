@@ -1922,7 +1922,7 @@
         },
         "pt_BR": {
           "term": "Anormalidade",
-          "definition": "Situação irregular com o velame que, a princípio, dá para resolver ou conviver: slider alto abaixo da metade, até duas células fechadas, batoque solto, pilotinho no bordo de ataque. Faça o check funcional; se não passar, é pane.",
+          "definition": "Quando o velame tem sustentação, mas tem algo anormal no check Visual. Podemos conviver com ela ou não, a certeza vem com o resultado do check funcional.\n Por exemplo, células das pontas murchas, pilotinho passando na frente do bordo de ataque do velame, etc.",
           "aliases": [
             "Anormalidade"
           ]
@@ -4695,7 +4695,7 @@
         },
         "pt_BR": {
           "term": "Pane",
-          "definition": "Na CBPq: ocorrência que exige procedimento de emergência imediato, pois o paraquedas não tem condições de pouso seguro. Pode ser de alta ou de baixa velocidade. Na dúvida, é pane.",
+          "definition": "Quando o velame em 5 segundos não gera sustentação, não passa no check Visual ou nao passa no check Funcional. Por exemplo:\nPane de Alta velocidade: quando o velame não gera sustentação em 5 segundos.\nPane de Baixa Velocidade: quando o velame tem sustentação mas não passa no check Visual ou no check Funcional.",
           "aliases": [
             "Pane",
             "Mal",
