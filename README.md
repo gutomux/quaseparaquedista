@@ -27,6 +27,7 @@ js/i18n.js            Locale detection, loading interface text, translating keys
 js/data.js            Loads, validates and localizes glossary.json
 js/search.js          Search logic across all locales: pure functions, no DOM
 js/view.js            View: all DOM rendering and event listening
+js/contact.js         Builds the suggestion/correction email link
 js/controller.js      Connects search logic and view, holds UI state
 js/main.js            Entry point: detects locale, loads files, starts the app
 tests/                Unit tests for search, data validation and i18n
@@ -73,6 +74,10 @@ Change the wording in `i18n/en_US.json` or `i18n/pt_BR.json`. Both files must ha
 3. Add the locale to `supportedLocales` in `js/config.js` and to `LOCALES` / `SUPPORTED` in the tests.
 4. Run `npm test`; it lists any entry or key that is missing.
 
+## Suggestions and corrections
+
+The "Suggest an entry or correction" button opens the visitor's email app with a message to the address in `contactEmail` (`js/config.js`). The subject and a short fill-in template come from `feedback` in each i18n file, so they appear in the visitor's language. To change where suggestions go, edit `contactEmail`.
+
 ## Running locally
 
 Browsers block `fetch()` for files opened directly from disk, so serve the folder instead of double-clicking `index.html`:
@@ -99,4 +104,4 @@ Uses Node's built-in test runner (Node 18 or newer), so there is nothing to inst
 
 ## Credits
 
-Based on the USPA Instructional Rating Manual 2026 and general skydiving knowledge. Rules and numbers follow USPA norms and vary by country and drop zone.
+Based on the USPA Instructional Rating Manual 2026, the CBPq AFF student handbook (2023) and general skydiving knowledge.

@@ -27,7 +27,13 @@
   },
   "examples": {
     "label": "Try",
-    "items": ["PLF", "Burble", "SHAGG", "Hook turn", "Wing loading"]
+    "items": [
+      "PLF",
+      "Burble",
+      "SHAGG",
+      "Hook turn",
+      "Wing loading"
+    ]
   },
   "entry": {
     "type": {
@@ -41,5 +47,11 @@
     "title": "Glossary unavailable",
     "body": "The glossary data could not be loaded. Refresh the page, or check that the data and i18n folders are published next to index.html."
   },
-  "footer": "Based on the USPA Instructional Rating Manual 2026 and general skydiving knowledge. Rules and numbers follow USPA norms and vary by country and drop zone."
+  "feedback": {
+    "hint": "Missing a term or spotted a mistake?",
+    "button": "Suggest an entry or correction",
+    "subject": "Skydiving glossary: suggestion or correction",
+    "body": "Is this a new entry or a correction?\n\nTerm or acronym:\n\nLanguage (English, Portuguese or both):\n\nYour suggestion:\n\n"
+  },
+  "footer": "Based on the USPA Instructional Rating Manual 2026, the CBPq AFF student handbook (2023) and general skydiving knowledge. Rules and numbers vary by country and drop zone; Brazilian limits follow CBPq."
 }

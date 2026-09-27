@@ -38,6 +38,7 @@ export class GlossaryView {
     this.examples = root.querySelector('#try');
     this.status = root.querySelector('#status');
     this.searchBox = root.querySelector('.search');
+    this.feedbackLink = root.querySelector('#feedback');
   }
 
   /**
@@ -233,6 +234,13 @@ export class GlossaryView {
     this.result.replaceChildren(box);
     this.input.disabled = true;
     this.setExamplesVisible(false);
+  }
+
+  /* ---------- Feedback ---------- */
+
+  /** Point the "Suggest an entry or correction" button at a mailto: link. */
+  setFeedbackLink(href) {
+    if (this.feedbackLink) this.feedbackLink.href = href;
   }
 
   /* ---------- Accessibility ---------- */

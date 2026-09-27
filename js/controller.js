@@ -8,6 +8,7 @@
  */
 import { search, highlightSegments, findRelated, normalize } from './search.js';
 import { localizeEntry } from './data.js';
+import { buildMailto } from './contact.js';
 
 export class GlossaryController {
   /**
@@ -34,6 +35,10 @@ export class GlossaryController {
   start() {
     this.view.applyTranslations();
     this.view.renderExamples(this.t.raw('examples.items') || []);
+    this.view.setFeedbackLink(buildMailto(this.config.contactEmail, {
+      subject: this.t('feedback.subject'),
+      body: this.t('feedback.body'),
+    }));
     this.view.bind({
       onInput: (value) => this.handleInput(value),
       onKey: (key, event) => this.handleKey(key, event),

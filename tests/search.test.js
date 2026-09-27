@@ -96,3 +96,15 @@ test('findRelated links a term and its acronym', () => {
   const related = findRelated(entries, byEnTerm('Circle of awareness'));
   assert.ok(related.some((e) => e.translations.en_US.term === 'COA'));
 });
+
+test('CBPq vocabulary finds the right entries', () => {
+  assert.equal(terms('batoques', 'pt_BR')[0], 'Batoques');
+  assert.equal(terms('pilotinho', 'pt_BR')[0], 'PC');
+  assert.equal(terms('ms', 'pt_BR')[0], 'MS');
+  assert.equal(terms('daa')[0], 'AAD');
+  assert.equal(terms('pe')[0], 'EP');
+  assert.ok(terms('punho vermelho').includes('Cutaway handle'));
+  assert.ok(terms('tirante de peito').includes('Chest strap'));
+  assert.ok(terms('anormalidade').includes('Abnormality'));
+  assert.ok(terms('biruta').includes('Windsock'));
+});

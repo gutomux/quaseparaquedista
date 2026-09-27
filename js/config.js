@@ -16,4 +16,6 @@ export const CONFIG = Object.freeze({
   maxRelated: 4,
   /** Minimum query length before definitions are searched too. */
   minDefinitionQueryLength: 3,
+  /** Where "Suggest an entry or correction" emails go. */
+  contactEmail: 'gutoferreira1010@gmail.com',
 });

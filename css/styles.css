@@ -98,3 +98,13 @@ footer{max-width:44rem;margin:0 auto;padding:0 1.25rem 2.5rem;font-size:.85rem;c
 #q:disabled{cursor:not-allowed;opacity:.6}
 .noscript{max-width:44rem;margin:0 auto;padding:0 1.25rem 2rem}
 .other-lang{margin:-.35rem 0 .75rem;color:var(--ink-soft);font-style:italic}
+
+/* Suggestion / correction button */
+.feedback{max-width:44rem;margin:0 auto;padding:0 1.25rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem}
+.feedback p{margin:0;color:var(--ink-soft)}
+.feedback-btn{
+  display:inline-block;font-weight:700;color:var(--ink);text-decoration:none;
+  border:2px solid var(--ink);border-radius:999px;padding:.5rem 1.1rem;background:var(--panel)
+}
+.feedback-btn:hover{border-color:var(--accent);color:var(--accent-ink)}
+.feedback-btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
