@@ -1,12 +1,13 @@
 {
   "meta": {
     "title": "Skydiving Glossary",
-    "version": "2.1.0",
+    "version": "3.0.0",
     "updated": "2026-09-27",
     "sources": [
       "USPA Instructional Rating Manual 2026",
       "CBPq – Apostila do Aluno, Curso AFF (2023)",
-      "General skydiving knowledge"
+      "General skydiving knowledge",
+      "First manual review by Guto"
     ],
     "locales": [
       "en_US",
@@ -22,15 +23,15 @@
         "en_US": {
           "term": "AAD",
           "expansion": "Automatic Activation Device",
-          "definition": "Electronic unit that fires the reserve if the jumper is still falling fast at a set altitude.",
+          "definition": "Electronic unit that automatically fires the reserve if the jumper is still falling fast at a specific altitude.",
           "aliases": [
             "AAD"
           ]
         },
         "pt_BR": {
           "term": "AAD",
-          "expansion": "Automatic Activation Device (DAA – disparador de abertura automática do reserva)",
-          "definition": "Dispositivo que abre o reserva sozinho: lê a pressão e a velocidade de queda e, abaixo de uma altura-limite em alta velocidade, corta o loop de fechamento do reserva. Deve ser ligado no solo, no local e no dia do salto. Ex.: Vigil, Cypres, FXC, Astra.",
+          "expansion": "Automatic Activation Device (DAA – Dispositivo de Abertura Automática)",
+          "definition": "Dispositivo eletrônico que abre o paraquedas reserva sozinho, caso o paraquedista ainda esteja caindo muito rápido na altura limite especificada.",
           "aliases": [
             "AAD",
             "DAA"
@@ -44,16 +45,16 @@
       "translations": {
         "en_US": {
           "term": "AFF",
-          "expansion": "Accelerated Freefall",
-          "definition": "Student method with freefall from the first jump, held by one or two instructors.",
+          "expansion": "Accelerated Free Fall",
+          "definition": "Accelerated Freefall (AFF) training program to teach people how to skydive solo. AFF is the fastest and most popular method to learn solo skydiving",
           "aliases": [
             "AFF"
           ]
         },
         "pt_BR": {
           "term": "AFF",
-          "expansion": "Accelerated Freefall (queda livre acelerada)",
-          "definition": "Método de aluno com queda livre desde o primeiro salto, acompanhado por um ou dois mestres de salto (MS). Na CBPq são sete níveis, seguidos do Nível VIII (Space Program) até a Categoria A.",
+          "expansion": "Accelerated Free Fall (Tradução literal 'queda livre acelerada')",
+          "definition": "Método de ensino onde o aluno experimenta queda livre desde o primeiro salto, acompanhado por dois instrutores (nos níveis I ao III), e um instrutor (dos níveis IV ao VII).",
           "aliases": [
             "AFF"
           ]
@@ -2619,10 +2620,9 @@
         },
         "pt_BR": {
           "term": "Tirante de peito",
-          "definition": "Tira do arnês que cruza o peito; ajusta a resposta do velame e mantém o arnês no lugar.",
+          "definition": "Tirante(alça) que cruza o peito e deve ser ajustada para ficar fime; É um dos componentes que permite uma abertura segura do seu paraquedas.",
           "aliases": [
             "Tirante de peito",
-            "Barrigueira",
             "Chest strap"
           ]
         }
@@ -2641,7 +2641,7 @@
         },
         "pt_BR": {
           "term": "Chop",
-          "definition": "Gíria para cutaway.",
+          "definition": "Gíria em inglês para desconexão do paraquedas principal.",
           "aliases": [
             "Chop"
           ]
@@ -3121,7 +3121,7 @@
         },
         "pt_BR": {
           "term": "Freio profundo",
-          "definition": "Batedores bem abaixados, desacelerando o velame perto do estol.",
+          "definition": "Batoques bem abaixados, desacelerando o velame perto do estol.",
           "aliases": [
             "Freio profundo"
           ]
@@ -3655,17 +3655,19 @@
       "translations": {
         "en_US": {
           "term": "Flare",
-          "definition": "Pulling both toggles (or risers) near the ground to slow descent and speed for landing.",
+          "definition": "Pulling both toggles (or risers) to slow descent and speed temporarily.",
           "aliases": [
-            "Flare"
+            "Flare",
+            "Break"
           ]
         },
         "pt_BR": {
           "term": "Flare",
-          "definition": "Abaixar os dois batedores (ou tirantes) perto do solo para reduzir a descida e a velocidade no pouso.",
+          "definition": "Abaixar os dois batoques (ou tirantes traseiros) para 'freiar' o paraquedas, reduzindo a razão de queda e a velocidade temporariamente.",
           "aliases": [
             "Flare",
-            "Arredondamento"
+            "Freio",
+            "Frear"
           ]
         }
       }
@@ -3832,7 +3834,7 @@
         },
         "pt_BR": {
           "term": "Voo pleno",
-          "definition": "Velame voando com os batedores totalmente em cima; a maior velocidade estável.",
+          "definition": "Velame voando com os batoques totalmente para cima, deixando o paraquedas voar livremente, na maior velocidade estável.",
           "aliases": [
             "Voo pleno",
             "Full flight"
@@ -5094,7 +5096,7 @@
         },
         "pt_BR": {
           "term": "Tirante traseiro",
-          "definition": "Fitas de trás do velame; podem ser usadas para direcionar ou fazer flare se os batedores falharem.",
+          "definition": "Tirantes de trás do velame; podem ser usadas para navegar o paraquedas e efetuar o flare.",
           "aliases": [
             "Tirante traseiro"
           ]
@@ -5513,7 +5515,7 @@
         },
         "pt_BR": {
           "term": "Ponto de estol",
-          "definition": "Posição dos batedores em que o velame começa a estolar; identificada em altitude segura.",
+          "definition": "É o limite em que o velame (paraquedas) deixa de produzir sustentação dado a posição dos batoques. Ao puxar ambos os batoques para baixo de forma simétrica e profunda, a velocidade reduz para o limite mínimo até que o velame desacelere drasticamente e comece a colapsar",
           "aliases": [
             "Ponto de estol"
           ]
@@ -5554,7 +5556,7 @@
         },
         "pt_BR": {
           "term": "Linhas direcionais",
-          "definition": "Linhas que vão dos batedores ao bordo de fuga do velame.",
+          "definition": "Linhas que vão dos batoques ao bordo de fuga do velame. Podem ser usadas para navegar o paraquedas.",
           "aliases": [
             "Linhas direcionais",
             "Linhas de comando",
@@ -5659,7 +5661,7 @@
         },
         "pt_BR": {
           "term": "Sweet spot",
-          "definition": "Posição dos batedores que dá o melhor planeio ou a menor razão de descida daquele velame.",
+          "definition": "Posição dos batoques que permitem o melhor planeio ou a menor razão de descida daquele velame.",
           "aliases": [
             "Sweet spot",
             "Ponto ideal"
@@ -5824,10 +5826,9 @@
         },
         "pt_BR": {
           "term": "Batoques",
-          "definition": "Punhos nas linhas direcionais usados para fazer curvas, frear e fazer o flare.",
+          "definition": "São as alças de comando, conectados aos tirantes traseiros, usados para navegar o paraquedas (fazer curvas, frear, etc).",
           "aliases": [
             "Batoques",
-            "Batedores",
             "Toggles"
           ]
         }
