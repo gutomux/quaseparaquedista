@@ -8,7 +8,7 @@ No build step and no dependencies: plain HTML, CSS and JavaScript modules, ready
 
 - **Interface language is detected automatically** from the browser (`navigator.languages`). Portuguese browsers (pt-BR, pt-PT, pt) get pt_BR; everything else gets en_US.
 - **Search always covers both languages.** A Portuguese reader can type "canopy" and an English reader can type "velame"; both find the same entry.
-- **Results are shown in the reader's language.** When a suggestion matched through the other language, it says so (for example "Em inglês: Canopy").
+- **Suggestions show both languages**, the reader's first, each marked with a country flag: "Velame 🇧🇷 | Canopy 🇺🇸". Windows, which has no flag emoji, shows the locale codes instead: "Velame (pt_BR) | Canopy (en_US)". The result card is shown in the reader's language.
 - Portuguese names follow Brazilian drop zone jargon (velame, pane, batedores, barrigueira, decolagem) and keep English where Brazilian jumpers use it (cutaway, flare, tracking, slider).
 - Accents are optional when searching: "circulo de atencao" finds "Círculo de atenção".
 
@@ -31,7 +31,13 @@ js/calculators.js     Entry calculators (wing loading): pure functions, no DOM
 js/feedback.js        Checks the suggestion/correction form link
 js/controller.js      Connects search logic and view, holds UI state
 js/main.js            Entry point: detects locale, loads files, starts the app
-tests/                Unit tests for search, data validation and i18n
+freefall.html         Freefall body-position simulator page
+css/freefall.css      Styles for the simulator (reuses the color tokens in styles.css)
+js/freefall/sim.js    Simulator rules: pose in, drift/fall rate/turn out. Pure functions, no DOM
+js/freefall/figure.js The SVG jumper: a simple 3D body turned by the heading and drawn from the side or above
+js/freefall/view.js   Simulator scene, air dots, compass, readouts and buttons
+js/freefall/main.js   Simulator entry point and animation loop
+tests/                Unit tests for search, data validation, i18n and the simulator
 ```
 
 The layers only talk in one direction: `main` wires everything up, the `controller` asks `search.js` for results and tells `view.js` what to show, and the view reports user actions back through callbacks. `search.js`, `data.js` and `i18n.js` never touch the page, which is what makes them testable in Node.
@@ -86,6 +92,24 @@ Change the wording in `i18n/en_US.json` or `i18n/pt_BR.json`. Both files must ha
 2. Add a `<locale>` block to every entry in `data/glossary.json`.
 3. Add the locale to `supportedLocales` in `js/config.js` and to `LOCALES` / `SUPPORTED` in the tests.
 4. Run `npm test`; it lists any entry or key that is missing.
+
+## Freefall simulator
+
+`freefall.html`, linked from the main page, shows a cartoon jumper falling belly to earth, seen from the side. Air dots rise past the jumper: the faster they rise, the faster the fall. Toggle buttons change the body position, and a caption explains each effect:
+
+| Button | Effect |
+|---|---|
+| Stretch legs / Pull arms back | Moves forward |
+| Tuck legs / Reach arms forward | Moves backward |
+| Arch more | Falls faster |
+| De-arch | Falls slower and rocks slightly |
+| Turn left / right | Dips that shoulder, rolls toward it and turns that way |
+
+The jumper is a simple 3D body, so turns really rotate it: facing you, you see both arms and legs spread out. The compass in the corner shows the same body from above. There is no speed gauge; the air dots show the fall rate.
+
+Buttons in the same group are opposites, so only one can be on. Effects add up: stretched legs with arms pulled back moves forward faster, and stretched legs with arms forward cancel out.
+
+The rules live in `js/freefall/sim.js`: `CONTROLS` lists the buttons and `EFFECT` holds the strengths (drift, fall rate change, turn speed). Change them there and run `npm test`. Page text is under `freefall` in the i18n files. If the visitor's system asks for reduced motion, the animation starts paused.
 
 ## Suggestions and corrections
 

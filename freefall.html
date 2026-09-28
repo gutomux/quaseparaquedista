@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="See how body position changes a skydiver's flight in freefall." data-i18n-attr="content: freefall.meta.description">
+  <title>Freefall Simulator</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪂</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/freefall.css">
+  <script type="module" src="js/freefall/main.js"></script>
+</head>
+<body>
+  <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
+  <main class="ff-main">
+    <a class="ff-back" href="index.html" data-i18n="freefall.back">← Back to the glossary</a>
+    <h1><span data-i18n="freefall.heading.line1">Body position</span><br><span data-i18n="freefall.heading.line2">in freefall</span></h1>
+    <p class="intro" data-i18n="freefall.intro"></p>
+
+    <div class="ff-stage">
+      <div id="scene" class="ff-scene"></div>
+      <div class="ff-readout">
+        <p><span class="ff-readout-label" data-i18n="freefall.status.label">Movement</span> <strong id="movement"></strong></p>
+      </div>
+      <div class="ff-caption" id="caption" aria-live="polite"></div>
+    </div>
+
+    <div id="controls" class="ff-controls"></div>
+    <div class="ff-actions">
+      <button id="reset" class="ff-action" type="button" data-i18n="freefall.reset">Neutral position</button>
+      <button id="pause" class="ff-action" type="button" aria-pressed="false" data-i18n="freefall.pause">Pause</button>
+    </div>
+  </main>
+
+  <footer>
+    <p class="disclaimer" role="note" data-i18n="freefall.disclaimer"></p>
+  </footer>
+
+  <noscript><p class="noscript">This simulator needs JavaScript. / Este simulador precisa de JavaScript para funcionar.</p></noscript>
+</body>
+</html>

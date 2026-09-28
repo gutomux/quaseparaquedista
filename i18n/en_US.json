@@ -92,5 +92,72 @@
       }
     }
   },
-  "disclaimer": "Remember that this glossary is only a complementary tool for your learning. Always ask all your questions to a certified instructor."
+  "disclaimer": "Remember that this glossary is only a complementary tool for your learning. Always ask all your questions to a certified instructor.",
+  "freefall": {
+    "meta": {
+      "title": "Freefall Simulator",
+      "description": "See how body position changes a skydiver's flight in freefall."
+    },
+    "back": "← Back to the glossary",
+    "heading": {
+      "line1": "Body position",
+      "line2": "in freefall"
+    },
+    "intro": "Turn the positions below on and off and watch what happens to the skydiver. The dots are the air rushing past you: the faster they rise, the faster you fall.",
+    "sceneLabel": "Animation of a skydiver in freefall, belly to earth, seen from the side.",
+    "topView": "Top view",
+    "groups": {
+      "legs": "Legs",
+      "arms": "Arms",
+      "arch": "Arch",
+      "turn": "Turns"
+    },
+    "controls": {
+      "legsStretch": "Stretch legs",
+      "legsTuck": "Tuck legs",
+      "armsForward": "Reach arms forward",
+      "armsBack": "Pull arms back",
+      "archMore": "Arch more",
+      "archFlat": "De-arch",
+      "dipLeft": "Turn left",
+      "dipRight": "Turn right"
+    },
+    "reset": "Neutral position",
+    "pause": "Pause",
+    "play": "Resume",
+    "status": {
+      "label": "Movement",
+      "move": {
+        "forward": "Forward",
+        "backward": "Backward",
+        "still": "Holding still"
+      },
+      "turn": {
+        "left": "turning left",
+        "right": "turning right"
+      }
+    },
+    "explain": {
+      "neutral": "Neutral box position: hips down, arms and legs symmetrical. The air pushes evenly on your body, so you fall stable without moving.",
+      "legsStretch": "Legs stretched: the air pushes your legs up, your head drops and you move forward.",
+      "legsTuck": "Legs tucked: your legs leave the airflow, your back tilts and you slide backward.",
+      "armsForward": "Arms forward: the air pushes the front of your body up and you slide backward.",
+      "armsBack": "Arms pulled back: the front of your body catches less air, your head drops and you move forward.",
+      "archMore": "More arch: your body is more stable and has less drag, so you fall faster.",
+      "archFlat": "No arch: more area against the air, so you fall slower, but you are less stable and may rock.",
+      "dipLeft": "Left shoulder down: air spills off your left side and you turn left.",
+      "dipRight": "Right shoulder down: air spills off your right side and you turn right."
+    },
+    "disclaimer": "This animation is a learning aid to help you understand how freefall works. Trust your instructor, and always take your questions to a certified instructor.",
+    "promo": {
+      "badge": "New",
+      "title": "Freefall simulator",
+      "text": "See how legs, arms and arch change your flight.",
+      "button": "🪂 Open the simulator"
+    },
+    "combos": {
+      "moreArea": "Result: more of your body is exposed to the wind, which slows your fall a little. To slow down more, you can also reduce your arch (de-arch).",
+      "slowFall": "This position is used to slow your fall rate. You can also turn your face to the side, which slows the fall rate a little more."
+    }
+  }
 }

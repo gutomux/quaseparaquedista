@@ -22,6 +22,26 @@ function appendSegments(parent, segments) {
   }
 }
 
+/**
+ * Fill every element marked with data-i18n (text) or data-i18n-attr
+ * ("attribute:key; attribute:key") with the current locale's text.
+ * Shared with the freefall page, which passes its own title key.
+ */
+export function applyTranslations(root, t, titleKey = 'meta.title') {
+  const doc = root.ownerDocument || root;
+  doc.documentElement.lang = t('meta.lang');
+  doc.title = t(titleKey);
+  root.querySelectorAll('[data-i18n]').forEach((node) => {
+    node.textContent = t(node.dataset.i18n);
+  });
+  root.querySelectorAll('[data-i18n-attr]').forEach((node) => {
+    node.dataset.i18nAttr.split(';').forEach((pair) => {
+      const [attr, key] = pair.split(':').map((p) => p.trim());
+      if (attr && key) node.setAttribute(attr, t(key));
+    });
+  });
+}
+
 /** Flag emoji for a locale's region, e.g. 'pt_BR' -> 🇧🇷. */
 export function flagEmoji(locale) {
   const region = String(locale).split('_')[1] || '';
@@ -56,24 +76,9 @@ export class GlossaryView {
     this.feedbackBox = root.querySelector('.feedback');
   }
 
-  /**
-   * Fill every element marked with data-i18n (text) or data-i18n-attr
-   * ("attribute:key; attribute:key") with the current locale's text.
-   */
+  /** Fill every data-i18n / data-i18n-attr element with the current locale's text. */
   applyTranslations() {
-    const { t } = this;
-    const doc = this.root.ownerDocument || this.root;
-    doc.documentElement.lang = t('meta.lang');
-    doc.title = t('meta.title');
-    this.root.querySelectorAll('[data-i18n]').forEach((node) => {
-      node.textContent = t(node.dataset.i18n);
-    });
-    this.root.querySelectorAll('[data-i18n-attr]').forEach((node) => {
-      node.dataset.i18nAttr.split(';').forEach((pair) => {
-        const [attr, key] = pair.split(':').map((p) => p.trim());
-        if (attr && key) node.setAttribute(attr, t(key));
-      });
-    });
+    applyTranslations(this.root, this.t);
   }
 
   typeBadge(type) {

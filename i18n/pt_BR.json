@@ -92,5 +92,72 @@
       }
     }
   },
-  "disclaimer": "Lembre que esse glossário é só uma ferramenta complementar para o seu aprendizado. Sempre pergunte todas as suas dúvidas para um instrutor certificado."
+  "disclaimer": "Lembre que esse glossário é só uma ferramenta complementar para o seu aprendizado. Sempre pergunte todas as suas dúvidas para um instrutor certificado.",
+  "freefall": {
+    "meta": {
+      "title": "Simulador de queda livre",
+      "description": "Veja como a posição do corpo muda o voo do paraquedista na queda livre."
+    },
+    "back": "← Voltar ao glossário",
+    "heading": {
+      "line1": "Posição de corpo",
+      "line2": "na queda livre"
+    },
+    "intro": "Ligue e desligue as posições abaixo e veja o que acontece com o paraquedista. Os pontos são o ar passando por você: quanto mais rápido eles sobem, mais rápido você cai.",
+    "sceneLabel": "Animação de um paraquedista em queda livre, de barriga para baixo, visto de lado.",
+    "topView": "Vista de cima",
+    "groups": {
+      "legs": "Pernas",
+      "arms": "Braços",
+      "arch": "Arco",
+      "turn": "Curvas"
+    },
+    "controls": {
+      "legsStretch": "Estender as pernas",
+      "legsTuck": "Recolher as pernas",
+      "armsForward": "Braços à frente",
+      "armsBack": "Braços para trás",
+      "archMore": "Arquear mais",
+      "archFlat": "Desarquear",
+      "dipLeft": "Curva para a esquerda",
+      "dipRight": "Curva para a direita"
+    },
+    "reset": "Posição neutra",
+    "pause": "Pausar",
+    "play": "Continuar",
+    "status": {
+      "label": "Deslocamento",
+      "move": {
+        "forward": "Para frente",
+        "backward": "Para trás",
+        "still": "Parado"
+      },
+      "turn": {
+        "left": "girando para a esquerda",
+        "right": "girando para a direita"
+      }
+    },
+    "explain": {
+      "neutral": "Posição neutra (box): quadril para baixo, braços e pernas simétricos. O ar empurra o corpo por igual, e você cai estável, sem se deslocar.",
+      "legsStretch": "Pernas estendidas: o ar empurra suas pernas para cima, a cabeça desce e você se desloca para frente.",
+      "legsTuck": "Pernas recolhidas: as pernas saem do vento, as costas se inclinam e você se desloca para trás.",
+      "armsForward": "Braços à frente: o ar empurra a parte da frente do corpo para cima e você se desloca para trás.",
+      "armsBack": "Braços para trás: a parte da frente do corpo pega menos ar, a cabeça desce e você se desloca para frente.",
+      "archMore": "Mais arco: o corpo fica mais estável e oferece menos resistência ao ar, então você cai mais rápido.",
+      "archFlat": "Sem arco: mais área contra o ar, então você cai mais devagar, mas fica menos estável e pode balançar.",
+      "dipLeft": "Ombro esquerdo abaixo: o ar escapa pelo lado esquerdo e você gira para a esquerda.",
+      "dipRight": "Ombro direito abaixo: o ar escapa pelo lado direito e você gira para a direita."
+    },
+    "disclaimer": "Esta animação é uma ferramenta auxiliar para ajudar a entender como a queda livre funciona. Confie no seu instrutor e sempre tire suas dúvidas com um instrutor certificado.",
+    "promo": {
+      "badge": "Novo",
+      "title": "Simulador de queda livre",
+      "text": "Veja como pernas, braços e arco mudam o seu voo.",
+      "button": "🪂 Abrir o simulador"
+    },
+    "combos": {
+      "moreArea": "Resultado: mais área do corpo fica exposta ao vento, reduzindo um pouco sua velocidade de queda. Para reduzir mais, você também pode diminuir o ângulo de sela (desarquear).",
+      "slowFall": "Posição usada para diminuir a velocidade de queda. Ainda podemos virar o rosto de lado, ajudando mais um pouco a diminuir a razão de queda."
+    }
+  }
 }

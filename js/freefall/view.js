@@ -1,0 +1,164 @@
+/**
+ * Freefall page view: builds the scene and controls, draws each frame,
+ * and reports button presses through callbacks. It holds no flight logic;
+ * main.js asks sim.js what happens and passes the results in here.
+ * All text is inserted with textContent, never innerHTML.
+ */
+import { JumperFigure } from './figure.js';
+
+const SVG_NS = 'http://www.w3.org/2000/svg';
+/** Scene size in SVG units, centered on the jumper's starting point. */
+export const SCENE = Object.freeze({ width: 400, height: 260 });
+const DOT_COUNT = 70;
+/** Air speed past the jumper at the neutral fall rate, in scene units per second. */
+const AIR_SPEED = 240;
+
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+
+function svg(tag, attrs = {}) {
+  const node = document.createElementNS(SVG_NS, tag);
+  for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
+  return node;
+}
+
+export class FreefallView {
+  /**
+   * @param {Document|HTMLElement} root
+   * @param {Function} t Translator from createTranslator().
+   * @param {Array<{id: string, group: string}>} controls From sim.js.
+   * @param {string[]} groups Group order for the button sets.
+   */
+  constructor(root, t, controls, groups) {
+    this.root = root;
+    this.t = t;
+    this.scene = root.querySelector('#scene');
+    this.controlsBox = root.querySelector('#controls');
+    this.caption = root.querySelector('#caption');
+    this.status = root.querySelector('#movement');
+    this.pauseButton = root.querySelector('#pause');
+    this.resetButton = root.querySelector('#reset');
+    this.buttons = new Map();
+
+    this.buildScene();
+    this.buildControls(controls, groups);
+  }
+
+  buildScene() {
+    const { width: w, height: h } = SCENE;
+    const root = svg('svg', { viewBox: `${-w / 2} ${-h / 2} ${w} ${h}`, role: 'img' });
+    root.setAttribute('aria-label', this.t('freefall.sceneLabel'));
+
+    this.dotLayer = svg('g', { class: 'ff-air' });
+    this.dots = Array.from({ length: DOT_COUNT }, () => {
+      const depth = 0.35 + Math.random() * 0.65; // nearer dots are bigger and faster
+      const node = svg('circle', { r: (0.8 + depth * 1.6).toFixed(2), opacity: (0.25 + depth * 0.5).toFixed(2) });
+      this.dotLayer.append(node);
+      return { node, depth, x: (Math.random() - 0.5) * w, y: (Math.random() - 0.5) * h };
+    });
+
+    this.figure = new JumperFigure('side', 1.9);
+
+    // Heading compass: the same jumper seen from above, in the corner.
+    const r = 34;
+    this.compass = svg('g', { class: 'ff-compass', transform: `translate(${w / 2 - r - 10} ${-h / 2 + r + 10})` });
+    this.topFigure = new JumperFigure('top', 0.62);
+    const label = svg('text', { class: 'ff-compass-label', y: r + 13, 'text-anchor': 'middle' });
+    label.textContent = this.t('freefall.topView');
+    this.compass.append(svg('circle', { class: 'ff-compass-ring', r }), this.topFigure.node, label);
+
+    root.append(this.dotLayer, this.figure.node, this.compass);
+    this.scene.replaceChildren(root);
+  }
+
+  buildControls(controls, groups) {
+    const sets = groups.map((group) => {
+      const set = el('fieldset', 'ff-group');
+      set.append(el('legend', '', this.t(`freefall.groups.${group}`)));
+      for (const control of controls.filter((c) => c.group === group)) {
+        const button = el('button', 'ff-toggle', this.t(`freefall.controls.${control.id}`));
+        button.type = 'button';
+        button.dataset.control = control.id;
+        button.setAttribute('aria-pressed', 'false');
+        this.buttons.set(control.id, button);
+        set.append(button);
+      }
+      return set;
+    });
+    this.controlsBox.replaceChildren(...sets);
+  }
+
+  /**
+   * @param {object} handlers
+   * @param {(id: string) => void} handlers.onToggle
+   * @param {() => void} handlers.onReset
+   * @param {() => void} handlers.onPause
+   */
+  bind({ onToggle, onReset, onPause }) {
+    this.controlsBox.addEventListener('click', (e) => {
+      const button = e.target.closest('[data-control]');
+      if (button) onToggle(button.dataset.control);
+    });
+    this.resetButton.addEventListener('click', onReset);
+    this.pauseButton.addEventListener('click', onPause);
+  }
+
+  /**
+   * Show which buttons are on, and explain the current position.
+   * @param {string[]} activeIds
+   * @param {{move: string, turn: string|null}} description From sim.describe().
+   * @param {string|null} combo From sim.comboNote(): an extra note for a combination.
+   */
+  renderPose(activeIds, description, combo = null) {
+    for (const [id, button] of this.buttons) button.setAttribute('aria-pressed', String(activeIds.includes(id)));
+
+    const lines = activeIds.length
+      ? activeIds.map((id) => this.t(`freefall.explain.${id}`))
+      : [this.t('freefall.explain.neutral')];
+    const paragraphs = lines.map((text) => el('p', '', text));
+    if (combo) paragraphs.push(el('p', 'ff-combo', this.t(`freefall.combos.${combo}`)));
+    this.caption.replaceChildren(...paragraphs);
+
+    const move = this.t(`freefall.status.move.${description.move}`);
+    const turn = description.turn ? `, ${this.t(`freefall.status.turn.${description.turn}`)}` : '';
+    this.status.textContent = move + turn;
+  }
+
+  setPaused(paused) {
+    this.pauseButton.textContent = this.t(paused ? 'freefall.play' : 'freefall.pause');
+    this.pauseButton.setAttribute('aria-pressed', String(paused));
+  }
+
+  /**
+   * Draw one frame.
+   * @param {object} frame
+   * @param {object} frame.pose Eased pose for the figure.
+   * @param {object} frame.state From sim.step(); x is in scene units.
+   * @param {number} frame.dt Seconds since the last frame.
+   */
+  draw({ pose, state, dt }) {
+    const { width: w, height: h } = SCENE;
+    const { flight } = state;
+
+    for (const dot of this.dots) {
+      dot.y -= AIR_SPEED * flight.fallRate * dot.depth * dt;
+      if (dot.y < -h / 2) {
+        dot.y += h;
+        dot.x = (Math.random() - 0.5) * w;
+      }
+      dot.node.setAttribute('cx', dot.x.toFixed(1));
+      dot.node.setAttribute('cy', dot.y.toFixed(1));
+    }
+
+    const span = w + 80;
+    const x = ((((state.x + span / 2) % span) + span) % span) - span / 2;
+    const rock = flight.wobble * 9 * Math.sin(state.time * 2 * Math.PI * 1.1);
+    const view = { heading: state.heading, tilt: flight.drift * 6, rock };
+    this.figure.update(pose, { ...view, x });
+    this.topFigure.update(pose, view);
+  }
+}
