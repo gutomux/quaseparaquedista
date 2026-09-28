@@ -28,8 +28,8 @@
           ]
         },
         "pt_BR": {
-          "term": "AAD",
-          "expansion": "Automatic Activation Device (DAA – disparador de abertura automática do reserva)",
+          "term": "DAA",
+          "expansion": "DAA: Dispositivo de Abertura Automática - do reserva",
           "definition": "Dispositivo que abre o reserva sozinho: lê a pressão e a velocidade de queda e, abaixo de uma altura-limite em alta velocidade, corta o loop de fechamento do reserva. Deve ser ligado no solo, no local e no dia do salto. Ex.: Vigil, Cypres, FXC, Astra.",
           "aliases": [
             "AAD",
