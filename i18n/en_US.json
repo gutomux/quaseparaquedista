@@ -85,7 +85,7 @@
       },
       "match": {
         "from": "Allowed from Category {category} up.",
-        "aboveRecommended": "Allowed from Category {category} up, above the recommended {recommended} for that category.",
+        "aboveRecommended": "Allowed from Category {category} up.",
         "onlyD": "Only Category D.",
         "experienceC": "In Category C this needs at least 100 jumps at up to {recommended} on a similar canopy.",
         "belowStudentMin": "Below {min}, which is the minimum for students (AI)."
