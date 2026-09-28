@@ -2910,9 +2910,10 @@
         },
         "pt_BR": {
           "term": "Vento de través",
-          "definition": "Vento vindo de uma das laterais.",
+          "definition": "Vento vindo de uma das laterais. Podemos corrigir derivando para o lado que vem o vento. O deslocamento lateral do velame é chamado de drift.",
           "aliases": [
-            "Vento de través"
+            "Vento de través",
+            "Través"
           ]
         }
       }
@@ -5288,7 +5289,8 @@
           "aliases": [
             "Novato",
             "Manicaca",
-            "Rookie"
+            "Rookie",
+            "Figo"
           ]
         }
       }
