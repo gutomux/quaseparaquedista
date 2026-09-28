@@ -79,7 +79,7 @@ mark{background:var(--mark);color:inherit;border-radius:.2rem;padding:0 .05em}
   border-radius:999px;padding:.3rem .85rem;cursor:pointer
 }
 .chip:hover,.chip:focus-visible{border-color:var(--ink);outline:none}
-#result{margin-top:2.25rem}
+#result{margin-top:1.25rem}
 #result:empty{display:none}
 .card{background:var(--panel);border-radius:1.25rem;padding:1.6rem 1.6rem 1.4rem;border-left:6px solid var(--accent)}
 .card .kind{display:inline-block;margin:0 0 .6rem}
