@@ -6,13 +6,14 @@ import { CONFIG } from './config.js';
 import { detectLocale, loadMessages, createTranslator } from './i18n.js';
 import { loadGlossary } from './data.js';
 import { createIndex } from './search.js';
-import { GlossaryView } from './view.js';
+import { GlossaryView, supportsFlagEmoji } from './view.js';
 import { GlossaryController } from './controller.js';
 
 async function init() {
   const locale = detectLocale(navigator.languages || [navigator.language], CONFIG.supportedLocales, CONFIG.defaultLocale);
+  const viewOptions = { flags: supportsFlagEmoji(navigator) };
   let t = createTranslator({}, locale);
-  let view = new GlossaryView(document, t);
+  let view = new GlossaryView(document, t, viewOptions);
 
   try {
     const [messages, glossary] = await Promise.all([
@@ -20,7 +21,7 @@ async function init() {
       loadGlossary(CONFIG.dataUrl, CONFIG.supportedLocales),
     ]);
     t = createTranslator(messages, locale);
-    view = new GlossaryView(document, t);
+    view = new GlossaryView(document, t, viewOptions);
 
     const controller = new GlossaryController({
       entries: glossary.entries,

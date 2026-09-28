@@ -74,6 +74,11 @@ test('the preferred locale wins a tie', () => {
   assert.equal(first.locale, 'pt_BR');
 });
 
+test('definition matches are dropped when a name matches', () => {
+  assert.deepEqual(terms('wing load', 'pt_BR'), ['Carga alar']);
+  assert.deepEqual(terms('carga alar', 'pt_BR'), ['Carga alar']);
+});
+
 test('empty and unknown queries return nothing', () => {
   assert.deepEqual(terms(''), []);
   assert.deepEqual(terms('zzzz'), []);

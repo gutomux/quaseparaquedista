@@ -107,15 +107,20 @@ export function scoreItem(item, query, { minDefinitionQueryLength = 3, preferLoc
 
 /**
  * Return the best-matching entries for a query in any locale, most relevant first.
+ * Definition matches are a fallback: they are dropped when any entry matches by name,
+ * so "wing load" finds "Wing loading" but not every term that mentions it.
  * Ties are broken by shorter term, then alphabetically (in the preferred locale).
  * @returns {Array<{entry: object, locale: string}>} Raw entry plus the locale that matched.
  */
 export function search(index, query, { limit = 8, minDefinitionQueryLength = 3, preferLocale } = {}) {
   if (!query || !query.trim()) return [];
   const label = (item) => (item.entry.translations[preferLocale] || item.entry.translations[item.locales[0].locale]).term;
-  return index
+  const matches = index
     .map((item) => ({ item, ...scoreItem(item, query, { minDefinitionQueryLength, preferLocale }) }))
-    .filter((r) => r.score > 0)
+    .filter((r) => r.score > 0);
+  const hasNameMatch = matches.some((r) => r.score > SCORE.DEFINITION_CONTAINS);
+  return matches
+    .filter((r) => !hasNameMatch || r.score > SCORE.DEFINITION_CONTAINS)
     .sort((a, b) =>
       b.score - a.score
       || label(a.item).length - label(b.item).length

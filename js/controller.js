@@ -2,9 +2,9 @@
  * The controller: holds UI state and connects the search logic to the view.
  * It never touches the DOM directly; it only calls view methods.
  *
- * Search always covers every locale. Results are shown in the user's locale;
- * when a match came from another language, the suggestion shows that name
- * too, so a Portuguese reader typing "canopy" sees "Velame — Em inglês: Canopy".
+ * Search always covers every locale. Each suggestion shows the term in every
+ * language, the user's locale first, so a Portuguese reader typing "canopy"
+ * sees "Velame 🇧🇷 | Canopy 🇺🇸".
  */
 import { search, highlightSegments, findRelated, normalize } from './search.js';
 import { localizeEntry } from './data.js';
@@ -67,22 +67,17 @@ export class GlossaryController {
     });
   }
 
-  /** Build what one suggestion row shows, including cross-language hints. */
-  toSuggestion({ entry, locale: matchedLocale }, query) {
+  /** Build what one suggestion row shows: the term in every locale, the shown one first. */
+  toSuggestion({ entry }, query) {
     const shown = this.localize(entry);
-    const matched = entry.translations[matchedLocale];
-    const fromOtherLanguage = matchedLocale !== shown.locale
-      && normalize(matched.term) !== normalize(shown.term);
-
-    let subText;
-    if (fromOtherLanguage) {
-      subText = this.t('entry.inLanguage', { language: this.languageName(matchedLocale), term: matched.term });
-    } else {
-      subText = shown.type === 'acronym' ? shown.expansion : shown.definition;
-    }
+    const locales = [shown.locale, ...this.config.supportedLocales.filter((l) => l !== shown.locale)];
+    const names = locales
+      .filter((locale) => entry.translations[locale])
+      .map((locale) => ({ locale, segments: highlightSegments(entry.translations[locale].term, query) }));
+    const subText = shown.type === 'acronym' ? shown.expansion : shown.definition;
     return {
       entry: shown,
-      nameSegments: highlightSegments(shown.term, query),
+      names,
       subSegments: highlightSegments(subText, query),
     };
   }

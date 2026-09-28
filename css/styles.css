@@ -67,6 +67,9 @@ h1{
 }
 .kind.acr{border-color:var(--accent);color:var(--accent-ink)}
 .s-name{font-weight:700;overflow-wrap:anywhere}
+.s-flag{font-weight:400}
+.s-lang{font-size:.8rem;font-weight:400;color:var(--ink-soft)}
+.s-sep{font-weight:400;color:var(--ink-soft)}
 .s-sub{font-size:.9rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 mark{background:var(--mark);color:inherit;border-radius:.2rem;padding:0 .05em}
 .empty-row{padding:.8rem 1rem;color:var(--ink-soft)}

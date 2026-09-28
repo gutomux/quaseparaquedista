@@ -3599,8 +3599,8 @@
           ]
         },
         "pt_BR": {
-          "term": "Final para pouso",
-          "definition": "Última perna do circuito, a partir do ponto C (cerca de 300 pés): vento de nariz, pequenas correções e voo total.",
+          "term": "Reta de pouso",
+          "definition": "Última perna do circuito, a partir do ponto C (cerca de 300 pés): vento de nariz, somente pequenas correções e braços altos até a hora de fazer o flare.",
           "aliases": [
             "Final para pouso",
             "Final",
@@ -6092,7 +6092,7 @@
       "calculator": "wing-loading",
       "translations": {
         "en_US": {
-          "term": "Wing loading",
+          "term": "Wing load",
           "definition": "The ratio of the jumper's total weight (body weight + equipment weight) to the total canopy area. Brazil's CBPq sets limits per category, shown in the table below. You can calculate it like this:",
           "aliases": [
             "Wing loading"

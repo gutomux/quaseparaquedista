@@ -22,15 +22,29 @@ function appendSegments(parent, segments) {
   }
 }
 
+/** Flag emoji for a locale's region, e.g. 'pt_BR' -> 🇧🇷. */
+export function flagEmoji(locale) {
+  const region = String(locale).split('_')[1] || '';
+  return [...region.toUpperCase()].map((c) => String.fromCodePoint(0x1f1e6 + c.charCodeAt(0) - 65)).join('');
+}
+
+/** Windows has no flag emoji (it shows letters), so it gets locale codes instead. */
+export function supportsFlagEmoji(nav) {
+  const platform = nav?.userAgentData?.platform || nav?.platform || nav?.userAgent || '';
+  return !/\bwin(dows|32|64)\b/i.test(platform);
+}
 
 export class GlossaryView {
   /**
    * @param {Document|HTMLElement} root Where to look up the page elements.
    * @param {Function} t Translator from createTranslator().
+   * @param {object} [options]
+   * @param {boolean} [options.flags=true] Show languages as flags; false shows codes like "(pt_BR)".
    */
-  constructor(root = document, t = (key) => key) {
+  constructor(root = document, t = (key) => key, { flags = true } = {}) {
     this.root = root;
     this.t = t;
+    this.flags = flags;
     this.input = root.querySelector('#q');
     this.clearButton = root.querySelector('#clear');
     this.list = root.querySelector('#list');
@@ -126,13 +140,13 @@ export class GlossaryView {
   /* ---------- Suggestions ---------- */
 
   /**
-   * @param {Array<{entry: object, nameSegments: Array, subSegments: Array}>} items
-   *   entry is already localized (see localizeEntry). subSegments may show
-   *   the expansion, the definition, or the matched name in another language.
+   * @param {Array<{entry: object, names: Array<{locale: string, segments: Array}>, subSegments: Array}>} items
+   *   entry is already localized (see localizeEntry). names holds the term in
+   *   every locale, shown first. subSegments shows the expansion or the definition.
    * @param {number} activeIndex
    */
   renderSuggestions(items, activeIndex) {
-    const options = items.map(({ entry, nameSegments, subSegments }, i) => {
+    const options = items.map(({ entry, names, subSegments }, i) => {
       const li = el('li');
       li.id = `opt-${i}`;
       li.setAttribute('role', 'option');
@@ -140,7 +154,11 @@ export class GlossaryView {
       li.dataset.index = String(i);
       const name = el('span', 's-name');
       const sub = el('span', 's-sub');
-      appendSegments(name, nameSegments);
+      names.forEach(({ locale, segments }, n) => {
+        if (n > 0) name.append(el('span', 's-sep', ' | '));
+        appendSegments(name, segments);
+        name.append(' ', this.languageTag(locale));
+      });
       appendSegments(sub, subSegments);
       li.append(this.typeBadge(entry.type), name, sub);
       return li;
@@ -149,6 +167,16 @@ export class GlossaryView {
     this.openList();
     this.setActive(activeIndex);
     this.announce(this.t('search.count', { count: items.length }));
+  }
+
+  /** A flag (named for screen readers) or, where flags don't render, the locale code. */
+  languageTag(locale) {
+    if (!this.flags) return el('span', 's-lang', `(${locale})`);
+    const flag = el('span', 's-flag', flagEmoji(locale));
+    flag.setAttribute('role', 'img');
+    flag.setAttribute('aria-label', this.t(`languages.${locale}`));
+    flag.title = this.t(`languages.${locale}`);
+    return flag;
   }
 
   renderNoMatches(query) {
