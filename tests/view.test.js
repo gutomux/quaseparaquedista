@@ -18,3 +18,10 @@ test('only Windows platforms lose flags', () => {
   assert.equal(supportsFlagEmoji({ userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }), false);
   assert.equal(supportsFlagEmoji({ userAgent: 'Something Darwin/24.0' }), true);
 });
+
+test('carousel: nextIndex wraps around in both directions', async () => {
+  const { nextIndex } = await import('../js/carousel.js');
+  assert.equal(nextIndex(0, 3), 1);
+  assert.equal(nextIndex(2, 3), 0);
+  assert.equal(nextIndex(0, 3, -1), 2);
+});

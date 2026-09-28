@@ -45,7 +45,7 @@
   },
   "error": {
     "title": "Glossary unavailable",
-    "body": "The glossary data could not be loaded. Refresh the page, or check that the data and i18n folders are published next to index.html."
+    "body": "The glossary data could not be loaded. Refresh the page, or check that the data and i18n folders are published next to glossary.html."
   },
   "feedback": {
     "hint": "Missing a term or spotted a mistake?",
@@ -98,7 +98,6 @@
       "title": "Freefall Simulator",
       "description": "See how body position changes a skydiver's flight in freefall."
     },
-    "back": "← Back to the glossary",
     "heading": {
       "line1": "Body position",
       "line2": "in freefall"
@@ -158,6 +157,59 @@
     "combos": {
       "moreArea": "Result: more of your body is exposed to the wind, which slows your fall a little. To slow down more, you can also reduce your arch (de-arch).",
       "slowFall": "This position is used to slow your fall rate. You can also turn your face to the side, which slows the fall rate a little more."
+    }
+  },
+  "nav": {
+    "home": "← Home"
+  },
+  "home": {
+    "meta": {
+      "title": "QuaseParaquedista.com.br",
+      "description": "Skydiving tools for people who have never jumped, students and experienced jumpers."
+    },
+    "lead": "Welcome! Here you'll find free tools to learn and review skydiving, made for the whole community.",
+    "audiences": {
+      "firstTimer": {
+        "title": "Never jumped?",
+        "text": "Feel free to look around and, if you feel like jumping, find a USPA-registered school. You'll be welcome!"
+      },
+      "student": {
+        "title": "Just starting your course?",
+        "text": "Review AFF acronyms and terms, and see how each body position changes your flight."
+      },
+      "experienced": {
+        "title": "Already a skydiver?",
+        "text": "Use the tools, share them with your students and friends, and help us improve by sending suggestions."
+      }
+    },
+    "menu": {
+      "button": "Choose a tool",
+      "glossary": {
+        "name": "Skydiving glossary",
+        "text": "Acronyms and terms in Portuguese and English."
+      },
+      "freefall": {
+        "name": "Freefall simulator",
+        "text": "See how body position changes your flight."
+      }
+    },
+    "instagram": {
+      "text": "Follow us on Instagram:"
+    },
+    "feedbackHint": "Your feedback helps us improve the site for the whole community.",
+    "feedbackButton": "Send a suggestion or correction",
+    "disclaimer": "These tools complement your training. Always take your questions to a certified instructor.",
+    "carousel": {
+      "label": "Photos from Instagram @quaseparaquedista",
+      "slides": {
+        "1": "A smiling skydiver in freefall, belly to earth, above green fields. Text on the photo, in Portuguese: “There is a side of life”.",
+        "2": "A skydiver descending under a yellow and black canopy against the sky. Text on the photo: “that you only reach”.",
+        "3": "A smiling skydiver on the ground after landing, holding the yellow canopy and a helmet. Text on the photo: “by facing fear head-on”."
+      },
+      "open": "(opens the post on Instagram in a new tab)",
+      "goTo": "Photo {n} of {total}",
+      "pause": "Pause",
+      "play": "Play"
     }
   }
 }

@@ -3,61 +3,83 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Search skydiving acronyms and terms in English or Portuguese." data-i18n-attr="content: meta.description">
-  <title>Skydiving Glossary</title>
+  <meta name="description" content="Skydiving tools for first-timers, students and experienced jumpers." data-i18n-attr="content: home.meta.description">
+  <title>QuaseParaquedista.com.br</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪂</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
   <link rel="stylesheet" href="css/styles.css">
-  <script type="module" src="js/main.js"></script>
+  <link rel="stylesheet" href="css/home.css">
+  <script type="module" src="js/home.js"></script>
 </head>
 <body>
   <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
-  <main>
-    <h1><span data-i18n="heading.line1">Skydiving</span><br><span data-i18n="heading.line2">glossary</span></h1>
-    <p class="intro" id="intro" data-i18n="intro"></p>
+  <main class="home">
+    <h1 class="home-title">QuaseParaquedista<span class="home-domain">.com.br</span></h1>
+    <p class="home-lead" data-i18n="home.lead">Welcome!</p>
 
-    <div class="search">
-      <div class="field">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.8-4.8"/></svg>
-        <label class="sr" for="q" data-i18n="search.label">Search the glossary</label>
-        <input id="q" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"
-               role="combobox" aria-expanded="false" aria-controls="list" aria-autocomplete="list"
-               aria-describedby="intro" data-i18n-attr="placeholder: search.placeholder">
-        <button id="clear" type="button" data-i18n="search.clear">Clear</button>
-      </div>
-      <ul id="list" role="listbox" hidden data-i18n-attr="aria-label: search.suggestionsLabel"></ul>
+    <div class="home-intro">
+      <ul class="home-audiences">
+        <li><strong data-i18n="home.audiences.firstTimer.title">Never jumped?</strong> <span data-i18n="home.audiences.firstTimer.text"></span></li>
+        <li><strong data-i18n="home.audiences.student.title">Student?</strong> <span data-i18n="home.audiences.student.text"></span></li>
+        <li><strong data-i18n="home.audiences.experienced.title">Experienced jumper?</strong> <span data-i18n="home.audiences.experienced.text"></span></li>
+      </ul>
+
+      <!-- Photos from the Instagram post, in its order. Add a slide by adding an <img class="carousel-slide">. -->
+      <section class="carousel" aria-roledescription="carousel" data-i18n-attr="aria-label: home.carousel.label">
+        <a class="carousel-frame" href="https://www.instagram.com/p/DZfUSjYlnWS/" target="_blank" rel="noopener noreferrer">
+          <img class="carousel-slide is-active" src="images/carousel/1.jpg" width="1080" height="1350" alt="" data-i18n-attr="alt: home.carousel.slides.1">
+          <img class="carousel-slide" src="images/carousel/2.jpg" width="1080" height="1350" alt="" loading="lazy" data-i18n-attr="alt: home.carousel.slides.2">
+          <img class="carousel-slide" src="images/carousel/3.jpg" width="1080" height="1350" alt="" loading="lazy" data-i18n-attr="alt: home.carousel.slides.3">
+          <span class="sr" data-i18n="home.carousel.open">(opens the post on Instagram in a new tab)</span>
+        </a>
+        <div class="carousel-controls">
+          <div class="carousel-dots"></div>
+          <button class="carousel-toggle" type="button" aria-pressed="false" data-i18n="home.carousel.pause">Pause</button>
+        </div>
+      </section>
     </div>
 
-    <!-- Right under the search bar, so a result pushes everything below it down. -->
-    <section id="result" aria-live="polite"></section>
+    <div class="home-menu">
+      <button id="menu-button" class="home-menu-button" type="button" aria-expanded="false" aria-controls="menu">
+        <span data-i18n="home.menu.button">Choose a tool</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul id="menu" class="home-menu-list" hidden>
+        <li>
+          <a href="glossary.html">
+            <span class="home-menu-name" data-i18n="home.menu.glossary.name">Skydiving glossary</span>
+            <span class="home-menu-text" data-i18n="home.menu.glossary.text">Acronyms and terms in Portuguese and English.</span>
+          </a>
+        </li>
+        <li>
+          <a href="freefall.html">
+            <span class="home-menu-name" data-i18n="home.menu.freefall.name">Freefall simulator</span>
+            <span class="home-menu-text" data-i18n="home.menu.freefall.text">See how body position changes your flight.</span>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-    <div class="try" id="try"></div>
-    <aside class="sim-promo">
-      <span class="sim-badge" data-i18n="freefall.promo.badge">New</span>
-      <div class="sim-text">
-        <p class="sim-title" data-i18n="freefall.promo.title">Freefall simulator</p>
-        <p data-i18n="freefall.promo.text">See how legs, arms and arch change your flight.</p>
-      </div>
-      <a class="sim-button" href="freefall.html" data-i18n="freefall.promo.button">Open the simulator</a>
-    </aside>
-
-    <p class="sr" id="status" aria-live="polite"></p>
+    <p class="home-instagram">
+      <span data-i18n="home.instagram.text">Follow us on Instagram:</span>
+      <a href="https://www.instagram.com/quaseparaquedista/" target="_blank" rel="noopener noreferrer">
+        @quaseparaquedista<span class="sr" data-i18n="feedback.newTab">(opens in a new tab)</span>
+      </a>
+    </p>
   </main>
 
   <footer>
-    <p class="disclaimer" role="note" data-i18n="disclaimer"></p>
+    <p class="disclaimer" role="note" data-i18n="home.disclaimer"></p>
   </footer>
 
   <aside class="feedback" hidden>
-    <p data-i18n="feedback.hint">Missing a term or spotted a mistake?</p>
+    <p data-i18n="home.feedbackHint">Have an idea or spotted a mistake?</p>
     <a id="feedback" class="feedback-btn" href="#" target="_blank" rel="noopener noreferrer">
-      <span data-i18n="feedback.button">Suggest an entry or correction</span>
+      <span data-i18n="home.feedbackButton">Send feedback</span>
       <span class="sr" data-i18n="feedback.newTab">(opens in a new tab)</span>
     </a>
   </aside>
-
-  <noscript><p class="noscript">This glossary needs JavaScript to search. / Este glossário precisa de JavaScript para funcionar.</p></noscript>
 </body>
 </html>

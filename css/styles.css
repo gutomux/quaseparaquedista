@@ -164,3 +164,8 @@ footer:has(+ .feedback:not([hidden])){padding-bottom:1.5rem}
 }
 .sim-button:hover{border-color:var(--accent);color:var(--accent-ink)}
 .sim-button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* Link back to the welcome page, on the glossary and the simulator */
+.back-home{display:inline-block;margin-bottom:1.5rem;color:var(--ink-soft);font-weight:700;text-decoration:none}
+.back-home:hover{color:var(--accent-ink)}
+.back-home:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:.3rem}

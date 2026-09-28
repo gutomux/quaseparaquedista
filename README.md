@@ -1,6 +1,12 @@
-# Skydiving Glossary
+# QuaseParaquedista.com.br
 
-A single-page, searchable glossary of skydiving terms and acronyms in **English (en_US)** and **Brazilian Portuguese (pt_BR)**. Type one letter and suggestions appear; pick one to see its definition, its name in the other language, and related entries.
+Free skydiving tools for people who have never jumped, students and experienced jumpers, in **English (en_US)** and **Brazilian Portuguese (pt_BR)**:
+
+- **Welcome page** (`index.html`): who the site is for, a menu to open each tool, the Instagram profile [@quaseparaquedista](https://www.instagram.com/quaseparaquedista/) and the feedback button.
+- **Glossary** (`glossary.html`): a searchable glossary of skydiving terms and acronyms.
+- **Freefall simulator** (`freefall.html`): how body position changes a jumper's flight.
+
+In the glossary, type one letter and suggestions appear; pick one to see its definition, its name in the other language, and related entries.
 
 No build step and no dependencies: plain HTML, CSS and JavaScript modules, ready for GitHub Pages.
 
@@ -17,8 +23,13 @@ To test the other language, change your browser's preferred language, or in Chro
 ## Project structure
 
 ```
-index.html            Page markup only; text comes from i18n files via data-i18n attributes
-css/styles.css        All styling, with light and dark themes
+index.html            Welcome page: intro, tool menu, Instagram link, feedback
+css/home.css          Styles for the welcome page
+js/home.js            Welcome page entry point: text, feedback link, tool menu
+js/carousel.js        Welcome page photo carousel (changes every 6 seconds)
+images/carousel/      Carousel photos (1.jpg, 2.jpg, 3.jpg), from the Instagram post
+glossary.html         Glossary page markup only; text comes from i18n files via data-i18n attributes
+css/styles.css        Shared styling for all pages, with light and dark themes
 data/glossary.json    All glossary entries, with one translation block per locale
 i18n/en_US.json       Interface text in English
 i18n/pt_BR.json       Interface text in Brazilian Portuguese
@@ -30,7 +41,7 @@ js/view.js            View: all DOM rendering and event listening
 js/calculators.js     Entry calculators (wing loading): pure functions, no DOM
 js/feedback.js        Checks the suggestion/correction form link
 js/controller.js      Connects search logic and view, holds UI state
-js/main.js            Entry point: detects locale, loads files, starts the app
+js/main.js            Glossary entry point: detects locale, loads files, starts the app
 freefall.html         Freefall body-position simulator page
 css/freefall.css      Styles for the simulator (reuses the color tokens in styles.css)
 js/freefall/sim.js    Simulator rules: pose in, drift/fall rate/turn out. Pure functions, no DOM
@@ -119,7 +130,7 @@ To connect your form, paste its link into `feedbackFormUrl` in `js/config.js` (u
 
 ## Running locally
 
-Browsers block `fetch()` for files opened directly from disk, so serve the folder instead of double-clicking `index.html`:
+Browsers block `fetch()` for files opened directly from disk, so serve the folder instead of double-clicking the HTML files:
 
 ```
 npm start                     # needs Node.js; opens on http://localhost:8080

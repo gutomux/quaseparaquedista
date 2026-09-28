@@ -45,7 +45,7 @@
   },
   "error": {
     "title": "Glossário indisponível",
-    "body": "Não foi possível carregar os dados do glossário. Recarregue a página ou confira se as pastas data e i18n estão publicadas junto do index.html."
+    "body": "Não foi possível carregar os dados do glossário. Recarregue a página ou confira se as pastas data e i18n estão publicadas junto do glossary.html."
   },
   "feedback": {
     "hint": "Falta algum termo ou encontrou um erro?",
@@ -98,7 +98,6 @@
       "title": "Simulador de queda livre",
       "description": "Veja como a posição do corpo muda o voo do paraquedista na queda livre."
     },
-    "back": "← Voltar ao glossário",
     "heading": {
       "line1": "Posição de corpo",
       "line2": "na queda livre"
@@ -158,6 +157,59 @@
     "combos": {
       "moreArea": "Resultado: mais área do corpo fica exposta ao vento, reduzindo um pouco sua velocidade de queda. Para reduzir mais, você também pode diminuir o ângulo de sela (desarquear).",
       "slowFall": "Posição usada para diminuir a velocidade de queda. Ainda podemos virar o rosto de lado, ajudando mais um pouco a diminuir a razão de queda."
+    }
+  },
+  "nav": {
+    "home": "← Início"
+  },
+  "home": {
+    "meta": {
+      "title": "QuaseParaquedista.com.br",
+      "description": "Ferramentas de paraquedismo para quem nunca saltou, para alunos e para atletas experientes."
+    },
+    "lead": "Boas-vindas! Aqui você encontra ferramentas gratuitas para aprender e revisar o paraquedismo, feitas para toda a comunidade.",
+    "audiences": {
+      "firstTimer": {
+        "title": "Nunca saltou?",
+        "text": "Fique à vontade para bisbilhotar e, se der vontade de saltar, procure uma escola cadastrada na CBPq e seja bem-vindo!"
+      },
+      "student": {
+        "title": "Está começando o curso?",
+        "text": "Revise as siglas e os termos do AFF e veja como cada posição de corpo muda o seu voo."
+      },
+      "experienced": {
+        "title": "Já é paraquedista?",
+        "text": "Use as ferramentas, compartilhe com seus alunos e amigos, e nos ajude a melhorar, fazendo sugestões."
+      }
+    },
+    "menu": {
+      "button": "Escolha uma ferramenta",
+      "glossary": {
+        "name": "Glossário de paraquedismo",
+        "text": "Siglas e termos em português e inglês."
+      },
+      "freefall": {
+        "name": "Simulador de queda livre",
+        "text": "Veja como a posição do corpo muda o seu voo."
+      }
+    },
+    "instagram": {
+      "text": "Siga a gente no Instagram:"
+    },
+    "feedbackHint": "Sua opinião ajuda a melhorar o site para toda a comunidade.",
+    "feedbackButton": "Enviar sugestão ou correção",
+    "disclaimer": "Estas ferramentas são complementares ao seu aprendizado. Sempre tire suas dúvidas com um instrutor certificado.",
+    "carousel": {
+      "label": "Fotos do Instagram @quaseparaquedista",
+      "slides": {
+        "1": "Paraquedista sorrindo em queda livre, de barriga para baixo, sobre campos verdes. Texto na foto: “Existe um lado da vida”.",
+        "2": "Paraquedista descendo sob um velame amarelo e preto, contra o céu. Texto na foto: “que você só acessa”.",
+        "3": "Paraquedista sorrindo no solo depois do pouso, com o velame amarelo nos braços e o capacete na mão. Texto na foto: “encarando o medo de frente”."
+      },
+      "open": "(abre o post no Instagram em uma nova aba)",
+      "goTo": "Foto {n} de {total}",
+      "pause": "Pausar",
+      "play": "Continuar"
     }
   }
 }

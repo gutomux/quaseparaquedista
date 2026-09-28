@@ -2,7 +2,7 @@
  * App-wide settings. Change values here instead of inside the logic or view.
  */
 export const CONFIG = Object.freeze({
-  /** Path to the glossary data, relative to index.html. */
+  /** Path to the glossary data, relative to the pages. */
   dataUrl: './data/glossary.json',
   /** Folder with one interface-text file per locale, e.g. i18n/pt_BR.json. */
   i18nPath: './i18n',

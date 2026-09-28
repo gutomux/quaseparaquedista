@@ -37,7 +37,7 @@ async function init() {
     // Interface text may be what failed to load, so fall back to English here.
     view.renderError(
       'Glossary unavailable',
-      'The glossary data could not be loaded. Refresh the page, or check that the data and i18n folders are published next to index.html.',
+      'The glossary data could not be loaded. Refresh the page, or check that the data and i18n folders are published next to glossary.html.',
     );
   }
 }
