@@ -148,12 +148,6 @@
       "dipRight": "Ombro direito abaixo: o ar escapa pelo lado direito e você gira para a direita."
     },
     "disclaimer": "Esta animação é uma ferramenta auxiliar para ajudar a entender como a queda livre funciona. Confie no seu instrutor e sempre tire suas dúvidas com um instrutor certificado.",
-    "promo": {
-      "badge": "Novo",
-      "title": "Simulador de queda livre",
-      "text": "Veja como pernas, braços e arco mudam o seu voo.",
-      "button": "🪂 Abrir o simulador"
-    },
     "combos": {
       "moreArea": "Resultado: mais área do corpo fica exposta ao vento, reduzindo um pouco sua velocidade de queda. Para reduzir mais, você também pode diminuir o ângulo de sela (desarquear).",
       "slowFall": "Posição usada para diminuir a velocidade de queda. Ainda podemos virar o rosto de lado, ajudando mais um pouco a diminuir a razão de queda."

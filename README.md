@@ -106,7 +106,7 @@ Change the wording in `i18n/en_US.json` or `i18n/pt_BR.json`. Both files must ha
 
 ## Freefall simulator
 
-`freefall.html`, linked from the main page, shows a cartoon jumper falling belly to earth, seen from the side. Air dots rise past the jumper: the faster they rise, the faster the fall. Toggle buttons change the body position, and a caption explains each effect:
+`freefall.html`, opened from the menu on the welcome page, shows a cartoon jumper falling belly to earth, seen from the side. Air dots rise past the jumper: the faster they rise, the faster the fall. Toggle buttons change the body position, and a caption explains each effect:
 
 | Button | Effect |
 |---|---|

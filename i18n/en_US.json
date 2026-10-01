@@ -148,12 +148,6 @@
       "dipRight": "Right shoulder down: air spills off your right side and you turn right."
     },
     "disclaimer": "This animation is a learning aid to help you understand how freefall works. Trust your instructor, and always take your questions to a certified instructor.",
-    "promo": {
-      "badge": "New",
-      "title": "Freefall simulator",
-      "text": "See how legs, arms and arch change your flight.",
-      "button": "🪂 Open the simulator"
-    },
     "combos": {
       "moreArea": "Result: more of your body is exposed to the wind, which slows your fall a little. To slow down more, you can also reduce your arch (de-arch).",
       "slowFall": "This position is used to slow your fall rate. You can also turn your face to the side, which slows the fall rate a little more."

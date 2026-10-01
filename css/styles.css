@@ -146,25 +146,6 @@ footer:has(+ .feedback:not([hidden])){padding-bottom:1.5rem}
 .calc-match-note{font-size:.9rem;color:var(--ink-soft)}
 .feedback[hidden]{display:none}
 
-/* Announcement card for the freefall simulator */
-.sim-promo{
-  margin-top:1.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1rem;
-  background:var(--panel);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:1rem;padding:.9rem 1.1rem
-}
-.sim-badge{
-  flex:none;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
-  color:var(--accent-ink);border:1.5px solid var(--accent);border-radius:.4rem;padding:.1rem .5rem
-}
-.sim-text{flex:1 1 14rem}
-.sim-text p{margin:0;color:var(--ink-soft);font-size:.95rem}
-.sim-text .sim-title{color:var(--ink);font-weight:700;font-size:1.05rem}
-.sim-button{
-  flex:none;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap;
-  border:2px solid var(--ink);border-radius:999px;padding:.5rem 1.1rem;background:var(--panel)
-}
-.sim-button:hover{border-color:var(--accent);color:var(--accent-ink)}
-.sim-button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-
 /* Link back to the welcome page, on the glossary and the simulator */
 .back-home{display:inline-block;margin-bottom:1.5rem;color:var(--ink-soft);font-weight:700;text-decoration:none}
 .back-home:hover{color:var(--accent-ink)}
