@@ -157,6 +157,10 @@
     "combos": {
       "moreArea": "Resultado: mais área do corpo fica exposta ao vento, reduzindo um pouco sua velocidade de queda. Para reduzir mais, você também pode diminuir o ângulo de sela (desarquear).",
       "slowFall": "Posição usada para diminuir a velocidade de queda. Ainda podemos virar o rosto de lado, ajudando mais um pouco a diminuir a razão de queda."
+    },
+    "motionNote": {
+      "text": "A animação está pausada porque seu sistema pede menos movimento na tela.",
+      "start": "Iniciar animação"
     }
   },
   "nav": {

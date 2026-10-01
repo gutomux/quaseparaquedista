@@ -21,7 +21,13 @@
     <p class="intro" data-i18n="freefall.intro"></p>
 
     <div class="ff-stage">
-      <div id="scene" class="ff-scene"></div>
+      <div class="ff-scene-box">
+        <div id="scene" class="ff-scene"></div>
+        <div id="motion-note" class="ff-motion-note" hidden>
+          <p data-i18n="freefall.motionNote.text">Animation paused because your system asks for less motion on screen.</p>
+          <button id="motion-start" class="ff-action" type="button" data-i18n="freefall.motionNote.start">Start animation</button>
+        </div>
+      </div>
       <div class="ff-readout">
         <p><span class="ff-readout-label" data-i18n="freefall.status.label">Movement</span> <strong id="movement"></strong></p>
       </div>

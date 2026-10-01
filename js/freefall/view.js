@@ -42,6 +42,8 @@ export class FreefallView {
     this.status = root.querySelector('#movement');
     this.pauseButton = root.querySelector('#pause');
     this.resetButton = root.querySelector('#reset');
+    this.motionNote = root.querySelector('#motion-note');
+    this.startButton = root.querySelector('#motion-start');
     this.buttons = new Map();
 
     this.buildScene();
@@ -97,14 +99,16 @@ export class FreefallView {
    * @param {(id: string) => void} handlers.onToggle
    * @param {() => void} handlers.onReset
    * @param {() => void} handlers.onPause
+   * @param {() => void} handlers.onStart The reduced-motion notice's start button.
    */
-  bind({ onToggle, onReset, onPause }) {
+  bind({ onToggle, onReset, onPause, onStart }) {
     this.controlsBox.addEventListener('click', (e) => {
       const button = e.target.closest('[data-control]');
       if (button) onToggle(button.dataset.control);
     });
     this.resetButton.addEventListener('click', onReset);
     this.pauseButton.addEventListener('click', onPause);
+    this.startButton.addEventListener('click', onStart);
   }
 
   /**
@@ -126,6 +130,11 @@ export class FreefallView {
     const move = this.t(`freefall.status.move.${description.move}`);
     const turn = description.turn ? `, ${this.t(`freefall.status.turn.${description.turn}`)}` : '';
     this.status.textContent = move + turn;
+  }
+
+  /** Show or hide the notice that the animation waits because the system asks for reduced motion. */
+  setMotionNote(visible) {
+    this.motionNote.hidden = !visible;
   }
 
   setPaused(paused) {

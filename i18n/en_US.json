@@ -157,6 +157,10 @@
     "combos": {
       "moreArea": "Result: more of your body is exposed to the wind, which slows your fall a little. To slow down more, you can also reduce your arch (de-arch).",
       "slowFall": "This position is used to slow your fall rate. You can also turn your face to the side, which slows the fall rate a little more."
+    },
+    "motionNote": {
+      "text": "The animation is paused because your system asks for less motion on screen.",
+      "start": "Start animation"
     }
   },
   "nav": {

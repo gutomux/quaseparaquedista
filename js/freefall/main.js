@@ -25,7 +25,10 @@ async function init() {
   let pose = { ...NEUTRAL };
   let shown = { ...NEUTRAL };
   let state = createState();
+  // With reduced motion requested (on Windows: Animation effects turned off), start paused,
+  // say so in the scene, and start on the first position button. A visitor's own Pause wins.
   let paused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let waitingForStart = paused;
   let last = null;
 
   const render = () => view.renderPose(activeControls(pose), describe(pose), comboNote(pose));
@@ -47,22 +50,31 @@ async function init() {
     if (moving) requestAnimationFrame(frame);
   }
 
+  const setPaused = (next) => {
+    paused = next;
+    waitingForStart = false;
+    view.setPaused(paused);
+    view.setMotionNote(false);
+    last = null;
+    if (!paused) requestAnimationFrame(frame);
+  };
+
   view.bind({
-    onToggle: (id) => setPose(toggle(pose, id)),
+    onToggle: (id) => {
+      if (waitingForStart) setPaused(false);
+      setPose(toggle(pose, id));
+    },
     onReset: () => {
       state = { ...state, x: 0, heading: 0 };
       setPose({ ...NEUTRAL });
     },
-    onPause: () => {
-      paused = !paused;
-      view.setPaused(paused);
-      last = null;
-      if (!paused) requestAnimationFrame(frame);
-    },
+    onPause: () => setPaused(!paused),
+    onStart: () => setPaused(false),
   });
 
   render();
   view.setPaused(paused);
+  view.setMotionNote(waitingForStart);
   frame(performance.now(), true);
   if (!paused) requestAnimationFrame(frame);
 }

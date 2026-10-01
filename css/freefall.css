@@ -4,6 +4,15 @@
 .ff-stage{background:var(--panel);border-radius:1.25rem;overflow:hidden;border:1px solid var(--line)}
 .ff-scene{background:linear-gradient(180deg,var(--sky-top),var(--sky-low))}
 .ff-scene svg{display:block;width:100%;height:auto;aspect-ratio:400/260}
+.ff-scene-box{position:relative}
+.ff-motion-note{
+  position:absolute;left:50%;bottom:.85rem;transform:translateX(-50%);width:min(30rem,calc(100% - 1.5rem));
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.5rem .9rem;text-align:center;
+  background:var(--panel);border:1px solid var(--line);border-radius:1rem;padding:.7rem .9rem;box-shadow:0 12px 30px -16px rgba(10,37,64,.5)
+}
+.ff-motion-note[hidden]{display:none}
+.ff-motion-note p{margin:0;font-size:.92rem;color:var(--ink-soft)}
+.ff-motion-note .ff-action{background:var(--ink);color:var(--panel)}
 .ff-air circle{fill:var(--ink)}
 
 /* Jumper: fixed colors, so the suit, boots and gloves read the same on light and dark skies */
