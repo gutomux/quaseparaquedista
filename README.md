@@ -128,6 +128,10 @@ The "Suggest an entry or correction" button opens a Google Form in a new tab. Vi
 
 To connect your form, paste its link into `feedbackFormUrl` in `js/config.js` (use the link from **Send → link icon**, e.g. `https://forms.gle/...`). While the setting is empty, or isn't a Google Forms link, the button stays hidden. The button text lives under `feedback` in each i18n file.
 
+## Publishing a change
+
+GitHub Pages lets browsers keep each file for up to 10 minutes. Without care, a visitor can get a new page with an old stylesheet, which breaks the layout. To prevent that, every page links its stylesheets and main script with a version, for example `css/home.css?v=2026-10-02`. **When you change any CSS or JavaScript, update that version in all three HTML pages** (search for `?v=`), so browsers fetch the new files.
+
 ## Running locally
 
 Browsers block `fetch()` for files opened directly from disk, so serve the folder instead of double-clicking the HTML files:

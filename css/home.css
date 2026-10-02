@@ -2,8 +2,10 @@
 /* A bit wider than the other pages, to fit the photos beside the cards. */
 .home,.home ~ footer,.home ~ .feedback{max-width:52rem}
 /* Title and hamburger on one row; the button is centered on the title's first line. */
-.home-top{--title-size:clamp(2.4rem,8.5vw,5.25rem);display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
-.home-title{flex:1;min-width:0;font-size:var(--title-size)}
+/* The size leaves room for "QuaseParaquedista" (about 7.4 times the font size wide) beside the
+   button: screen width minus the side padding (2 × 1.25rem), the button (3rem) and the gap (1rem). */
+.home-top{--title-size:clamp(1.1rem,calc((100vw - 6.5rem) / 7.4),5.25rem);display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.home-title{flex:1;min-width:0;font-size:var(--title-size);overflow-wrap:anywhere}
 /* Kept whole, so a narrow screen wraps before ".com.br" rather than inside it. */
 .home-domain{display:inline-block;color:var(--accent-ink)}
 .home-lead{margin:0 0 1.25rem;font-size:1.2rem;max-width:36rem}
