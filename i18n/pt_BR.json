@@ -181,7 +181,6 @@
       }
     },
     "menu": {
-      "button": "Escolha uma ferramenta",
       "glossary": {
         "name": "Glossário de paraquedismo",
         "text": "Siglas e termos em português e inglês."
@@ -189,7 +188,10 @@
       "freefall": {
         "name": "Simulador de queda livre",
         "text": "Veja como a posição do corpo muda o seu voo."
-      }
+      },
+      "label": "Ferramentas",
+      "open": "Abrir menu de ferramentas",
+      "close": "Fechar menu de ferramentas"
     },
     "instagram": {
       "text": "Siga a gente no Instagram:"

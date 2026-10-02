@@ -16,7 +16,29 @@
 <body>
   <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
   <main class="home">
-    <h1 class="home-title">QuaseParaquedista<span class="home-domain">.com.br</span></h1>
+    <header class="home-top">
+      <h1 class="home-title">QuaseParaquedista<span class="home-domain">.com.br</span></h1>
+      <nav class="home-nav" data-i18n-attr="aria-label: home.menu.label">
+        <button id="menu-button" class="home-burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open tools menu" title="Open tools menu">
+          <span class="home-burger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+        <ul id="menu" class="home-menu-list" hidden>
+          <li>
+            <a href="glossary.html">
+              <span class="home-menu-name" data-i18n="home.menu.glossary.name">Skydiving glossary</span>
+              <span class="home-menu-text" data-i18n="home.menu.glossary.text">Acronyms and terms in Portuguese and English.</span>
+            </a>
+          </li>
+          <li>
+            <a href="freefall.html">
+              <span class="home-menu-name" data-i18n="home.menu.freefall.name">Freefall simulator</span>
+              <span class="home-menu-text" data-i18n="home.menu.freefall.text">See how body position changes your flight.</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
     <p class="home-lead" data-i18n="home.lead">Welcome!</p>
 
     <div class="home-intro">
@@ -39,27 +61,6 @@
           <button class="carousel-toggle" type="button" aria-pressed="false" data-i18n="home.carousel.pause">Pause</button>
         </div>
       </section>
-    </div>
-
-    <div class="home-menu">
-      <button id="menu-button" class="home-menu-button" type="button" aria-expanded="false" aria-controls="menu">
-        <span data-i18n="home.menu.button">Choose a tool</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-      </button>
-      <ul id="menu" class="home-menu-list" hidden>
-        <li>
-          <a href="glossary.html">
-            <span class="home-menu-name" data-i18n="home.menu.glossary.name">Skydiving glossary</span>
-            <span class="home-menu-text" data-i18n="home.menu.glossary.text">Acronyms and terms in Portuguese and English.</span>
-          </a>
-        </li>
-        <li>
-          <a href="freefall.html">
-            <span class="home-menu-name" data-i18n="home.menu.freefall.name">Freefall simulator</span>
-            <span class="home-menu-text" data-i18n="home.menu.freefall.text">See how body position changes your flight.</span>
-          </a>
-        </li>
-      </ul>
     </div>
 
     <p class="home-instagram">

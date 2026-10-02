@@ -8,10 +8,16 @@ import { applyTranslations } from './view.js';
 import { isFeedbackFormUrl } from './feedback.js';
 import { setupCarousel } from './carousel.js';
 
-/** Open/close the tool menu; closes on Escape, on a click outside and when focus leaves it. */
+/**
+ * Open/close the hamburger menu; closes on Escape, on a click outside and when focus leaves it.
+ * @returns {(label: (open: boolean) => string) => void} Sets the button's label, which says open or close.
+ */
 function setupMenu(button, menu) {
+  let label = (open) => (open ? 'Close tools menu' : 'Open tools menu');
   const setOpen = (open) => {
     button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', label(open));
+    button.title = label(open);
     menu.hidden = !open;
   };
   button.addEventListener('click', () => {
@@ -31,14 +37,19 @@ function setupMenu(button, menu) {
   menu.addEventListener('focusout', (e) => {
     if (e.relatedTarget && !menu.contains(e.relatedTarget) && e.relatedTarget !== button) setOpen(false);
   });
+  return (next) => {
+    label = next;
+    setOpen(!menu.hidden);
+  };
 }
 
 async function init() {
-  setupMenu(document.querySelector('#menu-button'), document.querySelector('#menu'));
+  const setMenuLabel = setupMenu(document.querySelector('#menu-button'), document.querySelector('#menu'));
 
   const locale = detectLocale(navigator.languages || [navigator.language], CONFIG.supportedLocales, CONFIG.defaultLocale);
   const t = createTranslator(await loadMessages(CONFIG.i18nPath, locale), locale);
   applyTranslations(document, t, 'home.meta.title');
+  setMenuLabel((open) => t(open ? 'home.menu.close' : 'home.menu.open'));
   setupCarousel(document.querySelector('.carousel'), t, {
     autoplay: !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
   });

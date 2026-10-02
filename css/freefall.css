@@ -1,5 +1,4 @@
 /* Freefall simulator page. Colors come from the tokens in styles.css. */
-.ff-main{padding-top:clamp(2rem,8vh,4.5rem)}
 
 .ff-stage{background:var(--panel);border-radius:1.25rem;overflow:hidden;border:1px solid var(--line)}
 .ff-scene{background:linear-gradient(180deg,var(--sky-top),var(--sky-low))}

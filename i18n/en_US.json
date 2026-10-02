@@ -181,7 +181,6 @@
       }
     },
     "menu": {
-      "button": "Choose a tool",
       "glossary": {
         "name": "Skydiving glossary",
         "text": "Acronyms and terms in Portuguese and English."
@@ -189,7 +188,10 @@
       "freefall": {
         "name": "Freefall simulator",
         "text": "See how body position changes your flight."
-      }
+      },
+      "label": "Tools",
+      "open": "Open tools menu",
+      "close": "Close tools menu"
     },
     "instagram": {
       "text": "Follow us on Instagram:"
