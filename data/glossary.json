@@ -450,8 +450,7 @@
           "expansion": "Confederação Brasileira de Paraquedismo (Brazilian Parachuting Confederation)",
           "definition": "Brazil's governing body for sport skydiving; issues licenses and categories and publishes the Sporting Code.",
           "aliases": [
-            "CBPq",
-            "CBPQ"
+            "CBPq"
           ]
         },
         "pt_BR": {
@@ -459,8 +458,7 @@
           "expansion": "Confederação Brasileira de Paraquedismo",
           "definition": "Entidade que rege o paraquedismo esportivo no Brasil; emite licenças e categorias e publica o Código Esportivo.",
           "aliases": [
-            "CBPq",
-            "CBPQ"
+            "CBPq"
           ]
         }
       }
@@ -2454,7 +2452,6 @@
           "definition": "É o paraquedas propriamente dito, a asa do paraquedas, o tecido que se infla e gera sustentação para o paraquedista. O velame principal é usado normalmente; o reserva, em emergências.",
           "aliases": [
             "Velame",
-            "velame",
             "Canopy"
           ]
         }
@@ -3439,7 +3436,6 @@
           "definition": "Na CBPq: olhar o punho vermelho, pegá-lo com as duas mãos, olhar o punho de metal, puxar o vermelho até o fim, puxar o de metal e selar.",
           "aliases": [
             "Procedimento de emergência",
-            "Procedimento de Emergência",
             "PE"
           ]
         }
