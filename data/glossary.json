@@ -2451,9 +2451,10 @@
         },
         "pt_BR": {
           "term": "Velame",
-          "definition": "A asa do paraquedas. O principal é usado normalmente; o reserva, em emergências.",
+          "definition": "É o paraquedas propriamente dito, a asa do paraquedas, o tecido que se infla e gera sustentação para o paraquedista. O velame principal é usado normalmente; o reserva, em emergências.",
           "aliases": [
             "Velame",
+            "velame",
             "Canopy"
           ]
         }
@@ -3438,6 +3439,7 @@
           "definition": "Na CBPq: olhar o punho vermelho, pegá-lo com as duas mãos, olhar o punho de metal, puxar o vermelho até o fim, puxar o de metal e selar.",
           "aliases": [
             "Procedimento de emergência",
+            "Procedimento de Emergência",
             "PE"
           ]
         }
@@ -4632,7 +4634,7 @@
         },
         "pt_BR": {
           "term": "Pane de baixa velocidade",
-          "definition": "Velame aberto que não passa no check visual ou funcional(mas tem sustentação): formato não retangular, mais de duas células fechadas, linha rompida, rasgo ou twist abaixo de 2.500 pés.",
+          "definition": "Velame aberto que não passa no check visual ou funcional (mas tem sustentação): formato não retangular, mais de duas células fechadas, linha rompida, rasgo ou twist abaixo de 2.500 pés.",
           "aliases": [
             "Pane de baixa velocidade"
           ]
@@ -4801,7 +4803,7 @@
         },
         "pt_BR": {
           "term": "Altitude de abertura",
-          "definition": "Altura planejada para comandar(abrir) o paraquedas. Durante o AFF, a altura planejada para os alunos é de 6000 pés",
+          "definition": "Altura planejada para comandar (abrir) o paraquedas. Durante o AFF, a altura planejada para os alunos é de 6.000 pés",
           "aliases": [
             "Altitude de abertura",
             "Altura de comando",
@@ -4885,7 +4887,7 @@
         },
         "pt_BR": {
           "term": "Dobrador",
-          "definition": "Pessoa que dobra o paraquedas depois de cada salto. Geralmente se refere a dobrador de paraquedas principal. O paraquedas reserva exigem um dobrador certificado.",
+          "definition": "Pessoa que dobra o paraquedas depois de cada salto. Geralmente se refere a dobrador de paraquedas principal. O paraquedas reserva exige um dobrador certificado.",
           "aliases": [
             "Dobrador",
             "Packer"
@@ -4906,7 +4908,7 @@
         },
         "pt_BR": {
           "term": "Caderneta do reserva",
-          "definition": "Cartão encontrado em um bolso do container do paraquedas, que mostra várias informações: Dobragens do reserva (histórico de dobragens, mostrando quando e por quem ele foi dobrado pela última vez). Também podemos encontrar informações sobre o DAA, número de série do container, qual a cor do reserva, etc",
+          "definition": "Cartão encontrado em um bolso do container do paraquedas, que mostra várias informações: Dobragens do reserva (histórico de dobragens, mostrando quando e por quem ele foi dobrado pela última vez). Também podemos encontrar informações sobre o DAA, número de série do container, qual a cor do reserva, etc.",
           "aliases": [
             "Cartão de dobragem",
             "Caderneta do reserva",
