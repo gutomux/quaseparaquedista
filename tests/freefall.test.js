@@ -34,7 +34,7 @@ test('tucked legs or arms forward move the jumper backward', () => {
 
 test('effects add up, and opposing limbs cancel', () => {
   assert.ok(effects(on('legsStretch', 'armsBack')).drift > effects(on('legsStretch')).drift);
-  assert.equal(describe(on('legsStretch', 'armsForward')).move, 'still');
+  assert.equal(effects(on('legsStretch', 'armsForward')).drift, 0, 'opposing limbs cancel the drift');
 });
 
 test('arch changes the fall rate, and only flat wobbles', () => {
@@ -138,6 +138,26 @@ test('legs stretched with arms forward slow the fall a little, and more when fla
   assert.ok(spread < 1 && spread > effects(on('legsStretch', 'armsForward', 'archFlat')).fallRate);
 });
 
+test('legs stretched with arms forward: neutral, falling as slow as de-arching', () => {
+  const pose = on('legsStretch', 'armsForward');
+  assert.equal(effects(pose).drift, 0);
+  assert.equal(effects(pose).fallRate, effects(on('archFlat')).fallRate);
+  assert.deepEqual(describe(pose), { move: 'stillSlower', turn: null });
+  assert.deepEqual(describe(on('legsStretch', 'armsForward', 'dipRight')), { move: 'stillSlower', turn: 'right' });
+});
+
+test('legs tucked with arms pulled back: neutral, falling as fast as arching more', () => {
+  const pose = on('legsTuck', 'armsBack');
+  assert.equal(effects(pose).drift, 0);
+  assert.equal(effects(pose).fallRate, effects(on('archMore')).fallRate);
+  assert.deepEqual(describe(pose), { move: 'stillFaster', turn: null });
+});
+
+test('the readout says neutral only when nothing changes the fall', () => {
+  assert.equal(describe(NEUTRAL).move, 'still');
+  assert.equal(describe(on('archMore')).move, 'still', 'arch alone keeps the plain neutral label');
+});
+
 test('every control and group has text in every locale', () => {
   for (const locale of ['en_US', 'pt_BR']) {
     const { freefall } = JSON.parse(readFileSync(new URL(`../i18n/${locale}.json`, import.meta.url), 'utf8'));
@@ -147,6 +167,9 @@ test('every control and group has text in every locale', () => {
     }
     for (const group of GROUPS) assert.ok(freefall.groups[group], `${locale}: freefall.groups.${group}`);
     for (const { id } of COMBOS) assert.ok(freefall.combos[id], `${locale}: freefall.combos.${id}`);
+    for (const move of ['forward', 'backward', 'still', 'stillSlower', 'stillFaster']) {
+      assert.ok(freefall.status.move[move], `${locale}: freefall.status.move.${move}`);
+    }
   }
 });
 

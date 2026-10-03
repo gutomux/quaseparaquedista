@@ -108,16 +108,16 @@
     "groups": {
       "legs": "Pernas",
       "arms": "Braços",
-      "arch": "Arco",
+      "arch": "Sela",
       "turn": "Curvas"
     },
     "controls": {
-      "legsStretch": "Estender as pernas",
-      "legsTuck": "Recolher as pernas",
+      "legsStretch": "Esticar as pernas",
+      "legsTuck": "Dobrar as pernas",
       "armsForward": "Braços à frente",
       "armsBack": "Braços para trás",
-      "archMore": "Arquear mais",
-      "archFlat": "Desarquear",
+      "archMore": "Selar mais",
+      "archFlat": "Selar menos",
       "dipLeft": "Curva para a esquerda",
       "dipRight": "Curva para a direita"
     },
@@ -129,11 +129,13 @@
       "move": {
         "forward": "Para frente",
         "backward": "Para trás",
-        "still": "Parado"
+        "still": "Neutro",
+        "stillSlower": "Neutro, com menor razão de queda",
+        "stillFaster": "Neutro, com maior razão de queda"
       },
       "turn": {
-        "left": "girando para a esquerda",
-        "right": "girando para a direita"
+        "left": "curva para a esquerda",
+        "right": "curva para a direita"
       }
     },
     "explain": {

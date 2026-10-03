@@ -33,11 +33,13 @@ export const NEUTRAL = Object.freeze({ legs: 0, arms: 0, arch: 0, turn: 0 });
 export const EFFECT = Object.freeze({
   /** Forward drift per unit of legs or arms (legs and arms add up; max 1). */
   driftPerLimb: 0.5,
-  /** Fall rate change with more arch and with a flat body, relative to 1 (neutral). */
+  /**
+   * Fall rate change, relative to 1 (neutral). Faster: more arch, or legs tucked with arms
+   * pulled back (less body in the wind). Slower: a flat body, or legs stretched with arms
+   * forward (more body in the wind). The limb combinations count the same as the arch.
+   */
   fallFaster: 0.3,
   fallSlower: 0.25,
-  /** Extra fall rate drop with legs stretched and arms forward: more body area in the wind. */
-  fallMoreArea: 0.1,
   /** Heading change in degrees per second with a shoulder down. */
   turnDegPerSecond: 90,
   /** How long the flight takes to settle into a new pose, in seconds. */
@@ -84,11 +86,17 @@ export function activeControls(pose) {
  *   fallRate: relative to neutral (1). turnRate: degrees per second, + is right.
  *   wobble: 0 (stable) to 1 (rocking), only when flat.
  */
+/** Legs stretched with arms forward: 1 when fully on (values may be in between while easing). */
+const spreadOut = (pose) => Math.max(pose.legs, 0) * Math.max(-pose.arms, 0);
+/** Legs tucked with arms pulled back. */
+const tuckedIn = (pose) => Math.max(-pose.legs, 0) * Math.max(pose.arms, 0);
+
 export function effects(pose) {
   return {
     drift: (pose.legs + pose.arms) * EFFECT.driftPerLimb,
     fallRate: 1 + pose.arch * (pose.arch > 0 ? EFFECT.fallFaster : EFFECT.fallSlower)
-      - Math.max(pose.legs, 0) * Math.max(-pose.arms, 0) * EFFECT.fallMoreArea,
+      - spreadOut(pose) * EFFECT.fallSlower
+      + tuckedIn(pose) * EFFECT.fallFaster,
     turnRate: pose.turn * EFFECT.turnDegPerSecond,
     wobble: pose.arch < 0 ? 1 : 0,
   };
@@ -96,12 +104,14 @@ export function effects(pose) {
 
 /** Words for how a pose moves the jumper, as keys the view can translate. Fall rate is shown by the air dots. */
 export function describe(pose) {
-  const { drift, turnRate } = effects(pose);
+  const { drift, turnRate, fallRate } = effects(pose);
   const sign = (n) => (n > 0 ? 1 : n < 0 ? -1 : 0);
-  return {
-    move: ['backward', 'still', 'forward'][sign(drift) + 1],
-    turn: ['left', null, 'right'][sign(turnRate) + 1],
-  };
+  let move = ['backward', 'still', 'forward'][sign(drift) + 1];
+  // Legs and arms cancelling out: neutral, but falling slower or faster.
+  if (move === 'still' && (spreadOut(pose) || tuckedIn(pose)) && fallRate !== 1) {
+    move = fallRate < 1 ? 'stillSlower' : 'stillFaster';
+  }
+  return { move, turn: ['left', null, 'right'][sign(turnRate) + 1] };
 }
 
 /** Move value a toward b, settling in about `seconds`. */
