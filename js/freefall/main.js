@@ -11,6 +11,8 @@ import { FreefallView } from './view.js';
 
 /** Drift speed at full forward or backward, in scene units per second. */
 const DRIFT_SPEED = 60;
+/** Up/down speed per unit of fall rate away from neutral, in scene units per second (arching more: 0.3 × 160 = 48). */
+const FALL_SPEED = 160;
 /** How quickly the drawn limbs follow a new pose, in seconds. */
 const POSE_SECONDS = 0.3;
 /** Longest frame step, so a hidden tab doesn't make the jumper jump. */
@@ -45,7 +47,7 @@ async function init() {
     for (const key of Object.keys(shown)) shown[key] += (pose[key] - shown[key]) * k;
     // A settle frame (on load, or a change while paused) only moves the figure into the pose.
     const moving = !paused && !settle;
-    if (moving) state = step(state, pose, dt, DRIFT_SPEED);
+    if (moving) state = step(state, pose, dt, DRIFT_SPEED, FALL_SPEED);
     view.draw({ pose: shown, state, dt: moving ? dt : 0 });
     if (moving) requestAnimationFrame(frame);
   }
@@ -65,7 +67,7 @@ async function init() {
       setPose(toggle(pose, id));
     },
     onReset: () => {
-      state = { ...state, x: 0, heading: 0 };
+      state = { ...state, x: 0, y: 0, heading: 0 };
       setPose({ ...NEUTRAL });
     },
     onPause: () => setPaused(!paused),

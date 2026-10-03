@@ -149,18 +149,20 @@ export class FreefallView {
    * Draw one frame.
    * @param {object} frame
    * @param {object} frame.pose Eased pose for the figure.
-   * @param {object} frame.state From sim.step(); x is in scene units.
+   * @param {object} frame.state From sim.step(); x and y are in scene units.
    * @param {number} frame.dt Seconds since the last frame.
    */
   draw({ pose, state, dt }) {
-    const { width: w } = SCENE;
+    const { width: w, height: h } = SCENE;
     const { flight } = state;
 
-    const span = w + 80;
-    const x = ((((state.x + span / 2) % span) + span) % span) - span / 2;
+    // Off one edge, back in at the other, sideways and up/down alike.
+    const wrap = (value, span) => ((((value + span / 2) % span) + span) % span) - span / 2;
+    const x = wrap(state.x, w + 80);
+    const y = wrap(state.y, h + 90);
     const rock = flight.wobble * 9 * Math.sin(state.time * 2 * Math.PI * 1.1);
     const view = { heading: state.heading, tilt: flight.drift * 6, rock };
-    this.figure.update(pose, { ...view, x });
+    this.figure.update(pose, { ...view, x, y });
     this.topFigure.update(pose, view);
 
     // Move the air after the body, so the dots meet the body where it is drawn this frame.
@@ -169,7 +171,7 @@ export class FreefallView {
       time: state.time,
       speed: AIR_SPEED * flight.fallRate,
       body: this.figure.capsules(),
-      center: { x, y: 0 },
+      center: { x, y },
       bounds: this.bounds,
     });
     this.dots.forEach((dot, i) => {

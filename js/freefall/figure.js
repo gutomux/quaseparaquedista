@@ -168,10 +168,10 @@ function curvePoints([a, c, b], steps = 6) {
  * The drawn body as capsules for the air dots (see air.js): each part's line with half its
  * width, the head and hands as circles, in scene units.
  * @param {object} parts From projectModel() with the side camera.
- * @param {{x: number, size: number}} placement Where and how big the figure is drawn.
+ * @param {{x: number, y?: number, size: number}} placement Where and how big the figure is drawn.
  */
-export function bodyCapsules(parts, { x, size }) {
-  const at = (p) => ({ x: x + p.x * size, y: p.y * size });
+export function bodyCapsules(parts, { x, y = 0, size }) {
+  const at = (p) => ({ x: x + p.x * size, y: y + p.y * size });
   const capsules = [];
   const line = (points, r) => {
     for (let i = 0; i + 1 < points.length; i += 1) {
@@ -233,16 +233,18 @@ export class JumperFigure {
    * @param {object} pose Eased pose (see buildModel).
    * @param {object} view
    * @param {number} view.x Position in the scene.
+   * @param {number} [view.y] Up/down position in the scene (grows downward).
    * @param {number} view.heading Degrees.
    * @param {number} view.tilt Pitch in degrees; + dips the head.
    * @param {number} view.rock Extra roll in degrees, for wobbling.
    */
-  update(pose, { x = 0, heading, tilt = 0, rock = 0 }) {
+  update(pose, { x = 0, y = 0, heading, tilt = 0, rock = 0 }) {
     const parts = projectModel(buildModel(pose), {
       heading, tilt, roll: pose.turn * ROLL_DEGREES + rock, camera: this.camera,
     });
     this.parts = parts;
     this.x = x;
+    this.y = y;
     for (const shape of this.shapes) {
       const part = parts[shape.name];
       shape.depth = part.depth;
@@ -263,11 +265,11 @@ export class JumperFigure {
       this.stack = stack;
       this.node.append(...sorted.map((s) => s.node));
     }
-    this.node.setAttribute('transform', `translate(${fmt(x)} 0) scale(${this.size})`);
+    this.node.setAttribute('transform', `translate(${fmt(x)} ${fmt(y)}) scale(${this.size})`);
   }
 
   /** The body as drawn in the last frame, as capsules for the air dots. */
   capsules() {
-    return this.parts ? bodyCapsules(this.parts, { x: this.x, size: this.size }) : [];
+    return this.parts ? bodyCapsules(this.parts, { x: this.x, y: this.y, size: this.size }) : [];
   }
 }

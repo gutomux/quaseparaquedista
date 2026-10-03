@@ -121,7 +121,7 @@ function approach(a, b, dt, seconds) {
 
 /** Starting state: centered, heading screen-right, flying neutral. */
 export function createState() {
-  return { x: 0, heading: 0, time: 0, flight: effects(NEUTRAL) };
+  return { x: 0, y: 0, heading: 0, time: 0, flight: effects(NEUTRAL) };
 }
 
 /**
@@ -131,9 +131,10 @@ export function createState() {
  * @param {object} pose
  * @param {number} dt Seconds.
  * @param {number} [speed=1] Drift distance per second at full drift.
- * @returns {object} New state; x is the sideways position in the side view.
+ * @param {number} [fallSpeed=0] Up/down distance per second per unit of fall rate away from neutral.
+ * @returns {object} New state; x and y are the position in the side view (y grows downward).
  */
-export function step(state, pose, dt, speed = 1) {
+export function step(state, pose, dt, speed = 1, fallSpeed = 0) {
   const target = effects(pose);
   const flight = {};
   for (const key of Object.keys(target)) {
@@ -143,6 +144,8 @@ export function step(state, pose, dt, speed = 1) {
   const along = Math.cos((heading * Math.PI) / 180);
   return {
     x: state.x + flight.drift * along * speed * dt,
+    // Seen from a camera falling at the neutral rate: faster sinks (y grows downward), slower rises.
+    y: (state.y ?? 0) + (flight.fallRate - 1) * fallSpeed * dt,
     heading,
     time: state.time + dt,
     flight,

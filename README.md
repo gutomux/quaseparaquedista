@@ -126,7 +126,7 @@ Change the wording in `i18n/en_US.json` or `i18n/pt_BR.json`. Both files must ha
 | De-arch | Falls slower and rocks slightly |
 | Turn left / right | Dips that shoulder, rolls toward it and turns that way |
 
-The jumper is a simple 3D body, so turns really rotate it: facing you, you see both arms and legs spread out. The compass in the corner shows the same body from above. There is no speed gauge; the air dots show the fall rate. The dots can't pass through the jumper: they hit the body's outline, slide along it and come off its edges, turning blue for a moment, so you can see which way each body position pushes the air.
+The jumper is a simple 3D body, so turns really rotate it: facing you, you see both arms and legs spread out. The compass in the corner shows the same body from above. There is no speed gauge; the air dots show the fall rate. The scene is seen from a camera falling at the neutral rate, so a jumper falling faster sinks down the window and one falling slower rises, wrapping around at the edges like the forward and backward drift. The dots can't pass through the jumper: they hit the body's outline, slide along it and come off its edges, turning blue for a moment, so you can see which way each body position pushes the air.
 
 Buttons in the same group are opposites, so only one can be on. Effects add up: stretched legs with arms pulled back moves forward faster, and stretched legs with arms forward cancel out.
 

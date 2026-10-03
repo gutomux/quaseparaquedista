@@ -158,6 +158,21 @@ test('the readout says neutral only when nothing changes the fall', () => {
   assert.equal(describe(on('archMore')).move, 'still', 'arch alone keeps the plain neutral label');
 });
 
+test('falling faster sinks down the window, falling slower rises, like drifting sideways', () => {
+  const flyY = (pose) => {
+    let state = createState();
+    for (let t = 0; t < 3; t += 0.02) state = step(state, pose, 0.02, 60, 160);
+    return state.y;
+  };
+  assert.equal(Math.round(flyY(NEUTRAL) * 1000), 0, 'neutral stays at the same height');
+  assert.ok(flyY(on('archMore')) > 0, 'arching more sinks (y grows downward)');
+  assert.ok(flyY(on('archFlat')) < 0, 'de-arching rises');
+  assert.ok(flyY(on('legsTuck', 'armsBack')) > 0, 'legs tucked with arms back sinks');
+  assert.ok(flyY(on('legsStretch', 'armsForward')) < 0, 'legs stretched with arms forward rises');
+  assert.equal(Math.round(flyY(on('legsStretch'))), 0, 'drifting forward alone keeps the height');
+  assert.equal(step(createState(), on('archMore'), 0.02, 60).y, 0, 'no up/down movement unless a fall speed is given');
+});
+
 test('every control and group has text in every locale', () => {
   for (const locale of ['en_US', 'pt_BR']) {
     const { freefall } = JSON.parse(readFileSync(new URL(`../i18n/${locale}.json`, import.meta.url), 'utf8'));

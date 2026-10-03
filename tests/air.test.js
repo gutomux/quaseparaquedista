@@ -75,4 +75,6 @@ test('air: the body the dots meet matches the drawn figure, with the figure\'s p
   assert.equal(spine.length, 6, 'the spine curve is followed in 6 pieces');
   const xs = capsules.flatMap((c) => [c.ax, c.bx]);
   assert.ok(Math.min(...xs) < 30 - 40 && Math.max(...xs) > 30 + 40, 'covers legs to head');
+  const lowered = bodyCapsules(parts, { x: 30, y: 50, size: 2 });
+  assert.ok(lowered.every((c, i) => c.ay === capsules[i].ay + 50), 'moves down with the figure');
 });
