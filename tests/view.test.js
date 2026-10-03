@@ -25,3 +25,10 @@ test('carousel: nextIndex wraps around in both directions', async () => {
   assert.equal(nextIndex(2, 3), 0);
   assert.equal(nextIndex(0, 3, -1), 2);
 });
+
+test('pdf embed: the original file where the browser can show PDFs, Google\'s viewer elsewhere', async () => {
+  const { embedUrl } = await import('../js/pdf-embed.js');
+  const pdf = 'https://old.cbpq.org.br/site/download/i/ged/documentos/2023/05/668.pdf';
+  assert.equal(embedUrl(pdf, true), `${pdf}#navpanes=0&view=FitH`);
+  assert.equal(embedUrl(pdf, false), `https://docs.google.com/viewer?url=${encodeURIComponent(pdf)}&embedded=true`);
+});

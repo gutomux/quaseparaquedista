@@ -5,6 +5,7 @@ Free skydiving tools for people who have never jumped, students and experienced 
 - **Welcome page** (`index.html`): who the site is for, a menu to open each tool, the Instagram profile [@quaseparaquedista](https://www.instagram.com/quaseparaquedista/) and the feedback button.
 - **Glossary** (`glossary.html`): a searchable glossary of skydiving terms and acronyms.
 - **Freefall simulator** (`freefall.html`): how body position changes a jumper's flight.
+- **Training materials** (`materiais-instrucao.html`): the CBPq AFF handbook (`apostila-aff.html`) and emergency review (`revisao-emergencias-aff.html`) shown inside the page straight from the CBPq site (no copies are stored here), and videos of AFF levels I to VII (`aff-videos.html`).
 
 In the glossary, type one letter and suggestions appear; pick one to see its definition, its name in the other language, and related entries.
 
@@ -48,6 +49,14 @@ js/freefall/sim.js    Simulator rules: pose in, drift/fall rate/turn out. Pure f
 js/freefall/figure.js The SVG jumper: a simple 3D body turned by the heading and drawn from the side or above
 js/freefall/view.js   Simulator scene, air dots, compass, readouts and buttons
 js/freefall/main.js   Simulator entry point and animation loop
+materiais-instrucao.html  Training materials list
+apostila-aff.html     CBPq AFF handbook, embedded from the CBPq site
+revisao-emergencias-aff.html  CBPq AFF emergency review, embedded from the CBPq site
+aff-videos.html       YouTube videos of AFF levels I to VII
+css/materials.css     Styles for the training material pages
+js/page.js            Entry point for those pages: text, and the PDF embed when the page has one
+js/pdf-embed.js       Frames a PDF from its original site: directly where the browser can show PDFs,
+                      through Google's document viewer on Android, which can't
 tests/                Unit tests for search, data validation, i18n and the simulator
 ```
 
@@ -149,6 +158,18 @@ npm test
 ```
 
 Uses Node's built-in test runner (Node 18 or newer), so there is nothing to install. The tests check that every entry has both languages, that both i18n files have the same keys, and that search works across languages.
+
+## Checking embedded resources
+
+The training material pages embed resources from other sites: the CBPq PDFs and the YouTube videos. If one is moved or removed, its page breaks without any change here, so they are checked online:
+
+```
+npm run test:links
+```
+
+The checks read the addresses from the HTML pages, so new resources are covered automatically. For each PDF: the address answers, it is served as a PDF and starts like one, and Google's viewer (used on Android) answers for it. For each video: it is public and embedding is allowed.
+
+**Before every commit**, a git hook (`.githooks/pre-commit`) runs `npm test` and then `npm run test:links`; if either fails, the commit stops and lists what failed. The hook is switched on by `npm install` (the `prepare` script runs `git config core.hooksPath .githooks`); in a fresh copy of the repository, run `npm install` once. To commit anyway, for example offline or while a site is briefly down, use `git commit --no-verify`.
 
 ## Deploying to GitHub Pages
 

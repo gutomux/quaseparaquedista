@@ -158,7 +158,8 @@
     }
   },
   "nav": {
-    "home": "← Home"
+    "home": "← Home",
+    "materials": "← Training materials"
   },
   "home": {
     "meta": {
@@ -191,7 +192,11 @@
       },
       "label": "Tools",
       "open": "Open tools menu",
-      "close": "Close tools menu"
+      "close": "Close tools menu",
+      "materials": {
+        "name": "Training materials",
+        "text": "AFF handbook, emergency review and course videos."
+      }
     },
     "instagram": {
       "text": "Follow us on Instagram:"
@@ -211,5 +216,46 @@
       "pause": "Pause",
       "play": "Play"
     }
+  },
+  "materials": {
+    "meta": {
+      "title": "Training materials",
+      "description": "The AFF course handbook, emergency review and videos of every AFF level."
+    },
+    "heading": "Training materials",
+    "intro": "Study materials for the AFF course: the CBPq handbook and emergency review (in Portuguese), and videos of every level.",
+    "handbook": {
+      "name": "AFF Handbook – CBPq",
+      "title": "AFF Handbook – CBPq",
+      "text": "The CBPq AFF course student handbook (in Portuguese).",
+      "source": "Apostila do Aluno – Curso AFF, CBPq (2023)"
+    },
+    "emergencies": {
+      "name": "AFF Emergency Review (2023)",
+      "title": "AFF Emergency Review – CBPq",
+      "text": "The CBPq AFF course emergency procedures (in Portuguese).",
+      "source": "Emergências – Curso AFF, CBPq (2023)"
+    },
+    "videos": {
+      "name": "Videos of every AFF level",
+      "title": "AFF course videos – Levels I to VII",
+      "text": "One video for each AFF level, from I to VII.",
+      "intro": "Watch the jumps of each AFF level, in order.",
+      "levels": {
+        "1": "AFF Level I",
+        "2": "AFF Level II",
+        "3": "AFF Level III",
+        "4": "AFF Level IV",
+        "5": "AFF Level V",
+        "6": "AFF Level VI",
+        "7": "AFF Level VII"
+      },
+      "watch": "Watch on YouTube"
+    },
+    "source": "Source:",
+    "openPdf": "Open on the CBPq site",
+    "disclaimer": "These materials support your course. Always take your questions to a certified instructor.",
+    "hint": "PDF not showing?",
+    "hintLink": "Open it on the CBPq site."
   }
 }

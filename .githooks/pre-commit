@@ -1,0 +1,22 @@
+#!/bin/sh
+# Runs before every commit: the unit tests, then the online checks that the embedded
+# resources (CBPq PDFs, YouTube videos) still load. A failure stops the commit.
+# Skip once, if you really need to (for example offline): git commit --no-verify
+
+# Git apps (VS Code, GitHub Desktop) may not load your shell's PATH; add the usual Node locations.
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+
+if ! command -v npm >/dev/null 2>&1; then
+  echo "pre-commit: npm not found, so the tests could not run. Install Node.js (brew install node)." >&2
+  exit 1
+fi
+
+echo "pre-commit: running unit tests..."
+npm test --silent || { echo "pre-commit: unit tests failed; commit stopped." >&2; exit 1; }
+
+echo "pre-commit: checking that embedded PDFs and videos still load..."
+npm run test:links --silent || {
+  echo "pre-commit: an embedded resource no longer loads (see the ✖ lines above); commit stopped." >&2
+  echo "Update or remove it in the HTML page, or commit with --no-verify if the site is only briefly down." >&2
+  exit 1
+}

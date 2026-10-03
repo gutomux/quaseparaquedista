@@ -158,7 +158,8 @@
     }
   },
   "nav": {
-    "home": "← Início"
+    "home": "← Início",
+    "materials": "← Materiais de instrução"
   },
   "home": {
     "meta": {
@@ -191,7 +192,11 @@
       },
       "label": "Ferramentas",
       "open": "Abrir menu de ferramentas",
-      "close": "Fechar menu de ferramentas"
+      "close": "Fechar menu de ferramentas",
+      "materials": {
+        "name": "Materiais de instrução",
+        "text": "Apostila, revisão de emergências e vídeos do curso AFF."
+      }
     },
     "instagram": {
       "text": "Siga a gente no Instagram:"
@@ -211,5 +216,46 @@
       "pause": "Pausar",
       "play": "Continuar"
     }
+  },
+  "materials": {
+    "meta": {
+      "title": "Materiais de instrução",
+      "description": "Apostila do curso AFF, revisão de emergências e vídeos de todos os níveis do curso AFF."
+    },
+    "heading": "Materiais de instrução",
+    "intro": "Materiais de apoio para o curso AFF: a apostila e a revisão de emergências da CBPq, e os vídeos de todos os níveis.",
+    "handbook": {
+      "name": "Apostila AFF – CBPq",
+      "title": "Apostila AFF – CBPq",
+      "text": "A apostila do aluno do curso AFF, da CBPq.",
+      "source": "Apostila do Aluno – Curso AFF, CBPq (2023)"
+    },
+    "emergencies": {
+      "name": "Revisão de Emergências AFF (2023)",
+      "title": "Revisão de Emergências AFF – CBPq",
+      "text": "Os procedimentos de emergência do curso AFF, da CBPq.",
+      "source": "Emergências – Curso AFF, CBPq (2023)"
+    },
+    "videos": {
+      "name": "Vídeos de todos os níveis do curso AFF",
+      "title": "Vídeos do curso AFF – Níveis I ao VII",
+      "text": "Um vídeo para cada nível do curso AFF, do I ao VII.",
+      "intro": "Assista aos saltos de cada nível do curso AFF, em ordem.",
+      "levels": {
+        "1": "AFF Nível I",
+        "2": "AFF Nível II",
+        "3": "AFF Nível III",
+        "4": "AFF Nível IV",
+        "5": "AFF Nível V",
+        "6": "AFF Nível VI",
+        "7": "AFF Nível VII"
+      },
+      "watch": "Assistir no YouTube"
+    },
+    "source": "Fonte:",
+    "openPdf": "Abrir no site da CBPq",
+    "disclaimer": "Estes materiais são um apoio ao seu curso. Sempre tire suas dúvidas com um instrutor certificado.",
+    "hint": "O PDF não apareceu?",
+    "hintLink": "Abra no site da CBPq."
   }
 }
