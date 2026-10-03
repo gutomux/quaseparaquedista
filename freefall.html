@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=2026-10-03">
-  <link rel="stylesheet" href="css/freefall.css?v=2026-10-03">
-  <script type="module" src="js/freefall/main.js?v=2026-10-03"></script>
+  <link rel="stylesheet" href="css/styles.css?v=2026-10-03.2">
+  <link rel="stylesheet" href="css/freefall.css?v=2026-10-03.2">
+  <script type="module" src="js/freefall/main.js?v=2026-10-03.2"></script>
 </head>
 <body>
   <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
@@ -20,24 +20,30 @@
     <h1><span data-i18n="freefall.heading.line1">Body position</span><br><span data-i18n="freefall.heading.line2">in freefall</span></h1>
     <p class="intro" data-i18n="freefall.intro"></p>
 
-    <div class="ff-stage">
-      <div class="ff-scene-box">
-        <div id="scene" class="ff-scene"></div>
-        <div id="motion-note" class="ff-motion-note" hidden>
-          <p data-i18n="freefall.motionNote.text">Animation paused because your system asks for less motion on screen.</p>
-          <button id="motion-start" class="ff-action" type="button" data-i18n="freefall.motionNote.start">Start animation</button>
+    <!-- Scene and buttons side by side on wide screens; on phones the scene stays on screen above the buttons. -->
+    <div class="ff-layout">
+      <div class="ff-stage">
+        <div class="ff-scene-box">
+          <div id="scene" class="ff-scene"></div>
+          <div id="motion-note" class="ff-motion-note" hidden>
+            <p data-i18n="freefall.motionNote.text">Animation paused because your system asks for less motion on screen.</p>
+            <button id="motion-start" class="ff-action" type="button" data-i18n="freefall.motionNote.start">Start animation</button>
+          </div>
+        </div>
+        <div class="ff-readout">
+          <p><span class="ff-readout-label" data-i18n="freefall.status.label">Movement</span> <strong id="movement"></strong></p>
         </div>
       </div>
-      <div class="ff-readout">
-        <p><span class="ff-readout-label" data-i18n="freefall.status.label">Movement</span> <strong id="movement"></strong></p>
-      </div>
-      <div class="ff-caption" id="caption" aria-live="polite"></div>
-    </div>
 
-    <div id="controls" class="ff-controls"></div>
-    <div class="ff-actions">
-      <button id="reset" class="ff-action" type="button" data-i18n="freefall.reset">Neutral position</button>
-      <button id="pause" class="ff-action" type="button" aria-pressed="false" data-i18n="freefall.pause">Pause</button>
+      <div class="ff-panel">
+        <div id="controls" class="ff-controls"></div>
+        <div class="ff-actions">
+          <button id="reset" class="ff-action" type="button" data-i18n="freefall.reset">Neutral position</button>
+          <button id="pause" class="ff-action" type="button" aria-pressed="false" data-i18n="freefall.pause">Pause</button>
+        </div>
+      </div>
+
+      <div class="ff-caption" id="caption" aria-live="polite"></div>
     </div>
   </main>
 

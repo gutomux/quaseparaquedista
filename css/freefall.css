@@ -41,13 +41,13 @@
 .ff-readout{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:center;justify-content:space-between;padding:.85rem 1.1rem;border-top:1px solid var(--line)}
 .ff-readout p{margin:0}
 .ff-readout-label{display:block;font-size:.8rem;color:var(--ink-soft)}
-.ff-caption{padding:.85rem 1.1rem 1rem;border-top:1px solid var(--line);min-height:4.5rem}
+.ff-caption{padding:.85rem 1.1rem 1rem;background:var(--panel);border:1px solid var(--line);border-radius:1rem;min-height:4.5rem}
 .ff-caption p{margin:0}
 .ff-caption p + p{margin-top:.45rem}
 .ff-combo{font-weight:700;padding-left:.7rem;border-left:3px solid var(--accent)}
 
 /* Controls */
-.ff-controls{margin-top:1.25rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.75rem}
+.ff-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.75rem}
 .ff-group{margin:0;padding:.7rem .8rem .8rem;border:1px solid var(--line);border-radius:1rem;background:var(--panel);display:grid;grid-template-columns:1fr 1fr;align-content:start;gap:.5rem}
 .ff-group legend{padding:0 .35rem;font-weight:700;font-size:.9rem;color:var(--ink-soft)}
 .ff-toggle,.ff-action{
@@ -61,3 +61,52 @@
 .ff-actions{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem}
 .ff-action{font-weight:700;border-color:var(--ink)}
 .ff-main + footer{padding-top:0}
+
+/* Layout: scene, buttons and explanation. Stacked by default, in this order. */
+.ff-layout{display:grid;gap:.75rem;margin-top:1.25rem}
+
+/* Wide screens: scene on the left, buttons beside it, so both are always in view. */
+@media (min-width:900px){
+  .ff-main,.ff-main + footer{max-width:62rem}
+  /* A one-line heading leaves room for the scene and buttons on a laptop screen. */
+  .ff-main h1{font-size:clamp(2.6rem,4vw,3.5rem);margin-bottom:.5rem}
+  .ff-main h1 br{display:none}
+  .ff-main h1 br + span::before{content:" "}
+  .ff-main > .intro{margin-bottom:0}
+  .ff-layout{grid-template-columns:minmax(0,1fr) 19rem;grid-template-areas:"stage panel" "caption panel";align-items:start}
+  .ff-stage{grid-area:stage}
+  .ff-panel{grid-area:panel}
+  .ff-caption{grid-area:caption}
+  .ff-controls{grid-template-columns:1fr}
+}
+
+/* Narrower screens: playing comes first, reading after. The intro moves below the
+   explanation, and the scene stays at the top of the screen while the buttons scroll. */
+@media (max-width:899px){
+  .ff-main{display:flex;flex-direction:column}
+  .ff-layout{order:1}
+  .ff-main > .intro{order:2;margin:1.25rem 0 0}
+}
+@media (max-width:899px) and (orientation:portrait) and (min-height:560px){
+  .ff-stage{position:sticky;top:env(safe-area-inset-top,0px);z-index:4;box-shadow:0 10px 24px -18px rgba(10,37,64,.6)}
+}
+
+/* Phones: smaller heading, the movement readout over the scene's top-left corner (the compass
+   has the top right), and the four groups in a 2 × 2 grid with each group's buttons stacked. */
+@media (max-width:640px){
+  .ff-main h1{font-size:clamp(1.9rem,8.5vw,3rem);margin-bottom:.5rem}
+  .ff-main .back-home{margin-bottom:.75rem}
+  .ff-layout{margin-top:.5rem;gap:.6rem}
+  .ff-stage{position:relative}
+  .ff-readout{
+    position:absolute;top:.5rem;left:.5rem;max-width:calc(100% - 6.5rem);padding:.3rem .6rem;
+    border:0;border-radius:.6rem;background:var(--panel);opacity:.92;font-size:.85rem;line-height:1.3
+  }
+  .ff-readout-label{display:block;font-size:.7rem}
+  .ff-controls{grid-template-columns:1fr 1fr;gap:.5rem}
+  .ff-group{grid-template-columns:1fr;padding:.35rem .5rem .5rem;gap:.35rem}
+  .ff-group legend{font-size:.78rem;padding:0 .25rem}
+  .ff-toggle{font-size:.86rem;padding:.4rem .5rem;min-height:2.6rem}
+  .ff-actions{margin-top:.5rem}
+  .ff-action{font-size:.88rem;padding:.4rem .9rem}
+}
