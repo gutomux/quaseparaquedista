@@ -666,29 +666,6 @@
       }
     },
     {
-      "id": "acronym-ep",
-      "type": "acronym",
-      "translations": {
-        "en_US": {
-          "term": "EP",
-          "expansion": "Emergency Procedure",
-          "definition": "Trained actions for malfunctions and other emergencies.",
-          "aliases": [
-            "EP"
-          ]
-        },
-        "pt_BR": {
-          "term": "EP",
-          "expansion": "Emergency Procedure (procedimento de emergência – PE)",
-          "definition": "Ações treinadas para panes: olhar e pegar o punho vermelho com as duas mãos, olhar o punho de metal, desconectar e acionar o reserva. Só pode ser feito uma vez, com calma e precisão.",
-          "aliases": [
-            "EP",
-            "PE"
-          ]
-        }
-      }
-    },
-    {
       "id": "acronym-erc",
       "type": "acronym",
       "translations": {
@@ -3458,7 +3435,7 @@
         },
         "pt_BR": {
           "term": "Procedimento de emergência",
-          "definition": "Na CBPq: olhar o punho vermelho, pegá-lo com as duas mãos, olhar o punho de metal, puxar o vermelho até o fim, puxar o de metal e selar. Em caso de dúvida, faça o procedimento de emergência.",
+          "definition": "Na CBPq: olhar o punho vermelho, pegá-lo com as duas mãos, olhar o punho de metal, puxar o vermelho até o fim, puxar o de metal e selar.",
           "aliases": [
             "Procedimento de emergência",
             "PE"
@@ -4131,7 +4108,7 @@
         },
         "pt_BR": {
           "term": "Pane de alta velocidade",
-          "definition": "O velame não entra em processo de abertura ou não passa no check visual: nada saiu, punho duro, bag lock, charuto, streamer. Exige procedimento de emergência.",
+          "definition": "Quando não há sustentação 3 segundos após o comando do paraquedas principal. Exemplos: 'Bag lock', 'Charuto', 'Streamer'. Resolvemos realizando o Procedimento de Emergência.",
           "aliases": [
             "Pane de alta velocidade"
           ]
@@ -4655,7 +4632,7 @@
         },
         "pt_BR": {
           "term": "Pane de baixa velocidade",
-          "definition": "Velame aberto que não passa no check visual ou funcional: formato não retangular, mais de duas células fechadas, linha rompida, rasgo ou twist abaixo de 2.500 pés.",
+          "definition": "Velame aberto que não passa no check visual ou funcional(mas tem sustentação): formato não retangular, mais de duas células fechadas, linha rompida, rasgo ou twist abaixo de 2.500 pés.",
           "aliases": [
             "Pane de baixa velocidade"
           ]
@@ -4718,7 +4695,7 @@
         },
         "pt_BR": {
           "term": "Manifesto",
-          "definition": "Setor que coloca os paraquedistas nas decolagens; também a lista da decolagem.",
+          "definition": "Setor responsável por organizar os paraquedistas nas decolagens; Controle de decolagens, checagem de documentação e organização administrativa e financeira.",
           "aliases": [
             "Manifesto",
             "Manifest"
@@ -4739,7 +4716,7 @@
         },
         "pt_BR": {
           "term": "Mockup",
-          "definition": "Réplica de aeronave ou equipamento usada no treinamento em solo.",
+          "definition": "Réplica da aeronave em solo, usado no treinamento de alunos e também para praticar a saída da aeronave, de paraquedistas que vão saltar em grupos.",
           "aliases": [
             "Mockup",
             "Maquete"
@@ -4779,11 +4756,12 @@
           ]
         },
         "pt_BR": {
-          "term": "No contact",
+          "term": "Voar slot",
           "definition": "Em queda livre, permanecer próximo de outro paraquedista, porém sem contato físico.",
           "aliases": [
             "No contact",
-            "Sem contato"
+            "Sem contato",
+            "Voar slot"
           ]
         }
       }
@@ -4801,7 +4779,7 @@
         },
         "pt_BR": {
           "term": "Pouso fora",
-          "definition": "Pouso fora da área planejada. Na CBPq, decida até 2.500 pés se pousa na área oficial ou numa área alternativa livre de obstáculos.",
+          "definition": "Quando o paraquedista pousa fora da área de pouso designada.",
           "aliases": [
             "Pouso fora",
             "Pouso fora da área",
@@ -4823,7 +4801,7 @@
         },
         "pt_BR": {
           "term": "Altitude de abertura",
-          "definition": "Altura planejada para abrir o principal. Mínimas da CBPq: salto duplo 5.500 pés, aluno 5.000 (no AFF, 5.500), A 4.000, B 3.500, C e D 2.500.",
+          "definition": "Altura planejada para comandar(abrir) o paraquedas. Durante o AFF, a altura planejada para os alunos é de 6000 pés",
           "aliases": [
             "Altitude de abertura",
             "Altura de comando",
@@ -4845,7 +4823,7 @@
         },
         "pt_BR": {
           "term": "Ponto de abertura",
-          "definition": "Ponto sobre o solo onde o paraquedista pretende abrir.",
+          "definition": "Ponto sobre o solo onde o paraquedista pretende comandar(abrir) o paraquedas.",
           "aliases": [
             "Ponto de abertura"
           ]
@@ -4864,11 +4842,11 @@
           ]
         },
         "pt_BR": {
-          "term": "Organizador",
-          "definition": "Paraquedista experiente que planeja e lidera saltos em grupo.",
+          "term": "Load Organizer",
+          "definition": "Paraquedista credenciado experiente que planeja e lidera saltos em grupo.",
           "aliases": [
-            "Organizador",
-            "Organizer"
+            "LO",
+            "Load Organizer"
           ]
         }
       }
@@ -4886,7 +4864,7 @@
         },
         "pt_BR": {
           "term": "Pouso fora da área",
-          "definition": "O mesmo que pouso fora.",
+          "definition": "O mesmo que pouso fora. Quando o paraquedista pousa fora da área de pouso designada.",
           "aliases": [
             "Pouso fora da área",
             "Out landing"
@@ -4907,7 +4885,7 @@
         },
         "pt_BR": {
           "term": "Dobrador",
-          "definition": "Pessoa que dobra velames principais; reservas exigem um rigger certificado.",
+          "definition": "Pessoa que dobra o paraquedas depois de cada salto. Geralmente se refere a dobrador de paraquedas principal. O paraquedas reserva exigem um dobrador certificado.",
           "aliases": [
             "Dobrador",
             "Packer"
@@ -4927,10 +4905,11 @@
           ]
         },
         "pt_BR": {
-          "term": "Cartão de dobragem",
-          "definition": "Cartão no reserva que mostra quando e por quem ele foi dobrado pela última vez.",
+          "term": "Caderneta do reserva",
+          "definition": "Cartão encontrado em um bolso do container do paraquedas, que mostra várias informações: Dobragens do reserva (histórico de dobragens, mostrando quando e por quem ele foi dobrado pela última vez). Também podemos encontrar informações sobre o DAA, número de série do container, qual a cor do reserva, etc",
           "aliases": [
             "Cartão de dobragem",
+            "Caderneta do reserva",
             "Data card"
           ]
         }
@@ -4949,7 +4928,7 @@
         },
         "pt_BR": {
           "term": "Pilotinho no vácuo",
-          "definition": "Pilotinho preso no burble, sem inflar ou sem extrair a bolsa. Se nada abrir em cerca de 5 s, faça o procedimento de emergência.",
+          "definition": "Pilotinho preso no vácuo (geralmente quando ele paira acima do corpo do paraquedista), sem inflar ou sem extrair a bolsa. Pane de alta velocidade.",
           "aliases": [
             "Pilotinho no vácuo",
             "Hesitação do extrator",
@@ -4970,12 +4949,10 @@
           ]
         },
         "pt_BR": {
-          "term": "Extrator em reboque",
+          "term": "Pilot chute in tow",
           "definition": "Pane de alta velocidade: o pilotinho saiu, mas o container continua fechado. Faça o procedimento de emergência.",
           "aliases": [
-            "Pilot chute in tow",
-            "Pilotinho em reboque",
-            "Extrator em reboque"
+            "Pilot chute in tow"
           ]
         }
       }
@@ -4993,7 +4970,7 @@
         },
         "pt_BR": {
           "term": "Checagem de pinos",
-          "definition": "Verificar se o pino está totalmente encaixado e o loop em bom estado.",
+          "definition": "Verificar se os pinos do paraquedas principal e reserva estão encaixados corretamente, e o loop em bom estado.",
           "aliases": [
             "Checagem de pinos",
             "Pin check"
@@ -5034,7 +5011,7 @@
         },
         "pt_BR": {
           "term": "Abertura prematura",
-          "definition": "Container que abre antes da hora. Na aeronave com a porta fechada: recolher e abraçar a parte exposta, afastar-se da porta, desligar o DAA e pousar com o avião. Se algo sair pela porta, saltar imediatamente.",
+          "definition": "Quando o paraquedas abre antes da hora. Se isso acontecer na aeronave com a porta fechada: recolher e abraçar a parte exposta, afastar-se da porta, desligar o DAA e pousar com o avião. Se acontecer com a porta aberta e alguma parte do paraquedas sair pela porta, saltar imediatamente.",
           "aliases": [
             "Abertura prematura"
           ]
