@@ -1897,7 +1897,7 @@
         },
         "pt_BR": {
           "term": "Anormalidade",
-          "definition": "Quando o velame tem sustentação, mas tem algo anormal no check Visual. Podemos conviver com ela ou não, a certeza vem com o resultado do check funcional.\n Por exemplo, células das pontas murchas, pilotinho passando na frente do bordo de ataque do velame, etc.",
+          "definition": "Quando o velame tem sustentação, mas tem algo anormal no check Visual. Podemos conviver com ela ou não, a certeza vem com o resultado do check funcional. Por exemplo, células das pontas murchas, pilotinho passando na frente do bordo de ataque do velame, etc.",
           "aliases": [
             "Anormalidade"
           ]
@@ -4671,7 +4671,7 @@
         },
         "pt_BR": {
           "term": "Pane",
-          "definition": "Quando o velame não gera sustentação 5 segundos após o comando, não passa no check Visual ou não passa no check Funcional.\nEx.: Pane de Alta velocidade: quando o velame não gera sustentação em 5 segundos.\nPane de Baixa Velocidade: quando o velame tem sustentação, mas não passa no check Visual ou no check Funcional",
+          "definition": "Quando o velame não gera sustentação 5 segundos após o comando, não passa no check Visual ou não passa no check Funcional. Ex.: Pane de Alta velocidade: quando o velame não gera sustentação em 5 segundos. Pane de Baixa Velocidade: quando o velame tem sustentação, mas não passa no check Visual ou no check Funcional.",
           "aliases": [
             "Pane",
             "Mal",
