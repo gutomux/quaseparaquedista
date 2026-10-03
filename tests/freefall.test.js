@@ -15,7 +15,7 @@ const fly = (pose, seconds = 3) => {
 };
 
 test('neutral box position holds still at the normal fall rate', () => {
-  assert.deepEqual(describe(NEUTRAL), { move: 'still', turn: null });
+  assert.deepEqual(describe(NEUTRAL), { move: 'still', fall: null, turn: null });
   assert.equal(effects(NEUTRAL).fallRate, 1);
   assert.equal(Math.round(fly(NEUTRAL).x * 1000), 0);
 });
@@ -142,20 +142,23 @@ test('legs stretched with arms forward: neutral, falling as slow as de-arching',
   const pose = on('legsStretch', 'armsForward');
   assert.equal(effects(pose).drift, 0);
   assert.equal(effects(pose).fallRate, effects(on('archFlat')).fallRate);
-  assert.deepEqual(describe(pose), { move: 'stillSlower', turn: null });
-  assert.deepEqual(describe(on('legsStretch', 'armsForward', 'dipRight')), { move: 'stillSlower', turn: 'right' });
+  assert.deepEqual(describe(pose), { move: 'still', fall: 'slower', turn: null });
+  assert.deepEqual(describe(on('legsStretch', 'armsForward', 'dipRight')), { move: 'still', fall: 'slower', turn: 'right' });
 });
 
 test('legs tucked with arms pulled back: neutral, falling as fast as arching more', () => {
   const pose = on('legsTuck', 'armsBack');
   assert.equal(effects(pose).drift, 0);
   assert.equal(effects(pose).fallRate, effects(on('archMore')).fallRate);
-  assert.deepEqual(describe(pose), { move: 'stillFaster', turn: null });
+  assert.deepEqual(describe(pose), { move: 'still', fall: 'faster', turn: null });
 });
 
-test('the readout says neutral only when nothing changes the fall', () => {
-  assert.equal(describe(NEUTRAL).move, 'still');
-  assert.equal(describe(on('archMore')).move, 'still', 'arch alone keeps the plain neutral label');
+test('the readout mentions the fall rate whenever it changes, with any movement', () => {
+  assert.equal(describe(NEUTRAL).fall, null);
+  assert.deepEqual(describe(on('archMore')), { move: 'still', fall: 'faster', turn: null });
+  assert.deepEqual(describe(on('archFlat')), { move: 'still', fall: 'slower', turn: null });
+  assert.deepEqual(describe(on('legsStretch', 'archMore', 'dipLeft')), { move: 'forward', fall: 'faster', turn: 'left' });
+  assert.equal(describe(on('legsStretch')).fall, null, 'drifting alone keeps the normal fall');
 });
 
 test('falling faster sinks down the window, falling slower rises, like drifting sideways', () => {
@@ -182,9 +185,8 @@ test('every control and group has text in every locale', () => {
     }
     for (const group of GROUPS) assert.ok(freefall.groups[group], `${locale}: freefall.groups.${group}`);
     for (const { id } of COMBOS) assert.ok(freefall.combos[id], `${locale}: freefall.combos.${id}`);
-    for (const move of ['forward', 'backward', 'still', 'stillSlower', 'stillFaster']) {
-      assert.ok(freefall.status.move[move], `${locale}: freefall.status.move.${move}`);
-    }
+    for (const move of ['forward', 'backward', 'still']) assert.ok(freefall.status.move[move], `${locale}: freefall.status.move.${move}`);
+    for (const fall of ['faster', 'slower']) assert.ok(freefall.status.fall[fall], `${locale}: freefall.status.fall.${fall}`);
   }
 });
 

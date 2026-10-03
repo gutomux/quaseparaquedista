@@ -102,16 +102,16 @@ export function effects(pose) {
   };
 }
 
-/** Words for how a pose moves the jumper, as keys the view can translate. Fall rate is shown by the air dots. */
+/** Words for how a pose moves the jumper (sideways, faster/slower fall, turn), as keys the view can translate. */
 export function describe(pose) {
   const { drift, turnRate, fallRate } = effects(pose);
   const sign = (n) => (n > 0 ? 1 : n < 0 ? -1 : 0);
-  let move = ['backward', 'still', 'forward'][sign(drift) + 1];
-  // Legs and arms cancelling out: neutral, but falling slower or faster.
-  if (move === 'still' && (spreadOut(pose) || tuckedIn(pose)) && fallRate !== 1) {
-    move = fallRate < 1 ? 'stillSlower' : 'stillFaster';
-  }
-  return { move, turn: ['left', null, 'right'][sign(turnRate) + 1] };
+  return {
+    move: ['backward', 'still', 'forward'][sign(drift) + 1],
+    // Any change of fall rate (arch, or legs and arms together) moves the jumper down or up the window.
+    fall: ['slower', null, 'faster'][sign(fallRate - 1) + 1],
+    turn: ['left', null, 'right'][sign(turnRate) + 1],
+  };
 }
 
 /** Move value a toward b, settling in about `seconds`. */

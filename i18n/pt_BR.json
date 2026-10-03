@@ -129,9 +129,11 @@
       "move": {
         "forward": "Para frente",
         "backward": "Para trás",
-        "still": "Neutro",
-        "stillSlower": "Neutro, com menor razão de queda",
-        "stillFaster": "Neutro, com maior razão de queda"
+        "still": "Neutro"
+      },
+      "fall": {
+        "faster": "com maior razão de queda",
+        "slower": "com menor razão de queda"
       },
       "turn": {
         "left": "curva para a esquerda",

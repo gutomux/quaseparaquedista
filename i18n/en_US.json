@@ -129,9 +129,11 @@
       "move": {
         "forward": "Forward",
         "backward": "Backward",
-        "still": "Holding still",
-        "stillSlower": "Neutral, falling slower",
-        "stillFaster": "Neutral, falling faster"
+        "still": "Holding still"
+      },
+      "fall": {
+        "faster": "falling faster",
+        "slower": "falling slower"
       },
       "turn": {
         "left": "turning left",

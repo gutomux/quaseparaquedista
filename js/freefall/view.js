@@ -117,7 +117,7 @@ export class FreefallView {
   /**
    * Show which buttons are on, and explain the current position.
    * @param {string[]} activeIds
-   * @param {{move: string, turn: string|null}} description From sim.describe().
+   * @param {{move: string, fall: string|null, turn: string|null}} description From sim.describe().
    * @param {string|null} combo From sim.comboNote(): an extra note for a combination.
    */
   renderPose(activeIds, description, combo = null) {
@@ -130,9 +130,12 @@ export class FreefallView {
     if (combo) paragraphs.push(el('p', 'ff-combo', this.t(`freefall.combos.${combo}`)));
     this.caption.replaceChildren(...paragraphs);
 
-    const move = this.t(`freefall.status.move.${description.move}`);
-    const turn = description.turn ? `, ${this.t(`freefall.status.turn.${description.turn}`)}` : '';
-    this.status.textContent = move + turn;
+    // e.g. "Neutro, com maior razão de queda, curva para a direita"
+    this.status.textContent = [
+      this.t(`freefall.status.move.${description.move}`),
+      description.fall && this.t(`freefall.status.fall.${description.fall}`),
+      description.turn && this.t(`freefall.status.turn.${description.turn}`),
+    ].filter(Boolean).join(', ');
   }
 
   /** Show or hide the notice that the animation waits because the system asks for reduced motion. */
