@@ -13,23 +13,24 @@
 .ff-motion-note p{margin:0;font-size:.92rem;color:var(--ink-soft)}
 .ff-motion-note .ff-action{background:var(--ink);color:var(--panel)}
 .ff-air circle{fill:var(--ink)}
+/* Air the body has just turned aside: the flow that pushes the jumper around.
+   Blue, to stand apart from the orange suit and yellow boots on both skies. */
+.ff-scene{--flow:#1D5FD6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ff-scene{--flow:#6FD8FF}}
+:root[data-theme="dark"] .ff-scene{--flow:#6FD8FF}
+.ff-air circle.is-deflected{fill:var(--flow);opacity:1}
 
 /* Jumper: fixed colors, so the suit, boots and gloves read the same on light and dark skies */
 .ff-jumper{--suit:#FF6A1A;--suit-far:#C24A0B;--boot:#FFD23F;--boot-far:#C9A200;--glove:#F4CFA6;--glove-far:#C9A27C;--gear:#33415A;--visor:#7FC8F2}
+/* Line widths are set by figure.js, which also uses them for the air dots. */
 .ff-suit,.ff-boot{fill:none;stroke-linecap:round;stroke-linejoin:round}
 .ff-suit{stroke:var(--suit)}
 .ff-suit.is-far{stroke:var(--suit-far)}
-.ff-spine{stroke-width:11}
-.ff-hips{stroke-width:10}
-.ff-thigh{stroke-width:8.5}
-.ff-shin{stroke-width:7.5}
-.ff-arm{stroke-width:6.5}
-.ff-forearm{stroke-width:5.5}
-.ff-boot{stroke:var(--boot);stroke-width:7}
+.ff-boot{stroke:var(--boot)}
 .ff-boot.is-far{stroke:var(--boot-far)}
 .ff-glove{fill:var(--glove)}
 .ff-glove.is-far{fill:var(--glove-far)}
-.ff-container{fill:var(--gear);stroke:var(--gear);stroke-width:3;stroke-linejoin:round}
+.ff-container{fill:var(--gear);stroke:var(--gear);stroke-linejoin:round}
 .ff-helmet{fill:var(--gear)}
 .ff-visor{fill:var(--visor)}
 

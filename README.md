@@ -47,6 +47,7 @@ freefall.html         Freefall body-position simulator page
 css/freefall.css      Styles for the simulator (reuses the color tokens in styles.css)
 js/freefall/sim.js    Simulator rules: pose in, drift/fall rate/turn out. Pure functions, no DOM
 js/freefall/figure.js The SVG jumper: a simple 3D body turned by the heading and drawn from the side or above
+js/freefall/air.js    Air dots that flow around the jumper's outline instead of through it. Pure functions, no DOM
 js/freefall/view.js   Simulator scene, air dots, compass, readouts and buttons
 js/freefall/main.js   Simulator entry point and animation loop
 materiais-instrucao.html  Training materials list
@@ -125,7 +126,7 @@ Change the wording in `i18n/en_US.json` or `i18n/pt_BR.json`. Both files must ha
 | De-arch | Falls slower and rocks slightly |
 | Turn left / right | Dips that shoulder, rolls toward it and turns that way |
 
-The jumper is a simple 3D body, so turns really rotate it: facing you, you see both arms and legs spread out. The compass in the corner shows the same body from above. There is no speed gauge; the air dots show the fall rate.
+The jumper is a simple 3D body, so turns really rotate it: facing you, you see both arms and legs spread out. The compass in the corner shows the same body from above. There is no speed gauge; the air dots show the fall rate. The dots can't pass through the jumper: they hit the body's outline, slide along it and come off its edges, turning blue for a moment, so you can see which way each body position pushes the air.
 
 Buttons in the same group are opposites, so only one can be on. Effects add up: stretched legs with arms pulled back moves forward faster, and stretched legs with arms forward cancel out.
 

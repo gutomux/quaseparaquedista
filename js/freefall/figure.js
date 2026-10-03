@@ -140,15 +140,61 @@ export function projectModel(model, { heading, tilt = 0, roll = 0, camera = 'sid
   return out;
 }
 
-/** Shapes in their default stacking order; the frame re-stacks them by depth. */
+/**
+ * Shapes in their default stacking order; the frame re-stacks them by depth.
+ * [name, tag, class, line width]. The width is both how thick a part is drawn and how
+ * thick it is for the air dots (see bodyCapsules), so the two always match.
+ */
 const SHAPES = Object.freeze([
-  ['thighL', 'path', 'ff-suit ff-thigh'], ['shinL', 'path', 'ff-suit ff-shin'], ['footL', 'path', 'ff-boot'],
-  ['upperArmL', 'path', 'ff-suit ff-arm'], ['forearmL', 'path', 'ff-suit ff-forearm'], ['handL', 'circle', 'ff-glove'],
-  ['hips', 'path', 'ff-suit ff-hips'], ['spine', 'path', 'ff-suit ff-spine'], ['shoulders', 'path', 'ff-suit ff-hips'],
-  ['container', 'path', 'ff-container'], ['head', 'circle', 'ff-helmet'], ['visor', 'circle', 'ff-visor'],
-  ['thighR', 'path', 'ff-suit ff-thigh'], ['shinR', 'path', 'ff-suit ff-shin'], ['footR', 'path', 'ff-boot'],
-  ['upperArmR', 'path', 'ff-suit ff-arm'], ['forearmR', 'path', 'ff-suit ff-forearm'], ['handR', 'circle', 'ff-glove'],
+  ['thighL', 'path', 'ff-suit', 8.5], ['shinL', 'path', 'ff-suit', 7.5], ['footL', 'path', 'ff-boot', 7],
+  ['upperArmL', 'path', 'ff-suit', 6.5], ['forearmL', 'path', 'ff-suit', 5.5], ['handL', 'circle', 'ff-glove'],
+  ['hips', 'path', 'ff-suit', 10], ['spine', 'path', 'ff-suit', 11], ['shoulders', 'path', 'ff-suit', 10],
+  ['container', 'path', 'ff-container', 3], ['head', 'circle', 'ff-helmet'], ['visor', 'circle', 'ff-visor'],
+  ['thighR', 'path', 'ff-suit', 8.5], ['shinR', 'path', 'ff-suit', 7.5], ['footR', 'path', 'ff-boot', 7],
+  ['upperArmR', 'path', 'ff-suit', 6.5], ['forearmR', 'path', 'ff-suit', 5.5], ['handR', 'circle', 'ff-glove'],
 ]);
+const WIDTH = Object.fromEntries(SHAPES.filter((s) => s[3]).map(([name, , , width]) => [name, width]));
+
+/** Points along the spine's curve (a quadratic through its control point). */
+function curvePoints([a, c, b], steps = 6) {
+  return Array.from({ length: steps + 1 }, (_, i) => {
+    const t = i / steps;
+    const u = 1 - t;
+    return { x: u * u * a.x + 2 * u * t * c.x + t * t * b.x, y: u * u * a.y + 2 * u * t * c.y + t * t * b.y };
+  });
+}
+
+/**
+ * The drawn body as capsules for the air dots (see air.js): each part's line with half its
+ * width, the head and hands as circles, in scene units.
+ * @param {object} parts From projectModel() with the side camera.
+ * @param {{x: number, size: number}} placement Where and how big the figure is drawn.
+ */
+export function bodyCapsules(parts, { x, size }) {
+  const at = (p) => ({ x: x + p.x * size, y: p.y * size });
+  const capsules = [];
+  const line = (points, r) => {
+    for (let i = 0; i + 1 < points.length; i += 1) {
+      const a = at(points[i]);
+      const b = at(points[i + 1]);
+      capsules.push({ ax: a.x, ay: a.y, bx: b.x, by: b.y, r });
+    }
+  };
+  for (const [name, part] of Object.entries(parts)) {
+    if (name === 'visor') continue; // inside the helmet
+    if (part.r) {
+      const c = at(part.points[0]);
+      capsules.push({ ax: c.x, ay: c.y, bx: c.x, by: c.y, r: part.r * size });
+    } else if (name === 'spine') {
+      line(curvePoints(part.points), (WIDTH.spine / 2) * size);
+    } else if (name === 'container') {
+      line([...part.points, part.points[0]], (WIDTH.container / 2) * size);
+    } else {
+      line(part.points, (WIDTH[name] / 2) * size);
+    }
+  }
+  return capsules;
+}
 /** Parts behind the body by more than this are shaded darker. */
 const FAR_DEPTH = -2;
 
@@ -172,9 +218,10 @@ export class JumperFigure {
     this.size = size;
     this.node = document.createElementNS(SVG_NS, 'g');
     this.node.setAttribute('class', `ff-jumper ff-jumper-${camera}`);
-    this.shapes = SHAPES.map(([name, tag, className], order) => {
+    this.shapes = SHAPES.map(([name, tag, className, width], order) => {
       const node = document.createElementNS(SVG_NS, tag);
       node.setAttribute('class', className);
+      if (width) node.setAttribute('stroke-width', width);
       this.node.append(node);
       return { name, node, className, order };
     });
@@ -194,6 +241,8 @@ export class JumperFigure {
     const parts = projectModel(buildModel(pose), {
       heading, tilt, roll: pose.turn * ROLL_DEGREES + rock, camera: this.camera,
     });
+    this.parts = parts;
+    this.x = x;
     for (const shape of this.shapes) {
       const part = parts[shape.name];
       shape.depth = part.depth;
@@ -215,5 +264,10 @@ export class JumperFigure {
       this.node.append(...sorted.map((s) => s.node));
     }
     this.node.setAttribute('transform', `translate(${fmt(x)} 0) scale(${this.size})`);
+  }
+
+  /** The body as drawn in the last frame, as capsules for the air dots. */
+  capsules() {
+    return this.parts ? bodyCapsules(this.parts, { x: this.x, size: this.size }) : [];
   }
 }

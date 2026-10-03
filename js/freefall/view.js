@@ -5,11 +5,12 @@
  * All text is inserted with textContent, never innerHTML.
  */
 import { JumperFigure } from './figure.js';
+import { createDot, stepDots, isDeflected } from './air.js';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 /** Scene size in SVG units, centered on the jumper's starting point. */
 export const SCENE = Object.freeze({ width: 400, height: 260 });
-const DOT_COUNT = 70;
+const DOT_COUNT = 110;
 /** Air speed past the jumper at the neutral fall rate, in scene units per second. */
 const AIR_SPEED = 240;
 
@@ -55,12 +56,14 @@ export class FreefallView {
     const root = svg('svg', { viewBox: `${-w / 2} ${-h / 2} ${w} ${h}`, role: 'img' });
     root.setAttribute('aria-label', this.t('freefall.sceneLabel'));
 
+    // Air dots flow around the jumper (see air.js); dots the body has just turned are highlighted.
+    this.bounds = { left: -w / 2, top: -h / 2, width: w, height: h };
     this.dotLayer = svg('g', { class: 'ff-air' });
-    this.dots = Array.from({ length: DOT_COUNT }, () => {
-      const depth = 0.35 + Math.random() * 0.65; // nearer dots are bigger and faster
-      const node = svg('circle', { r: (0.8 + depth * 1.6).toFixed(2), opacity: (0.25 + depth * 0.5).toFixed(2) });
+    this.dots = Array.from({ length: DOT_COUNT }, () => createDot(this.bounds));
+    this.dotNodes = this.dots.map(() => {
+      const node = svg('circle');
       this.dotLayer.append(node);
-      return { node, depth, x: (Math.random() - 0.5) * w, y: (Math.random() - 0.5) * h };
+      return node;
     });
 
     this.figure = new JumperFigure('side', 1.9);
@@ -150,18 +153,8 @@ export class FreefallView {
    * @param {number} frame.dt Seconds since the last frame.
    */
   draw({ pose, state, dt }) {
-    const { width: w, height: h } = SCENE;
+    const { width: w } = SCENE;
     const { flight } = state;
-
-    for (const dot of this.dots) {
-      dot.y -= AIR_SPEED * flight.fallRate * dot.depth * dt;
-      if (dot.y < -h / 2) {
-        dot.y += h;
-        dot.x = (Math.random() - 0.5) * w;
-      }
-      dot.node.setAttribute('cx', dot.x.toFixed(1));
-      dot.node.setAttribute('cy', dot.y.toFixed(1));
-    }
 
     const span = w + 80;
     const x = ((((state.x + span / 2) % span) + span) % span) - span / 2;
@@ -169,5 +162,27 @@ export class FreefallView {
     const view = { heading: state.heading, tilt: flight.drift * 6, rock };
     this.figure.update(pose, { ...view, x });
     this.topFigure.update(pose, view);
+
+    // Move the air after the body, so the dots meet the body where it is drawn this frame.
+    stepDots(this.dots, {
+      dt,
+      time: state.time,
+      speed: AIR_SPEED * flight.fallRate,
+      body: this.figure.capsules(),
+      center: { x, y: 0 },
+      bounds: this.bounds,
+    });
+    this.dots.forEach((dot, i) => {
+      const node = this.dotNodes[i];
+      if (node.dot !== dot) {
+        // A new dot (at the start, or recycled at the bottom): size and fade by depth.
+        node.dot = dot;
+        node.setAttribute('r', (0.8 + dot.depth * 1.6).toFixed(2));
+        node.setAttribute('opacity', (0.25 + dot.depth * 0.5).toFixed(2));
+      }
+      node.setAttribute('cx', dot.x.toFixed(1));
+      node.setAttribute('cy', dot.y.toFixed(1));
+      node.classList.toggle('is-deflected', isDeflected(dot, state.time));
+    });
   }
 }
