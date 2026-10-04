@@ -53,7 +53,7 @@
         "pt_BR": {
           "term": "AFF",
           "expansion": "Accelerated Freefall (queda livre acelerada)",
-          "definition": "Método de aluno com queda livre desde o primeiro salto, acompanhado por um ou dois mestres de salto (MS). Na CBPq são sete níveis, seguidos do Nível VIII (Space Program) até a Categoria A.",
+          "definition": "O curso AFF (Accelerated Free Fall) ou Queda Livre Acelerada é a formação indicada para quem deseja aprender a saltar de paraquedas com mais autonomia. A sigla vem de Accelerated Freefall, ou queda livre acelerada, um método de ensino usado para preparar o aluno para realizar saltos com o próprio equipamento.",
           "aliases": [
             "AFF"
           ]
@@ -122,7 +122,7 @@
         "pt_BR": {
           "term": "AI",
           "expansion": "Aluno em Instrução",
-          "definition": "Categoria da CBPq do paraquedista em curso, sob supervisão dos instrutores, até a Categoria A.",
+          "definition": "Significa 'Aluno em Instrução'. É a primeira categoria atribuída ao paraquedista. Similar às categorias da CNH, o paraquedismo tem várias categorias, que vão mudando ao longo do tempo, conforme o paraquedista vai evoluindo.",
           "aliases": [
             "AI"
           ]
@@ -1874,8 +1874,8 @@
           ]
         },
         "pt_BR": {
-          "term": "Licença A",
-          "definition": "Primeira licença da USPA: ISP concluído e pelo menos 25 saltos. Equivale à Categoria A da CBPq, que também exige 25 saltos, 10 min de queda livre e 5 pousos num alvo de 50 m sem rádio.",
+          "term": "Categoria A",
+          "definition": "Primeira de uma série de quatro categorias (A, B, C e D) que classificam o paraquedista do ponto de vista técnico em relação a sua experiência no esporte. Onde 'A' é a primeira licença como atleta e 'D' é a categoria que demonstra a maior experiência como atleta. (Lembrando que a categoria que vem antes, 'AI', é para alunos em instrução).",
           "aliases": [
             "Licença A",
             "Brevê A",
@@ -2364,7 +2364,7 @@
         },
         "pt_BR": {
           "term": "Briefing",
-          "definition": "Preparação antes do salto: check list, objetivos, treinamento adicional e repetição da sequência até o aluno estar confiante.",
+          "definition": "Preparação antes do salto: check list, objetivos, treinamento adicional e repetição da sequência, etc.",
           "aliases": [
             "Briefing"
           ]
@@ -2428,7 +2428,7 @@
         },
         "pt_BR": {
           "term": "Cameraman",
-          "definition": "Paraquedista que salta com equipamento de foto ou vídeo; na CBPq, filmar outros saltos exige Categoria C.",
+          "definition": "Paraquedista que salta com equipamento de foto ou vídeo.",
           "aliases": [
             "Cameraman",
             "Câmera man"
@@ -5866,7 +5866,7 @@
         },
         "pt_BR": {
           "term": "Capotar",
-          "definition": "Perder a estabilidade durante a queda livre.",
+          "definition": "O ato de perder a estabilidade durante a queda livre.",
           "aliases": [
             "Capotar",
             "Capotagem"
