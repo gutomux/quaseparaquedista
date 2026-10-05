@@ -14,6 +14,17 @@ const MARK_SECONDS = 0.7;
 /** Sliding speed along the body, as a share of the oncoming air's speed. */
 const SLIDE_SHARE = 0.9;
 
+/** Longest distance a dot moves in one collision step; less than the thinnest limb, so none is skipped. */
+const MAX_STEP = 4;
+
+/**
+ * Share of the free-flow speed for a dot at this depth (0.35 far to 1 near): 70% to 100%.
+ * Far dots are a little slower for a sense of depth, but every dot stays fast.
+ */
+export function flowShare(depth) {
+  return 0.7 + (0.3 * (depth - 0.35)) / 0.65;
+}
+
 /** Closest point to p on segment a-b. */
 function closestOnSegment(px, py, s) {
   const dx = s.bx - s.ax;
@@ -105,21 +116,28 @@ export function collide(dot, body, center, time, flowSpeed) {
  */
 export function stepDots(dots, { dt, time, speed, body, center, bounds, random = Math.random }) {
   if (dt <= 0) return;
-  const k = 1 - Math.exp(-dt / RELAX_SECONDS);
+  // Fast air could jump over a thin arm in one frame, so move in small steps.
+  const steps = Math.max(1, Math.ceil((speed * dt) / MAX_STEP));
+  const h = dt / steps;
+  const k = 1 - Math.exp(-h / RELAX_SECONDS);
   for (let i = 0; i < dots.length; i += 1) {
-    const dot = dots[i];
-    const freeVy = -speed * dot.depth; // the air rises past a falling jumper
-    dot.vx += (0 - dot.vx) * k;
-    dot.vy += (freeVy - dot.vy) * k;
-    if (dot.vx === 0 && dot.vy === 0) dot.vy = freeVy;
-    dot.x += dot.vx * dt;
-    dot.y += dot.vy * dt;
-    collide(dot, body, center, time, -freeVy);
+    let dot = dots[i];
+    for (let s = 0; s < steps; s += 1) {
+      const freeVy = -speed * flowShare(dot.depth); // the air rises past a falling jumper
+      dot.vx += (0 - dot.vx) * k;
+      dot.vy += (freeVy - dot.vy) * k;
+      if (dot.vx === 0 && dot.vy === 0) dot.vy = freeVy;
+      dot.x += dot.vx * h;
+      dot.y += dot.vy * h;
+      collide(dot, body, center, time, -freeVy);
 
-    const out = dot.y < bounds.top || dot.x < bounds.left - 10 || dot.x > bounds.left + bounds.width + 10;
-    if (out) {
-      dots[i] = createDot(bounds, random, false);
-      dots[i].vy = -speed * dots[i].depth;
+      const out = dot.y < bounds.top || dot.x < bounds.left - 10 || dot.x > bounds.left + bounds.width + 10;
+      if (out) {
+        dot = createDot(bounds, random, false);
+        dot.vy = -speed * flowShare(dot.depth);
+        dots[i] = dot;
+        break;
+      }
     }
   }
 }

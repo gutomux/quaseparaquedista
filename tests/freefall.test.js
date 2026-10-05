@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
-  CONTROLS, GROUPS, COMBOS, NEUTRAL, toggle, isOn, activeControls, comboNote, effects, describe, createState, step,
+  CONTROLS, GROUPS, COMBOS, NEUTRAL, SPEED, airSpeed, toggle, isOn, activeControls, comboNote, effects, describe, createState, step,
 } from '../js/freefall/sim.js';
 import { buildModel, projectModel } from '../js/freefall/figure.js';
 
@@ -174,6 +174,27 @@ test('falling faster sinks down the window, falling slower rises, like drifting 
   assert.ok(flyY(on('legsStretch', 'armsForward')) < 0, 'legs stretched with arms forward rises');
   assert.equal(Math.round(flyY(on('legsStretch'))), 0, 'drifting forward alone keeps the height');
   assert.equal(step(createState(), on('archMore'), 0.02, 60).y, 0, 'no up/down movement unless a fall speed is given');
+});
+
+test('the air always rises clearly faster than the jumper moves up or down', async () => {
+  const { flowShare } = await import('../js/freefall/air.js');
+  const slowestShare = flowShare(0.35);
+  for (const ids of [['legsStretch', 'armsForward', 'archFlat'], ['legsTuck', 'armsBack', 'archMore'], ['archFlat'], []]) {
+    const { fallRate } = effects(on(...ids));
+    const slowestDot = airSpeed(fallRate) * slowestShare;
+    const body = Math.abs(fallRate - 1) * SPEED.fall;
+    assert.ok(slowestDot >= 2 * body, `${ids.join('+') || 'neutral'}: slowest dot ${slowestDot.toFixed(0)} vs body ${body.toFixed(0)}`);
+  }
+});
+
+test('the air keeps a good speed in the slowest position, and follows the fall rate elsewhere', () => {
+  const slowest = effects(on('legsStretch', 'armsForward', 'archFlat')).fallRate;
+  assert.equal(slowest, 0.5);
+  assert.ok(airSpeed(slowest) >= 1.3 * SPEED.air * slowest, 'at least 30% faster than the fall rate alone would make it');
+  for (const ids of [[], ['archFlat'], ['archMore'], ['legsStretch', 'armsForward'], ['legsTuck', 'armsBack', 'archMore']]) {
+    const { fallRate } = effects(on(...ids));
+    assert.equal(airSpeed(fallRate), SPEED.air * fallRate, `${ids.join('+') || 'neutral'} unchanged`);
+  }
 });
 
 test('every control and group has text in every locale', () => {

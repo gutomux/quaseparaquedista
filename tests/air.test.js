@@ -78,3 +78,13 @@ test('air: the body the dots meet matches the drawn figure, with the figure\'s p
   const lowered = bodyCapsules(parts, { x: 30, y: 50, size: 2 });
   assert.ok(lowered.every((c, i) => c.ay === capsules[i].ay + 50), 'moves down with the figure');
 });
+
+test('air: fast air on a slow frame still cannot jump over a thin limb', () => {
+  const thin = [{ ax: -40, ay: 0, bx: 40, by: 0, r: 3 }]; // about a forearm's half width on screen
+  const dot = { x: 5, y: 20, vx: 0, vy: -800, depth: 1, deflectedUntil: -1 };
+  const dots = [dot];
+  stepDots(dots, { dt: 0.05, time: 0, speed: 800, body: thin, center: { x: 0, y: 0 }, bounds, random: () => 0.5 });
+  assert.equal(dots[0], dot, 'not recycled');
+  assert.ok(dot.y >= 3 - 1e-6 || Math.abs(dot.x) > 40, `stopped below the limb or went around its end (x ${dot.x.toFixed(1)}, y ${dot.y.toFixed(1)})`);
+  assert.ok(isDeflected(dot, 0), 'it touched the limb');
+});

@@ -6,13 +6,12 @@
  */
 import { JumperFigure } from './figure.js';
 import { createDot, stepDots, isDeflected } from './air.js';
+import { airSpeed } from './sim.js';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 /** Scene size in SVG units, centered on the jumper's starting point. */
 export const SCENE = Object.freeze({ width: 400, height: 260 });
 const DOT_COUNT = 110;
-/** Air speed past the jumper at the neutral fall rate, in scene units per second. */
-const AIR_SPEED = 240;
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -190,7 +189,7 @@ export class FreefallView {
     stepDots(this.dots, {
       dt,
       time: state.time,
-      speed: AIR_SPEED * flight.fallRate,
+      speed: airSpeed(flight.fallRate),
       body: this.figure.capsules(),
       center: { x, y },
       bounds: this.bounds,

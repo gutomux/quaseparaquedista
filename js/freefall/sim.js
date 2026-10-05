@@ -46,6 +46,31 @@ export const EFFECT = Object.freeze({
   settleSeconds: 0.6,
 });
 
+/**
+ * Scene speeds, in scene units per second (the scene is 400 × 260).
+ * The air must stay clearly faster than the jumper's own up/down movement, even in the
+ * slowest position, or the body seems carried along by the air (a test checks this).
+ */
+export const SPEED = Object.freeze({
+  /** Sideways drift at full drift (legs and arms both pushing). */
+  drift: 60,
+  /** Up/down movement per unit of fall rate away from neutral (arching more: 0.3 × 160 = 48). */
+  fall: 160,
+  /** The air rising past the jumper at the neutral fall rate, for the nearest dots. */
+  air: 520,
+  /**
+   * The air never slows below this share of its neutral speed. Only the slowest position
+   * (legs and arms stretched, de-arched: fall rate 0.5) reaches it; there the air stays
+   * 40% faster than the fall rate alone would make it.
+   */
+  airMinRate: 0.7,
+});
+
+/** Air speed for a fall rate: follows the fall rate, but never below SPEED.airMinRate. */
+export function airSpeed(fallRate) {
+  return SPEED.air * Math.max(fallRate, SPEED.airMinRate);
+}
+
 /** Turn a control on, or off if it is already on. Its opposite turns off. */
 export function toggle(pose, id) {
   const control = CONTROLS.find((c) => c.id === id);

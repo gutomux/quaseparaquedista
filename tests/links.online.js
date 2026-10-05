@@ -20,14 +20,22 @@ const videos = unique([...html.matchAll(/youtube-nocookie\.com\/embed\/([\w-]+)/
 
 const TIMEOUT_MS = 20000;
 
-/** fetch with a timeout and one retry, so a passing network hiccup doesn't block a commit. */
+/** Answers that usually mean "try again shortly": too many requests, or a temporary server error. */
+const TEMPORARY = (status) => status === 429 || status >= 500;
+
+/**
+ * fetch with a timeout and one retry, so a passing hiccup doesn't block a commit: no answer
+ * at all, or a temporary answer. A missing file (404 and the like) fails straight away.
+ */
 async function get(url, headers = {}) {
   for (let attempt = 1; ; attempt += 1) {
     try {
-      return await fetch(url, { headers: { 'User-Agent': 'quaseparaquedista-link-check', ...headers }, signal: AbortSignal.timeout(TIMEOUT_MS) });
+      const response = await fetch(url, { headers: { 'User-Agent': 'quaseparaquedista-link-check', ...headers }, signal: AbortSignal.timeout(TIMEOUT_MS) });
+      if (!TEMPORARY(response.status) || attempt >= 2) return response;
     } catch (error) {
       if (attempt >= 2) throw new Error(`${url} did not answer: ${error.message}`);
     }
+    await new Promise((resolve) => setTimeout(resolve, 2000));
   }
 }
 

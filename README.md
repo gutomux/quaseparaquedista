@@ -132,7 +132,7 @@ The jumper is a simple 3D body, so turns really rotate it: facing you, you see b
 
 Buttons in the same group are opposites, so only one can be on. Effects add up: stretched legs with arms pulled back moves forward faster, and stretched legs with arms forward cancel out.
 
-The rules live in `js/freefall/sim.js`: `CONTROLS` lists the buttons and `EFFECT` holds the strengths (drift, fall rate change, turn speed). Change them there and run `npm test`. Page text is under `freefall` in the i18n files. If the visitor's system asks for reduced motion, the animation starts paused.
+The rules live in `js/freefall/sim.js`: `CONTROLS` lists the buttons and `EFFECT` holds the strengths (drift, fall rate change, turn speed), and `SPEED` the scene speeds (sideways drift, up/down movement, and the air, which a test keeps clearly faster than the jumper). Change them there and run `npm test`. Page text is under `freefall` in the i18n files. If the visitor's system asks for reduced motion, the animation starts paused.
 
 ## Suggestions and corrections
 
