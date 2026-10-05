@@ -36,6 +36,8 @@ i18n/en_US.json       Interface text in English
 i18n/pt_BR.json       Interface text in Brazilian Portuguese
 js/config.js          Settings: paths, supported locales, default locale, limits
 js/i18n.js            Locale detection, loading interface text, translating keys
+js/page-lang.js       Loaded first on every page: sets the page language and stops browser translation
+                      when the page is already in the visitor's language (keep its list in sync with config.js)
 js/data.js            Loads, validates and localizes glossary.json
 js/search.js          Search logic across all locales: pure functions, no DOM
 js/view.js            View: all DOM rendering and event listening

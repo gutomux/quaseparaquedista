@@ -49,13 +49,14 @@
 
 /* Controls */
 .ff-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.75rem}
-.ff-group{margin:0;padding:.7rem .8rem .8rem;border:1px solid var(--line);border-radius:1rem;background:var(--panel);display:grid;grid-template-columns:1fr 1fr;align-content:start;gap:.5rem}
+/* min-width:0 lets the groups shrink with big system fonts (fieldsets otherwise keep their content width). */
+.ff-group{min-width:0;margin:0;padding:.7rem .8rem .8rem;border:1px solid var(--line);border-radius:1rem;background:var(--panel);display:grid;grid-template-columns:1fr 1fr;align-content:start;gap:.5rem}
 .ff-group legend{padding:0 .35rem;font-weight:700;font-size:.9rem;color:var(--ink-soft)}
 .ff-toggle,.ff-action{
   font:inherit;font-size:.95rem;color:var(--ink);background:transparent;cursor:pointer;
   border:1.5px solid var(--line);border-radius:999px;padding:.4rem .9rem
 }
-.ff-toggle{line-height:1.25}
+.ff-toggle{line-height:1.25;overflow-wrap:anywhere;hyphens:auto}
 .ff-toggle:hover,.ff-action:hover{border-color:var(--ink)}
 .ff-toggle:focus-visible,.ff-action:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .ff-toggle[aria-pressed="true"]{background:var(--ink);border-color:var(--accent);color:var(--panel);font-weight:700;box-shadow:inset 0 0 0 1.5px var(--accent)}
@@ -64,7 +65,9 @@
 .ff-main + footer{padding-top:0}
 
 /* Layout: scene, buttons and explanation. Stacked by default, in this order. */
-.ff-layout{display:grid;gap:.75rem;margin-top:1.25rem}
+.ff-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:.75rem;margin-top:1.25rem}
+/* Never wider than the screen, even with a very large system font. */
+.ff-layout > *{min-width:0}
 
 /* Wide screens: scene on the left, buttons beside it, so both are always in view. */
 @media (min-width:900px){
@@ -99,12 +102,16 @@
   .ff-main .back-home{margin-bottom:.75rem}
   .ff-layout{margin-top:.5rem;gap:.6rem}
   .ff-stage{position:relative}
+  /* Sized against the scene (the compass takes the right quarter), not the text size,
+     so a bigger system font doesn't squeeze it. */
   .ff-readout{
-    position:absolute;top:.5rem;left:.5rem;max-width:calc(100% - 6.5rem);padding:.3rem .6rem;
+    position:absolute;top:.5rem;left:.5rem;max-width:72%;padding:.3rem .6rem;overflow-wrap:anywhere;hyphens:auto;
     border:0;border-radius:.6rem;background:var(--panel);opacity:.92;font-size:.85rem;line-height:1.3
   }
   .ff-readout-label{display:block;font-size:.7rem}
-  .ff-controls{grid-template-columns:1fr 1fr;gap:.5rem}
+  /* Set by view.js when the readout would cover the jumper (very large system font). */
+  .ff-stage.readout-below .ff-readout{position:static;max-width:none;opacity:1;border-radius:0;border-top:1px solid var(--line)}
+  .ff-controls{grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
   .ff-group{grid-template-columns:1fr;padding:.35rem .5rem .5rem;gap:.35rem}
   .ff-group legend{font-size:.78rem;padding:0 .25rem}
   .ff-toggle{font-size:.86rem;padding:.4rem .5rem;min-height:2.6rem}

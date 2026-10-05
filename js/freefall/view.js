@@ -49,6 +49,24 @@ export class FreefallView {
 
     this.buildScene();
     this.buildControls(controls, groups);
+    this.placeReadout();
+  }
+
+  /**
+   * On phones the movement readout sits over the scene's corner. With a large system font
+   * it would cover the jumper, so then it moves to a bar below the scene instead.
+   */
+  placeReadout() {
+    const stage = this.root.querySelector('.ff-stage');
+    const readout = this.root.querySelector('.ff-readout');
+    if (!stage || !readout || typeof ResizeObserver === 'undefined') return;
+    const check = () => {
+      stage.classList.remove('readout-below');
+      const overlaid = getComputedStyle(readout).position === 'absolute';
+      if (overlaid && readout.offsetHeight > this.scene.offsetHeight * 0.32) stage.classList.add('readout-below');
+    };
+    new ResizeObserver(check).observe(this.scene);
+    new ResizeObserver(check).observe(readout);
   }
 
   buildScene() {
