@@ -3,8 +3,6 @@
 .home,.home ~ footer,.home ~ .feedback{max-width:52rem}
 /* Leaves room for "QuaseParaquedista" (about 7.4 times the font size wide) beside the menu button. */
 .home .page-top{--title-size:clamp(1.1rem,calc((100vw - 6.5rem) / 7.4),5.25rem)}
-/* Kept whole, so a narrow screen wraps before ".com.br" rather than inside it. */
-.home-domain{display:inline-block;color:var(--accent-ink)}
 .home-lead{margin:0 0 1.25rem;font-size:1.2rem;max-width:36rem}
 
 .home-audiences{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;align-content:start}
