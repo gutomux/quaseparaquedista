@@ -1,8 +1,8 @@
 /* Welcome page. Colors come from the tokens in styles.css. */
 /* A bit wider than the other pages, to fit the photos beside the cards. */
 .home,.home ~ footer,.home ~ .feedback{max-width:52rem}
-/* Photo header, as in the @quaseparaquedista posts: an open canopy against the sky (the photo is
-   portrait; the position keeps the canopy and lines in the strip) with QUASE / PARAQUEDISTA in
+/* Photo header, as in the @quaseparaquedista posts: a jumper in freefall (a 4:1 panorama; the
+   position keeps the jumper in view on phones, which show a narrower slice) with QUASE / PARAQUEDISTA in
    wide, spaced, see-through white letters with a thin black outline: the photo shows through,
    and the outline keeps the letters easy to read over bright clouds and the dark canopy. The title size leaves
    room for "PARAQUEDISTA" (11.8 times the font size wide at weight 900 with its spacing, plus a
@@ -12,7 +12,7 @@
   margin:calc(-1 * clamp(1rem,3vh,1.75rem)) -1.25rem 1.25rem;padding:1.25rem 1.25rem 0;min-height:clamp(12.5rem,38vw,19rem);
   color:#fff;border-radius:0 0 1.5rem 1.5rem;
   /* A darker band at the top keeps the white title readable over the clouds. */
-  background:linear-gradient(180deg,rgba(17,19,23,.55),rgba(17,19,23,.15) 50%,rgba(17,19,23,0) 75%),url("../images/hero/gutoVelameAberto05.jpg") 45% 22%/cover #8FB2D9;
+  background:linear-gradient(180deg,rgba(17,19,23,.55),rgba(17,19,23,.15) 50%,rgba(17,19,23,0) 75%),url("../images/hero/gutoskydiving.jpg") 68% 50%/cover #6E9BC9;
 
 }
 @media (min-width:52rem){.home .page-top{margin-top:1rem;border-radius:1.5rem}}

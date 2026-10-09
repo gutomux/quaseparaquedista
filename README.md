@@ -19,7 +19,7 @@ The look follows the @quaseparaquedista Instagram posts: real sky photos, wide t
 - **Yellow only fills** (main buttons, icon tiles, highlights, the current page dot) with black text on it; as text on white it would be unreadable. Links and text stay black or grey.
 - **Focus rings** use `--focus` (black in light mode, yellow in dark), so keyboard focus is always visible.
 - **Icons** are small line drawings on yellow tiles, the same on every phone (no emoji).
-- **The welcome page header** uses `images/hero/gutoVelameAberto05.jpg`, with a see-through white title (QUASE 35%, PARAQUEDISTA 50%) outlined in black, so the photo shows through and the letters stay readable. Photos for other pages should have no printed text.
+- **The welcome page header** uses `images/hero/gutoskydiving.jpg` (a freefall panorama), with a see-through white title (QUASE 35%, PARAQUEDISTA 50%) outlined in black, so the photo shows through and the letters stay readable. Photos for other pages should have no printed text.
 - **The simulator scene** keeps its own sky colors (`--scene-top`, `--scene-low` in `css/freefall.css`).
 
 ## How languages work
