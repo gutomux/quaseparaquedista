@@ -1,7 +1,7 @@
 /* Freefall simulator page. Colors come from the tokens in styles.css. */
 
 .ff-stage{background:var(--panel);border-radius:1.25rem;overflow:hidden;border:1px solid var(--line)}
-.ff-scene{background:linear-gradient(180deg,var(--sky-top),var(--sky-low))}
+.ff-scene{background:linear-gradient(180deg,var(--scene-top),var(--scene-low))}
 .ff-scene svg{display:block;width:100%;height:auto;aspect-ratio:400/260}
 .ff-scene-box{position:relative}
 .ff-motion-note{
@@ -14,35 +14,35 @@
 .ff-tip{
   position:relative;margin:.5rem;
   display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .75rem;padding:.6rem 2.6rem .6rem .9rem;
-  background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:1rem;box-shadow:0 12px 30px -16px rgba(10,37,64,.5)
+  background:var(--panel);border:1px solid var(--line);border-radius:1rem;box-shadow:0 12px 30px -16px rgba(10,37,64,.5)
 }
 .ff-tip[hidden]{display:none}
 .ff-tip p{margin:0;flex:1 1 12rem;font-size:.92rem;color:var(--ink)}
-.ff-tip .ff-action{background:var(--ink);color:var(--panel)}
+.ff-tip .ff-action{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .ff-tip-close{
   position:absolute;top:.35rem;right:.35rem;width:2.25rem;height:2.25rem;padding:0;border:0;border-radius:50%;
   font:inherit;font-size:1rem;color:var(--ink-soft);background:transparent;cursor:pointer
 }
 .ff-tip-close:hover{color:var(--ink);background:var(--sky-low)}
-.ff-tip-close:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
+.ff-tip-close:focus-visible{outline:3px solid var(--focus);outline-offset:1px}
 /* Phones: a short explanation over the scene after each change. Wide screens show the
    full caption beside the scene, so it isn't needed there. */
 .ff-flash{
   position:absolute;left:.5rem;right:.5rem;bottom:.5rem;margin:0;padding:.45rem .7rem;font-size:.85rem;line-height:1.35;
-  color:var(--ink);background:var(--panel);opacity:.95;border-radius:.6rem;border-left:4px solid var(--flow);pointer-events:none
+  color:var(--ink);background:var(--panel);opacity:.95;border-radius:.6rem;pointer-events:none
 }
 .ff-flash[hidden]{display:none}
 @media (min-width:900px){.ff-flash{display:none}}
 @media (prefers-reduced-motion:no-preference){.ff-flash:not([hidden]){animation:ff-flash-in .25s ease-out}}
 @keyframes ff-flash-in{from{opacity:0;transform:translateY(6px)}to{opacity:.95;transform:none}}
 .ff-motion-note p{margin:0;font-size:.92rem;color:var(--ink-soft)}
-.ff-motion-note .ff-action{background:var(--ink);color:var(--panel)}
+.ff-motion-note .ff-action{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .ff-air circle{fill:var(--ink)}
 /* Air the body has just turned aside: the flow that pushes the jumper around.
    Blue, to stand apart from the orange suit and yellow boots on both skies. */
-.ff-scene{--flow:#1D5FD6}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ff-scene{--flow:#6FD8FF}}
-:root[data-theme="dark"] .ff-scene{--flow:#6FD8FF}
+.ff-scene{--flow:#1D5FD6;--scene-top:#9CCBF0;--scene-low:#EAF4FB}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ff-scene{--flow:#6FD8FF;--scene-top:#08162A;--scene-low:#12294A}}
+:root[data-theme="dark"] .ff-scene{--flow:#6FD8FF;--scene-top:#08162A;--scene-low:#12294A}
 .ff-air circle.is-deflected{fill:var(--flow);opacity:1}
 
 /* Jumper: fixed colors, so the suit, boots and gloves read the same on light and dark skies */
@@ -70,7 +70,7 @@
 .ff-caption{padding:.85rem 1.1rem 1rem;background:var(--panel);border:1px solid var(--line);border-radius:1rem;min-height:4.5rem}
 .ff-caption p{margin:0}
 .ff-caption p + p{margin-top:.45rem}
-.ff-combo{font-weight:700;padding-left:.7rem;border-left:3px solid var(--accent)}
+.ff-combo{font-weight:700;padding:.55rem .75rem;border-radius:.75rem;background:var(--mark);color:var(--ink)}
 
 /* Controls */
 .ff-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.75rem}
@@ -83,7 +83,7 @@
 }
 .ff-toggle{line-height:1.25;overflow-wrap:anywhere;hyphens:auto}
 .ff-toggle:hover,.ff-action:hover{border-color:var(--ink)}
-.ff-toggle:focus-visible,.ff-action:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.ff-toggle:focus-visible,.ff-action:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 .ff-toggle[aria-pressed="true"]{background:var(--ink);border-color:var(--accent);color:var(--panel);font-weight:700;box-shadow:inset 0 0 0 1.5px var(--accent)}
 .ff-actions{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem}
 .ff-action{font-weight:700;border-color:var(--ink)}
@@ -98,7 +98,7 @@
 @media (min-width:900px){
   .ff-main,.ff-main + footer{max-width:62rem}
   /* A one-line heading leaves room for the scene and buttons on a laptop screen. */
-  .ff-main .page-top{--title-size:clamp(2.6rem,4vw,3.5rem)}
+  .ff-main .page-top{--title-size:clamp(2rem,3vw,2.75rem)}
   .ff-main h1{margin-bottom:.5rem}
   .ff-main h1 br{display:none}
   .ff-main h1 br + span::before{content:" "}
@@ -124,7 +124,7 @@
 /* Phones: smaller heading, the movement readout over the scene's top-left corner (the compass
    has the top right), and the four groups in a 2 × 2 grid with each group's buttons stacked. */
 @media (max-width:640px){
-  .ff-main .page-top{--title-size:clamp(1.9rem,8.5vw,3rem)}
+  .ff-main .page-top{--title-size:clamp(1.5rem,7vw,2.4rem)}
   .ff-main h1{margin-bottom:.5rem}
   .ff-layout{margin-top:.5rem;gap:.6rem}
   .ff-stage{position:relative}

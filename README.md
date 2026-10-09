@@ -12,6 +12,16 @@ In the glossary, type one letter and suggestions appear; pick one to see its def
 
 No build step and no dependencies: plain HTML, CSS and JavaScript modules, ready for GitHub Pages.
 
+## Visual style
+
+The look follows the @quaseparaquedista Instagram posts: real sky photos, wide titles (Archivo, expanded), canopy yellow `#F5B400` and black on cloud white `#F4F7FB`, with a matching dark theme. Body text is Atkinson Hyperlegible, chosen for legibility. All colors are tokens at the top of `css/styles.css`:
+
+- **Yellow only fills** (main buttons, icon tiles, highlights, the current page dot) with black text on it; as text on white it would be unreadable. Links and text stay black or grey.
+- **Focus rings** use `--focus` (black in light mode, yellow in dark), so keyboard focus is always visible.
+- **Icons** are small line drawings on yellow tiles, the same on every phone (no emoji).
+- **The welcome page header** uses `images/hero/gutoVelameAberto05.jpg`, with a see-through white title (QUASE 35%, PARAQUEDISTA 50%) outlined in black, so the photo shows through and the letters stay readable. Photos for other pages should have no printed text.
+- **The simulator scene** keeps its own sky colors (`--scene-top`, `--scene-low` in `css/freefall.css`).
+
 ## How languages work
 
 - **Interface language is detected automatically** from the browser (`navigator.languages`). Portuguese browsers (pt-BR, pt-PT, pt) get pt_BR; everything else gets en_US.

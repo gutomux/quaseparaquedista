@@ -1,9 +1,13 @@
 /* Skydiving Glossary — styles */
+/* Direction C ("Feed"): the @quaseparaquedista look. Canopy yellow and black on cloud white,
+   real sky photos, wide titles. Yellow only fills (buttons, highlights) with black text on it:
+   as text on white it would be unreadable. */
 :root{
-  --sky-top:#9CCBF0; --sky-low:#EAF4FB; --ink:#0A2540; --ink-soft:#44607C;
-  --panel:#FFFFFF; --line:#C9DCEC; --accent:#FF5A00; --accent-ink:#B83F00; --mark:#FFE3CF;
+  --sky-top:#E4EEF8; --sky-low:#F4F7FB; --ink:#111317; --ink-soft:#4B5563;
+  --panel:#FFFFFF; --line:#DDE3EA; --accent:#F5B400; --on-accent:#111317; --accent-ink:#7A5600; --mark:#FFE58A;
+  --focus:#111317; --shadow:0 10px 24px -16px rgba(17,19,23,.45);
   --warn-bg:#FFF4CC; --warn-line:#E0A800; --warn-ink:#5C4200;
-  --display:"Big Shoulders Display","Arial Narrow","Roboto Condensed",sans-serif;
+  --display:"Archivo","Arial",sans-serif;
   --body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -11,15 +15,19 @@
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --sky-top:#08162A; --sky-low:#12294A; --ink:#E6F0FA; --ink-soft:#9DB5CE;
-    --panel:#0F2340; --line:#24416A; --accent:#FF7A33; --accent-ink:#FF9A5E; --mark:#5A2A10;
+    --sky-top:#0B0D11; --sky-low:#14171C; --ink:#F4F7FB; --ink-soft:#A8B3C2;
+    --panel:#1B1F26; --line:#2D333D; --accent:#F5B400; --on-accent:#111317; --accent-ink:#F5B400; --mark:#5C4600;
+    --focus:#F5B400; --shadow:0 10px 24px -16px rgba(0,0,0,.8);
     --warn-bg:#3A2E05; --warn-line:#E0A800; --warn-ink:#FFE08A;
+    color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --sky-top:#08162A; --sky-low:#12294A; --ink:#E6F0FA; --ink-soft:#9DB5CE;
-  --panel:#0F2340; --line:#24416A; --accent:#FF7A33; --accent-ink:#FF9A5E; --mark:#5A2A10;
+  --sky-top:#0B0D11; --sky-low:#14171C; --ink:#F4F7FB; --ink-soft:#A8B3C2;
+  --panel:#1B1F26; --line:#2D333D; --accent:#F5B400; --on-accent:#111317; --accent-ink:#F5B400; --mark:#5C4600;
+  --focus:#F5B400; --shadow:0 10px 24px -16px rgba(0,0,0,.8);
   --warn-bg:#3A2E05; --warn-line:#E0A800; --warn-ink:#FFE08A;
+  color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:inherit}
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
@@ -34,8 +42,8 @@ body{
 main{max-width:44rem;margin:0 auto;padding:clamp(1rem,3vh,1.75rem) 1.25rem 3rem}
 h1{
   hyphens:auto;
-  font-family:var(--display);font-weight:800;font-size:clamp(3.2rem,11vw,6.25rem);
-  line-height:.88;letter-spacing:.005em;margin:0 0 .9rem;text-transform:none;
+  font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(2rem,8vw,3.75rem);
+  line-height:1;letter-spacing:0;margin:0 0 .9rem;text-transform:none;
 }
 .intro{margin:0 0 2rem;color:var(--ink-soft);max-width:34rem}
 .search{position:relative}
@@ -43,7 +51,7 @@ h1{
   display:flex;align-items:center;gap:.75rem;background:var(--panel);
   border:2px solid var(--ink);border-radius:999px;padding:.35rem .5rem .35rem 1.35rem;
 }
-.field:focus-within{outline:3px solid var(--accent);outline-offset:3px}
+.field:focus-within{outline:3px solid var(--focus);outline-offset:3px}
 .field svg{flex:none;color:var(--ink-soft)}
 #q{
   flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:inherit;font-size:1.25rem;
@@ -69,18 +77,18 @@ h1{
   grid-row:span 2;align-self:start;margin-top:.15rem;font-size:.75rem;font-weight:700;
   padding:.1rem .5rem;border-radius:.4rem;border:1.5px solid var(--line);color:var(--ink-soft);min-width:4.6rem;text-align:center
 }
-.kind.acr{border-color:var(--accent);color:var(--accent-ink)}
+.kind.acr{border-color:var(--ink);color:var(--ink)}
 .s-name{font-weight:700;overflow-wrap:anywhere}
 .s-flag{font-weight:400}
 .s-lang{font-size:.8rem;font-weight:400;color:var(--ink-soft)}
 .s-sep{font-weight:400;color:var(--ink-soft)}
 .s-sub{font-size:.9rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 mark{background:var(--mark);color:inherit;border-radius:.2rem;padding:0 .05em}
-.no-match{margin-top:1rem;padding:.85rem 1.1rem;background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:.9rem;color:var(--ink-soft)}
+.no-match{margin-top:1rem;padding:.85rem 1.1rem;background:var(--panel);border:1px solid var(--line);border-radius:1rem;color:var(--ink-soft);box-shadow:var(--shadow)}
 .no-match p{margin:0}
 .no-match a{color:var(--ink);font-weight:700;text-decoration:none}
 .no-match a:hover{color:var(--accent-ink)}
-.no-match a:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:.2rem}
+.no-match a:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:.2rem}
 .try{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;color:var(--ink-soft);font-size:.95rem}
 .chip{
   font:inherit;font-size:.95rem;color:var(--ink);background:transparent;border:1.5px solid var(--line);
@@ -89,22 +97,29 @@ mark{background:var(--mark);color:inherit;border-radius:.2rem;padding:0 .05em}
 .chip:hover,.chip:focus-visible{border-color:var(--ink);outline:none}
 #result{margin-top:1.25rem}
 #result:empty{display:none}
-.card{background:var(--panel);border-radius:1.25rem;padding:1.6rem 1.6rem 1.4rem;border-left:6px solid var(--accent)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:1.25rem;padding:1.6rem 1.6rem 1.4rem;box-shadow:var(--shadow)}
 .card .kind{display:inline-block;margin:0 0 .6rem}
-.card h2{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,7vw,3.25rem);line-height:.95;margin:0 0 .35rem;overflow-wrap:anywhere}
+.card h2{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(1.75rem,6vw,2.6rem);line-height:1.05;margin:0 0 .35rem;overflow-wrap:anywhere}
 .stands{font-size:1.2rem;font-weight:700;margin:0 0 .75rem}
 .def{margin:0;font-size:1.125rem;max-width:36rem}
 .card-actions{margin-top:1.1rem;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .9rem}
 .share-btn{
-  font:inherit;font-size:.95rem;font-weight:700;color:var(--ink);background:var(--panel);cursor:pointer;
-  border:2px solid var(--ink);border-radius:999px;padding:.4rem 1rem
+  font:inherit;font-size:.95rem;font-weight:700;color:var(--on-accent);background:var(--accent);cursor:pointer;
+  border:2px solid var(--accent);border-radius:999px;padding:.45rem 1.1rem
 }
-.share-btn:hover{border-color:var(--accent);color:var(--accent-ink)}
-.share-btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.share-btn:hover{border-color:var(--ink)}
+.share-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 .share-status{font-size:.9rem;color:var(--ink-soft);overflow-wrap:anywhere}
 .also{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;font-size:.95rem;color:var(--ink-soft)}
 footer{max-width:44rem;margin:0 auto;padding:0 1.25rem 2.5rem}
-.disclaimer{margin:0;padding:.85rem 1rem;border:1px solid var(--warn-line);border-left-width:.35rem;border-radius:.5rem;background:var(--warn-bg);color:var(--warn-ink);font-size:.95rem;font-weight:700}
+.disclaimer{
+  margin:0;display:flex;gap:.7rem;align-items:flex-start;padding:.85rem 1rem;border:1px solid var(--line);border-radius:1rem;
+  background:var(--panel);color:var(--ink-soft);font-size:.95rem
+}
+.disclaimer::before{
+  content:"i";flex:none;display:grid;place-items:center;width:1.5rem;height:1.5rem;margin-top:.05rem;border-radius:50%;
+  font-weight:700;font-style:italic;font-family:Georgia,serif;color:var(--on-accent);background:var(--accent)
+}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media (max-width:480px){
   .card{padding:1.25rem}
@@ -117,7 +132,7 @@ footer{max-width:44rem;margin:0 auto;padding:0 1.25rem 2.5rem}
 
 /* States added in the modular version */
 .try[hidden]{display:none}
-.card.error{border-left-color:var(--ink-soft)}
+.card.error{border-color:var(--ink-soft)}
 #q:disabled{cursor:not-allowed;opacity:.6}
 .noscript{max-width:44rem;margin:0 auto;padding:0 1.25rem 2rem}
 .other-lang{margin:-.35rem 0 .75rem;color:var(--ink-soft);font-style:italic}
@@ -128,11 +143,11 @@ footer:has(+ .feedback:not([hidden])){padding-bottom:1.5rem}
 .feedback{max-width:44rem;margin:0 auto;padding:0 1.25rem 2.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem}
 .feedback p{margin:0;color:var(--ink-soft)}
 .feedback-btn{
-  display:inline-block;font-weight:700;color:var(--ink);text-decoration:none;
-  border:2px solid var(--ink);border-radius:999px;padding:.5rem 1.1rem;background:var(--panel)
+  display:inline-block;font-weight:700;color:var(--on-accent);text-decoration:none;
+  border:2px solid var(--accent);border-radius:999px;padding:.55rem 1.2rem;background:var(--accent)
 }
-.feedback-btn:hover{border-color:var(--accent);color:var(--accent-ink)}
-.feedback-btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.feedback-btn:hover{border-color:var(--ink)}
+.feedback-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 
 /* Calculators on result cards */
 .calc{margin-top:1.1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:.75rem;max-width:36rem}
@@ -141,11 +156,11 @@ footer:has(+ .feedback:not([hidden])){padding-bottom:1.5rem}
   font:inherit;font-size:1.05rem;color:var(--ink);background:var(--sky-low);
   border:1.5px solid var(--line);border-radius:.6rem;padding:.55rem .7rem;width:100%
 }
-.calc-field input:focus-visible{outline:3px solid var(--accent);outline-offset:1px;border-color:var(--ink)}
+.calc-field input:focus-visible{outline:3px solid var(--focus);outline-offset:1px;border-color:var(--ink)}
 .calc-result{grid-column:1/-1;display:flex;flex-direction:column;gap:.15rem;padding:.75rem .9rem;border-radius:.75rem;background:var(--sky-low);color:var(--ink-soft)}
 .calc-result strong{font-weight:400}
 .calc-result.has-value{color:var(--ink)}
-.calc-result.has-value strong{font-family:var(--display);font-weight:800;font-size:1.75rem;line-height:1.1}
+.calc-result.has-value strong{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:1.75rem;line-height:1.1}
 .calc-formula{font-size:.9rem;color:var(--ink-soft)}
 
 /* Limits table under calculators */
@@ -156,31 +171,36 @@ footer:has(+ .feedback:not([hidden])){padding-bottom:1.5rem}
 .limits thead th{color:var(--ink-soft);font-weight:400;font-size:.85rem}
 .limits tbody th{font-weight:700;white-space:nowrap}
 .limits tr.is-match{background:var(--mark)}
-.limits tr.is-match th{box-shadow:inset 4px 0 0 var(--accent)}
+.limits tr.is-match th{font-weight:800}
 .limits-note{margin:.5rem 0 0;font-size:.85rem;color:var(--ink-soft)}
 .calc-match{margin-top:.35rem;font-weight:700;color:var(--ink)}
 .calc-match-note{font-size:.9rem;color:var(--ink-soft)}
 .feedback[hidden]{display:none}
 
+/* Icons: drawn line icons on a canopy-yellow tile (the same on every phone, unlike emoji) */
+.icon-tile{flex:none;display:grid;place-items:center;width:2.75rem;height:2.75rem;border-radius:.85rem;background:var(--accent);color:var(--on-accent)}
+.icon-tile svg{width:1.5rem;height:1.5rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.icon-tile svg circle[r="1.3"]{fill:currentColor;stroke:none}
+
 /* "Where you are" trail above the title of pages inside a section */
 .crumbs{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15rem .45rem;margin:0 0 .6rem;font-size:.9rem;color:var(--ink-soft)}
 .crumbs a{color:var(--ink);font-weight:700;text-decoration:none}
 .crumbs a:hover{color:var(--accent-ink)}
-.crumbs a:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:.2rem}
+.crumbs a:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:.2rem}
 
 /* Page top, on every page: the title, and the ☰ menu button at the right of its first line.
    --title-size sets the title; pages override it. The default leaves room for a word about
-   6.6 times the font size wide (e.g. "paraquedismo") beside the button: screen width minus the
+   8.1 times the font size wide (e.g. "paraquedismo" in the wide title face) beside the button: screen width minus the
    side padding (2 × 1.25rem), the button (3rem) and the gap (1rem). */
-.page-top{--title-size:clamp(1.6rem,calc((100vw - 6.5rem) / 6.6),5rem);display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.page-top{--title-size:clamp(1.5rem,calc((100vw - 6.5rem) / 8.1),3.75rem);display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
 .page-title{flex:1;min-width:0;font-size:var(--title-size)}
-.site-nav{position:relative;flex:none;margin-top:calc((var(--title-size) * .88 - 3rem) / 2)}
+.site-nav{position:relative;flex:none;margin-top:calc((var(--title-size) * 1 - 3rem) / 2)}
 .site-burger{
   display:grid;place-items:center;width:3rem;height:3rem;padding:0;cursor:pointer;
   color:var(--ink);background:var(--panel);border:2px solid var(--ink);border-radius:50%
 }
 .site-burger:hover{border-color:var(--accent);color:var(--accent-ink)}
-.site-burger:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.site-burger:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 .site-burger-lines{position:relative;display:block;width:1.25rem;height:.95rem}
 .site-burger-lines span{position:absolute;left:0;width:100%;height:2.5px;border-radius:2px;background:currentColor;transition:transform .2s ease,opacity .2s ease}
 .site-burger-lines span:nth-child(1){top:0}
@@ -197,10 +217,11 @@ footer:has(+ .feedback:not([hidden])){padding-bottom:1.5rem}
 }
 .site-menu a{display:flex;flex-direction:column;gap:.1rem;padding:.7rem .9rem;border-radius:.75rem;text-decoration:none;color:var(--ink)}
 .site-menu a:hover,.site-menu a:focus-visible{background:var(--sky-low);outline:none}
-.site-menu a:focus-visible{box-shadow:inset 0 0 0 2px var(--accent)}
-/* The page you're on (or its section) is marked with an accent bar. */
-.site-menu a[aria-current]{box-shadow:inset 4px 0 0 var(--accent)}
-.site-menu a[aria-current]:focus-visible{box-shadow:inset 4px 0 0 var(--accent),inset 0 0 0 2px var(--accent)}
+.site-menu a:focus-visible{box-shadow:inset 0 0 0 2px var(--focus)}
+/* The page you're on (or its section) is marked with a yellow dot before its name. */
+.site-menu a[aria-current] .site-menu-name::before{
+  content:"";display:inline-block;width:.6rem;height:.6rem;margin-right:.45rem;border-radius:50%;background:var(--accent);vertical-align:.1em
+}
 /* Language switch at the end of the menu */
 .site-lang{margin-top:.25rem;padding:.6rem .9rem .5rem;border-top:1px solid var(--line)}
 .site-lang-group{display:flex;align-items:center;gap:.5rem}
@@ -210,7 +231,7 @@ footer:has(+ .feedback:not([hidden])){padding-bottom:1.5rem}
   color:var(--ink);background:transparent;border:2px solid var(--line);border-radius:999px
 }
 .site-lang-option:hover{border-color:var(--ink)}
-.site-lang-option:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.site-lang-option:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 .site-lang-option[aria-pressed="true"]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
 .site-menu-name{font-weight:700;font-size:1.05rem}
 .site-menu-text{font-size:.9rem;color:var(--ink-soft)}
