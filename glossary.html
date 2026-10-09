@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
-  <script src="js/page-lang.js?v=2026-10-05.3"></script>
+  <script src="js/page-lang.js?v=2026-10-09.2"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Search skydiving acronyms and terms in English or Portuguese." data-i18n-attr="content: meta.description">
   <title>Skydiving Glossary</title>
@@ -10,14 +10,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=2026-10-05.3">
-  <script type="module" src="js/main.js?v=2026-10-05.3"></script>
+  <link rel="stylesheet" href="css/styles.css?v=2026-10-09.2">
+  <script type="module" src="js/main.js?v=2026-10-09.2"></script>
 </head>
 <body>
   <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
   <main>
-    <a class="back-home" href="index.html" data-i18n="nav.home">← Home</a>
-    <h1><span data-i18n="heading.line1">Skydiving</span><br><span data-i18n="heading.line2">glossary</span></h1>
+    <header class="page-top">
+      <h1 class="page-title"><span data-i18n="heading.line1">Skydiving</span><br><span data-i18n="heading.line2">glossary</span></h1>
+      <nav class="site-nav" data-site-nav></nav>
+    </header>
     <p class="intro" id="intro" data-i18n="intro"></p>
 
     <div class="search">
@@ -31,6 +33,8 @@
       </div>
       <ul id="list" role="listbox" hidden data-i18n-attr="aria-label: search.suggestionsLabel"></ul>
     </div>
+    <!-- Shown when a search finds nothing, with a link to suggest the term. -->
+    <div id="no-match" class="no-match" hidden></div>
 
     <!-- Right under the search bar, so a result pushes everything below it down. -->
     <section id="result" aria-live="polite"></section>

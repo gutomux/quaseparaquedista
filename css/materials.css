@@ -1,5 +1,5 @@
 /* Training materials: the list page, the PDF pages and the video page. Colors come from styles.css. */
-.mat-main h1{font-size:clamp(2.4rem,9vw,4.5rem)}
+.mat-main .page-top{--title-size:clamp(1.6rem,calc((100vw - 6.5rem) / 6.6),4.5rem)}
 
 /* List of materials */
 .mat-list{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}
@@ -34,6 +34,16 @@
 .pdf-hint a:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:.2rem}
 
 /* Video page */
+.mat-levels{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin:-.75rem 0 .5rem}
+.mat-levels-label{width:100%;font-size:.85rem;color:var(--ink-soft)}
+.mat-levels a{
+  display:inline-grid;place-items:center;min-width:2.75rem;height:2.75rem;padding:0 .6rem;border-radius:999px;
+  font-weight:700;color:var(--ink);text-decoration:none;background:var(--panel);border:2px solid var(--line)
+}
+.mat-levels a:hover{border-color:var(--accent);color:var(--accent-ink)}
+.mat-levels a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+/* Land a jumped-to level just below the top, not under the browser's edge. */
+.mat-video h2{scroll-margin-top:1rem}
 .mat-video{margin-top:1.75rem}
 .mat-video h2{font-family:var(--display);font-weight:800;font-size:1.75rem;line-height:1.1;margin:0 0 .6rem}
 .mat-video-frame{position:relative;aspect-ratio:16/9;background:#000;border-radius:.9rem;overflow:hidden}

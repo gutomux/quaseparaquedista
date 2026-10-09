@@ -23,7 +23,8 @@
     "count": {
       "one": "{count} suggestion",
       "other": "{count} suggestions"
-    }
+    },
+    "suggestThis": "Suggest “{query}” for the glossary."
   },
   "examples": {
     "label": "Try",
@@ -162,8 +163,28 @@
     }
   },
   "nav": {
-    "home": "← Home",
-    "materials": "← Training materials"
+    "menu": {
+      "label": "Site menu",
+      "open": "Open the menu",
+      "close": "Close the menu",
+      "home": {
+        "name": "Home",
+        "text": "The QuaseParaquedista.com.br home page."
+      },
+      "glossary": {
+        "name": "Skydiving glossary",
+        "text": "Acronyms and terms in Portuguese and English."
+      },
+      "freefall": {
+        "name": "Freefall simulator",
+        "text": "See how body position changes your flight."
+      },
+      "materials": {
+        "name": "Training materials",
+        "text": "AFF handbook, emergency review and course videos."
+      }
+    },
+    "crumbs": "You are here"
   },
   "home": {
     "meta": {
@@ -174,32 +195,18 @@
     "audiences": {
       "firstTimer": {
         "title": "Never jumped?",
-        "text": "Feel free to look around and, if you feel like jumping, find a USPA-registered school. You'll be welcome!"
+        "text": "Feel free to look around and, if you feel like jumping, find a USPA-registered school. You'll be welcome!",
+        "cta": "Try the freefall simulator"
       },
       "student": {
         "title": "Just starting your course?",
-        "text": "Review AFF acronyms and terms, and see how each body position changes your flight."
+        "text": "Review AFF acronyms and terms, and see how each body position changes your flight.",
+        "cta": "See the course materials"
       },
       "experienced": {
         "title": "Already a skydiver?",
-        "text": "Use the tools, share them with your students and friends, and help us improve by sending suggestions."
-      }
-    },
-    "menu": {
-      "glossary": {
-        "name": "Skydiving glossary",
-        "text": "Acronyms and terms in Portuguese and English."
-      },
-      "freefall": {
-        "name": "Freefall simulator",
-        "text": "See how body position changes your flight."
-      },
-      "label": "Tools",
-      "open": "Open tools menu",
-      "close": "Close tools menu",
-      "materials": {
-        "name": "Training materials",
-        "text": "AFF handbook, emergency review and course videos."
+        "text": "Use the tools, share them with your students and friends, and help us improve by sending suggestions.",
+        "cta": "Send a suggestion"
       }
     },
     "instagram": {
@@ -219,7 +226,8 @@
       "goTo": "Photo {n} of {total}",
       "pause": "Pause",
       "play": "Play"
-    }
+    },
+    "toolsHeading": "Tools"
   },
   "materials": {
     "meta": {
@@ -254,7 +262,8 @@
         "6": "AFF Level VI",
         "7": "AFF Level VII"
       },
-      "watch": "Watch on YouTube"
+      "watch": "Watch on YouTube",
+      "jumpTo": "Jump to level:"
     },
     "source": "Source:",
     "openPdf": "Open on the CBPq site",

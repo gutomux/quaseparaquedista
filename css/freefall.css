@@ -73,7 +73,8 @@
 @media (min-width:900px){
   .ff-main,.ff-main + footer{max-width:62rem}
   /* A one-line heading leaves room for the scene and buttons on a laptop screen. */
-  .ff-main h1{font-size:clamp(2.6rem,4vw,3.5rem);margin-bottom:.5rem}
+  .ff-main .page-top{--title-size:clamp(2.6rem,4vw,3.5rem)}
+  .ff-main h1{margin-bottom:.5rem}
   .ff-main h1 br{display:none}
   .ff-main h1 br + span::before{content:" "}
   .ff-main > .intro{margin-bottom:0}
@@ -98,8 +99,8 @@
 /* Phones: smaller heading, the movement readout over the scene's top-left corner (the compass
    has the top right), and the four groups in a 2 × 2 grid with each group's buttons stacked. */
 @media (max-width:640px){
-  .ff-main h1{font-size:clamp(1.9rem,8.5vw,3rem);margin-bottom:.5rem}
-  .ff-main .back-home{margin-bottom:.75rem}
+  .ff-main .page-top{--title-size:clamp(1.9rem,8.5vw,3rem)}
+  .ff-main h1{margin-bottom:.5rem}
   .ff-layout{margin-top:.5rem;gap:.6rem}
   .ff-stage{position:relative}
   /* Sized against the scene (the compass takes the right quarter), not the text size,

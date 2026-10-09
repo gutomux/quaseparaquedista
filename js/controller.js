@@ -87,6 +87,7 @@ export class GlossaryController {
     this.view.setClearVisible(value.length > 0);
 
     if (!value.trim()) {
+      this.view.hideNoMatch();
       this.closeSuggestions();
       return;
     }
@@ -97,6 +98,7 @@ export class GlossaryController {
     this.state.open = true;
 
     if (!results.length) {
+      this.state.open = false;
       this.view.renderNoMatches(value.trim());
       return;
     }
@@ -136,6 +138,7 @@ export class GlossaryController {
   }
 
   select(id) {
+    this.view.hideNoMatch();
     const entry = this.byId.get(id);
     if (!entry) return;
     const shown = this.localize(entry);
@@ -231,6 +234,7 @@ export class GlossaryController {
 
   clear() {
     this.state = { query: '', results: [], active: -1, open: false };
+    this.view.hideNoMatch();
     this.view.setQuery('');
     this.view.closeList();
     this.view.clearResult();

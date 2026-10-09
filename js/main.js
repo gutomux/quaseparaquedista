@@ -8,6 +8,7 @@ import { loadGlossary } from './data.js';
 import { createIndex } from './search.js';
 import { GlossaryView, supportsFlagEmoji } from './view.js';
 import { GlossaryController } from './controller.js';
+import { mountSiteMenu } from './nav.js';
 
 async function init() {
   const locale = detectLocale(navigator.languages || [navigator.language], CONFIG.supportedLocales, CONFIG.defaultLocale);
@@ -32,6 +33,7 @@ async function init() {
       config: CONFIG,
     });
     controller.start();
+    mountSiteMenu(document.querySelector('[data-site-nav]'), t);
   } catch (error) {
     console.error(error);
     // Interface text may be what failed to load, so fall back to English here.

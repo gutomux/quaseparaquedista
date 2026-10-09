@@ -8,6 +8,7 @@ import { detectLocale, loadMessages, createTranslator } from '../i18n.js';
 import { applyTranslations } from '../view.js';
 import { CONTROLS, GROUPS, NEUTRAL, SPEED, toggle, activeControls, comboNote, describe, createState, step } from './sim.js';
 import { FreefallView } from './view.js';
+import { mountSiteMenu } from '../nav.js';
 
 /** How quickly the drawn limbs follow a new pose, in seconds. */
 const POSE_SECONDS = 0.3;
@@ -18,6 +19,7 @@ async function init() {
   const locale = detectLocale(navigator.languages || [navigator.language], CONFIG.supportedLocales, CONFIG.defaultLocale);
   const t = createTranslator(await loadMessages(CONFIG.i18nPath, locale), locale);
   applyTranslations(document, t, 'freefall.meta.title');
+  mountSiteMenu(document.querySelector('[data-site-nav]'), t);
 
   const view = new FreefallView(document, t, CONTROLS, GROUPS);
   let pose = { ...NEUTRAL };

@@ -23,7 +23,8 @@
     "count": {
       "one": "{count} sugestão",
       "other": "{count} sugestões"
-    }
+    },
+    "suggestThis": "Sugerir “{query}” para o glossário."
   },
   "examples": {
     "label": "Experimente",
@@ -162,8 +163,28 @@
     }
   },
   "nav": {
-    "home": "← Início",
-    "materials": "← Materiais de instrução"
+    "menu": {
+      "label": "Menu do site",
+      "open": "Abrir o menu",
+      "close": "Fechar o menu",
+      "home": {
+        "name": "Início",
+        "text": "Página inicial do QuaseParaquedista.com.br."
+      },
+      "glossary": {
+        "name": "Glossário de paraquedismo",
+        "text": "Siglas e termos em português e inglês."
+      },
+      "freefall": {
+        "name": "Simulador de queda livre",
+        "text": "Veja como a posição do corpo muda o seu voo."
+      },
+      "materials": {
+        "name": "Materiais de instrução",
+        "text": "Apostila, revisão de emergências e vídeos do curso AFF."
+      }
+    },
+    "crumbs": "Você está em"
   },
   "home": {
     "meta": {
@@ -174,32 +195,18 @@
     "audiences": {
       "firstTimer": {
         "title": "Nunca saltou?",
-        "text": "Fique à vontade para bisbilhotar e, se der vontade de saltar, procure uma escola cadastrada na CBPq e seja bem-vindo!"
+        "text": "Fique à vontade para bisbilhotar e, se der vontade de saltar, procure uma escola cadastrada na CBPq e seja bem-vindo!",
+        "cta": "Experimente o simulador de queda livre"
       },
       "student": {
         "title": "Está começando o curso?",
-        "text": "Revise as siglas e os termos do AFF e veja como cada posição de corpo muda o seu voo."
+        "text": "Revise as siglas e os termos do AFF e veja como cada posição de corpo muda o seu voo.",
+        "cta": "Ver os materiais do curso"
       },
       "experienced": {
         "title": "Já é paraquedista?",
-        "text": "Use as ferramentas, compartilhe com seus alunos e amigos, e nos ajude a melhorar, fazendo sugestões."
-      }
-    },
-    "menu": {
-      "glossary": {
-        "name": "Glossário de paraquedismo",
-        "text": "Siglas e termos em português e inglês."
-      },
-      "freefall": {
-        "name": "Simulador de queda livre",
-        "text": "Veja como a posição do corpo muda o seu voo."
-      },
-      "label": "Ferramentas",
-      "open": "Abrir menu de ferramentas",
-      "close": "Fechar menu de ferramentas",
-      "materials": {
-        "name": "Materiais de instrução",
-        "text": "Apostila, revisão de emergências e vídeos do curso AFF."
+        "text": "Use as ferramentas, compartilhe com seus alunos e amigos, e nos ajude a melhorar, fazendo sugestões.",
+        "cta": "Enviar uma sugestão"
       }
     },
     "instagram": {
@@ -219,7 +226,8 @@
       "goTo": "Foto {n} de {total}",
       "pause": "Pausar",
       "play": "Continuar"
-    }
+    },
+    "toolsHeading": "Ferramentas"
   },
   "materials": {
     "meta": {
@@ -254,7 +262,8 @@
         "6": "AFF Nível VI",
         "7": "AFF Nível VII"
       },
-      "watch": "Assistir no YouTube"
+      "watch": "Assistir no YouTube",
+      "jumpTo": "Ir para o nível:"
     },
     "source": "Fonte:",
     "openPdf": "Abrir no site da CBPq",

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
-  <script src="js/page-lang.js?v=2026-10-05.3"></script>
+  <script src="js/page-lang.js?v=2026-10-09.2"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Skydiving tools for first-timers, students and experienced jumpers." data-i18n-attr="content: home.meta.description">
   <title>QuaseParaquedista.com.br</title>
@@ -10,49 +10,75 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=2026-10-05.3">
-  <link rel="stylesheet" href="css/home.css?v=2026-10-05.3">
-  <script type="module" src="js/home.js?v=2026-10-05.3"></script>
+  <link rel="stylesheet" href="css/styles.css?v=2026-10-09.2">
+  <link rel="stylesheet" href="css/home.css?v=2026-10-09.2">
+  <script type="module" src="js/home.js?v=2026-10-09.2"></script>
 </head>
 <body>
   <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
   <main class="home">
-    <header class="home-top">
-      <h1 class="home-title">QuaseParaquedista<span class="home-domain">.com.br</span></h1>
-      <nav class="home-nav" data-i18n-attr="aria-label: home.menu.label">
-        <button id="menu-button" class="home-burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open tools menu" title="Open tools menu">
-          <span class="home-burger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
-        </button>
-        <ul id="menu" class="home-menu-list" hidden>
-          <li>
-            <a href="glossary.html">
-              <span class="home-menu-name" data-i18n="home.menu.glossary.name">Skydiving glossary</span>
-              <span class="home-menu-text" data-i18n="home.menu.glossary.text">Acronyms and terms in Portuguese and English.</span>
-            </a>
-          </li>
-          <li>
-            <a href="freefall.html">
-              <span class="home-menu-name" data-i18n="home.menu.freefall.name">Freefall simulator</span>
-              <span class="home-menu-text" data-i18n="home.menu.freefall.text">See how body position changes your flight.</span>
-            </a>
-          </li>
-          <li>
-            <a href="materiais-instrucao.html">
-              <span class="home-menu-name" data-i18n="home.menu.materials.name">Training materials</span>
-              <span class="home-menu-text" data-i18n="home.menu.materials.text">AFF handbook, emergency review and course videos.</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <header class="page-top">
+      <h1 class="page-title home-title">QuaseParaquedista<span class="home-domain">.com.br</span></h1>
+      <nav class="site-nav" data-site-nav></nav>
     </header>
 
     <p class="home-lead" data-i18n="home.lead">Welcome!</p>
 
+    <!-- The tools, first thing below the welcome, so nobody depends on finding the ☰ menu. -->
+    <h2 class="sr" data-i18n="home.toolsHeading">Tools</h2>
+    <ul class="home-tools">
+      <li>
+        <a class="home-tool" href="glossary.html">
+          <span class="home-tool-icon" aria-hidden="true">🔎</span>
+          <span class="home-tool-text">
+            <span class="home-tool-name" data-i18n="nav.menu.glossary.name"></span>
+            <span class="home-tool-desc" data-i18n="nav.menu.glossary.text"></span>
+          </span>
+          <span class="home-tool-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="home-tool" href="freefall.html">
+          <span class="home-tool-icon" aria-hidden="true">🪂</span>
+          <span class="home-tool-text">
+            <span class="home-tool-name" data-i18n="nav.menu.freefall.name"></span>
+            <span class="home-tool-desc" data-i18n="nav.menu.freefall.text"></span>
+          </span>
+          <span class="home-tool-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="home-tool" href="materiais-instrucao.html">
+          <span class="home-tool-icon" aria-hidden="true">📚</span>
+          <span class="home-tool-text">
+            <span class="home-tool-name" data-i18n="nav.menu.materials.name"></span>
+            <span class="home-tool-desc" data-i18n="nav.menu.materials.text"></span>
+          </span>
+          <span class="home-tool-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ul>
+
     <div class="home-intro">
       <ul class="home-audiences">
-        <li><strong data-i18n="home.audiences.firstTimer.title">Never jumped?</strong> <span data-i18n="home.audiences.firstTimer.text"></span></li>
-        <li><strong data-i18n="home.audiences.student.title">Student?</strong> <span data-i18n="home.audiences.student.text"></span></li>
-        <li><strong data-i18n="home.audiences.experienced.title">Experienced jumper?</strong> <span data-i18n="home.audiences.experienced.text"></span></li>
+        <li>
+          <a class="home-audience" href="freefall.html">
+            <strong data-i18n="home.audiences.firstTimer.title"></strong> <span data-i18n="home.audiences.firstTimer.text"></span>
+            <span class="home-audience-cta"><span data-i18n="home.audiences.firstTimer.cta"></span> <span aria-hidden="true">→</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="home-audience" href="materiais-instrucao.html">
+            <strong data-i18n="home.audiences.student.title"></strong> <span data-i18n="home.audiences.student.text"></span>
+            <span class="home-audience-cta"><span data-i18n="home.audiences.student.cta"></span> <span aria-hidden="true">→</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="home-audience" href="#" id="audience-feedback" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="home.audiences.experienced.title"></strong> <span data-i18n="home.audiences.experienced.text"></span>
+            <span class="home-audience-cta"><span data-i18n="home.audiences.experienced.cta"></span> <span aria-hidden="true">→</span></span><span class="sr" data-i18n="feedback.newTab"></span>
+          </a>
+        </li>
       </ul>
 
       <!-- Photos from the Instagram post, in its order. Add a slide by adding an <img class="carousel-slide">. -->

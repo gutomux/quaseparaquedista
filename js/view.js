@@ -74,6 +74,8 @@ export class GlossaryView {
     this.searchBox = root.querySelector('.search');
     this.feedbackLink = root.querySelector('#feedback');
     this.feedbackBox = root.querySelector('.feedback');
+    this.noMatch = root.querySelector('#no-match');
+    this.feedbackHref = '';
   }
 
   /** Fill every data-i18n / data-i18n-attr element with the current locale's text. */
@@ -151,6 +153,7 @@ export class GlossaryView {
    * @param {number} activeIndex
    */
   renderSuggestions(items, activeIndex) {
+    this.hideNoMatch();
     const options = items.map(({ entry, names, subSegments }, i) => {
       const li = el('li');
       li.id = `opt-${i}`;
@@ -184,14 +187,33 @@ export class GlossaryView {
     return flag;
   }
 
+  /**
+   * Nothing found: close the suggestions and say so below the search bar, with a link to
+   * suggest the term. It sits outside the list so the link stays tappable when the field
+   * loses focus (the list closes on blur).
+   */
   renderNoMatches(query) {
-    const li = el('li', 'empty-row', this.t('search.noMatch', { query }));
-    li.setAttribute('role', 'option');
-    li.setAttribute('aria-disabled', 'true');
-    this.list.replaceChildren(li);
-    this.openList();
+    this.closeList();
+    this.input.setAttribute('aria-expanded', 'false');
     this.setActive(-1);
+    const message = el('p', '', this.t('search.noMatch', { query }));
+    if (this.feedbackHref) {
+      const link = el('a', '', this.t('search.suggestThis', { query }));
+      link.href = this.feedbackHref;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.append(el('span', 'sr', ` ${this.t('feedback.newTab')}`));
+      message.append(' ', link);
+    }
+    this.noMatch.replaceChildren(message);
+    this.noMatch.hidden = false;
     this.announce(this.t('search.noMatchStatus'));
+  }
+
+  hideNoMatch() {
+    if (!this.noMatch) return;
+    this.noMatch.hidden = true;
+    this.noMatch.replaceChildren();
   }
 
   setActive(index) {
@@ -365,6 +387,7 @@ export class GlossaryView {
 
   /** Point the "Suggest an entry or correction" button at the feedback form, or hide it. */
   setFeedbackLink(href) {
+    this.feedbackHref = href;
     if (!this.feedbackLink || !this.feedbackBox) return;
     if (href) this.feedbackLink.href = href;
     this.feedbackBox.hidden = !href;
