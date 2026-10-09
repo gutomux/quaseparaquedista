@@ -42,7 +42,10 @@
       "term": "Term"
     },
     "inLanguage": "In {language}: {term}",
-    "seeAlso": "See also"
+    "seeAlso": "See also",
+    "share": "Share",
+    "copied": "Link copied! Paste it anywhere.",
+    "copyThis": "Copy the link: {url}"
   },
   "error": {
     "title": "Glossary unavailable",
@@ -160,6 +163,12 @@
     "motionNote": {
       "text": "The animation is paused because your system asks for less motion on screen.",
       "start": "Start animation"
+    },
+    "tip": {
+      "label": "Tip:",
+      "text": "tap “{button}” and watch what happens to the skydiver.",
+      "try": "Try it",
+      "close": "Close tip"
     }
   },
   "nav": {
@@ -182,7 +191,8 @@
       "materials": {
         "name": "Training materials",
         "text": "AFF handbook, emergency review and course videos."
-      }
+      },
+      "language": "Language"
     },
     "crumbs": "You are here"
   },

@@ -3,14 +3,15 @@
  * show the feedback button, and run the site menu and the photo carousel.
  */
 import { CONFIG } from './config.js';
-import { detectLocale, loadMessages, createTranslator } from './i18n.js';
+import { loadMessages, createTranslator } from './i18n.js';
+import { currentLocale } from './locale.js';
 import { applyTranslations } from './view.js';
 import { isFeedbackFormUrl } from './feedback.js';
 import { setupCarousel } from './carousel.js';
 import { mountSiteMenu } from './nav.js';
 
 async function init() {
-  const locale = detectLocale(navigator.languages || [navigator.language], CONFIG.supportedLocales, CONFIG.defaultLocale);
+  const locale = currentLocale(CONFIG);
   const t = createTranslator(await loadMessages(CONFIG.i18nPath, locale), locale);
   applyTranslations(document, t, 'home.meta.title');
   mountSiteMenu(document.querySelector('[data-site-nav]'), t);

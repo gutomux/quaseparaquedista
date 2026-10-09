@@ -10,6 +10,31 @@
   background:var(--panel);border:1px solid var(--line);border-radius:1rem;padding:.7rem .9rem;box-shadow:0 12px 30px -16px rgba(10,37,64,.5)
 }
 .ff-motion-note[hidden]{display:none}
+/* First-visit tip: just below the scene, so it doesn't hide the jumper it asks you to watch */
+.ff-tip{
+  position:relative;margin:.5rem;
+  display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .75rem;padding:.6rem 2.6rem .6rem .9rem;
+  background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:1rem;box-shadow:0 12px 30px -16px rgba(10,37,64,.5)
+}
+.ff-tip[hidden]{display:none}
+.ff-tip p{margin:0;flex:1 1 12rem;font-size:.92rem;color:var(--ink)}
+.ff-tip .ff-action{background:var(--ink);color:var(--panel)}
+.ff-tip-close{
+  position:absolute;top:.35rem;right:.35rem;width:2.25rem;height:2.25rem;padding:0;border:0;border-radius:50%;
+  font:inherit;font-size:1rem;color:var(--ink-soft);background:transparent;cursor:pointer
+}
+.ff-tip-close:hover{color:var(--ink);background:var(--sky-low)}
+.ff-tip-close:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
+/* Phones: a short explanation over the scene after each change. Wide screens show the
+   full caption beside the scene, so it isn't needed there. */
+.ff-flash{
+  position:absolute;left:.5rem;right:.5rem;bottom:.5rem;margin:0;padding:.45rem .7rem;font-size:.85rem;line-height:1.35;
+  color:var(--ink);background:var(--panel);opacity:.95;border-radius:.6rem;border-left:4px solid var(--flow);pointer-events:none
+}
+.ff-flash[hidden]{display:none}
+@media (min-width:900px){.ff-flash{display:none}}
+@media (prefers-reduced-motion:no-preference){.ff-flash:not([hidden]){animation:ff-flash-in .25s ease-out}}
+@keyframes ff-flash-in{from{opacity:0;transform:translateY(6px)}to{opacity:.95;transform:none}}
 .ff-motion-note p{margin:0;font-size:.92rem;color:var(--ink-soft)}
 .ff-motion-note .ff-action{background:var(--ink);color:var(--panel)}
 .ff-air circle{fill:var(--ink)}

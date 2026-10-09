@@ -94,6 +94,14 @@ mark{background:var(--mark);color:inherit;border-radius:.2rem;padding:0 .05em}
 .card h2{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,7vw,3.25rem);line-height:.95;margin:0 0 .35rem;overflow-wrap:anywhere}
 .stands{font-size:1.2rem;font-weight:700;margin:0 0 .75rem}
 .def{margin:0;font-size:1.125rem;max-width:36rem}
+.card-actions{margin-top:1.1rem;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .9rem}
+.share-btn{
+  font:inherit;font-size:.95rem;font-weight:700;color:var(--ink);background:var(--panel);cursor:pointer;
+  border:2px solid var(--ink);border-radius:999px;padding:.4rem 1rem
+}
+.share-btn:hover{border-color:var(--accent);color:var(--accent-ink)}
+.share-btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.share-status{font-size:.9rem;color:var(--ink-soft);overflow-wrap:anywhere}
 .also{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;font-size:.95rem;color:var(--ink-soft)}
 footer{max-width:44rem;margin:0 auto;padding:0 1.25rem 2.5rem}
 .disclaimer{margin:0;padding:.85rem 1rem;border:1px solid var(--warn-line);border-left-width:.35rem;border-radius:.5rem;background:var(--warn-bg);color:var(--warn-ink);font-size:.95rem;font-weight:700}
@@ -193,5 +201,16 @@ footer:has(+ .feedback:not([hidden])){padding-bottom:1.5rem}
 /* The page you're on (or its section) is marked with an accent bar. */
 .site-menu a[aria-current]{box-shadow:inset 4px 0 0 var(--accent)}
 .site-menu a[aria-current]:focus-visible{box-shadow:inset 4px 0 0 var(--accent),inset 0 0 0 2px var(--accent)}
+/* Language switch at the end of the menu */
+.site-lang{margin-top:.25rem;padding:.6rem .9rem .5rem;border-top:1px solid var(--line)}
+.site-lang-group{display:flex;align-items:center;gap:.5rem}
+.site-lang-label{flex:1;font-size:.9rem;color:var(--ink-soft)}
+.site-lang-option{
+  font:inherit;font-size:.9rem;font-weight:700;min-width:3rem;min-height:2.5rem;cursor:pointer;
+  color:var(--ink);background:transparent;border:2px solid var(--line);border-radius:999px
+}
+.site-lang-option:hover{border-color:var(--ink)}
+.site-lang-option:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.site-lang-option[aria-pressed="true"]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
 .site-menu-name{font-weight:700;font-size:1.05rem}
 .site-menu-text{font-size:.9rem;color:var(--ink-soft)}

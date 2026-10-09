@@ -42,7 +42,10 @@
       "term": "Termo"
     },
     "inLanguage": "Em {language}: {term}",
-    "seeAlso": "Veja também"
+    "seeAlso": "Veja também",
+    "share": "Compartilhar",
+    "copied": "Link copiado! Cole onde quiser.",
+    "copyThis": "Copie o link: {url}"
   },
   "error": {
     "title": "Glossário indisponível",
@@ -160,6 +163,12 @@
     "motionNote": {
       "text": "A animação está pausada porque seu sistema pede menos movimento na tela.",
       "start": "Iniciar animação"
+    },
+    "tip": {
+      "label": "Dica:",
+      "text": "toque em “{button}” e veja o que acontece com o paraquedista.",
+      "try": "Experimentar",
+      "close": "Fechar dica"
     }
   },
   "nav": {
@@ -182,7 +191,8 @@
       "materials": {
         "name": "Materiais de instrução",
         "text": "Apostila, revisão de emergências e vídeos do curso AFF."
-      }
+      },
+      "language": "Idioma"
     },
     "crumbs": "Você está em"
   },

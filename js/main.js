@@ -3,15 +3,31 @@
  * build the search index, start the app.
  */
 import { CONFIG } from './config.js';
-import { detectLocale, loadMessages, createTranslator } from './i18n.js';
+import { loadMessages, createTranslator } from './i18n.js';
+import { currentLocale } from './locale.js';
 import { loadGlossary } from './data.js';
 import { createIndex } from './search.js';
 import { GlossaryView, supportsFlagEmoji } from './view.js';
 import { GlossaryController } from './controller.js';
 import { mountSiteMenu } from './nav.js';
 
+/**
+ * The open entry lives in the address: glossary.html#term-canopy. Opening an entry adds a
+ * history step, so the link can be shared and the phone's Back button returns to the last one.
+ */
+function hashRouter() {
+  const current = () => decodeURIComponent(location.hash.slice(1)) || null;
+  return {
+    current,
+    push(id) {
+      if (current() === id) return;
+      history.pushState(null, '', id ? `#${encodeURIComponent(id)}` : location.pathname + location.search);
+    },
+  };
+}
+
 async function init() {
-  const locale = detectLocale(navigator.languages || [navigator.language], CONFIG.supportedLocales, CONFIG.defaultLocale);
+  const locale = currentLocale(CONFIG);
   const viewOptions = { flags: supportsFlagEmoji(navigator) };
   let t = createTranslator({}, locale);
   let view = new GlossaryView(document, t, viewOptions);
@@ -31,7 +47,10 @@ async function init() {
       t,
       locale,
       config: CONFIG,
+      router: hashRouter(),
     });
+    // Back and Forward move between opened entries.
+    window.addEventListener('popstate', () => controller.openFromRoute(hashRouter().current()));
     controller.start();
     mountSiteMenu(document.querySelector('[data-site-nav]'), t);
   } catch (error) {

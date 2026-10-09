@@ -4,11 +4,32 @@
  * and hands the result to the view.
  */
 import { CONFIG } from '../config.js';
-import { detectLocale, loadMessages, createTranslator } from '../i18n.js';
+import { loadMessages, createTranslator } from '../i18n.js';
+import { currentLocale } from '../locale.js';
 import { applyTranslations } from '../view.js';
-import { CONTROLS, GROUPS, NEUTRAL, SPEED, toggle, activeControls, comboNote, describe, createState, step } from './sim.js';
+import { CONTROLS, GROUPS, NEUTRAL, SPEED, isOn, toggle, activeControls, comboNote, describe, createState, step } from './sim.js';
 import { FreefallView } from './view.js';
 import { mountSiteMenu } from '../nav.js';
+
+/** The button the first-visit tip suggests, and where its dismissal is remembered. */
+const TIP_CONTROL = 'legsStretch';
+const TIP_DONE_KEY = 'qp.freefallTipDone';
+
+function tipDone() {
+  try {
+    return localStorage.getItem(TIP_DONE_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
+function markTipDone() {
+  try {
+    localStorage.setItem(TIP_DONE_KEY, '1');
+  } catch {
+    // Storage blocked: the tip just shows again next visit.
+  }
+}
 
 /** How quickly the drawn limbs follow a new pose, in seconds. */
 const POSE_SECONDS = 0.3;
@@ -16,7 +37,7 @@ const POSE_SECONDS = 0.3;
 const MAX_DT = 0.05;
 
 async function init() {
-  const locale = detectLocale(navigator.languages || [navigator.language], CONFIG.supportedLocales, CONFIG.defaultLocale);
+  const locale = currentLocale(CONFIG);
   const t = createTranslator(await loadMessages(CONFIG.i18nPath, locale), locale);
   applyTranslations(document, t, 'freefall.meta.title');
   mountSiteMenu(document.querySelector('[data-site-nav]'), t);
@@ -55,15 +76,33 @@ async function init() {
     waitingForStart = false;
     view.setPaused(paused);
     view.setMotionNote(false);
+    updateTip();
     last = null;
     if (!paused) requestAnimationFrame(frame);
   };
 
+  // First visit: suggest a button to start with (after the reduced-motion notice, if any).
+  let showTip = !tipDone();
+  const updateTip = () => view.setTip(showTip && !waitingForStart, TIP_CONTROL);
+  const finishTip = () => {
+    if (!showTip) return;
+    showTip = false;
+    markTipDone();
+    updateTip();
+  };
+
+  const pressControl = (id) => {
+    if (waitingForStart) setPaused(false);
+    finishTip();
+    setPose(toggle(pose, id));
+    // On phones the full explanation is below the buttons; show it briefly over the scene too.
+    if (isOn(pose, id)) view.flashExplanation(t(`freefall.explain.${id}`));
+  };
+
   view.bind({
-    onToggle: (id) => {
-      if (waitingForStart) setPaused(false);
-      setPose(toggle(pose, id));
-    },
+    onToggle: pressControl,
+    onTipTry: () => pressControl(TIP_CONTROL),
+    onTipClose: finishTip,
     onReset: () => {
       state = { ...state, x: 0, y: 0, heading: 0 };
       setPose({ ...NEUTRAL });
@@ -75,6 +114,7 @@ async function init() {
   render();
   view.setPaused(paused);
   view.setMotionNote(waitingForStart);
+  updateTip();
   frame(performance.now(), true);
   if (!paused) requestAnimationFrame(frame);
 }

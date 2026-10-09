@@ -7,6 +7,8 @@
  * can never inject markup. Interface text comes from the translator (see i18n.js).
  */
 
+import { shareLink } from './share.js';
+
 /** Small helper to create an element with a class and optional text. */
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -114,6 +116,11 @@ export class GlossaryView {
     this.list.addEventListener('mousemove', (e) => {
       const option = e.target.closest('[data-index]');
       if (option) handlers.onHover(Number(option.dataset.index));
+    });
+
+    this.result.addEventListener('click', (e) => {
+      const share = e.target.closest('.share-btn');
+      if (share) this.shareEntry(share);
     });
 
     // The calculator is re-created with each card, so listen on the result area.
@@ -288,7 +295,28 @@ export class GlossaryView {
       }
       card.append(also);
     }
+
+    // Share this entry: the page address already names it (see main.js).
+    const actions = el('div', 'card-actions');
+    const share = el('button', 'share-btn', this.t('entry.share'));
+    share.type = 'button';
+    share.dataset.term = entry.term;
+    actions.append(share, el('span', 'share-status'));
+    actions.lastChild.setAttribute('aria-live', 'polite');
+    card.append(actions);
     this.result.replaceChildren(card);
+  }
+
+  /**
+   * Share the open entry's link: copy it, and open the phone's share menu where there is one.
+   * @param {HTMLButtonElement} button The card's share button.
+   */
+  async shareEntry(button) {
+    const url = location.href;
+    const status = button.parentElement.querySelector('.share-status');
+    const title = `${button.dataset.term} – ${this.t('meta.title')}`;
+    const copied = await shareLink({ url, title }).copied; // don't wait for the share menu to close
+    status.textContent = copied ? this.t('entry.copied') : this.t('entry.copyThis', { url });
   }
 
   /** Build the three wing-loading fields and the result line. */

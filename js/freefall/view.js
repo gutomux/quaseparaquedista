@@ -43,6 +43,8 @@ export class FreefallView {
     this.pauseButton = root.querySelector('#pause');
     this.resetButton = root.querySelector('#reset');
     this.motionNote = root.querySelector('#motion-note');
+    this.tip = root.querySelector('#ff-tip');
+    this.flash = root.querySelector('#ff-flash');
     this.startButton = root.querySelector('#motion-start');
     this.buttons = new Map();
 
@@ -120,8 +122,10 @@ export class FreefallView {
    * @param {() => void} handlers.onReset
    * @param {() => void} handlers.onPause
    * @param {() => void} handlers.onStart The reduced-motion notice's start button.
+   * @param {() => void} handlers.onTipTry  The tip's "Try it" button.
+   * @param {() => void} handlers.onTipClose The tip's close button.
    */
-  bind({ onToggle, onReset, onPause, onStart }) {
+  bind({ onToggle, onReset, onPause, onStart, onTipTry, onTipClose }) {
     this.controlsBox.addEventListener('click', (e) => {
       const button = e.target.closest('[data-control]');
       if (button) onToggle(button.dataset.control);
@@ -129,6 +133,8 @@ export class FreefallView {
     this.resetButton.addEventListener('click', onReset);
     this.pauseButton.addEventListener('click', onPause);
     this.startButton.addEventListener('click', onStart);
+    this.root.querySelector('#ff-tip-try').addEventListener('click', onTipTry);
+    this.root.querySelector('#ff-tip-close').addEventListener('click', onTipClose);
   }
 
   /**
@@ -158,6 +164,20 @@ export class FreefallView {
   /** Show or hide the notice that the animation waits because the system asks for reduced motion. */
   setMotionNote(visible) {
     this.motionNote.hidden = !visible;
+  }
+
+  /** Show the first-visit tip, naming the button to try, or hide it. */
+  setTip(visible, controlId) {
+    if (visible) this.root.querySelector('#ff-tip-text').textContent = this.t('freefall.tip.text', { button: this.t(`freefall.controls.${controlId}`) });
+    this.tip.hidden = !visible;
+  }
+
+  /** Briefly show a short explanation over the scene (phones only, see freefall.css). */
+  flashExplanation(text, seconds = 5) {
+    clearTimeout(this.flashTimer);
+    this.flash.textContent = text;
+    this.flash.hidden = false;
+    this.flashTimer = setTimeout(() => { this.flash.hidden = true; }, seconds * 1000);
   }
 
   setPaused(paused) {

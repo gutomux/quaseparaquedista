@@ -45,10 +45,12 @@ test('glossary: the no-results message has its place below the search bar', () =
 });
 
 test('the new texts exist in every locale', () => {
-  const keys = ['home.toolsHeading', 'home.audiences.firstTimer.cta', 'home.audiences.student.cta', 'home.audiences.experienced.cta',
+  const keys = ['freefall.tip.label', 'freefall.tip.text', 'freefall.tip.try', 'freefall.tip.close', 'entry.share', 'entry.copied', 'entry.copyThis', 'nav.menu.language', 'home.toolsHeading', 'home.audiences.firstTimer.cta', 'home.audiences.student.cta', 'home.audiences.experienced.cta',
     'nav.crumbs', 'search.suggestThis', 'materials.videos.jumpTo'];
   for (const locale of ['en_US', 'pt_BR']) {
     for (const key of keys) assert.ok(get(messages(locale), key), `${locale}: ${key}`);
     assert.match(get(messages(locale), 'search.suggestThis'), /\{query\}/, `${locale}: the suggestion names the searched term`);
+    assert.match(get(messages(locale), 'freefall.tip.text'), /\{button\}/, `${locale}: the simulator tip names the button to try`);
+    assert.match(get(messages(locale), 'entry.copyThis'), /\{url\}/, `${locale}: the copy fallback shows the link`);
   }
 });

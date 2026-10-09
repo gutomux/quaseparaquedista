@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
-  <script src="js/page-lang.js?v=2026-10-09.2"></script>
+  <script src="js/page-lang.js?v=2026-10-09.4"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="See how body position changes a skydiver's flight in freefall." data-i18n-attr="content: freefall.meta.description">
   <title>Freefall Simulator</title>
@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=2026-10-09.2">
-  <link rel="stylesheet" href="css/freefall.css?v=2026-10-09.2">
-  <script type="module" src="js/freefall/main.js?v=2026-10-09.2"></script>
+  <link rel="stylesheet" href="css/styles.css?v=2026-10-09.4">
+  <link rel="stylesheet" href="css/freefall.css?v=2026-10-09.4">
+  <script type="module" src="js/freefall/main.js?v=2026-10-09.4"></script>
 </head>
 <body>
   <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
@@ -32,6 +32,15 @@
             <p data-i18n="freefall.motionNote.text">Animation paused because your system asks for less motion on screen.</p>
             <button id="motion-start" class="ff-action" type="button" data-i18n="freefall.motionNote.start">Start animation</button>
           </div>
+          <!-- First visit: what to try first. -->
+          <div id="ff-tip" class="ff-tip" hidden>
+            <p><strong data-i18n="freefall.tip.label">Tip:</strong> <span id="ff-tip-text"></span></p>
+            <button id="ff-tip-try" class="ff-action" type="button" data-i18n="freefall.tip.try">Try it</button>
+            <button id="ff-tip-close" class="ff-tip-close" type="button" data-i18n-attr="aria-label: freefall.tip.close; title: freefall.tip.close">✕</button>
+          </div>
+          <!-- Phones: the explanation of the position just turned on, briefly, where the eyes are.
+               Screen readers already hear it from the caption below, so it is hidden from them. -->
+          <p id="ff-flash" class="ff-flash" aria-hidden="true" hidden></p>
         </div>
         <div class="ff-readout">
           <p><span class="ff-readout-label" data-i18n="freefall.status.label">Movement</span> <strong id="movement"></strong></p>

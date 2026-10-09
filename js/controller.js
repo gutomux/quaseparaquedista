@@ -20,14 +20,17 @@ export class GlossaryController {
    * @param {Function} deps.t            Translator for the current locale.
    * @param {string} deps.locale         Current locale, e.g. 'pt_BR'.
    * @param {object} deps.config         See config.js.
+   * @param {{current: () => string|null, push: (id: string|null) => void}} [deps.router]
+   *   Keeps the open entry in the page address, so entries can be shared and Back works.
    */
-  constructor({ entries, index, view, t, locale, config }) {
+  constructor({ entries, index, view, t, locale, config, router = null }) {
     this.entries = entries;
     this.index = index;
     this.view = view;
     this.t = t;
     this.locale = locale;
     this.config = config;
+    this.router = router;
     this.byId = new Map(entries.map((e) => [e.id, e]));
 
     this.state = { query: '', results: [], active: -1, open: false };
@@ -48,6 +51,25 @@ export class GlossaryController {
       onDismiss: () => this.closeSuggestions(),
       onCalculatorInput: (values) => this.updateWingLoading(values),
     });
+    // Opened from a shared link (glossary.html#entry-id): show that entry.
+    if (this.router?.current()) this.openFromRoute(this.router.current());
+  }
+
+  /**
+   * Show what the page address names: an entry, or the empty search. Used on load and when
+   * Back/Forward moves through opened entries; it never adds a history step itself.
+   */
+  openFromRoute(id) {
+    if (id && this.byId.has(id)) {
+      this.select(id, { fromRoute: true });
+      return;
+    }
+    this.state = { query: '', results: [], active: -1, open: false };
+    this.view.hideNoMatch();
+    this.view.setQuery('');
+    this.view.closeList();
+    this.view.clearResult();
+    this.view.setExamplesVisible(true);
   }
 
   /** Entry text in the current locale, falling back to the default locale. */
@@ -137,10 +159,16 @@ export class GlossaryController {
     this.view.setActive(index);
   }
 
-  select(id) {
+  /**
+   * Open an entry. Adds it to the page address (and history) unless it came from there.
+   * @param {string} id
+   * @param {{fromRoute?: boolean}} [options]
+   */
+  select(id, { fromRoute = false } = {}) {
     this.view.hideNoMatch();
     const entry = this.byId.get(id);
     if (!entry) return;
+    if (!fromRoute) this.router?.push(id);
     const shown = this.localize(entry);
 
     // Names in the other languages, when they differ from the one shown.
@@ -233,6 +261,7 @@ export class GlossaryController {
   }
 
   clear() {
+    this.router?.push(null);
     this.state = { query: '', results: [], active: -1, open: false };
     this.view.hideNoMatch();
     this.view.setQuery('');

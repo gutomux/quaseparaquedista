@@ -2,13 +2,13 @@
 
 Free skydiving tools for people who have never jumped, students and experienced jumpers, in **English (en_US)** and **Brazilian Portuguese (pt_BR)**:
 
-- **Every page** has the same top: its title, and a ☰ menu at the right (Início, Glossário, Simulador, Materiais de instrução).
+- **Every page** has the same top: its title, and a ☰ menu at the right (Início, Glossário, Simulador, Materiais de instrução), ending with a PT | EN language switch that is remembered on the device.
 - **Welcome page** (`index.html`): cards linking to each tool right below the welcome text, then who the site is for (each card linking to the tool that fits), the Instagram profile [@quaseparaquedista](https://www.instagram.com/quaseparaquedista/) and the feedback button.
 - **Glossary** (`glossary.html`): a searchable glossary of skydiving terms and acronyms.
 - **Freefall simulator** (`freefall.html`): how body position changes a jumper's flight.
 - **Training materials** (`materiais-instrucao.html`; its pages show a "Materiais de instrução ›" trail, and the videos page has shortcuts to each level): the CBPq AFF handbook (`apostila-aff.html`) and emergency review (`revisao-emergencias-aff.html`) shown inside the page straight from the CBPq site (no copies are stored here), and videos of AFF levels I to VII (`aff-videos.html`).
 
-In the glossary, type one letter and suggestions appear; pick one to see its definition, its name in the other language, and related entries.
+In the glossary, type one letter and suggestions appear; pick one to see its definition, its name in the other language, and related entries. Each entry has its own link (for example `glossary.html#term-canopy`) and a **Compartilhar** button, and the browser's Back button returns to the previous entry.
 
 No build step and no dependencies: plain HTML, CSS and JavaScript modules, ready for GitHub Pages.
 
@@ -29,6 +29,7 @@ index.html            Welcome page: intro, tool menu, Instagram link, feedback
 css/home.css          Styles for the welcome page
 js/home.js            Welcome page entry point: text, feedback link, menu, carousel
 js/nav.js             The site menu (☰ at the top right of every page): list of pages, Home first
+js/locale.js          Which language to show: the menu choice (saved on the device) or the browser's
 js/carousel.js        Welcome page photo carousel (changes every 6 seconds)
 images/carousel/      Carousel photos (1.jpg, 2.jpg, 3.jpg), from the Instagram post
 glossary.html         Glossary page markup only; text comes from i18n files via data-i18n attributes
@@ -131,6 +132,8 @@ Change the wording in `i18n/en_US.json` or `i18n/pt_BR.json`. Both files must ha
 | Turn left / right | Dips that shoulder, rolls toward it and turns that way |
 
 The jumper is a simple 3D body, so turns really rotate it: facing you, you see both arms and legs spread out. The compass in the corner shows the same body from above. There is no speed gauge; the air dots show the fall rate. The scene is seen from a camera falling at the neutral rate, so a jumper falling faster sinks down the window and one falling slower rises, wrapping around at the edges like the forward and backward drift. The dots can't pass through the jumper: they hit the body's outline, slide along it and come off its edges, turning blue for a moment, so you can see which way each body position pushes the air.
+
+On a first visit a tip suggests what to try first; on phones, each change also shows a short explanation over the scene for a few seconds (the full one is below the buttons).
 
 Buttons in the same group are opposites, so only one can be on. Effects add up: stretched legs with arms pulled back moves forward faster, and stretched legs with arms forward cancel out.
 
