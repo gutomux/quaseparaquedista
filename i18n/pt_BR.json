@@ -103,17 +103,18 @@
       "description": "Veja como a posição do corpo muda o voo do paraquedista na queda livre."
     },
     "heading": {
-      "line1": "Posição de corpo",
-      "line2": "na queda livre"
+      "line1": "Simulador de",
+      "line2": "queda livre"
     },
-    "intro": "Ligue e desligue as posições abaixo e veja o que acontece com o paraquedista. Os pontos são o ar passando por você: quanto mais rápido eles sobem, mais rápido você cai.",
+    "intro": "Use os botões para interagir com o paraquedista. Teste clicar em mais de um ao mesmo tempo para diferentes resultados.",
     "sceneLabel": "Animação de um paraquedista em queda livre, de barriga para baixo, visto de lado.",
     "topView": "Vista de cima",
     "groups": {
       "legs": "Pernas",
       "arms": "Braços",
       "arch": "Sela",
-      "turn": "Curvas"
+      "turn": "Curvas",
+      "simulation": "Controle"
     },
     "controls": {
       "legsStretch": "Esticar as pernas",

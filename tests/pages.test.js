@@ -45,7 +45,7 @@ test('glossary: the no-results message has its place below the search bar', () =
 });
 
 test('the new texts exist in every locale', () => {
-  const keys = ['freefall.tip.label', 'freefall.tip.text', 'freefall.tip.try', 'freefall.tip.close', 'entry.share', 'entry.copied', 'entry.copyThis', 'nav.menu.language', 'home.toolsHeading', 'home.audiences.firstTimer.cta', 'home.audiences.student.cta', 'home.audiences.experienced.cta',
+  const keys = ['freefall.groups.simulation', 'freefall.tip.label', 'freefall.tip.text', 'freefall.tip.try', 'freefall.tip.close', 'entry.share', 'entry.copied', 'entry.copyThis', 'nav.menu.language', 'home.toolsHeading', 'home.audiences.firstTimer.cta', 'home.audiences.student.cta', 'home.audiences.experienced.cta',
     'nav.crumbs', 'search.suggestThis', 'materials.videos.jumpTo'];
   for (const locale of ['en_US', 'pt_BR']) {
     for (const key of keys) assert.ok(get(messages(locale), key), `${locale}: ${key}`);

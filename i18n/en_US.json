@@ -103,17 +103,18 @@
       "description": "See how body position changes a skydiver's flight in freefall."
     },
     "heading": {
-      "line1": "Body position",
-      "line2": "in freefall"
+      "line1": "Freefall",
+      "line2": "simulator"
     },
-    "intro": "Turn the positions below on and off and watch what happens to the skydiver. The dots are the air rushing past you: the faster they rise, the faster you fall.",
+    "intro": "Use the buttons to interact with the skydiver. Try pressing more than one at the same time for different results.",
     "sceneLabel": "Animation of a skydiver in freefall, belly to earth, seen from the side.",
     "topView": "Top view",
     "groups": {
       "legs": "Legs",
       "arms": "Arms",
       "arch": "Arch",
-      "turn": "Turns"
+      "turn": "Turns",
+      "simulation": "Controls"
     },
     "controls": {
       "legsStretch": "Stretch legs",
@@ -133,7 +134,7 @@
       "move": {
         "forward": "Forward",
         "backward": "Backward",
-        "still": "Holding still"
+        "still": "Neutral"
       },
       "fall": {
         "faster": "falling faster",

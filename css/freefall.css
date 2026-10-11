@@ -85,8 +85,9 @@
 .ff-toggle:hover,.ff-action:hover{border-color:var(--ink)}
 .ff-toggle:focus-visible,.ff-action:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 .ff-toggle[aria-pressed="true"]{background:var(--ink);border-color:var(--accent);color:var(--panel);font-weight:700;box-shadow:inset 0 0 0 1.5px var(--accent)}
-.ff-actions{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem}
 .ff-action{font-weight:700;border-color:var(--ink)}
+/* "Simulação" group: below the position groups, full width, its two buttons side by side. */
+.ff-sim-group{margin-top:.75rem}
 .ff-main + footer{padding-top:0}
 
 /* Layout: scene, buttons and explanation. Stacked by default, in this order. */
@@ -141,6 +142,6 @@
   .ff-group{grid-template-columns:1fr;padding:.35rem .5rem .5rem;gap:.35rem}
   .ff-group legend{font-size:.78rem;padding:0 .25rem}
   .ff-toggle{font-size:.86rem;padding:.4rem .5rem;min-height:2.6rem}
-  .ff-actions{margin-top:.5rem}
   .ff-action{font-size:.88rem;padding:.4rem .9rem}
+  .ff-sim-group{margin-top:.5rem;grid-template-columns:1fr 1fr}
 }
