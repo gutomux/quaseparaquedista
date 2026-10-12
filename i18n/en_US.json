@@ -295,7 +295,7 @@
       "line1": "Navigation",
       "line2": "simulator"
     },
-    "intro": "You've just opened your canopy at 3,000 ft. Find the seta, plan your pattern, and navigate to the target.",
+    "intro": "You have just opened your canopy, done your visual and functional check, and are at 3,000 ft. Plan your navigation, then fly it down to a landing close to the target you planned.",
     "plan": {
       "title": "1. Plan your pattern",
       "seta": "The seta on the ground points the landing direction, into the wind.",
