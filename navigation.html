@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
-  <script src="js/page-lang.js?v=2026-10-13.14"></script>
+  <script src="js/page-lang.js?v=2026-10-13.16"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Plan and fly the landing pattern to the target." data-i18n-attr="content: navigation.meta.description">
   <title>Navigation simulator</title>
@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,700..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=2026-10-13.14">
-  <link rel="stylesheet" href="css/navigation.css?v=2026-10-13.14">
-  <script type="module" src="js/navigation/main.js?v=2026-10-13.14"></script>
+  <link rel="stylesheet" href="css/styles.css?v=2026-10-13.16">
+  <link rel="stylesheet" href="css/navigation.css?v=2026-10-13.16">
+  <script type="module" src="js/navigation/main.js?v=2026-10-13.16"></script>
 </head>
 <body>
   <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
@@ -55,7 +55,14 @@
         <button id="nav-right" class="nav-control" type="button"><span data-i18n="navigation.flight.right">Right</span> <span aria-hidden="true">↷</span></button>
       </div>
       <p class="nav-hold-hint" data-i18n="navigation.flight.holdHint">Hold Left or Right to turn; let go to fly straight.</p>
-      <button id="nav-pause" class="nav-secondary" type="button" aria-pressed="false" data-i18n="navigation.flight.pause">Pause</button>
+      <div class="nav-flight-bar">
+        <button id="nav-pause" class="nav-secondary" type="button" aria-pressed="false" data-i18n="navigation.flight.pause">Pause</button>
+        <div class="nav-speed" role="group" aria-labelledby="nav-speed-label">
+          <span id="nav-speed-label" class="nav-speed-label" data-i18n="navigation.flight.speed">Speed</span>
+          <button class="nav-speed-option" type="button" data-speed="regular" aria-pressed="true" data-i18n="navigation.flight.speedRegular">Regular</button>
+          <button class="nav-speed-option" type="button" data-speed="fast" aria-pressed="false" data-i18n="navigation.flight.speedFast">Faster (4×)</button>
+        </div>
+      </div>
     </section>
 
     <!-- 3. Report after landing. -->

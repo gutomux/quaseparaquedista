@@ -335,11 +335,14 @@
       "play": "Resume",
       "sceneLabel": "View from under the canopy, looking forward and down.",
       "mapLabel": "Top-down map with your position.",
-      "fast": "Time sped up until 1,200 ft",
+      "fast": "Time sped up (4×)",
       "controlsLabel": "Canopy controls",
+      "speed": "Speed",
+      "speedRegular": "Regular",
+      "speedFast": "Faster (4×)",
       "altimeter": "Altimeter",
       "feet": "ft",
-      "holdHint": "Hold Left or Right to turn; let go to fly straight. Hold Flare from about 6 to 7 ft until touchdown. Drag the view to look around.",
+      "holdHint": "Hold Left or Right to turn; let go to fly straight. Hold Flare from when the top of the flag beside the target (6.5 ft) is level with your feet until touchdown. Drag the view to look around.",
       "lookAhead": "Look ahead"
     },
     "settings": {
@@ -361,10 +364,10 @@
       },
       "flare": {
         "good": "Flare on time, at {alt} ft.",
-        "high": "Flare too early, at {alt} ft: the canopy loses speed before the ground. Flare at about 6 to 7 ft.",
-        "low": "Flare too late, at {alt} ft: a hard landing. Flare at about 6 to 7 ft.",
-        "none": "You didn't flare. Remember to flare at about 6 to 7 ft above the ground.",
-        "released": "You let go of the flare before touching down. Hold the flare from about 6 to 7 ft until you land."
+        "high": "Flare too early, at {alt} ft. Flare at about 6 to 7 ft (roughly a person's height), when the top of the flag beside the target is level with your feet.",
+        "low": "Flare too late, at {alt} ft. Flare at about 6 to 7 ft (roughly a person's height), when the top of the flag beside the target is level with your feet.",
+        "none": "You didn't flare. Remember to flare at about 6 to 7 ft (roughly a person's height), when the top of the flag beside the target is level with your feet.",
+        "released": "You let go of the flare before touching down. Hold the flare from about 6 to 7 ft (roughly a person's height) until you touch the ground."
       },
       "landing": {
         "legendary": "Legendary! You landed {dist} m from the target.",

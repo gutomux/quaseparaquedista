@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import {
   patternPoints, planOptions, newRun, PLAN_STEPS, PATTERN, START, HOLDING_WOBBLE, holdingShape, unit, distance, headingTo, outsideLanding, HOLDING_OPTION_ANGLES,
 } from '../js/navigation/pattern.js';
-import { createFlight, step, setTurn, setFlare, inPattern, timeScale } from '../js/navigation/flight.js';
+import { createFlight, step, setTurn, setFlare, setFast, inPattern, timeScale } from '../js/navigation/flight.js';
 import { buildReport, landingGrade, flareGrade, patternRightTurns } from '../js/navigation/report.js';
 import { buildDropzone } from '../js/navigation/dropzone.js';
 
@@ -93,8 +93,8 @@ test('flare: it only works while held, and the one held at touchdown counts', ()
   assert.ok(before - flight.altFt > held * 2, 'without the flare the canopy sinks faster again');
 });
 
-test('flight: above 1,200 ft the clock runs faster but turns feel the same on screen', () => {
-  const flight = createFlight({ setaHeading: 0, start: { x: 0, y: 0, altFt: 2500, heading: 0 } }, patternPoints(0));
+test('flight: at the faster speed the clock runs faster but turns feel the same on screen', () => {
+  const flight = setFast(createFlight({ setaHeading: 0, start: { x: 0, y: 0, altFt: 2500, heading: 0 } }, patternPoints(0)), true);
   setTurn(flight, 1);
   step(flight, 1 * timeScale(flight)); // one real second, at 4× clock
   assert.equal(Math.round(flight.heading), 60);
@@ -183,10 +183,14 @@ test('flight: holding a turn turns at 60° per second, letting go flies straight
   assert.ok(afterFlare.altFt - flight.altFt < sinkNormal / 2, 'the flare cuts the sink rate');
 });
 
-test('flight: the clock runs fast in the holding area and in real time from 1200 ft', () => {
+test('flight: real time unless the student picks the faster speed, at any altitude', () => {
   const flight = createFlight({ setaHeading: 0, start: { x: 0, y: 0, altFt: 3000, heading: 0 } }, patternPoints(0));
+  assert.equal(timeScale(flight), 1, 'regular speed by default, even high up');
+  setFast(flight, true);
   assert.equal(timeScale(flight), 4);
-  flight.altFt = 1200;
+  flight.altFt = 300;
+  assert.equal(timeScale(flight), 4, 'still faster near the ground, until switched back');
+  setFast(flight, false);
   assert.equal(timeScale(flight), 1);
 });
 

@@ -335,11 +335,14 @@
       "play": "Continuar",
       "sceneLabel": "Visão de dentro do velame, olhando para a frente e para baixo.",
       "mapLabel": "Mapa visto de cima, com a sua posição.",
-      "fast": "Tempo acelerado até 1.200 pés",
+      "fast": "Tempo acelerado (4×)",
       "controlsLabel": "Comandos do velame",
+      "speed": "Velocidade",
+      "speedRegular": "Normal",
+      "speedFast": "Mais rápida (4×)",
       "altimeter": "Altímetro",
       "feet": "pés",
-      "holdHint": "Segure Esquerda ou Direita para virar; solte para seguir reto. Segure Flare a partir de 6 a 7 pés até tocar o chão. Arraste a imagem para olhar ao redor.",
+      "holdHint": "Segure Esquerda ou Direita para virar; solte para seguir reto. Segure Flare quando o topo da bandeira ao lado do alvo (6,5 pés) estiver na altura dos seus pés, até tocar o chão. Arraste a imagem para olhar ao redor.",
       "lookAhead": "Olhar para frente"
     },
     "settings": {
@@ -361,10 +364,10 @@
       },
       "flare": {
         "good": "Flare na hora certa, a {alt} pés.",
-        "high": "Flare cedo demais, a {alt} pés: o velame perde velocidade antes do chão. Faça o flare perto de 6 a 7 pés.",
-        "low": "Flare tarde, a {alt} pés: o pouso fica duro. Faça o flare perto de 6 a 7 pés.",
-        "none": "Você não fez o flare. Lembre de fazer o flare perto de 6 a 7 pés do chão.",
-        "released": "Você soltou o flare antes de tocar o chão. Segure o flare a partir de 6 a 7 pés até o pouso."
+        "high": "Flare cedo demais, a {alt} pés. Faça o flare perto de 6 a 7 pés (mais ou menos a altura de uma pessoa), quando o topo da bandeira ao lado do alvo estiver na altura dos seus pés.",
+        "low": "Flare tarde, a {alt} pés. Faça o flare perto de 6 a 7 pés (mais ou menos a altura de uma pessoa), quando o topo da bandeira ao lado do alvo estiver na altura dos seus pés.",
+        "none": "Você não fez o flare. Lembre de fazer o flare perto de 6 a 7 pés (mais ou menos a altura de uma pessoa), quando o topo da bandeira ao lado do alvo estiver na altura dos seus pés.",
+        "released": "Você soltou o flare antes de tocar o chão. Segure o flare a partir de 6 a 7 pés (mais ou menos a altura de uma pessoa) até tocar o solo."
       },
       "landing": {
         "legendary": "Lendário! Você pousou a {dist} m do alvo.",

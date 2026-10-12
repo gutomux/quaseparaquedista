@@ -2,7 +2,7 @@
  * Navigation simulator entry point: plan the pattern, fly it, read the report.
  *   plan:   paused at 3000 ft, the student picks the holding area, A, B and C from options;
  *           a wrong pick shows a hint, and the flight only starts when all four are right.
- *   flight: hold left/right to turn, hold the flare; fast clock until 1200 ft, then real time.
+ *   flight: hold left/right to turn, hold the flare; real time, or 4× faster if the student picks it.
  *   report: after landing, what went well and what to work on.
  */
 import { CONFIG } from '../config.js';
@@ -11,13 +11,13 @@ import { currentLocale } from '../locale.js';
 import { applyTranslations } from '../view.js';
 import { mountSiteMenu } from '../nav.js';
 import { patternPoints, planOptions, newRun, PLAN_STEPS } from './pattern.js';
-import { createFlight, step, setTurn, setFlare, timeScale } from './flight.js';
+import { createFlight, step, setTurn, setFlare, setFast, timeScale } from './flight.js';
 import { buildReport } from './report.js';
 import { NavigationView } from './view.js';
 
 /** Longest simulated step per frame, so a hidden tab doesn't jump the canopy. */
 const MAX_DT = 0.05;
-const SETTINGS = { guides: ['visible', 'hidden'] };
+const SETTINGS = { guides: ['visible', 'hidden'], speed: ['regular', 'fast'] };
 const settingKey = (name) => `qp.nav.${name}`;
 
 function loadSetting(name, fallback) {
@@ -43,8 +43,10 @@ async function init() {
   mountSiteMenu(document.querySelector('[data-site-nav]'), t);
 
   const view = new NavigationView(document, t);
-  const settings = { guides: loadSetting('guides', 'visible') };
+  const settings = { guides: loadSetting('guides', 'visible'), speed: loadSetting('speed', 'regular') };
   view.setSettings(settings);
+  view.setSpeed(settings.speed);
+  const redraw = () => view.drawFlight({ flight, run, guides: settings.guides === 'visible', fast: timeScale(flight) > 1 });
 
   let run;
   let points;
@@ -100,7 +102,7 @@ async function init() {
   }
 
   function startFlight() {
-    flight = createFlight(run, points);
+    flight = setFast(createFlight(run, points), settings.speed === 'fast');
     paused = false;
     last = null;
     view.setPaused(false);
@@ -128,7 +130,14 @@ async function init() {
       const name = input.replace('nav-', '');
       settings[name] = value;
       saveSetting(name, value);
-      if (flight && paused) view.drawFlight({ flight, run, guides: settings.guides === 'visible', fast: timeScale(flight) > 1 });
+      if (flight && paused) redraw();
+    },
+    onSpeed: (speed) => {
+      settings.speed = speed;
+      saveSetting('speed', speed);
+      view.setSpeed(speed);
+      if (flight) setFast(flight, speed === 'fast');
+      if (flight && paused) redraw();
     },
   });
 

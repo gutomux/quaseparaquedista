@@ -43,6 +43,12 @@ function appendDropzone(root, range) {
 }
 /** The target: a pea-gravel pit (12 m radius, like a real one) with a red center. */
 const TARGET = { gravel: 12, center: 4 };
+/**
+ * A flag beside the target, 6.5 ft tall: the flare reference. When its top is level with the
+ * student's feet, the canopy is at flare height. Its cloth streams downwind.
+ */
+const EYE_ABOVE_FEET_M = 1.6;
+const FLAG = { at: { x: 16, y: 0 }, heightFt: 6.5, cloth: '#FF6A13', pole: '#F2F2EC' };
 /** On the maps it's drawn bigger (`scale`) so it stays visible from far above. */
 function appendTarget(root, scale = 1) {
   root.append(svg('circle', { cx: 0, cy: 0, r: 30 * scale, fill: PALETTE.gravel, stroke: PALETTE.target, 'stroke-width': 6 * scale }));
@@ -106,6 +112,7 @@ export class NavigationView {
     this.altimeter = root.querySelector('#nav-altimeter');
     this.fastBadge = root.querySelector('#nav-fast');
     this.pauseButton = root.querySelector('#nav-pause');
+    this.speedButtons = [...root.querySelectorAll('[data-speed]')];
     this.lookReset = root.querySelector('#nav-look-reset');
     /** Where the student looks, relative to straight ahead: yaw (+ right) and pitch (+ down), degrees. */
     this.look = { yaw: 0, pitch: 0 };
@@ -115,7 +122,7 @@ export class NavigationView {
 
   /**
    * @param {object} h Handlers: onChoose(index), onStart(), onTurn(dir: -1 left | 1 right | 0 straight),
-   *   onFlare(), onPause(), onAgain(), onSetting(name, value)
+   *   onFlare(), onPause(), onAgain(), onSetting(name, value), onSpeed('regular' | 'fast')
    */
   bind(h) {
     this.planOptionsBox.addEventListener('click', (e) => {
@@ -163,6 +170,7 @@ export class NavigationView {
     flareButton.addEventListener('keyup', (e) => { if (e.key === ' ' || e.key === 'Enter') flareUp(); });
     window.addEventListener('blur', flareUp);
     this.pauseButton.addEventListener('click', h.onPause);
+    for (const b of this.speedButtons) b.addEventListener('click', () => h.onSpeed(b.dataset.speed));
     this.root.querySelector('#report-again').addEventListener('click', h.onAgain);
     this.root.querySelectorAll('[name="nav-guides"]').forEach((input) => {
       input.addEventListener('change', () => h.onSetting(input.name, input.value));
@@ -349,7 +357,8 @@ export class NavigationView {
     const focal = w / (2 * Math.tan((70 * Math.PI) / 360));
     const cx = w / 2;
     const cy = h * 0.42;
-    const height = Math.max(1.6, flight.altFt * FT); // eye height in meters
+    // The altitude is the student's feet above the ground; the eyes are about 1.6 m higher.
+    const height = flight.altFt * FT + EYE_ABOVE_FEET_M;
     const fwd = unit(flight.heading + look.yaw);
     const right = unit(flight.heading + look.yaw + 90);
     // A world point (p.e = meters above the ground, 0 if missing) in camera space.
@@ -428,6 +437,11 @@ export class NavigationView {
       const dist = Math.hypot(dx, dy);
       if (dist < reach && dx * fwd.x + dy * fwd.y > -60) standing.push({ kind: 'building', obj: b, dist });
     }
+    {
+      const dx = FLAG.at.x - flight.x;
+      const dy = FLAG.at.y - flight.y;
+      if (dx * fwd.x + dy * fwd.y > -5) standing.push({ kind: 'flag', obj: FLAG, dist: Math.hypot(dx, dy) });
+    }
     fill(polygon(circle({ x: 0, y: 0 }, TARGET.gravel)), PALETTE.gravel);
     fill(polygon(circle({ x: 0, y: 0 }, TARGET.center, 14)), PALETTE.target);
     fill(polygon(setaShape(setaCenter(run.setaHeading), run.setaHeading, SETA.length)), color('--nav-seta'));
@@ -444,6 +458,31 @@ export class NavigationView {
     standing.sort((a, b) => b.dist - a.dist);
     const eye = { x: flight.x, y: flight.y };
     for (const { kind, obj } of standing) {
+      if (kind === 'flag') {
+        const top = obj.heightFt * FT;
+        const base = camera(obj.at);
+        const tip = camera({ ...obj.at, e: top });
+        if (base.z < near || tip.z < near) continue;
+        const b = project(base);
+        const t = project(tip);
+        ctx.strokeStyle = obj.pole;
+        ctx.lineWidth = Math.max(1.2, (focal * 0.05) / base.z);
+        ctx.beginPath();
+        ctx.moveTo(b.x, b.y);
+        ctx.lineTo(t.x, t.y);
+        ctx.stroke();
+        // The cloth, streaming downwind from the top of the pole.
+        const d = unit(flight.windHeading);
+        const at = (along, e) => ({ x: obj.at.x + d.x * along, y: obj.at.y + d.y * along, e });
+        const cloth = polygon([at(0, top), at(0.9, top - 0.08), at(0.9, top - 0.42), at(0, top - 0.5)]);
+        fill(cloth, obj.cloth);
+        if (cloth.length > 2) {
+          ctx.lineWidth = 1;
+          ctx.strokeStyle = 'rgba(0,0,0,.35)';
+          ctx.stroke();
+        }
+        continue;
+      }
       if (kind === 'tree') {
         const base = camera(obj);
         const top = camera({ x: obj.x, y: obj.y, e: obj.h });
@@ -686,6 +725,11 @@ export class NavigationView {
     if (!this.dialReadout) this.dialReadout = el('span', 'alt-readout');
     this.dialReadout.textContent = `${ft.toLocaleString(this.t('meta.lang'))} ${this.t('navigation.flight.feet')}`;
     if (this.altimeter.firstChild !== this.dial) this.altimeter.replaceChildren(this.dial, this.dialReadout);
+  }
+
+  /** Show which speed is picked: 'regular' (real time) or 'fast'. */
+  setSpeed(speed) {
+    for (const b of this.speedButtons) b.setAttribute('aria-pressed', String(b.dataset.speed === speed));
   }
 
   setPaused(paused) {

@@ -13,8 +13,7 @@ export const FLIGHT = Object.freeze({
   /** Share of forward speed and of sink left while the flare is held. */
   flareSpeed: 0.45,
   flareSink: 0.25,
-  /** Below this altitude (ft) the clock runs in real time; above it, faster. */
-  realTimeBelowFt: 1200,
+  /** How much faster the clock runs when the student picks the faster speed. */
   fastTimeScale: 4,
 });
 
@@ -29,6 +28,8 @@ export function createFlight(run, points) {
     y: run.start.y,
     altFt: run.start.altFt,
     heading: run.start.heading,
+    /** True when the student picked the faster speed (the clock runs FLIGHT.fastTimeScale× faster). */
+    fast: false,
     /** -1 while left is held, 1 while right is held, 0 flying straight. */
     turning: 0,
     windHeading: (run.setaHeading + 180) % 360, // the wind blows against the seta
@@ -60,8 +61,14 @@ export function createFlight(run, points) {
 /** The pattern starts at point A's altitude; from then on, a right turn is a mistake. */
 export const inPattern = (flight) => flight.altFt <= PATTERN.altitudesFt.A;
 
-/** Clock speed for the current altitude: fast in the holding area, real time near the pattern. */
-export const timeScale = (flight) => (flight.altFt > FLIGHT.realTimeBelowFt ? FLIGHT.fastTimeScale : 1);
+/** Clock speed: real time, or faster if the student picked it. */
+export const timeScale = (flight) => (flight.fast ? FLIGHT.fastTimeScale : 1);
+
+/** Pick the faster speed (true) or real time (false); it can change at any moment of the flight. */
+export function setFast(flight, fast) {
+  flight.fast = Boolean(fast);
+  return flight;
+}
 
 /**
  * Hold a turn: -1 left, 1 right, 0 to let go and fly straight. Holding the same direction
@@ -93,7 +100,7 @@ export function step(flight, dt, { canopy = CANOPY, wind = WIND_SPEED } = {}) {
   if (flight.landed || dt <= 0) return flight;
 
   // Turn while a toggle is held. The rate is per real second, so turns feel the same when the
-  // clock runs faster above the pattern.
+  // clock runs faster.
   if (flight.turning !== 0) {
     const deg = (FLIGHT.turnRate / timeScale(flight)) * dt;
     flight.heading = (flight.heading + flight.turning * deg + 360) % 360;
