@@ -358,7 +358,7 @@
       "far": "passou a {dist} m do ponto, a {alt} pés. A meta é até 30 m do ponto.",
       "notNear": "você não estava perto dele na altura certa (entre {low} e {high} pés).",
       "rightTurns": {
-        "zero": "Nenhuma curva de 90° para a direita no circuito. Ótimo!",
+        "zero": "Somente curvas para a esquerda durante o circuito. Ótimo!",
         "one": "{count} curva de 90° para a direita depois do ponto A. No circuito, todas as curvas são para a esquerda (pequenas correções para a direita tudo bem).",
         "other": "{count} curvas de 90° para a direita depois do ponto A. No circuito, todas as curvas são para a esquerda (pequenas correções para a direita tudo bem)."
       },

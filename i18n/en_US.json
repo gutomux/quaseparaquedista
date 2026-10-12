@@ -358,7 +358,7 @@
       "far": "you passed {dist} m from it, at {alt} ft. The goal is within 30 m of the point.",
       "notNear": "you weren't near it at the right height (between {low} and {high} ft).",
       "rightTurns": {
-        "zero": "No 90° right turns in the pattern. Great!",
+        "zero": "Only left turns during the pattern. Great!",
         "one": "{count} 90° right turn after point A. In the pattern, every turn is to the left (small corrections to the right are fine).",
         "other": "{count} 90° right turns after point A. In the pattern, every turn is to the left (small corrections to the right are fine)."
       },
