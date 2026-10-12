@@ -30,7 +30,7 @@
 .nav-legend{display:flex;flex-wrap:wrap;gap:.35rem 1rem;justify-content:center;margin:0;font-size:.85rem;color:var(--ink-soft)}
 .lg::before{content:"";display:inline-block;width:.9rem;height:.9rem;margin-right:.35rem;vertical-align:-.1em;border-radius:.2rem}
 .lg-you::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-60 -60 120 120'%3E%3Cpath d='M0 -50 L36 40 L0 20 L-36 40 Z' fill='%23111317' stroke='white' stroke-width='10' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;border-radius:0}
-.lg-seta::before{background:#fff;border:1.5px solid #111317}
+.lg-seta::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-60 -60 120 120'%3E%3Cpath d='M0 -56 L44 0 L17 0 L17 56 L-17 56 L-17 0 L-44 0 Z' fill='white' stroke='%23111317' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;border-radius:0}
 .lg-target::before{border-radius:50%;border:3px solid #D9342B}
 .lg-holding::before{border-radius:.15rem;border:2px dashed #F5B400;background:rgba(245,180,0,.18)}
 
