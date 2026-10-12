@@ -21,7 +21,7 @@ The look follows the @quaseparaquedista Instagram posts: real sky photos, wide t
 - **Focus rings** use `--focus` (black in light mode, yellow in dark), so keyboard focus is always visible.
 - **Icons** are small line drawings on yellow tiles, the same on every phone (no emoji).
 - **The welcome page header** uses `images/hero/gutoskydiving.jpg` (a freefall panorama), with a see-through white title (QUASE 35%, PARAQUEDISTA 50%) outlined in black, so the photo shows through and the letters stay readable. Photos for other pages should have no printed text.
-- **The navigation simulator's seta** has a fixed spot in the landing area's north-east corner, and only turns with the wind (`SETA` in `js/navigation/view.js`).
+- **The navigation simulator's seta** has a fixed spot in the landing area's south-east corner, inside a circle that makes it easy to find, and only turns with the wind (`SETA` in `js/navigation/view.js`).
 - **The landing area holds the whole pattern**: points A, B, C and X lie over it for every seta direction (a 980 m square centered on the target, `LANDING_AREA` in `js/navigation/pattern.js`), so students learn to plan the pattern inside the landing area. The holding areas (the right one and the wrong options) stay at least 60 m outside it, so they never cover the seta: 300 m beyond point A as usual, further out where a corner of the landing area is in the way (diagonal setas). Tests check both.
 - **The simulator scene** keeps its own sky colors (`--scene-top`, `--scene-low` in `css/freefall.css`).
 

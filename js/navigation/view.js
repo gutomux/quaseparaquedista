@@ -20,10 +20,16 @@ const DZ = (() => {
   return dz;
 })();
 /**
- * The seta, the same in every view: a fixed spot inside the landing area, near its north-east
- * corner, as at real drop zones. Only its direction changes with the wind.
+ * The seta, the same in every view: a fixed spot inside the landing area, near its south-east
+ * corner, as at real drop zones. Only its direction changes with the wind. A circle around it
+ * (`ring`, its radius as a share of the seta's length) makes it easy to find.
  */
-const SETA = { at: { x: 420, y: 420 }, length: 67 };
+const SETA = { at: { x: 420, y: -420 }, length: 67, ring: 0.75 };
+/** The circle around the seta on a map, under the arrow. */
+function appendSetaRing(root, scale = 1) {
+  const c = SETA.at;
+  root.append(svg('circle', { class: 'nm-seta-ring', cx: mx(c).toFixed(1), cy: my(c).toFixed(1), r: (SETA.length * SETA.ring * scale).toFixed(1) }));
+}
 const setaCenter = () => SETA.at;
 
 /** Draw the drop zone into a map's SVG, skipping what's outside the view. */
@@ -254,6 +260,7 @@ export class NavigationView {
     root.setAttribute('aria-label', this.t('navigation.plan.mapLabel'));
     appendDropzone(root, MAP_RANGE);
     appendTarget(root, k);
+    appendSetaRing(root);
     root.append(svg('polygon', { class: 'nm-seta', points: toPoints(setaShape(setaCenter(run.setaHeading), run.setaHeading, SETA.length)) }));
 
     // What the student has already placed.
@@ -444,6 +451,15 @@ export class NavigationView {
     }
     fill(polygon(circle({ x: 0, y: 0 }, TARGET.gravel)), PALETTE.gravel);
     fill(polygon(circle({ x: 0, y: 0 }, TARGET.center, 14)), PALETTE.target);
+    // The circle around the seta: a slightly darker disc with a white edge, then the arrow.
+    const ring = polygon(circle(SETA.at, SETA.length * SETA.ring, 40));
+    fill(ring, 'rgba(17,19,23,.22)');
+    if (ring.length > 2) {
+      const d = Math.max(1, Math.hypot(SETA.at.x - flight.x, SETA.at.y - flight.y, height));
+      ctx.lineWidth = Math.max(1.5, (focal * 3) / d);
+      ctx.strokeStyle = color('--nav-seta');
+      ctx.stroke();
+    }
     fill(polygon(setaShape(setaCenter(run.setaHeading), run.setaHeading, SETA.length)), color('--nav-seta'));
 
     // Haze toward the horizon, like looking through miles of air.
@@ -649,6 +665,7 @@ export class NavigationView {
       root.setAttribute('aria-label', this.t('navigation.flight.mapLabel'));
       appendDropzone(root, MINI_RANGE);
       appendTarget(root, 1.6);
+      appendSetaRing(root, 1.5);
       root.append(svg('polygon', { class: 'nm-seta', points: toPoints(setaShape(setaCenter(run.setaHeading), run.setaHeading, SETA.length * 1.5)) }));
       if (guides) {
         const p = flight.points;
