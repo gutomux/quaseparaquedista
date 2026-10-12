@@ -19,7 +19,7 @@ function fakeDoc({ copyWorks = true } = {}) {
   };
   return doc;
 }
-const link = { url: 'https://quaseparaquedista.com.br/glossary.html#term-canopy', title: 'Velame' };
+const link = { url: 'https://quaseparaquedista.com.br/glossary#term-canopy', title: 'Velame' };
 
 test('share: copies the link and opens the share menu, copy first', async () => {
   const order = [];

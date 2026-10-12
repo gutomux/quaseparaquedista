@@ -12,7 +12,7 @@ import { GlossaryController } from './controller.js';
 import { mountSiteMenu } from './nav.js';
 
 /**
- * The open entry lives in the address: glossary.html#term-canopy. Opening an entry adds a
+ * The open entry lives in the address: glossary#term-canopy. Opening an entry adds a
  * history step, so the link can be shared and the phone's Back button returns to the last one.
  */
 function hashRouter() {

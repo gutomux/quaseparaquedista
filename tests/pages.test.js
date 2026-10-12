@@ -11,22 +11,22 @@ test('welcome page: the tools are linked right after the welcome text', () => {
   const lead = html.indexOf('home-lead');
   const tools = html.indexOf('class="home-tools"');
   assert.ok(lead > 0 && tools > lead && tools < html.indexOf('class="home-intro"'), 'tool cards come right after the welcome text');
-  for (const href of ['glossary.html', 'freefall.html', 'navigation.html', 'materiais-instrucao.html']) {
+  for (const href of ['glossary', 'freefall', 'navigation', 'materiais-instrucao']) {
     assert.match(html, new RegExp(`<a class="home-tool" href="${href}">`), `links to ${href}`);
   }
 });
 
 test('welcome page: each visitor card leads somewhere, with a call to action', () => {
   const html = read('index.html');
-  assert.match(html, /<a class="home-audience" href="freefall\.html">[\s\S]*?home\.audiences\.firstTimer\.cta/);
-  assert.match(html, /<a class="home-audience" href="materiais-instrucao\.html">[\s\S]*?home\.audiences\.student\.cta/);
+  assert.match(html, /<a class="home-audience" href="freefall">[\s\S]*?home\.audiences\.firstTimer\.cta/);
+  assert.match(html, /<a class="home-audience" href="materiais-instrucao">[\s\S]*?home\.audiences\.student\.cta/);
   assert.match(html, /<a class="home-audience" href="#" id="audience-feedback" target="_blank"[\s\S]*?home\.audiences\.experienced\.cta/);
 });
 
 test('material pages show where you are, linking back to the materials list', () => {
   for (const page of ['apostila-aff.html', 'revisao-emergencias-aff.html', 'aff-videos.html']) {
     const html = read(page);
-    assert.match(html, /<nav class="crumbs"[\s\S]*?<a href="materiais-instrucao\.html"[\s\S]*?aria-current="page"/, page);
+    assert.match(html, /<nav class="crumbs"[\s\S]*?<a href="materiais-instrucao"[\s\S]*?aria-current="page"/, page);
     assert.ok(html.indexOf('class="crumbs"') < html.indexOf('class="page-top"'), `${page}: the trail sits above the title`);
   }
 });

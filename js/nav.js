@@ -19,18 +19,24 @@ export const LANGUAGES = Object.freeze({
   en_US: { short: 'EN', name: 'English', tag: 'en-US' },
 });
 
-/** Pages in the menu, in order. Pages under a section (e.g. the PDFs) mark that section. */
+/**
+ * Pages in the menu, in order. Pages under a section (e.g. the PDFs) mark that section.
+ * Links have no ".html": GitHub Pages serves "/glossary" from glossary.html, and "./" is Home.
+ */
 export const MENU = Object.freeze([
-  { key: 'home', href: 'index.html' },
-  { key: 'glossary', href: 'glossary.html' },
-  { key: 'freefall', href: 'freefall.html' },
-  { key: 'navigation', href: 'navigation.html' },
-  { key: 'materials', href: 'materiais-instrucao.html', pages: ['apostila-aff.html', 'revisao-emergencias-aff.html', 'aff-videos.html'] },
+  { key: 'home', href: './' },
+  { key: 'glossary', href: 'glossary' },
+  { key: 'freefall', href: 'freefall' },
+  { key: 'navigation', href: 'navigation' },
+  { key: 'materials', href: 'materiais-instrucao', pages: ['apostila-aff', 'revisao-emergencias-aff', 'aff-videos'] },
 ]);
 
-/** The page file name from a path: "/glossary.html" → "glossary.html", "/" → "index.html". */
-export function pageFile(pathname) {
-  return String(pathname).split('/').pop() || 'index.html';
+/**
+ * The page's name from a path or link, with or without ".html":
+ * "/glossary.html" and "/glossary" → "glossary"; "/", "./" and "/index.html" → "index".
+ */
+export function pageName(path) {
+  return String(path).split(/[?#]/)[0].split('/').pop().replace(/\.html$/, '') || 'index';
 }
 
 /**
@@ -38,11 +44,12 @@ export function pageFile(pathname) {
  * @returns {Array<{key: string, href: string, current: 'page'|'true'|null}>}
  *   current is "page" on the page itself and "true" on its section (aria-current values).
  */
-export function menuItems(currentFile) {
+export function menuItems(currentPage) {
+  const page = pageName(currentPage);
   return MENU.map(({ key, href, pages = [] }) => ({
     key,
     href,
-    current: href === currentFile ? 'page' : pages.includes(currentFile) ? 'true' : null,
+    current: pageName(href) === page ? 'page' : pages.includes(page) ? 'true' : null,
   }));
 }
 
@@ -86,7 +93,7 @@ function el(tag, className, text) {
  * @param {Function} t Translator from createTranslator().
  * @param {string} [currentFile] Defaults to the page being shown.
  */
-export function mountSiteMenu(nav, t, currentFile = pageFile(location.pathname)) {
+export function mountSiteMenu(nav, t, currentFile = pageName(location.pathname)) {
   if (!nav) return;
   nav.setAttribute('aria-label', t('nav.menu.label'));
 

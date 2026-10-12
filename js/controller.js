@@ -51,7 +51,7 @@ export class GlossaryController {
       onDismiss: () => this.closeSuggestions(),
       onCalculatorInput: (values) => this.updateWingLoading(values),
     });
-    // Opened from a shared link (glossary.html#entry-id): show that entry.
+    // Opened from a shared link (glossary#entry-id): show that entry.
     if (this.router?.current()) this.openFromRoute(this.router.current());
   }
 

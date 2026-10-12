@@ -190,6 +190,8 @@ npm start                     # needs Node.js; opens on http://localhost:8080
 python3 -m http.server 8080   # no Node.js needed
 ```
 
+Links between pages have no `.html` (`navigation`, `glossary`, `./` for Home), as GitHub Pages serves each page without it. `npm start` does the same; the Python server doesn't, so with it, open pages by their full name (`/navigation.html`).
+
 ## Tests
 
 ```
