@@ -7,7 +7,7 @@ const ROOT = new URL('../', import.meta.url);
 const pages = readdirSync(ROOT).filter((f) => f.endsWith('.html'));
 
 test('menu: Home comes first, then the tools', () => {
-  assert.deepEqual(MENU.map((m) => m.key), ['home', 'glossary', 'freefall', 'materials']);
+  assert.deepEqual(MENU.map((m) => m.key), ['home', 'glossary', 'freefall', 'navigation', 'materials']);
   assert.equal(MENU[0].href, 'index.html');
 });
 

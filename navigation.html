@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <script src="js/page-lang.js?v=2026-10-13.13"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Plan and fly the landing pattern to the target." data-i18n-attr="content: navigation.meta.description">
+  <title>Navigation simulator</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪂</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,700..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="css/styles.css?v=2026-10-13.13">
+  <link rel="stylesheet" href="css/navigation.css?v=2026-10-13.13">
+  <script type="module" src="js/navigation/main.js?v=2026-10-13.13"></script>
+</head>
+<body>
+  <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
+  <main class="nav-main">
+    <header class="page-top">
+      <h1 class="page-title"><span data-i18n="navigation.heading.line1">Navigation</span><br><span data-i18n="navigation.heading.line2">simulator</span></h1>
+      <nav class="site-nav" data-site-nav></nav>
+    </header>
+    <p class="intro" data-i18n="navigation.intro"></p>
+
+    <!-- 1. Plan: paused at 3000 ft, looking straight down. -->
+    <section id="plan" class="nav-step" aria-labelledby="plan-title">
+      <h2 id="plan-title" data-i18n="navigation.plan.title">Plan your pattern</h2>
+      <p id="plan-prompt" class="nav-prompt" aria-live="polite"></p>
+      <div id="plan-map" class="nav-map"></div>
+      <p class="nav-legend">
+        <span class="lg lg-you" data-i18n="navigation.plan.legend.you">You</span>
+        <span class="lg lg-seta" data-i18n="navigation.plan.legend.seta">Seta</span>
+        <span class="lg lg-target" data-i18n="navigation.plan.legend.target">Target</span>
+        <span class="lg lg-holding" data-i18n="navigation.plan.legend.holding">Holding area</span>
+      </p>
+      <div id="plan-options" class="nav-options"></div>
+      <p id="plan-feedback" class="nav-feedback" aria-live="polite"></p>
+      <button id="start-flight" class="nav-primary" type="button" hidden data-i18n="navigation.plan.start">Start navigating</button>
+    </section>
+
+    <!-- 2. Flight: looking forward and down, with a small map and the altimeter. -->
+    <section id="flight" class="nav-step" aria-labelledby="flight-title" hidden>
+      <h2 id="flight-title" data-i18n="navigation.flight.title">Navigate to the target</h2>
+      <div class="nav-stage">
+        <canvas id="nav-view" class="nav-view" role="img" data-i18n-attr="aria-label: navigation.flight.sceneLabel"></canvas>
+        <div id="nav-altimeter" class="nav-altimeter" role="img"></div>
+        <div id="nav-minimap" class="nav-minimap"></div>
+        <p id="nav-fast" class="nav-fast" hidden data-i18n="navigation.flight.fast">Time sped up</p>
+        <button id="nav-look-reset" class="nav-look-reset" type="button" hidden data-i18n="navigation.flight.lookAhead">Look ahead</button>
+      </div>
+      <div class="nav-controls" role="group" data-i18n-attr="aria-label: navigation.flight.controlsLabel">
+        <button id="nav-left" class="nav-control" type="button"><span aria-hidden="true">↶</span> <span data-i18n="navigation.flight.left">Left</span></button>
+        <button id="nav-flare" class="nav-control is-flare" type="button" data-i18n="navigation.flight.flare">Flare</button>
+        <button id="nav-right" class="nav-control" type="button"><span data-i18n="navigation.flight.right">Right</span> <span aria-hidden="true">↷</span></button>
+      </div>
+      <p class="nav-hold-hint" data-i18n="navigation.flight.holdHint">Hold Left or Right to turn; let go to fly straight.</p>
+      <button id="nav-pause" class="nav-secondary" type="button" aria-pressed="false" data-i18n="navigation.flight.pause">Pause</button>
+    </section>
+
+    <!-- 3. Report after landing. -->
+    <section id="report" class="nav-step" aria-labelledby="report-title" hidden>
+      <h2 id="report-title" data-i18n="navigation.report.title">Landing report</h2>
+      <ul id="report-list" class="nav-report"></ul>
+      <div id="report-notes" class="nav-notes"></div>
+      <button id="report-again" class="nav-primary" type="button" data-i18n="navigation.report.again">Fly again</button>
+    </section>
+
+    <details class="nav-settings">
+      <summary data-i18n="navigation.settings.title">Settings</summary>
+      <fieldset>
+        <legend data-i18n="navigation.settings.guides">Points A, B and C in flight</legend>
+        <label><input type="radio" name="nav-guides" value="visible"> <span data-i18n="navigation.settings.visible">Visible</span></label>
+        <label><input type="radio" name="nav-guides" value="hidden"> <span data-i18n="navigation.settings.hidden">Hidden</span></label>
+      </fieldset>
+    </details>
+  </main>
+
+  <footer>
+    <p class="disclaimer" role="note" data-i18n="navigation.disclaimer"></p>
+  </footer>
+
+  <noscript><p class="noscript">This simulator needs JavaScript. / Este simulador precisa de JavaScript para funcionar.</p></noscript>
+</body>
+</html>

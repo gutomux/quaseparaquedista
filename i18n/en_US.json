@@ -189,6 +189,10 @@
         "name": "Freefall simulator",
         "text": "See how body position changes your flight."
       },
+      "navigation": {
+        "name": "Navigation simulator",
+        "text": "Plan and fly the landing pattern to the target."
+      },
       "materials": {
         "name": "Training materials",
         "text": "AFF handbook, emergency review and course videos."
@@ -281,5 +285,98 @@
     "disclaimer": "These materials support your course. Always take your questions to a certified instructor.",
     "hint": "PDF not showing?",
     "hintLink": "Open it on the CBPq site."
+  },
+  "navigation": {
+    "meta": {
+      "title": "Navigation simulator",
+      "description": "Plan and fly the landing pattern: holding area, points A, B and C, and landing on target."
+    },
+    "heading": {
+      "line1": "Navigation",
+      "line2": "simulator"
+    },
+    "intro": "You've just opened your canopy at 3,000 ft. Find the seta, plan your pattern, and navigate to the target.",
+    "plan": {
+      "title": "1. Plan your pattern",
+      "seta": "The seta on the ground points the landing direction, into the wind.",
+      "ask": {
+        "H": "Where is the holding area?",
+        "A": "Where is point A (1,000 ft)?",
+        "B": "Where is point B (600 ft)?",
+        "C": "Where is point C (300 ft)?"
+      },
+      "choose": "Tap one of the numbered options on the map.",
+      "option": "Option {n}",
+      "right": "Correct!",
+      "hints": {
+        "downwind": "Not yet. The seta points into the wind: the holding area and the start of the pattern are on the side the seta points to.",
+        "rightSide": "Not yet. Every turn in the pattern is to the left, so the pattern is on the left of someone landing in the seta's direction.",
+        "both": "Not yet. That point is on the wrong side and at the wrong end. Follow the seta, and remember the turns are to the left.",
+        "pastTarget": "Not yet. From point C you fly the final into the wind to the target, so point C is before the target, on the side the wind comes from.",
+        "cRight": "Not yet. At point B you turn left, and point C lines up with the target, on the final approach.",
+        "holdingSide": "Not yet. The holding area is in the direction the seta points, beyond the target."
+      },
+      "ready": "Plan complete and correct! Time to fly it.",
+      "start": "Start navigating",
+      "legend": {
+        "you": "You",
+        "target": "Target",
+        "holding": "Holding area",
+        "seta": "Seta"
+      },
+      "mapLabel": "Top-down map of the landing area, seen from 3,000 ft."
+    },
+    "flight": {
+      "title": "2. Navigate to the target",
+      "left": "Left",
+      "right": "Right",
+      "flare": "Flare",
+      "pause": "Pause",
+      "play": "Resume",
+      "sceneLabel": "View from under the canopy, looking forward and down.",
+      "mapLabel": "Top-down map with your position.",
+      "fast": "Time sped up until 1,200 ft",
+      "controlsLabel": "Canopy controls",
+      "altimeter": "Altimeter",
+      "feet": "ft",
+      "holdHint": "Hold Left or Right to turn; let go to fly straight. Hold Flare from about 6 to 7 ft until touchdown. Drag the view to look around.",
+      "lookAhead": "Look ahead"
+    },
+    "settings": {
+      "title": "Settings",
+      "guides": "Points A, B and C in flight",
+      "visible": "Visible",
+      "hidden": "Hidden"
+    },
+    "report": {
+      "title": "3. Landing report",
+      "point": "Point {name} ({target} ft)",
+      "reached": "you passed {dist} m from it, at {alt} ft.",
+      "far": "you passed {dist} m from it, at {alt} ft. The goal is within 30 m of the point.",
+      "notNear": "you weren't near it at the right height (between {low} and {high} ft).",
+      "rightTurns": {
+        "zero": "No 90° right turns in the pattern. Great!",
+        "one": "{count} 90° right turn after point A. In the pattern, every turn is to the left (small corrections to the right are fine).",
+        "other": "{count} 90° right turns after point A. In the pattern, every turn is to the left (small corrections to the right are fine)."
+      },
+      "flare": {
+        "good": "Flare on time, at {alt} ft.",
+        "high": "Flare too early, at {alt} ft: the canopy loses speed before the ground. Flare at about 6 to 7 ft.",
+        "low": "Flare too late, at {alt} ft: a hard landing. Flare at about 6 to 7 ft.",
+        "none": "You didn't flare. Remember to flare at about 6 to 7 ft above the ground.",
+        "released": "You let go of the flare before touching down. Hold the flare from about 6 to 7 ft until you land."
+      },
+      "landing": {
+        "legendary": "Legendary! You landed {dist} m from the target.",
+        "great": "Great landing: {dist} m from the target.",
+        "goal": "Good landing: {dist} m from the target, within the 20 m goal.",
+        "missed": "You landed {dist} m from the target. The goal is within 20 m."
+      },
+      "praise": "Even with things to improve, you landed close to the target. Well done!",
+      "clean": "A perfect pattern: every point, left turns only, and the flare on time!",
+      "tip": "Tip: start each turn a little before the point, and let go once you line up with the next leg.",
+      "again": "Fly again"
+    },
+    "disclaimer": "This tool supports your course, with simplified numbers. Always follow your drop zone's briefing and instructor."
   }
 }

@@ -40,7 +40,7 @@ test('page language: picks the same language as the main script, for the locales
 });
 
 test('page language: every page loads it first, before anything is shown', () => {
-  for (const page of ['index.html', 'glossary.html', 'freefall.html', 'materiais-instrucao.html', 'apostila-aff.html', 'revisao-emergencias-aff.html', 'aff-videos.html']) {
+  for (const page of ['index.html', 'glossary.html', 'freefall.html', 'materiais-instrucao.html', 'apostila-aff.html', 'revisao-emergencias-aff.html', 'aff-videos.html', 'navigation.html']) {
     const html = readFileSync(new URL(`../${page}`, import.meta.url), 'utf8');
     const script = html.indexOf('js/page-lang.js');
     assert.ok(script > 0 && script < html.indexOf('<link rel="stylesheet"'), `${page} loads page-lang.js before its stylesheets`);

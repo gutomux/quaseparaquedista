@@ -24,6 +24,7 @@ export const MENU = Object.freeze([
   { key: 'home', href: 'index.html' },
   { key: 'glossary', href: 'glossary.html' },
   { key: 'freefall', href: 'freefall.html' },
+  { key: 'navigation', href: 'navigation.html' },
   { key: 'materials', href: 'materiais-instrucao.html', pages: ['apostila-aff.html', 'revisao-emergencias-aff.html', 'aff-videos.html'] },
 ]);
 

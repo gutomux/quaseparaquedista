@@ -6,12 +6,12 @@ const read = (file) => readFileSync(new URL(`../${file}`, import.meta.url), 'utf
 const messages = (locale) => JSON.parse(read(`i18n/${locale}.json`));
 const get = (obj, path) => path.split('.').reduce((o, k) => o?.[k], obj);
 
-test('welcome page: the three tools are linked right after the welcome text', () => {
+test('welcome page: the tools are linked right after the welcome text', () => {
   const html = read('index.html');
   const lead = html.indexOf('home-lead');
   const tools = html.indexOf('class="home-tools"');
   assert.ok(lead > 0 && tools > lead && tools < html.indexOf('class="home-intro"'), 'tool cards come right after the welcome text');
-  for (const href of ['glossary.html', 'freefall.html', 'materiais-instrucao.html']) {
+  for (const href of ['glossary.html', 'freefall.html', 'navigation.html', 'materiais-instrucao.html']) {
     assert.match(html, new RegExp(`<a class="home-tool" href="${href}">`), `links to ${href}`);
   }
 });

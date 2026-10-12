@@ -189,6 +189,10 @@
         "name": "Simulador de queda livre",
         "text": "Veja como a posição do corpo muda o seu voo."
       },
+      "navigation": {
+        "name": "Simulador de navegação",
+        "text": "Planeje e voe o circuito de pouso até o alvo."
+      },
       "materials": {
         "name": "Materiais de instrução",
         "text": "Apostila, revisão de emergências e vídeos do curso AFF."
@@ -281,5 +285,98 @@
     "disclaimer": "Estes materiais são um apoio ao seu curso. Sempre tire suas dúvidas com um instrutor certificado.",
     "hint": "O PDF não apareceu?",
     "hintLink": "Abra no site da CBPq."
+  },
+  "navigation": {
+    "meta": {
+      "title": "Simulador de navegação",
+      "description": "Planeje e voe o circuito de pouso: área de espera, pontos A, B e C e pouso no alvo."
+    },
+    "heading": {
+      "line1": "Simulador de",
+      "line2": "navegação"
+    },
+    "intro": "Você acabou de abrir o velame a 3.000 pés. Encontre a seta, planeje o circuito e navegue até o alvo.",
+    "plan": {
+      "title": "1. Planeje o circuito",
+      "seta": "A seta no chão aponta a direção do pouso, contra o vento.",
+      "ask": {
+        "H": "Onde fica a área de espera?",
+        "A": "Onde fica o ponto A (1.000 pés)?",
+        "B": "Onde fica o ponto B (600 pés)?",
+        "C": "Onde fica o ponto C (300 pés)?"
+      },
+      "choose": "Toque em uma das opções numeradas no mapa.",
+      "option": "Opção {n}",
+      "right": "Correto!",
+      "hints": {
+        "downwind": "Ainda não. A seta aponta contra o vento: a área de espera e o começo do circuito ficam para o lado onde a seta aponta.",
+        "rightSide": "Ainda não. Todas as curvas do circuito são para a esquerda, então o circuito fica à esquerda de quem pousa na direção da seta.",
+        "both": "Ainda não. Esse ponto está no lado errado e na ponta errada. Siga a seta e lembre que as curvas são para a esquerda.",
+        "pastTarget": "Ainda não. Do ponto C você faz a reta final contra o vento até o alvo, então o ponto C fica antes do alvo, do lado de onde vem o vento.",
+        "cRight": "Ainda não. No ponto B você vira à esquerda, e o ponto C fica alinhado com o alvo, na reta final.",
+        "holdingSide": "Ainda não. A área de espera fica na direção para onde a seta aponta, depois do alvo."
+      },
+      "ready": "Plano completo e correto! Agora é navegar.",
+      "start": "Começar a navegação",
+      "legend": {
+        "you": "Você",
+        "target": "Alvo",
+        "holding": "Área de espera",
+        "seta": "Seta"
+      },
+      "mapLabel": "Mapa da área de pouso visto de cima, a 3.000 pés."
+    },
+    "flight": {
+      "title": "2. Navegue até o alvo",
+      "left": "Esquerda",
+      "right": "Direita",
+      "flare": "Flare",
+      "pause": "Pausar",
+      "play": "Continuar",
+      "sceneLabel": "Visão de dentro do velame, olhando para a frente e para baixo.",
+      "mapLabel": "Mapa visto de cima, com a sua posição.",
+      "fast": "Tempo acelerado até 1.200 pés",
+      "controlsLabel": "Comandos do velame",
+      "altimeter": "Altímetro",
+      "feet": "pés",
+      "holdHint": "Segure Esquerda ou Direita para virar; solte para seguir reto. Segure Flare a partir de 6 a 7 pés até tocar o chão. Arraste a imagem para olhar ao redor.",
+      "lookAhead": "Olhar para frente"
+    },
+    "settings": {
+      "title": "Ajustes",
+      "guides": "Pontos A, B e C no voo",
+      "visible": "Visíveis",
+      "hidden": "Ocultos"
+    },
+    "report": {
+      "title": "3. Relatório do pouso",
+      "point": "Ponto {name} ({target} pés)",
+      "reached": "passou a {dist} m do ponto, a {alt} pés.",
+      "far": "passou a {dist} m do ponto, a {alt} pés. A meta é até 30 m do ponto.",
+      "notNear": "você não estava perto dele na altura certa (entre {low} e {high} pés).",
+      "rightTurns": {
+        "zero": "Nenhuma curva de 90° para a direita no circuito. Ótimo!",
+        "one": "{count} curva de 90° para a direita depois do ponto A. No circuito, todas as curvas são para a esquerda (pequenas correções para a direita tudo bem).",
+        "other": "{count} curvas de 90° para a direita depois do ponto A. No circuito, todas as curvas são para a esquerda (pequenas correções para a direita tudo bem)."
+      },
+      "flare": {
+        "good": "Flare na hora certa, a {alt} pés.",
+        "high": "Flare cedo demais, a {alt} pés: o velame perde velocidade antes do chão. Faça o flare perto de 6 a 7 pés.",
+        "low": "Flare tarde, a {alt} pés: o pouso fica duro. Faça o flare perto de 6 a 7 pés.",
+        "none": "Você não fez o flare. Lembre de fazer o flare perto de 6 a 7 pés do chão.",
+        "released": "Você soltou o flare antes de tocar o chão. Segure o flare a partir de 6 a 7 pés até o pouso."
+      },
+      "landing": {
+        "legendary": "Lendário! Você pousou a {dist} m do alvo.",
+        "great": "Ótimo pouso: {dist} m do alvo.",
+        "goal": "Bom pouso: {dist} m do alvo, dentro da meta de 20 m.",
+        "missed": "Você pousou a {dist} m do alvo. A meta é até 20 m."
+      },
+      "praise": "Mesmo com pontos a melhorar, você pousou perto do alvo. Muito bem!",
+      "clean": "Circuito perfeito: todos os pontos, só curvas para a esquerda e flare na hora certa!",
+      "tip": "Dica: comece cada curva um pouco antes do ponto e solte quando estiver alinhado com a próxima perna.",
+      "again": "Voar de novo"
+    },
+    "disclaimer": "Esta ferramenta é um apoio ao seu curso, com números simplificados. Siga sempre o briefing e o instrutor da sua área de salto."
   }
 }

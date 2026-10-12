@@ -6,6 +6,7 @@ Free skydiving tools for people who have never jumped, students and experienced 
 - **Welcome page** (`index.html`): cards linking to each tool right below the welcome text, then who the site is for (each card linking to the tool that fits), the Instagram profile [@quaseparaquedista](https://www.instagram.com/quaseparaquedista/) and the feedback button.
 - **Glossary** (`glossary.html`): a searchable glossary of skydiving terms and acronyms.
 - **Freefall simulator** (`freefall.html`): how body position changes a jumper's flight.
+- **Navigation simulator** (`navigation.html`): plan and fly the CBPq landing pattern (holding area, points A, B and C, final approach) with left/right taps and the flare, then get a landing report.
 - **Training materials** (`materiais-instrucao.html`; its pages show a "Materiais de instrução ›" trail, and the videos page has shortcuts to each level): the CBPq AFF handbook (`apostila-aff.html`) and emergency review (`revisao-emergencias-aff.html`) shown inside the page straight from the CBPq site (no copies are stored here), and videos of AFF levels I to VII (`aff-videos.html`).
 
 In the glossary, type one letter and suggestions appear; pick one to see its definition, its name in the other language, and related entries. Each entry has its own link (for example `glossary.html#term-canopy`) and a **Compartilhar** button, and the browser's Back button returns to the previous entry.
@@ -20,6 +21,8 @@ The look follows the @quaseparaquedista Instagram posts: real sky photos, wide t
 - **Focus rings** use `--focus` (black in light mode, yellow in dark), so keyboard focus is always visible.
 - **Icons** are small line drawings on yellow tiles, the same on every phone (no emoji).
 - **The welcome page header** uses `images/hero/gutoskydiving.jpg` (a freefall panorama), with a see-through white title (QUASE 35%, PARAQUEDISTA 50%) outlined in black, so the photo shows through and the letters stay readable. Photos for other pages should have no printed text.
+- **The navigation simulator's seta** has a fixed spot in the landing area's north-east corner, and only turns with the wind (`SETA` in `js/navigation/view.js`).
+- **The landing area holds the whole pattern**: points A, B, C and X lie over it for every seta direction (a 980 m square centered on the target, `LANDING_AREA` in `js/navigation/pattern.js`), so students learn to plan the pattern inside the landing area. The holding areas (the right one and the wrong options) stay at least 60 m outside it, so they never cover the seta: 300 m beyond point A as usual, further out where a corner of the landing area is in the way (diagonal setas). Tests check both.
 - **The simulator scene** keeps its own sky colors (`--scene-top`, `--scene-low` in `css/freefall.css`).
 
 ## How languages work
@@ -65,6 +68,14 @@ js/freefall/figure.js The SVG jumper: a simple 3D body turned by the heading and
 js/freefall/air.js    Air dots that flow around the jumper's outline instead of through it. Pure functions, no DOM
 js/freefall/view.js   Simulator scene, air dots, compass, readouts and buttons
 js/freefall/main.js   Simulator entry point and animation loop
+navigation.html       Navigation simulator page
+css/navigation.css    Styles for the navigation simulator (its scene colors are tokens on .nav-view)
+js/navigation/pattern.js  The landing pattern for a seta direction: holding area, A, B, C, planning options. Pure
+js/navigation/flight.js   The canopy in flight: glide 3.2:1, 10 km/h wind, held turns, flare, landing. Pure
+js/navigation/dropzone.js The drop zone: fields, landing area, runway, roads, landmarks (a town south, a lake east, a forest north), plus trees and buildings with height. Pure data
+js/navigation/report.js   Grading after landing: points ±100 ft, right turns after A, flare, distance to target. Pure
+js/navigation/view.js     Planning map, forward view (canvas), small map, digital/analog altimeter, report
+js/navigation/main.js     Plan → flight → report, settings, animation loop
 materiais-instrucao.html  Training materials list
 apostila-aff.html     CBPq AFF handbook, embedded from the CBPq site
 revisao-emergencias-aff.html  CBPq AFF emergency review, embedded from the CBPq site
@@ -148,6 +159,16 @@ On a first visit a tip suggests what to try first; on phones, each change also s
 Buttons in the same group are opposites, so only one can be on. Effects add up: stretched legs with arms pulled back moves forward faster, and stretched legs with arms forward cancel out.
 
 The rules live in `js/freefall/sim.js`: `CONTROLS` lists the buttons and `EFFECT` holds the strengths (drift, fall rate change, turn speed), and `SPEED` the scene speeds (sideways drift, up/down movement, and the air, which a test keeps clearly faster than the jumper). Change them there and run `npm test`. Page text is under `freefall` in the i18n files. If the visitor's system asks for reduced motion, the animation starts paused.
+
+## Navigation simulator
+
+`navigation.html` teaches the landing pattern as CBPq does. Each run, the seta points one of 8 directions (N, NE, E, SE, S, SW, W or NW) from its fixed spot, and the canopy opens at 3,000 ft somewhere different, close to the holding area.
+
+1. **Plan** (looking straight down, paused): pick the holding area, then points A, B and C, from 3 or 4 options each. A wrong pick shows a hint that teaches; the flight only starts when the whole plan is right.
+2. **Fly** (looking forward and down, with a small map): hold **Esquerda** or **Direita** to turn (60° per second, like pulling a toggle; let go to fly straight), plus a **Flare** button that only works while held (press at about 6–7 ft and hold until touchdown). On a keyboard, hold the arrow keys, and Space or F for the flare. The clock runs 4× faster above 1,200 ft, then in real time; turns feel the same at either speed. The view tilts with altitude: looking down more when high, more ahead near the ground. Trees and buildings near the canopy are drawn standing up, and tall eucalyptus rows (20–25 m) line the landing area: near the ground their tops rise above the horizon, a cue for height. Landmarks help with orientation: a town to the south, a lake to the east and a forest to the north. The view is first person: the canopy overhead, the lines, the hands on the toggles (a held turn pulls that hand down, the flare both) and the boots below. Dragging the view looks around (drag up to look down and check you're over a point; the up/down arrow keys too), and **Olhar para frente** looks ahead again. The altimeter is analog (an Alti-Master style dial), with the altitude in small numbers below it.
+3. **Report** after landing: each point reached at its altitude (±100 ft, within 30 m), right turns after point A (a 70°+ turn, or taps adding up to it; small corrections are fine), flare timing (the flare held at touchdown must start between 5 and 8 ft; letting go before touchdown counts as a mistake), and distance to the target (legendary under 5 m, great under 10 m, the goal under 20 m). A good landing is praised even when the pattern had mistakes.
+
+The pattern: the holding area is where the seta points (upwind); A (1,000 ft) → downwind leg → B (600 ft) → left turn → C (300 ft) → left turn → final into the wind → target. Point positions are computed from the flight model (canopy 32 km/h, glide 3.2:1, wind 10 km/h, in `js/navigation/pattern.js`), so a perfectly flown pattern passes over each point at its altitude. The legs always meet at 90°: the canopy corrects for the drift and holds the line it points along (the wind only speeds it up or slows it down), as students are taught for a crosswind. Setting (remembered on the device): points A, B and C visible or hidden during the flight.
 
 ## Suggestions and corrections
 
