@@ -766,8 +766,8 @@ export class NavigationView {
   renderReport(report) {
     const t = (k, p) => this.t(`navigation.report.${k}`, p);
     const n = (v) => (v === null || v === undefined ? v : v.toLocaleString(this.t('meta.lang'))); // 1.010 and 6,5 in Portuguese
-    const item = (ok, text) => {
-      const li = el('li', ok ? 'is-ok' : 'is-off');
+    const item = (ok, text, alert = false) => {
+      const li = el('li', ok ? 'is-ok' : alert ? 'is-off is-alert' : 'is-off');
       li.append(el('span', 'rep-mark', ok ? '✓' : '!'), el('span', '', text));
       li.firstChild.setAttribute('aria-hidden', 'true');
       return li;
@@ -779,8 +779,8 @@ export class NavigationView {
       else detail = t(p.reached ? 'reached' : 'far', { dist: n(p.distM), alt: n(p.altFt) });
       return item(p.reached, `${label}: ${detail}`);
     });
-    rows.push(item(report.rightTurns === 0, report.rightTurns === 0 ? t('rightTurns.zero') : t('rightTurns', { count: report.rightTurns })));
-    rows.push(item(report.flare === 'good', t(`flare.${report.flare}`, { alt: n(report.flareAltFt) })));
+    rows.push(item(report.rightTurns === 0, report.rightTurns === 0 ? t('rightTurns.zero') : t('rightTurns', { count: report.rightTurns }), report.rightTurns > 0));
+    rows.push(item(report.flare === 'good', t(`flare.${report.flare}`, { alt: n(report.flareAltFt) }), report.flare === 'released'));
     rows.push(item(report.landing.grade !== 'missed', t(`landing.${report.landing.grade}`, { dist: n(report.landing.distM) })));
     this.reportList.replaceChildren(...rows);
 

@@ -137,6 +137,9 @@
 .rep-mark{flex:none;display:grid;place-items:center;width:1.6rem;height:1.6rem;border-radius:50%;font-weight:800}
 .is-ok .rep-mark{background:var(--accent);color:var(--on-accent)}
 .is-off .rep-mark{background:var(--ink);color:var(--panel)}
+/* Serious mistakes (a 90° right turn in the pattern, letting go of the flare) stand out in red. */
+.nav-report li.is-alert{background:var(--alert-bg);border-color:var(--alert-line);color:var(--alert-ink);font-weight:700}
+.is-alert .rep-mark{background:var(--alert-line);color:#fff}
 .nav-notes{display:grid;gap:.5rem}
 .nav-notes p{margin:0;padding:.75rem 1rem;border-radius:.9rem;background:var(--mark);color:var(--ink);font-weight:700}
 .nav-notes p + p{background:var(--panel);border:1px solid var(--line);font-weight:400}

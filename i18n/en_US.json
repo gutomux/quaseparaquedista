@@ -373,7 +373,7 @@
         "high": "Flare too early, at {alt} ft. Flare at about 6 to 7 ft (roughly a person's height), when the top of the flag beside the target is level with your feet.",
         "low": "Flare too late, at {alt} ft. Flare at about 6 to 7 ft (roughly a person's height), when the top of the flag beside the target is level with your feet.",
         "none": "You didn't flare. Remember to flare at about 6 to 7 ft (roughly a person's height), when the top of the flag beside the target is level with your feet.",
-        "released": "You let go of the flare before touching down. Hold the flare from about 6 to 7 ft (roughly a person's height) until you touch the ground."
+        "released": "You let go of the flare before touching down. Remember that once you start the flare, you hold it until you touch the ground (even if you started it higher)."
       },
       "landing": {
         "legendary": "Legendary! You landed {dist} m from the target.",

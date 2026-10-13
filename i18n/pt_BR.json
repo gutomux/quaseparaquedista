@@ -373,7 +373,7 @@
         "high": "Flare cedo demais, a {alt} pés. Faça o flare perto de 6 a 7 pés (mais ou menos a altura de uma pessoa), quando o topo da bandeira ao lado do alvo estiver na altura dos seus pés.",
         "low": "Flare tarde, a {alt} pés. Faça o flare perto de 6 a 7 pés (mais ou menos a altura de uma pessoa), quando o topo da bandeira ao lado do alvo estiver na altura dos seus pés.",
         "none": "Você não fez o flare. Lembre de fazer o flare perto de 6 a 7 pés (mais ou menos a altura de uma pessoa), quando o topo da bandeira ao lado do alvo estiver na altura dos seus pés.",
-        "released": "Você soltou o flare antes de tocar o chão. Segure o flare a partir de 6 a 7 pés (mais ou menos a altura de uma pessoa) até tocar o solo."
+        "released": "Você soltou o flare antes de tocar o chão. Lembre que depois de começar o flare, mantenha até tocar o solo (mesmo se começar mais alto)."
       },
       "landing": {
         "legendary": "Lendário! Você pousou a {dist} m do alvo.",
