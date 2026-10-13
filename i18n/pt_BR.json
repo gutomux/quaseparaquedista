@@ -308,9 +308,15 @@
       "choose": "Toque em uma das opções numeradas no mapa.",
       "option": "Opção {n}",
       "right": "Correto!",
+      "why": {
+        "H": "A área de espera fica na direção para onde a seta aponta, depois do alvo, do lado de onde vem o vento. Assim, mesmo com o vento te levando, você chega ao ponto A com altura de sobra.",
+        "A": "O ponto A é o começo do circuito, e devemos passar por ele a 1.000 pés de altura. Para chegar no ponto A (da área de espera), e ir do A para o B, voamos sempre com vento de cauda (com o vento ao nosso favor).",
+        "B": "O ponto B (600 pés) é o segundo ponto do circuito, ainda à direita da linha de pouso. Ali você vira à esquerda rumo ao ponto C, e voa com vento de través.",
+        "C": "O ponto C (300 pés) fica na linha de pouso, antes do alvo. Ali você faz a última curva à esquerda e voa a reta final contra o vento até o alvo."
+      },
       "hints": {
         "downwind": "Ainda não. A seta aponta contra o vento: a área de espera e o começo do circuito ficam para o lado onde a seta aponta.",
-        "rightSide": "Ainda não. Todas as curvas do circuito são para a esquerda, então o circuito fica à esquerda de quem pousa na direção da seta.",
+        "rightSide": "Ainda não. Todas as curvas do circuito são para a esquerda: saindo da área de espera em direção ao ponto A, a linha de pouso fica sempre à sua esquerda, e o circuito à direita dela.",
         "both": "Ainda não. Esse ponto está no lado errado e na ponta errada. Siga a seta e lembre que as curvas são para a esquerda.",
         "pastTarget": "Ainda não. Do ponto C você faz a reta final contra o vento até o alvo, então o ponto C fica antes do alvo, do lado de onde vem o vento.",
         "cRight": "Ainda não. No ponto B você vira à esquerda, e o ponto C fica alinhado com o alvo, na reta final.",

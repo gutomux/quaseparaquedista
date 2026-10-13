@@ -317,8 +317,15 @@ export class NavigationView {
     root.append(g);
   }
 
-  planMessage(text, kind) {
-    this.planFeedback.textContent = text;
+  /** The message under the map: 'info', a 'hint' after a wrong pick, or 'right', with a bold lead. */
+  planMessage(text, kind, lead = '') {
+    this.planFeedback.textContent = '';
+    if (lead) {
+      const strong = document.createElement('strong');
+      strong.textContent = lead;
+      this.planFeedback.append(strong, ' ');
+    }
+    this.planFeedback.append(text);
     this.planFeedback.dataset.kind = kind || '';
   }
 

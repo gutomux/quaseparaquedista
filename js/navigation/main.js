@@ -82,7 +82,8 @@ async function init() {
     plan.stepIndex += 1;
     const next = PLAN_STEPS[plan.stepIndex];
     plan.options = next ? planOptions(points, next, run.setaHeading) : null;
-    view.planMessage(next ? t('navigation.plan.right') : '', 'right');
+    // Say why it's right, so the choice is understood and not just guessed.
+    view.planMessage(t(`navigation.plan.why.${stepName}`), 'right', t('navigation.plan.right'));
     renderPlan();
   }
 

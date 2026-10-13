@@ -308,9 +308,15 @@
       "choose": "Tap one of the numbered options on the map.",
       "option": "Option {n}",
       "right": "Correct!",
+      "why": {
+        "H": "The holding area is in the direction the seta points, beyond the target, on the side the wind comes from. That way, even as the wind carries you, you reach point A with height to spare.",
+        "A": "Point A is where the pattern starts, and we should pass over it at 1,000 ft. To reach point A (from the holding area), and to go from A to B, we always fly with a tailwind (the wind behind us).",
+        "B": "Point B (600 ft) is the second point of the pattern, still on the right of the landing line. There you turn left toward point C, and fly with a crosswind.",
+        "C": "Point C (300 ft) is on the landing line, before the target. There you make the last left turn and fly the final approach into the wind to the target."
+      },
       "hints": {
         "downwind": "Not yet. The seta points into the wind: the holding area and the start of the pattern are on the side the seta points to.",
-        "rightSide": "Not yet. Every turn in the pattern is to the left, so the pattern is on the left of someone landing in the seta's direction.",
+        "rightSide": "Not yet. Every turn in the pattern is to the left: leaving the holding area toward point A, the landing line is always on your left, and the pattern on its right.",
         "both": "Not yet. That point is on the wrong side and at the wrong end. Follow the seta, and remember the turns are to the left.",
         "pastTarget": "Not yet. From point C you fly the final into the wind to the target, so point C is before the target, on the side the wind comes from.",
         "cRight": "Not yet. At point B you turn left, and point C lines up with the target, on the final approach.",
