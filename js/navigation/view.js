@@ -54,7 +54,34 @@ const TARGET = { gravel: 12, center: 4 };
  * student's feet, the canopy is at flare height. Its cloth streams downwind.
  */
 const EYE_ABOVE_FEET_M = 1.6;
+/**
+ * The pillars marking points A, B and C in flight: colors (as r,g,b), yellow until reached, then
+ * green; each pillar's height (ft), and the band to enter it through, the ideal height to pass the
+ * point at (ft).
+ */
+const PILLAR = {
+  todo: '245,180,0',
+  done: '63,191,116',
+  A: { topFt: 1300, entryFt: [950, 1050] },
+  B: { topFt: 800, entryFt: [550, 650] },
+  C: { topFt: 500, entryFt: [280, 380] },
+};
 const FLAG = { at: { x: 16, y: 0 }, heightFt: 6.5, cloth: '#FF6A13', pole: '#F2F2EC' };
+/** Convex hull of screen points (monotone chain), for the outline of a pillar. */
+function hull(points) {
+  const pts = [...points].sort((a, b) => a.x - b.x || a.y - b.y);
+  const cross = (o, a, b) => (a.x - o.x) * (b.y - o.y) - (a.y - o.y) * (b.x - o.x);
+  const half = (list) => {
+    const out = [];
+    for (const p of list) {
+      while (out.length >= 2 && cross(out[out.length - 2], out[out.length - 1], p) <= 0) out.pop();
+      out.push(p);
+    }
+    out.pop();
+    return out;
+  };
+  return [...half(pts), ...half(pts.reverse())];
+}
 /** On the maps it's drawn bigger (`scale`) so it stays visible from far above. */
 function appendTarget(root, scale = 1) {
   root.append(svg('circle', { cx: 0, cy: 0, r: 30 * scale, fill: PALETTE.gravel, stroke: PALETTE.target, 'stroke-width': 6 * scale }));
@@ -556,19 +583,60 @@ export class NavigationView {
         ctx.stroke();
         ctx.setLineDash([]);
       }
-      for (const name of ['A', 'B', 'C']) {
-        const c = camera(p[name]);
-        if (c.z < near) continue;
-        const s = project(c);
-        if (s.x < -20 || s.x > w + 20 || s.y < -20 || s.y > h + 20) continue;
-        fill(polygon(circle(p[name], 22, 16)), color('--nav-guide'));
-        ctx.font = `700 ${Math.max(11, Math.min(18, 2400 / c.z))}px Archivo, Arial, sans-serif`;
+      // Points A, B and C as see-through pillars rising from the ground, so they can be seen
+      // looking ahead: as wide as the area that counts as reaching the point, with a brighter band
+      // at the ideal height to enter it. Yellow until reached, then green.
+      const stroke = (pts, style, width) => {
+        if (pts.length < 2) return;
+        ctx.beginPath();
+        pts.forEach((q, i) => (i ? ctx.lineTo(q.x, q.y) : ctx.moveTo(q.x, q.y)));
+        ctx.closePath();
+        ctx.strokeStyle = style;
+        ctx.lineWidth = width;
+        ctx.stroke();
+      };
+      const pillars = ['A', 'B', 'C']
+        .map((name) => ({ name, at: p[name], dist: Math.hypot(p[name].x - flight.x, p[name].y - flight.y) }))
+        .sort((a, b) => b.dist - a.dist);
+      for (const { name, at, dist } of pillars) {
+        const pass = flight.passes[name];
+        const rgb = pass && pass.distM <= PATTERN.reachM ? PILLAR.done : PILLAR.todo;
+        const r = PATTERN.reachM;
+        const topM = PILLAR[name].topFt * FT;
+        const [lowM, highM] = PILLAR[name].entryFt.map((ft) => ft * FT);
+        const ringAt = (e) => polygon(circle(at, r, 28).map((q) => ({ ...q, e })));
+        fill(ringAt(0), `rgba(${rgb},.45)`);
+        // The body, and the entry band filled more strongly: each the outline of the cylinder
+        // between two heights (skipped while flying inside the pillar).
+        if (dist > r) {
+          const slab = (e0, e1) => {
+            const cam = [...circle(at, r, 24).map((q) => ({ ...q, e: e0 })), ...circle(at, r, 24).map((q) => ({ ...q, e: e1 }))].map(camera);
+            return cam.every((q) => q.z >= near) ? hull(cam.map(project)) : null;
+          };
+          const body = slab(0, topM);
+          if (body) {
+            fill(body, `rgba(${rgb},.13)`);
+            stroke(body, `rgba(${rgb},.55)`, 1.2);
+          }
+          const band = slab(lowM, highM);
+          if (band) fill(band, `rgba(${rgb},.55)`);
+        }
+        stroke(ringAt(topM), `rgba(${rgb},.6)`, 1.5);
+        stroke(ringAt(lowM), `rgb(${rgb})`, 2.5);
+        stroke(ringAt(highM), `rgb(${rgb})`, 2.5);
+        // The label above the pillar (kept on screen when the top is above the view).
+        const top = camera({ ...at, e: topM });
+        if (top.z < near) continue;
+        const s = project(top);
+        if (s.x < -40 || s.x > w + 40 || s.y > h) continue;
+        ctx.font = `800 ${Math.max(12, Math.min(20, 3000 / top.z))}px Archivo, Arial, sans-serif`;
         ctx.textAlign = 'center';
-        ctx.fillStyle = color('--nav-guide');
-        ctx.strokeStyle = 'rgba(0,0,0,.6)';
+        ctx.fillStyle = `rgb(${rgb})`;
+        ctx.strokeStyle = 'rgba(0,0,0,.65)';
         ctx.lineWidth = 3;
-        ctx.strokeText(name, s.x, s.y - 14);
-        ctx.fillText(name, s.x, s.y - 14);
+        const y = Math.max(18, s.y - 8);
+        ctx.strokeText(name, s.x, y);
+        ctx.fillText(name, s.x, y);
       }
     }
 
