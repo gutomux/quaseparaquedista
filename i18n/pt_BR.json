@@ -368,6 +368,11 @@
         "one": "{count} curva de 90° para a direita depois do ponto A. No circuito, todas as curvas são para a esquerda (pequenas correções para a direita tudo bem).",
         "other": "{count} curvas de 90° para a direita depois do ponto A. No circuito, todas as curvas são para a esquerda (pequenas correções para a direita tudo bem)."
       },
+      "lowTurns": {
+        "zero": "Nenhuma curva forte abaixo de 300 pés. Ótimo!",
+        "one": "{count} curva forte abaixo de 300 pés. Uma curva perto do chão faz o velame mergulhar e acelerar, e tira a capacidade de fazer um bom flare, aumentando muito o risco de acidentes no pouso. Abaixo de 300 pés, só pequenas correções.",
+        "other": "{count} curvas fortes abaixo de 300 pés. Uma curva perto do chão faz o velame mergulhar e acelerar, e tira a capacidade de fazer um bom flare, aumentando muito o risco de acidentes no pouso. Abaixo de 300 pés, só pequenas correções."
+      },
       "flare": {
         "good": "Flare na hora certa, a {alt} pés.",
         "high": "Flare cedo demais, a {alt} pés. Faça o flare perto de 6 a 7 pés (mais ou menos a altura de uma pessoa), quando o topo da bandeira ao lado do alvo estiver na altura dos seus pés.",

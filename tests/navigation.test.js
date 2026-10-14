@@ -5,7 +5,7 @@ import {
   patternPoints, planOptions, newRun, PLAN_STEPS, PATTERN, START, HOLDING_WOBBLE, holdingShape, unit, distance, headingTo, outsideLanding, HOLDING_OPTION_ANGLES,
 } from '../js/navigation/pattern.js';
 import { createFlight, step, setTurn, setFlare, setFast, inPattern, timeScale } from '../js/navigation/flight.js';
-import { buildReport, landingGrade, flareGrade, patternRightTurns } from '../js/navigation/report.js';
+import { buildReport, landingGrade, flareGrade, patternRightTurns, lowTurns } from '../js/navigation/report.js';
 import { buildDropzone } from '../js/navigation/dropzone.js';
 
 const dot = (a, b) => a.x * b.x + a.y * b.y;
@@ -332,4 +332,57 @@ test('planning: no holding area offered covers the landing area (or the seta in 
     const usual = p.A.x * unit(seta).x + p.A.y * unit(seta).y + PATTERN.holdingOffsetM;
     assert.ok(radius - usual <= 310, `seta ${seta}°: holding area ${Math.round(radius - usual)} m further than usual`);
   }
+});
+
+test('report: a sharp turn started below 300 ft is a serious mistake, small corrections there are not', () => {
+  const run = { setaHeading: 0, start: { x: 0, y: -400, altFt: 280, heading: 0 } };
+  const hold = (flight, dir, seconds) => {
+    setTurn(flight, dir);
+    for (let i = 0; i < Math.round(seconds / 0.05); i += 1) step(flight, 0.05);
+    setTurn(flight, 0);
+  };
+  const straight = (flight, seconds) => { for (let i = 0; i < Math.round(seconds / 0.05); i += 1) step(flight, 0.05); };
+  const land = (flight) => { while (!flight.landed) step(flight, 0.05); return buildReport(flight); };
+
+  // A 90° left turn at 280 ft: even to the left, it counts, and the pattern is not clean.
+  const sharp = createFlight(run, patternPoints(0));
+  hold(sharp, -1, 1.5);
+  const report = land(sharp);
+  assert.equal(report.lowTurns, 1);
+  assert.equal(report.clean, false);
+
+  // Two 15° corrections, well apart: fine.
+  const gentle = createFlight(run, patternPoints(0));
+  hold(gentle, 1, 0.25); straight(gentle, 3); hold(gentle, -1, 0.25);
+  assert.equal(land(gentle).lowTurns, 0);
+
+  // Three quick 20° taps the same way add up to a 60° turn.
+  const taps = createFlight(run, patternPoints(0));
+  for (let i = 0; i < 3; i += 1) { hold(taps, 1, 1 / 3); straight(taps, 0.4); }
+  assert.equal(lowTurns(taps.turns).length, 1);
+
+  // A sharp turn above 300 ft is not this mistake...
+  const high = createFlight({ setaHeading: 0, start: { x: 0, y: -400, altFt: 400, heading: 0 } }, patternPoints(0));
+  hold(high, -1, 1.5);
+  assert.equal(land(high).lowTurns, 0);
+
+  // ...nor the turn onto final, started at point C (300 ft) and ending a little lower.
+  const final = createFlight({ setaHeading: 0, start: { x: 0, y: -400, altFt: 302, heading: 0 } }, patternPoints(0));
+  hold(final, -1, 1.5);
+  assert.ok(final.altFt < 300);
+  assert.equal(land(final).lowTurns, 0);
+
+  // Over point C, the turn onto final may start down to 250 ft; lower, it counts.
+  const points = patternPoints(0);
+  const overC = (altFt) => createFlight({ setaHeading: 0, start: { x: points.C.x + 20, y: points.C.y, altFt, heading: 0 } }, points);
+  const late = overC(255);
+  hold(late, -1, 1.5);
+  assert.equal(land(late).lowTurns, 0, '255 ft over C: a little late, allowed');
+  const tooLate = overC(240);
+  hold(tooLate, -1, 1.5);
+  assert.equal(land(tooLate).lowTurns, 1, '240 ft over C: too low');
+  // Away from point C, 255 ft is still too low.
+  const away = createFlight({ setaHeading: 0, start: { x: points.C.x + 200, y: points.C.y, altFt: 255, heading: 0 } }, points);
+  hold(away, -1, 1.5);
+  assert.equal(land(away).lowTurns, 1, '255 ft away from C: too low');
 });

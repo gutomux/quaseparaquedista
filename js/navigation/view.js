@@ -780,6 +780,7 @@ export class NavigationView {
       return item(p.reached, `${label}: ${detail}`);
     });
     rows.push(item(report.rightTurns === 0, report.rightTurns === 0 ? t('rightTurns.zero') : t('rightTurns', { count: report.rightTurns }), report.rightTurns > 0));
+    rows.push(item(report.lowTurns === 0, report.lowTurns === 0 ? t('lowTurns.zero') : t('lowTurns', { count: report.lowTurns }), report.lowTurns > 0));
     rows.push(item(report.flare === 'good', t(`flare.${report.flare}`, { alt: n(report.flareAltFt) }), report.flare === 'released'));
     rows.push(item(report.landing.grade !== 'missed', t(`landing.${report.landing.grade}`, { dist: n(report.landing.distM) })));
     this.reportList.replaceChildren(...rows);

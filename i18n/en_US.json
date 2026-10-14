@@ -368,6 +368,11 @@
         "one": "{count} 90° right turn after point A. In the pattern, every turn is to the left (small corrections to the right are fine).",
         "other": "{count} 90° right turns after point A. In the pattern, every turn is to the left (small corrections to the right are fine)."
       },
+      "lowTurns": {
+        "zero": "No sharp turns below 300 ft. Great!",
+        "one": "{count} sharp turn below 300 ft. A turn close to the ground makes the canopy dive and speed up, and takes away your ability to flare well, greatly increasing the risk of an accident on landing. Below 300 ft, only small corrections.",
+        "other": "{count} sharp turns below 300 ft. A turn close to the ground makes the canopy dive and speed up, and takes away your ability to flare well, greatly increasing the risk of an accident on landing. Below 300 ft, only small corrections."
+      },
       "flare": {
         "good": "Flare on time, at {alt} ft.",
         "high": "Flare too early, at {alt} ft. Flare at about 6 to 7 ft (roughly a person's height), when the top of the flag beside the target is level with your feet.",

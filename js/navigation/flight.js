@@ -47,7 +47,9 @@ export function createFlight(run, points) {
     flaredOnce: false,
     /**
      * Every held turn: { dir: -1 left | 1 right, altFt (where it started), inPattern,
-     * patternDeg (degrees turned at or below point A's altitude), start and end (flight time, s) }.
+     * patternDeg (degrees turned at or below point A's altitude), lowDeg (degrees turned by a hold
+     * started too low: below LOW_TURN_FT, or below C_TURN.lowestFt over point C), atC (started
+     * over point C), start and end (flight time, s) }.
      * inPattern becomes true if the turn reaches point A's altitude while still held.
      */
     turns: [],
@@ -57,6 +59,17 @@ export function createFlight(run, points) {
     track: [{ x: run.start.x, y: run.start.y }],
   };
 }
+
+/**
+ * A sharp turn started below this height (ft) is dangerous: the canopy dives, speeds up and can't
+ * flare well. It is point C's altitude: the turn onto final starts there, and nothing after it.
+ */
+export const LOW_TURN_FT = 300;
+/**
+ * The turn onto final, started over point C (within `radiusM` of it), may start a little late:
+ * down to `lowestFt` without counting as a low turn.
+ */
+export const C_TURN = Object.freeze({ lowestFt: 250, radiusM: 60 });
 
 /** The pattern starts at point A's altitude; from then on, a right turn is a mistake. */
 export const inPattern = (flight) => flight.altFt <= PATTERN.altitudesFt.A;
@@ -79,7 +92,7 @@ export function setTurn(flight, dir) {
   const last = flight.turns[flight.turns.length - 1];
   if (flight.turning !== 0 && last) last.end = flight.time;
   flight.turning = dir;
-  if (dir !== 0) flight.turns.push({ dir, altFt: Math.round(flight.altFt), inPattern: inPattern(flight), patternDeg: 0, start: flight.time, end: null });
+  if (dir !== 0) flight.turns.push({ dir, altFt: Math.round(flight.altFt), inPattern: inPattern(flight), patternDeg: 0, lowDeg: 0, atC: distance(flight, flight.points.C) <= C_TURN.radiusM, start: flight.time, end: null });
   return flight;
 }
 
@@ -109,6 +122,9 @@ export function step(flight, dt, { canopy = CANOPY, wind = WIND_SPEED } = {}) {
       hold.inPattern = true;
       hold.patternDeg += deg;
     }
+    // Only turns started too low: below 300 ft, or below 250 ft for the turn onto final over
+    // point C (it may start a little late, and ends a little lower).
+    if (hold && hold.altFt < (hold.atC ? C_TURN.lowestFt : LOW_TURN_FT)) hold.lowDeg += deg;
   }
 
   const flared = flight.flaring;
