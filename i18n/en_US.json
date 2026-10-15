@@ -349,7 +349,13 @@
       "altimeter": "Altimeter",
       "feet": "ft",
       "holdHint": "Hold Left or Right to turn; let go to fly straight. Hold Flare from when the top of the flag beside the target (6.5 ft) is level with your feet until touchdown. Drag the view to look around.",
-      "lookAhead": "Look ahead"
+      "lookAhead": "Look ahead",
+      "callouts": {
+        "prepare": "Prepare for landing",
+        "armsUp": "Arms up",
+        "wait": "Wait...",
+        "flare": "FLARE!!!"
+      }
     },
     "settings": {
       "title": "Settings",

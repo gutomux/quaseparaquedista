@@ -76,6 +76,7 @@ async function init() {
     if (!option || !stepName) return;
     if (!option.correct) {
       view.planMessage(t(`navigation.plan.hints.${option.mistake}`), 'hint');
+      view.markWrong(index);
       return;
     }
     plan.placed[stepName] = option.pos;

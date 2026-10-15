@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import {
   patternPoints, planOptions, newRun, PLAN_STEPS, PATTERN, START, HOLDING_WOBBLE, holdingShape, unit, distance, headingTo, outsideLanding, HOLDING_OPTION_ANGLES,
 } from '../js/navigation/pattern.js';
-import { createFlight, step, setTurn, setFlare, setFast, inPattern, timeScale } from '../js/navigation/flight.js';
+import { createFlight, step, setTurn, setFlare, setFast, inPattern, timeScale, calloutFor } from '../js/navigation/flight.js';
 import { buildReport, landingGrade, flareGrade, patternRightTurns, lowTurns } from '../js/navigation/report.js';
 import { buildDropzone } from '../js/navigation/dropzone.js';
 
@@ -385,4 +385,21 @@ test('report: a sharp turn started below 300 ft is a serious mistake, small corr
   const away = createFlight({ setaHeading: 0, start: { x: points.C.x + 200, y: points.C.y, altFt: 255, heading: 0 } }, points);
   hold(away, -1, 1.5);
   assert.equal(land(away).lowTurns, 1, '255 ft away from C: too low');
+});
+
+test('landing callouts: from 150 ft down to the flare, with a countdown', () => {
+  const at = (ft) => { const c = calloutFor(ft); return c ? c.key ?? c.text : null; };
+  assert.equal(at(151), null, 'nothing before 150 ft');
+  assert.equal(at(150), 'prepare');
+  assert.equal(at(120), 'prepare');
+  assert.equal(at(100), 'armsUp');
+  assert.equal(at(71), 'armsUp');
+  assert.equal(at(70), 'wait');
+  assert.equal(at(50), 'wait');
+  assert.equal(at(49), '3');
+  assert.equal(at(35), '2');
+  assert.equal(at(21), '1');
+  assert.equal(at(8), '1');
+  assert.equal(at(7), 'flare');
+  assert.equal(at(0), 'flare');
 });

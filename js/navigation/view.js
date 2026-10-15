@@ -5,6 +5,7 @@
  * Text goes in with textContent only.
  */
 import { FT, PATTERN, unit, holdingShape, headingTo } from './pattern.js';
+import { calloutFor } from './flight.js';
 import { buildDropzone, PALETTE } from './dropzone.js';
 
 /** The drop zone, built once, with each shape's center and bounds for quick culling. */
@@ -144,6 +145,7 @@ export class NavigationView {
     this.miniMap = root.querySelector('#nav-minimap');
     this.altimeter = root.querySelector('#nav-altimeter');
     this.fastBadge = root.querySelector('#nav-fast');
+    this.callout = root.querySelector('#nav-callout');
     this.pauseButton = root.querySelector('#nav-pause');
     this.speedButtons = [...root.querySelectorAll('[data-speed]')];
     this.lookReset = root.querySelector('#nav-look-reset');
@@ -344,6 +346,13 @@ export class NavigationView {
     root.append(g);
   }
 
+  /** Mark a wrong pick in red, on the map and on its button, until the step changes. */
+  markWrong(index) {
+    for (const node of [...this.planMap.querySelectorAll(`[data-option="${index}"]`), ...this.planOptionsBox.querySelectorAll(`[data-option="${index}"]`)]) {
+      node.classList.add('is-wrong');
+    }
+  }
+
   /** The message under the map: 'info', a 'hint' after a wrong pick, or 'right', with a bold lead. */
   planMessage(text, kind, lead = '') {
     this.planFeedback.textContent = '';
@@ -379,6 +388,21 @@ export class NavigationView {
     this.drawMiniMap(flight, run, guides);
     this.drawAltimeter(flight.altFt);
     this.fastBadge.hidden = !fast;
+    this.showCallout(flight.landed ? null : calloutFor(flight.altFt));
+  }
+
+  /** Show a landing callout (or none), changing the page only when it changes. */
+  showCallout(callout) {
+    if (!this.callout) return;
+    const text = callout ? callout.text ?? this.t(`navigation.flight.callouts.${callout.key}`) : '';
+    if (this.callout.textContent === text) return;
+    this.callout.textContent = text;
+    this.callout.hidden = !callout;
+    this.callout.dataset.kind = callout ? (callout.flare ? 'flare' : callout.count ? 'count' : 'call') : '';
+    // Restart the pop-in animation for each new callout.
+    this.callout.classList.remove('is-new');
+    void this.callout.offsetWidth;
+    this.callout.classList.add('is-new');
   }
 
   /**

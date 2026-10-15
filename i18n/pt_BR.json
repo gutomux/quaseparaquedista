@@ -349,7 +349,13 @@
       "altimeter": "Altímetro",
       "feet": "pés",
       "holdHint": "Segure Esquerda ou Direita para virar; solte para seguir reto. Segure Flare quando o topo da bandeira ao lado do alvo (6,5 pés) estiver na altura dos seus pés, até tocar o chão. Arraste a imagem para olhar ao redor.",
-      "lookAhead": "Olhar para frente"
+      "lookAhead": "Olhar para frente",
+      "callouts": {
+        "prepare": "Preparar para o pouso",
+        "armsUp": "Braços altos",
+        "wait": "Atenção...",
+        "flare": "FLARE!!!"
+      }
     },
     "settings": {
       "title": "Ajustes",

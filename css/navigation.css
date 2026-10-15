@@ -23,10 +23,18 @@
 .nm-option{cursor:pointer}
 .nm-option circle{fill:rgba(255,255,255,.92);stroke:#111317;stroke-width:8}
 .nm-option text{font:800 70px Archivo,Arial,sans-serif;fill:#111317}
-.nm-option:hover circle{fill:var(--guide)}
 /* Holding area options: shaded areas with their number in the middle */
 .nm-option .nm-region{fill:rgba(255,255,255,.22);stroke:#FFFFFF;stroke-width:10;stroke-dasharray:34 22}
-.nm-option.is-region:hover .nm-region{fill:rgba(245,180,0,.35);stroke:var(--guide)}
+/* Hover highlight only with a mouse: on touch screens it would stick after a tap and look like
+   the yellow of a correct, placed point. */
+@media (hover:hover) and (pointer:fine){
+  .nm-option:hover circle{fill:var(--guide)}
+  .nm-option.is-region:hover .nm-region{fill:rgba(245,180,0,.35);stroke:var(--guide)}
+}
+/* A wrong pick stays marked in red until the step changes. */
+.nm-option.is-wrong circle,.nm-option.is-wrong:hover circle{fill:#D92D20;stroke:#FFFFFF}
+.nm-option.is-wrong text{fill:#FFFFFF}
+.nm-option.is-wrong .nm-region,.nm-option.is-region.is-wrong:hover .nm-region{fill:rgba(217,45,32,.28);stroke:#D92D20}
 
 .nav-legend{display:flex;flex-wrap:wrap;gap:.35rem 1rem;justify-content:center;margin:0;font-size:.85rem;color:var(--ink-soft)}
 .lg::before{content:"";display:inline-block;width:.9rem;height:.9rem;margin-right:.35rem;vertical-align:-.1em;border-radius:.2rem}
@@ -41,7 +49,10 @@
   font:inherit;font-weight:700;color:var(--ink);background:var(--panel);cursor:pointer;
   border:2px solid var(--line);border-radius:999px;padding:.55rem 1.1rem;min-height:2.75rem
 }
-.nav-option:hover,.nav-secondary:hover{border-color:var(--ink)}
+@media (hover:hover) and (pointer:fine){
+  .nav-option:hover,.nav-secondary:hover{border-color:var(--ink)}
+}
+.nav-option.is-wrong{border-color:var(--alert-line);background:var(--alert-bg);color:var(--alert-ink);text-decoration:line-through}
 .nav-feedback{margin:0;padding:.75rem 1rem;border-radius:.9rem;background:var(--panel);border:1px solid var(--line);color:var(--ink-soft)}
 .nav-feedback:empty{display:none}
 .nav-feedback[data-kind="hint"]{background:var(--mark);color:var(--ink);border-color:transparent}
@@ -67,11 +78,12 @@
   position:absolute;left:.6rem;top:.6rem;display:grid;place-items:center;
   background:rgba(17,19,23,.78);color:#fff;border-radius:1rem;padding:.4rem .7rem;min-width:5.5rem
 }
-.nav-altimeter[data-mode="analog"]{padding:0;background:none;border-radius:.6rem;min-width:0;gap:.25rem}
+.nav-altimeter[data-mode="analog"]{padding:0;background:none;border-radius:.6rem;min-width:0;gap:.2rem;opacity:.82}
 .nav-altimeter[data-mode="analog"] .alt-dial{border-radius:.6rem;box-shadow:0 6px 16px -10px rgba(0,0,0,.7)}
 /* The altitude in small numbers under the analog dial */
-.alt-readout{padding:.1rem .5rem;border-radius:999px;background:rgba(17,19,23,.78);color:#fff;font-size:.78rem;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
-.alt-dial{width:8rem;height:8rem;display:block}
+.alt-readout{padding:.1rem .5rem;border-radius:999px;background:rgba(17,19,23,.78);color:#fff;font-size:.72rem;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+/* Smaller on narrow screens (about a fifth of the view's width), and a little see-through. */
+.alt-dial{width:clamp(4.75rem,20cqw,6.5rem);height:clamp(4.75rem,20cqw,6.5rem);display:block}
 /* Analog: an Alti-Master style student altimeter (fixed colors, like the real instrument) */
 .alt-bezel{fill:#1A1C20}
 .alt-face{fill:#FFFFFF;stroke:#C9CED6;stroke-width:.8}
@@ -90,6 +102,26 @@
   position:absolute;right:.6rem;top:.6rem;width:clamp(6.5rem,26%,9.5rem);aspect-ratio:1;
   border-radius:.8rem;overflow:hidden;border:2px solid rgba(255,255,255,.8);box-shadow:0 6px 16px -10px rgba(0,0,0,.6)
 }
+/* The stage is a size container, so overlays can line up with the small map's width. */
+.nav-stage{container-type:inline-size}
+/* Landing callouts, top right, under the small map: red letters with a white outline and no box,
+   so they cover as little of the view as possible. */
+.nav-callout{
+  position:absolute;right:.7rem;top:calc(1.1rem + clamp(6.5rem,26cqw,9.5rem));margin:0;max-width:60%;
+  color:#D92D20;font-family:var(--display);font-stretch:112%;font-weight:900;font-size:1.2rem;line-height:1.1;text-align:right;
+  --outline:2px;
+  text-shadow:
+    var(--outline) 0 0 #fff, calc(-1 * var(--outline)) 0 0 #fff, 0 var(--outline) 0 #fff, 0 calc(-1 * var(--outline)) 0 #fff,
+    var(--outline) var(--outline) 0 #fff, calc(-1 * var(--outline)) var(--outline) 0 #fff,
+    var(--outline) calc(-1 * var(--outline)) 0 #fff, calc(-1 * var(--outline)) calc(-1 * var(--outline)) 0 #fff;
+  pointer-events:none
+}
+.nav-callout[hidden]{display:none}
+.nav-callout[data-kind="count"]{font-size:2.8rem;line-height:1;--outline:3px}
+.nav-callout[data-kind="flare"]{font-size:2.2rem;--outline:3px}
+.nav-callout.is-new{animation:nav-callout-pop .35s ease-out}
+@keyframes nav-callout-pop{from{transform:scale(1.25);opacity:.4}to{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.nav-callout.is-new{animation:none}}
 .nav-fast{
   position:absolute;left:50%;bottom:.6rem;transform:translateX(-50%);margin:0;padding:.3rem .8rem;border-radius:999px;
   background:rgba(17,19,23,.78);color:#fff;font-size:.8rem;font-weight:700;white-space:nowrap

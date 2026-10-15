@@ -71,6 +71,24 @@ export const LOW_TURN_FT = 300;
  */
 export const C_TURN = Object.freeze({ lowestFt: 250, radiusM: 60 });
 
+/**
+ * Landing callouts (shown top right of the view), on final down to the flare:
+ * each shown from its height (ft) down to the next one. A countdown runs into the flare.
+ */
+export const CALLOUTS = Object.freeze([
+  { belowFt: 150, key: 'prepare' },
+  { belowFt: 100, key: 'armsUp' },
+  { belowFt: 70, key: 'wait' },
+  { belowFt: 49, text: '3', count: true },
+  { belowFt: 35, text: '2', count: true },
+  { belowFt: 21, text: '1', count: true },
+  { belowFt: 7, key: 'flare', flare: true },
+]);
+/** The callout for a height: the last one whose height has been reached, or null above 150 ft. */
+export function calloutFor(altFt) {
+  return CALLOUTS.filter((c) => altFt <= c.belowFt).pop() || null;
+}
+
 /** The pattern starts at point A's altitude; from then on, a right turn is a mistake. */
 export const inPattern = (flight) => flight.altFt <= PATTERN.altitudesFt.A;
 
