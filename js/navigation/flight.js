@@ -82,7 +82,8 @@ export const CALLOUTS = Object.freeze([
   { belowFt: 49, text: '3', count: true },
   { belowFt: 35, text: '2', count: true },
   { belowFt: 21, text: '1', count: true },
-  { belowFt: 7, key: 'flare', flare: true },
+  // FLARE!!! a little early, at 10 ft: reading it and reacting take a moment.
+  { belowFt: 10, key: 'flare', flare: true },
 ]);
 /** The callout for a height: the last one whose height has been reached, or null above 150 ft. */
 export function calloutFor(altFt) {

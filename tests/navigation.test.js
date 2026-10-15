@@ -399,7 +399,8 @@ test('landing callouts: from 150 ft down to the flare, with a countdown', () => 
   assert.equal(at(49), '3');
   assert.equal(at(35), '2');
   assert.equal(at(21), '1');
-  assert.equal(at(8), '1');
+  assert.equal(at(11), '1');
+  assert.equal(at(10), 'flare', 'a little early, to leave time to react');
   assert.equal(at(7), 'flare');
   assert.equal(at(0), 'flare');
 });

@@ -50,10 +50,7 @@ function appendDropzone(root, range) {
 }
 /** The target: a pea-gravel pit (12 m radius, like a real one) with a red center. */
 const TARGET = { gravel: 12, center: 4 };
-/**
- * A flag beside the target, 6.5 ft tall: the flare reference. When its top is level with the
- * student's feet, the canopy is at flare height. Its cloth streams downwind.
- */
+/** The student's eyes are this far above the feet (the altitude is the feet's height). */
 const EYE_ABOVE_FEET_M = 1.6;
 /**
  * The pillars marking points A, B and C in flight: colors (as r,g,b), yellow until reached, then
@@ -67,7 +64,20 @@ const PILLAR = {
   B: { topFt: 800, entryFt: [550, 650] },
   C: { topFt: 500, entryFt: [280, 380] },
 };
-const FLAG = { at: { x: 16, y: 0 }, heightFt: 6.5, cloth: '#FF6A13', pole: '#F2F2EC' };
+/**
+ * Four flags around the target, 8 ft tall: the flare reference. When their tops are level with
+ * the student's feet, the canopy is at flare height. They stand 90° apart, on the diagonals of the
+ * landing direction (45° off it), so none is ever on the final approach, whatever the seta.
+ * Their cloth streams downwind.
+ */
+const FLAG = { radiusM: 16, heightFt: 8, cloth: '#FF6A13', pole: '#F2F2EC' };
+/** The four flags for a seta direction. */
+function flagsFor(setaHeading) {
+  return [45, 135, 225, 315].map((deg) => {
+    const d = unit(setaHeading + deg);
+    return { ...FLAG, at: { x: d.x * FLAG.radiusM, y: d.y * FLAG.radiusM } };
+  });
+}
 /** Convex hull of screen points (monotone chain), for the outline of a pillar. */
 function hull(points) {
   const pts = [...points].sort((a, b) => a.x - b.x || a.y - b.y);
@@ -502,10 +512,10 @@ export class NavigationView {
       const dist = Math.hypot(dx, dy);
       if (dist < reach && dx * fwd.x + dy * fwd.y > -60) standing.push({ kind: 'building', obj: b, dist });
     }
-    {
-      const dx = FLAG.at.x - flight.x;
-      const dy = FLAG.at.y - flight.y;
-      if (dx * fwd.x + dy * fwd.y > -5) standing.push({ kind: 'flag', obj: FLAG, dist: Math.hypot(dx, dy) });
+    for (const flag of flagsFor(run.setaHeading)) {
+      const dx = flag.at.x - flight.x;
+      const dy = flag.at.y - flight.y;
+      if (dx * fwd.x + dy * fwd.y > -5) standing.push({ kind: 'flag', obj: flag, dist: Math.hypot(dx, dy) });
     }
     fill(polygon(circle({ x: 0, y: 0 }, TARGET.gravel)), PALETTE.gravel);
     fill(polygon(circle({ x: 0, y: 0 }, TARGET.center, 14)), PALETTE.target);

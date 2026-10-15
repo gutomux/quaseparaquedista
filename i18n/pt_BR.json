@@ -348,7 +348,7 @@
       "speedFast": "Mais rápida (4×)",
       "altimeter": "Altímetro",
       "feet": "pés",
-      "holdHint": "Segure Esquerda ou Direita para virar; solte para seguir reto. Segure Flare quando o topo da bandeira ao lado do alvo (6,5 pés) estiver na altura dos seus pés, até tocar o chão. Arraste a imagem para olhar ao redor.",
+      "holdHint": "Segure Esquerda ou Direita para virar; solte para seguir reto. Segure Flare quando o topo das bandeiras em volta do alvo (8 pés) estiver na altura dos seus pés, até tocar o chão. Arraste a imagem para olhar ao redor.",
       "lookAhead": "Olhar para frente",
       "callouts": {
         "prepare": "Preparar para o pouso",
@@ -381,9 +381,9 @@
       },
       "flare": {
         "good": "Flare na hora certa, a {alt} pés.",
-        "high": "Flare cedo demais, a {alt} pés. Faça o flare perto de 6 a 7 pés (mais ou menos a altura de uma pessoa), quando o topo da bandeira ao lado do alvo estiver na altura dos seus pés.",
-        "low": "Flare tarde, a {alt} pés. Faça o flare perto de 6 a 7 pés (mais ou menos a altura de uma pessoa), quando o topo da bandeira ao lado do alvo estiver na altura dos seus pés.",
-        "none": "Você não fez o flare. Lembre de fazer o flare perto de 6 a 7 pés (mais ou menos a altura de uma pessoa), quando o topo da bandeira ao lado do alvo estiver na altura dos seus pés.",
+        "high": "Flare cedo demais, a {alt} pés. Faça o flare perto de 6 a 7 pés (mais ou menos a altura de uma pessoa), quando o topo das bandeiras em volta do alvo estiver na altura dos seus pés.",
+        "low": "Flare tarde, a {alt} pés. Faça o flare perto de 6 a 7 pés (mais ou menos a altura de uma pessoa), quando o topo das bandeiras em volta do alvo estiver na altura dos seus pés.",
+        "none": "Você não fez o flare. Lembre de fazer o flare perto de 6 a 7 pés (mais ou menos a altura de uma pessoa), quando o topo das bandeiras em volta do alvo estiver na altura dos seus pés.",
         "released": "Você soltou o flare antes de tocar o chão. Lembre que depois de começar o flare, mantenha até tocar o solo (mesmo se começar mais alto)."
       },
       "landing": {

@@ -348,7 +348,7 @@
       "speedFast": "Faster (4×)",
       "altimeter": "Altimeter",
       "feet": "ft",
-      "holdHint": "Hold Left or Right to turn; let go to fly straight. Hold Flare from when the top of the flag beside the target (6.5 ft) is level with your feet until touchdown. Drag the view to look around.",
+      "holdHint": "Hold Left or Right to turn; let go to fly straight. Hold Flare from when the top of the flags around the target (8 ft) is level with your feet until touchdown. Drag the view to look around.",
       "lookAhead": "Look ahead",
       "callouts": {
         "prepare": "Prepare for landing",
@@ -381,9 +381,9 @@
       },
       "flare": {
         "good": "Flare on time, at {alt} ft.",
-        "high": "Flare too early, at {alt} ft. Flare at about 6 to 7 ft (roughly a person's height), when the top of the flag beside the target is level with your feet.",
-        "low": "Flare too late, at {alt} ft. Flare at about 6 to 7 ft (roughly a person's height), when the top of the flag beside the target is level with your feet.",
-        "none": "You didn't flare. Remember to flare at about 6 to 7 ft (roughly a person's height), when the top of the flag beside the target is level with your feet.",
+        "high": "Flare too early, at {alt} ft. Flare at about 6 to 7 ft (roughly a person's height), when the top of the flags around the target is level with your feet.",
+        "low": "Flare too late, at {alt} ft. Flare at about 6 to 7 ft (roughly a person's height), when the top of the flags around the target is level with your feet.",
+        "none": "You didn't flare. Remember to flare at about 6 to 7 ft (roughly a person's height), when the top of the flags around the target is level with your feet.",
         "released": "You let go of the flare before touching down. Remember that once you start the flare, you hold it until you touch the ground (even if you started it higher)."
       },
       "landing": {
