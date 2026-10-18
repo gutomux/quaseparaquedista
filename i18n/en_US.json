@@ -64,8 +64,9 @@
       "bodyPlaceholder": "e.g. 80",
       "gearPlaceholder": "e.g. 12",
       "canopyPlaceholder": "e.g. 190",
-      "result": "Your wing loading: {value}",
-      "formula": "({body} + {gear}) × 2.2 ÷ {canopy}",
+      "result": "Wing load = {value}",
+      "formula": "(({body} + {gear}) × 2.2) ÷ {canopy}",
+      "formulaTop": "({body} + {gear}) × 2.2",
       "missing": "Fill in all three fields to see your wing loading.",
       "invalid": "Use numbers greater than zero.",
       "label": "Wing loading calculator",
@@ -184,6 +185,10 @@
       "glossary": {
         "name": "Skydiving glossary",
         "text": "Acronyms and terms in Portuguese and English."
+      },
+      "wingLoad": {
+        "name": "Wing load",
+        "text": "Work out your wing load and see the CBPq limits."
       },
       "freefall": {
         "name": "Freefall simulator",

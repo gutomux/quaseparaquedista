@@ -242,9 +242,11 @@ export class GlossaryController {
     }
     const lang = this.t('meta.lang');
     const fmt = (n, digits) => n.toLocaleString(lang, { maximumFractionDigits: digits });
+    const parts = { body: fmt(outcome.body, 1), gear: fmt(outcome.gear, 1), canopy: fmt(outcome.canopy, 0) };
     this.view.setCalculatorResult(
       key('result', { value: outcome.value.toLocaleString(lang, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) }),
-      key('formula', { body: fmt(outcome.body, 1), gear: fmt(outcome.gear, 1), canopy: fmt(outcome.canopy, 0) }),
+      // Shown as a fraction (the weights over the canopy size); the one-line version is read aloud.
+      { text: key('formula', parts), top: key('formulaTop', parts), bottom: parts.canopy },
       true,
       this.wingLoadingMatch(outcome.value),
     );

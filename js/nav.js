@@ -26,6 +26,8 @@ export const LANGUAGES = Object.freeze({
 export const MENU = Object.freeze([
   { key: 'home', href: './' },
   { key: 'glossary', href: 'glossary' },
+  // A shortcut to one glossary entry (with its calculator), not a page of its own.
+  { key: 'wingLoad', href: 'glossary#term-wing-loading' },
   { key: 'freefall', href: 'freefall' },
   { key: 'navigation', href: 'navigation' },
   { key: 'materials', href: 'materiais-instrucao', pages: ['apostila-aff', 'revisao-emergencias-aff', 'aff-videos'] },
@@ -49,7 +51,8 @@ export function menuItems(currentPage) {
   return MENU.map(({ key, href, pages = [] }) => ({
     key,
     href,
-    current: pageName(href) === page ? 'page' : pages.includes(page) ? 'true' : null,
+    // A shortcut into a page (with "#") is never marked: the page's own item is.
+    current: href.includes('#') ? null : pageName(href) === page ? 'page' : pages.includes(page) ? 'true' : null,
   }));
 }
 
@@ -142,6 +145,10 @@ export function mountSiteMenu(nav, t, currentFile = pageName(location.pathname))
   });
   document.addEventListener('click', (e) => {
     if (!list.hidden && !nav.contains(e.target)) setOpen(false);
+  });
+  // A link to a spot on the same page (e.g. a glossary entry) doesn't load a new page: close the menu.
+  list.addEventListener('click', (e) => {
+    if (e.target.closest('a')) setOpen(false);
   });
   list.addEventListener('focusout', (e) => {
     if (e.relatedTarget && !nav.contains(e.relatedTarget)) setOpen(false);

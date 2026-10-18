@@ -166,8 +166,13 @@ footer:has(+ .feedback:not([hidden])){padding-bottom:1.5rem}
 .calc-result{grid-column:1/-1;display:flex;flex-direction:column;gap:.15rem;padding:.75rem .9rem;border-radius:.75rem;background:var(--sky-low);color:var(--ink-soft)}
 .calc-result strong{font-weight:400}
 .calc-result.has-value{color:var(--ink)}
-.calc-result.has-value strong{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:1.75rem;line-height:1.1}
+/* Sized to keep "Carga alar = 1,33" on one line, even on a narrow phone. */
+.calc-result.has-value strong{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(1.15rem,5.9vw,1.75rem);line-height:1.1;white-space:nowrap}
 .calc-formula{font-size:.9rem;color:var(--ink-soft)}
+/* The worked formula as a fraction: the weights over the canopy size. */
+.calc-fraction{display:inline-grid;justify-items:center;justify-self:start;align-self:flex-start;margin-top:.25rem;font-size:1rem;font-variant-numeric:tabular-nums}
+.calc-fraction-top{padding:0 .35rem .15rem;border-bottom:2px solid currentColor}
+.calc-fraction-bottom{padding-top:.15rem}
 
 /* Limits table under calculators */
 .limits{margin-top:1.1rem;overflow-x:auto;max-width:36rem}

@@ -377,7 +377,8 @@ export class GlossaryView {
   /**
    * Show the calculator outcome.
    * @param {string} message Main line (result or guidance).
-   * @param {string} [detail] Secondary line, e.g. the worked formula.
+   * @param {string|{text: string, top: string, bottom: string}} [detail] Secondary line, e.g. the
+   *   worked formula: a fraction (top over bottom) when given as an object, read aloud as `text`.
    * @param {boolean} [ok] Whether this is a real result (styled more strongly).
    * @param {object} [match]
    * @param {string[]} [match.lines] Category match sentences.
@@ -388,7 +389,18 @@ export class GlossaryView {
     if (!output) return;
     output.classList.toggle('has-value', ok);
     output.replaceChildren(el('strong', '', message));
-    if (detail) output.append(el('span', 'calc-formula', detail));
+    if (typeof detail === 'string' && detail) output.append(el('span', 'calc-formula', detail));
+    else if (detail) {
+      const fraction = el('span', 'calc-formula calc-fraction');
+      fraction.setAttribute('role', 'img');
+      fraction.setAttribute('aria-label', detail.text);
+      const top = el('span', 'calc-fraction-top', detail.top);
+      const bottom = el('span', 'calc-fraction-bottom', detail.bottom);
+      top.setAttribute('aria-hidden', 'true');
+      bottom.setAttribute('aria-hidden', 'true');
+      fraction.append(top, bottom);
+      output.append(fraction);
+    }
     (match.lines || []).forEach((line, i) => output.append(el('span', i === 0 ? 'calc-match' : 'calc-match-note', line)));
 
     this.result.querySelectorAll('.limits tr[data-category]').forEach((tr) => {

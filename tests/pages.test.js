@@ -11,7 +11,7 @@ test('welcome page: the tools are linked right after the welcome text', () => {
   const lead = html.indexOf('home-lead');
   const tools = html.indexOf('class="home-tools"');
   assert.ok(lead > 0 && tools > lead && tools < html.indexOf('class="home-intro"'), 'tool cards come right after the welcome text');
-  for (const href of ['glossary', 'freefall', 'navigation', 'materiais-instrucao']) {
+  for (const href of ['glossary', 'glossary#term-wing-loading', 'freefall', 'navigation', 'materiais-instrucao']) {
     assert.match(html, new RegExp(`<a class="home-tool" href="${href}">`), `links to ${href}`);
   }
 });

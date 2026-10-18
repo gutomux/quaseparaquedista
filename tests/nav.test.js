@@ -8,7 +8,7 @@ const files = readdirSync(ROOT).filter((f) => f.endsWith('.html'));
 const pages = files.map((f) => f.replace(/\.html$/, ''));
 
 test('menu: Home comes first, then the tools', () => {
-  assert.deepEqual(MENU.map((m) => m.key), ['home', 'glossary', 'freefall', 'navigation', 'materials']);
+  assert.deepEqual(MENU.map((m) => m.key), ['home', 'glossary', 'wingLoad', 'freefall', 'navigation', 'materials']);
   assert.equal(MENU[0].href, './');
 });
 
@@ -18,7 +18,7 @@ test('menu: marks the page you are on, and the section of the material pages', (
   assert.deepEqual(current('/'), { home: 'page' });
   assert.deepEqual(current('/index.html'), { home: 'page' });
   assert.deepEqual(current('/glossary'), { glossary: 'page' });
-  assert.deepEqual(current('/glossary.html'), { glossary: 'page' });
+  assert.deepEqual(current('/glossary.html'), { glossary: 'page' }, 'the wing load shortcut is not marked too');
   assert.deepEqual(current('/materiais-instrucao'), { materials: 'page' });
   assert.deepEqual(current('/apostila-aff'), { materials: 'true' });
   assert.deepEqual(current('/aff-videos.html'), { materials: 'true' });
@@ -58,4 +58,13 @@ test('links between pages have no ".html" (GitHub Pages serves them without it)'
     const old = [...html.matchAll(/href="([^"]+\.html[^"]*)"/g)].map((m) => m[1]);
     assert.deepEqual(old, [], `${page} still links with .html`);
   }
+});
+
+test('menu: the wing load item opens its glossary entry', () => {
+  const item = MENU.find((m) => m.key === 'wingLoad');
+  const [page, id] = item.href.split('#');
+  assert.equal(page, 'glossary');
+  const data = JSON.parse(readFileSync(new URL('../data/glossary.json', import.meta.url), 'utf8'));
+  const entries = Array.isArray(data) ? data : data.entries;
+  assert.ok(entries.some((e) => e.id === id), `${id} exists in the glossary`);
 });

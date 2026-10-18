@@ -64,8 +64,9 @@
       "bodyPlaceholder": "ex.: 80",
       "gearPlaceholder": "ex.: 12",
       "canopyPlaceholder": "ex.: 190",
-      "result": "Sua carga alar: {value}",
-      "formula": "({body} + {gear}) × 2,2 ÷ {canopy}",
+      "result": "Carga alar = {value}",
+      "formula": "(({body} + {gear}) × 2,2) ÷ {canopy}",
+      "formulaTop": "({body} + {gear}) × 2,2",
       "missing": "Preencha os três campos para ver sua carga alar.",
       "invalid": "Use números maiores que zero.",
       "label": "Calculadora de carga alar",
@@ -184,6 +185,10 @@
       "glossary": {
         "name": "Glossário de paraquedismo",
         "text": "Siglas e termos em português e inglês."
+      },
+      "wingLoad": {
+        "name": "Carga alar",
+        "text": "Calcule a sua carga alar e veja os limites da CBPq."
       },
       "freefall": {
         "name": "Simulador de queda livre",
