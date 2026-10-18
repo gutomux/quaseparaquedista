@@ -184,7 +184,7 @@
       },
       "glossary": {
         "name": "Glossário de paraquedismo",
-        "text": "Siglas e termos em português e inglês."
+        "text": "Pra ter siglas e termos na ponta da língua."
       },
       "wingLoad": {
         "name": "Carga alar",
@@ -192,15 +192,15 @@
       },
       "freefall": {
         "name": "Simulador de queda livre",
-        "text": "Veja como a posição do corpo muda o seu voo."
+        "text": "Pra ir do quase ao paraquedista, tem que saber cair direitinho."
       },
       "navigation": {
         "name": "Simulador de navegação",
-        "text": "Planeje e voe o circuito de pouso até o alvo."
+        "text": "Não sabe pilotar suas vida? Ok. Mas saiba pilotar seu paraquedas com segurança (pelo amor de Jah)!"
       },
       "materials": {
         "name": "Materiais de instrução",
-        "text": "Apostila, revisão de emergências e vídeos do curso AFF."
+        "text": "Nunca tire ideias do furico. Consulte os materiais oficiais da CBPq. Obrigada, de nada."
       },
       "language": "Idioma"
     },
@@ -215,7 +215,7 @@
     "audiences": {
       "firstTimer": {
         "title": "Nunca saltou?",
-        "text": "Fique à vontade para bisbilhotar e, se der vontade de saltar, procure uma escola cadastrada na CBPq e seja bem-vindo!",
+        "text": "Tá esperando o que, pelamor de Jah! Vem conhecer o lado incrível da vida.",
         "cta": "Experimente o simulador de queda livre"
       },
       "student": {

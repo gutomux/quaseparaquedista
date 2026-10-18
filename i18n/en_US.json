@@ -184,7 +184,7 @@
       },
       "glossary": {
         "name": "Skydiving glossary",
-        "text": "Acronyms and terms in Portuguese and English."
+        "text": "Have the acronyms and terms on the tip of your tongue."
       },
       "wingLoad": {
         "name": "Wing load",
@@ -192,15 +192,15 @@
       },
       "freefall": {
         "name": "Freefall simulator",
-        "text": "See how body position changes your flight."
+        "text": "To go from almost to skydiver, you have to fall just right."
       },
       "navigation": {
         "name": "Navigation simulator",
-        "text": "Plan and fly the landing pattern to the target."
+        "text": "Can't steer your own life? Fine. But learn to fly your canopy safely (for Jah's sake)!"
       },
       "materials": {
         "name": "Training materials",
-        "text": "AFF handbook, emergency review and course videos."
+        "text": "Never pull ideas out of your behind. Check the official CBPq materials. Thanks, you're welcome."
       },
       "language": "Language"
     },
@@ -215,7 +215,7 @@
     "audiences": {
       "firstTimer": {
         "title": "Never jumped?",
-        "text": "Feel free to look around and, if you feel like jumping, find a USPA-registered school. You'll be welcome!",
+        "text": "What are you waiting for, for Jah's sake! Come see the amazing side of life.",
         "cta": "Try the freefall simulator"
       },
       "student": {
