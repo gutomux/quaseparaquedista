@@ -12,7 +12,7 @@
     "line1": "Glossário de",
     "line2": "paraquedismo"
   },
-  "intro": "Encontre qualquer sigla ou termo de paraquedismo, de AAD a carga alar. Pesquise em português ou inglês.",
+  "intro": "É só digitar qualquer sigla ou termo de paraquedismo que… voilà! vai aparecer mais rápido que o tempo de queda livre (em pt-br ou ingrêis, você escolhe).",
   "search": {
     "label": "Pesquisar no glossário",
     "placeholder": "Digite uma sigla ou termo",
@@ -52,7 +52,7 @@
     "body": "Não foi possível carregar os dados do glossário. Recarregue a página ou confira se as pastas data e i18n estão publicadas junto do glossary.html."
   },
   "feedback": {
-    "hint": "Falta algum termo ou encontrou um erro?",
+    "hint": "Achou que falta algum termo ou encontrou um erro? Clique no botão e dê seus pitacos.",
     "button": "Sugerir um termo ou correção",
     "newTab": "(abre em uma nova aba)"
   },
@@ -97,7 +97,7 @@
       }
     }
   },
-  "disclaimer": "Lembre que esse glossário é só uma ferramenta complementar para o seu aprendizado. Sempre pergunte todas as suas dúvidas para um instrutor certificado.",
+  "disclaimer": "Lembrando que esse glossário é só uma ferramenta complementar. Sempre tire suas dúvidas com um instrutor certificado.",
   "freefall": {
     "meta": {
       "title": "Simulador de queda livre",

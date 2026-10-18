@@ -12,7 +12,7 @@
     "line1": "Skydiving",
     "line2": "glossary"
   },
-  "intro": "Look up any skydiving acronym or term, from AAD to wing loading. Search in English or Portuguese.",
+  "intro": "Just type any skydiving acronym or term and… voilà! It shows up faster than a freefall (in English or pt-br, you choose).",
   "search": {
     "label": "Search the glossary",
     "placeholder": "Type an acronym or term",
@@ -52,7 +52,7 @@
     "body": "The glossary data could not be loaded. Refresh the page, or check that the data and i18n folders are published next to glossary.html."
   },
   "feedback": {
-    "hint": "Missing a term or spotted a mistake?",
+    "hint": "Think a term is missing or found a mistake? Click the button and share your two cents.",
     "button": "Suggest an entry or correction",
     "newTab": "(opens in a new tab)"
   },
@@ -97,7 +97,7 @@
       }
     }
   },
-  "disclaimer": "Remember that this glossary is only a complementary tool for your learning. Always ask all your questions to a certified instructor.",
+  "disclaimer": "Remember, this glossary is only a complementary tool. Always take your questions to a certified instructor.",
   "freefall": {
     "meta": {
       "title": "Freefall Simulator",
