@@ -20,7 +20,8 @@
 .home-title > span{display:block}
 /* PARAQUEDISTA crosses the dark canopy, so it keeps more of its white than QUASE (35%). */
 .home-title > span:last-child{color:rgba(255,255,255,.5)}
-.home-lead{margin:0 0 1.25rem;font-size:1.2rem;max-width:36rem}
+/* pre-line: a "\n" in the welcome text starts a new line. */
+.home-lead{margin:0 0 1.25rem;font-size:1.2rem;white-space:pre-line}
 
 .home-audiences{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;align-content:start}
 .home-audience{display:block;height:100%;background:var(--panel);border:1px solid var(--line);border-radius:1rem;padding:.8rem 1rem;color:var(--ink-soft);text-decoration:none;box-shadow:var(--shadow)}
