@@ -1,25 +1,26 @@
 /* Welcome page. Colors come from the tokens in styles.css. */
 /* A bit wider than the other pages, to fit the photos beside the cards. */
 .home,.home ~ footer,.home ~ .feedback{max-width:52rem}
-/* Photo header, as in the @quaseparaquedista posts: a jumper in freefall (a 4:1 panorama; the
-   position keeps the jumper in view on phones, which show a narrower slice) with QUASE / PARAQUEDISTA in
-   wide, spaced, see-through white letters with a thin black outline: the photo shows through,
-   and the outline keeps the letters easy to read over bright clouds and the dark canopy. The title size leaves
-   room for "PARAQUEDISTA" (11.8 times the font size wide at weight 900 with its spacing, plus a
-   margin) beside the button. The brand name is never hyphenated. */
+/* Poster header: two jumpers in freefall over QUASE / PARAQUEDISTA, printed on paper. The poster is
+   portrait and already carries the name, so it is shown whole (contain), centered on its own paper
+   color, and the page's h1 is kept for screen readers only. The height keeps the name readable on a
+   phone without pushing the tools too far down. */
 .home .page-top{
-  --title-size:clamp(12px,calc((100vw - 6.5rem) / 12.6),3rem);
-  margin:calc(-1 * clamp(1rem,3vh,1.75rem)) -1.25rem 1.25rem;padding:1.25rem 1.25rem 0;min-height:clamp(12.5rem,38vw,19rem);
-  color:#fff;border-radius:0 0 1.5rem 1.5rem;
-  /* A darker band at the top keeps the white title readable over the clouds. */
-  background:linear-gradient(180deg,rgba(17,19,23,.55),rgba(17,19,23,.15) 50%,rgba(17,19,23,0) 75%),url("../images/hero/gutoskydiving.jpg") 68% 50%/cover #6E9BC9;
-
+  position:relative;isolation:isolate;
+  margin:calc(-1 * clamp(1rem,3vh,1.75rem)) -1.25rem 1.25rem;padding:1.25rem 1.25rem 0;height:clamp(20rem,85vw,28rem);
+  border-radius:0 0 1.5rem 1.5rem;background:#F2E6D3;
+}
+/* The poster, faded at its sides and top into the paper color so no seam shows. */
+.home .page-top::before{
+  content:"";position:absolute;z-index:-1;top:.75rem;bottom:0;left:50%;transform:translateX(-50%);aspect-ratio:769/1000;max-width:100%;
+  background:url("../images/hero/quaseParaquedista-web.jpg") 50% 100%/contain no-repeat;
+  --fade-sides:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);--fade-top:linear-gradient(transparent,#000 3%);
+  -webkit-mask-image:var(--fade-sides),var(--fade-top);-webkit-mask-composite:source-in;
+  mask-image:var(--fade-sides),var(--fade-top);mask-composite:intersect;
 }
 @media (min-width:52rem){.home .page-top{margin-top:1rem;border-radius:1.5rem}}
-.home-title{hyphens:none;font-stretch:125%;font-weight:900;letter-spacing:.12em;text-transform:uppercase;line-height:1.15;color:rgba(255,255,255,.35);-webkit-text-stroke:max(1px,.035em) rgba(0,0,0,.85)}
-.home-title > span{display:block}
-/* PARAQUEDISTA crosses the dark canopy, so it keeps more of its white than QUASE (35%). */
-.home-title > span:last-child{color:rgba(255,255,255,.5)}
+/* The title sits off screen (the poster shows it), so the menu keeps to the right. */
+.home .site-nav{margin:0 0 0 auto}
 /* pre-line: a "\n" in the welcome text starts a new line. */
 .home-lead{margin:0 0 1.25rem;font-size:1.2rem;white-space:pre-line}
 
