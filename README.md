@@ -3,7 +3,7 @@
 Free skydiving tools for people who have never jumped, students and experienced jumpers, in **English (en_US)** and **Brazilian Portuguese (pt_BR)**:
 
 - **Every page** has the same top: its title, and a ☰ menu at the right (Início, Glossário de paraquedismo, Carga alar, Simulador de queda livre, Simulador de navegação, Materiais de instrução; Carga alar opens that glossary entry, with its calculator), ending with a PT | EN language switch that is remembered on the device.
-- **Welcome page** (`index.html`): cards linking to each tool right below the welcome text, then who the site is for (each card linking to the tool that fits), the Instagram profile [@quaseparaquedista](https://www.instagram.com/quaseparaquedista/) and the feedback button.
+- **Welcome page** (`index.html`): cards linking to each tool right below the welcome text, then who the site is for (each card linking to the tool that fits), the disclaimer and the feedback button, and last the Instagram profile [@quaseparaquedista](https://www.instagram.com/quaseparaquedista/).
 - **Glossary** (`glossary.html`): a searchable glossary of skydiving terms and acronyms.
 - **Freefall simulator** (`freefall.html`): how body position changes a jumper's flight.
 - **Navigation simulator** (`navigation.html`): plan and fly the CBPq landing pattern (holding area, points A, B and C, final approach) with left/right taps and the flare, then get a landing report.

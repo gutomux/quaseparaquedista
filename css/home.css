@@ -48,6 +48,8 @@ a.home-audience[href]:hover{border-color:var(--ink)}
 
 /* Cards beside the photos; stacked on narrow screens, photos first */
 .home-intro{display:grid;grid-template-columns:minmax(0,1fr) 17rem;gap:1.25rem 1.75rem;align-items:start;margin-bottom:2rem}
+/* Last in the page content (the Instagram line moved to the end): the page's own bottom space is enough. */
+.home-intro:last-child{margin-bottom:0}
 @media (max-width:760px){
   .home-intro{grid-template-columns:minmax(0,1fr)}
   .carousel{order:-1;width:100%;max-width:22rem;justify-self:center}
@@ -70,7 +72,9 @@ a.home-audience[href]:hover{border-color:var(--ink)}
 .carousel-toggle:focus-visible{outline:3px solid var(--focus);outline-offset:1px}
 
 
-.home-instagram{margin:0;color:var(--ink-soft)}
+/* Last on the page, below the feedback request, which then needs less space under it. */
+.home-instagram{max-width:52rem;margin:0 auto;padding:0 1.25rem 2.5rem;color:var(--ink-soft)}
+.feedback:not([hidden]):has(+ .home-instagram){padding-bottom:1rem}
 .home-instagram a{color:var(--ink);font-weight:700;text-decoration:none}
 .home-instagram a:hover{text-decoration:underline}
 .home-instagram a:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:.2rem}
