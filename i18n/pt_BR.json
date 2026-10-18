@@ -188,7 +188,7 @@
       },
       "wingLoad": {
         "name": "Carga alar",
-        "text": "Calcule a sua carga alar e veja os limites da CBPq."
+        "text": "Calcule o tamanho de velame que é seguro pra você voar de acordo com os limites da CBPq."
       },
       "freefall": {
         "name": "Simulador de queda livre",
@@ -219,13 +219,13 @@
         "cta": "Experimente o simulador de queda livre"
       },
       "student": {
-        "title": "Está começando o curso?",
-        "text": "Revise as siglas e os termos do AFF e veja como cada posição de corpo muda o seu voo.",
+        "title": "Tá começando o curso?",
+        "text": "Seja nerd e acesse todos os materiais da CBPq (bora, bora!) — e lembra de sempre ouvir e confiar no seu instrutor(a).",
         "cta": "Ver os materiais do curso"
       },
       "experienced": {
         "title": "Já é paraquedista?",
-        "text": "Use as ferramentas, compartilhe com seus alunos e amigos, e nos ajude a melhorar, fazendo sugestões.",
+        "text": "Se divirta com as ferramentas e compartilhe com seus alunos e amigos quase paraquedistas (pode ser bem útil pra eles). Ah! E nos ajude a melhorar dando suas sugestões.",
         "cta": "Enviar uma sugestão"
       }
     },

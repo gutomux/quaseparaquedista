@@ -188,7 +188,7 @@
       },
       "wingLoad": {
         "name": "Wing load",
-        "text": "Work out your wing load and see the CBPq limits."
+        "text": "Work out the canopy size that is safe for you to fly, according to the CBPq limits."
       },
       "freefall": {
         "name": "Freefall simulator",
@@ -220,12 +220,12 @@
       },
       "student": {
         "title": "Just starting your course?",
-        "text": "Review AFF acronyms and terms, and see how each body position changes your flight.",
+        "text": "Be a nerd and check out all the CBPq materials (let's go, let's go!) — and always remember to listen to and trust your instructor.",
         "cta": "See the course materials"
       },
       "experienced": {
         "title": "Already a skydiver?",
-        "text": "Use the tools, share them with your students and friends, and help us improve by sending suggestions.",
+        "text": "Have fun with the tools and share them with your students and almost-skydiver friends (they can be really useful to them). Oh! And help us improve by sending your suggestions.",
         "cta": "Send a suggestion"
       }
     },
