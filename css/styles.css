@@ -147,14 +147,24 @@ footer{max-width:44rem;margin:0 auto;padding:0 1.25rem 2.5rem}
 /* Suggestion / correction button */
 /* Last on the page, below the disclaimer, which then needs less space under it. */
 footer:has(+ .feedback:not([hidden])){padding-bottom:1.5rem}
-.feedback{max-width:44rem;margin:0 auto;padding:0 1.25rem 2.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem}
-.feedback p{margin:0;color:var(--ink-soft)}
-.feedback-btn{
-  display:inline-block;font-weight:700;color:var(--on-accent);text-decoration:none;
-  border:2px solid var(--accent);border-radius:999px;padding:.55rem 1.2rem;background:var(--accent)
+/* A box like the disclaimer's; the whole box is the link, ending in a call to action styled like
+   the welcome page's visitor cards (bold text, then a black arrow in a yellow circle).
+   --below is the space under it. */
+.feedback{--below:2.5rem;max-width:44rem;margin:0 auto;padding:0 1.25rem var(--below)}
+.feedback-link{
+  display:flex;align-items:flex-start;gap:.7rem;padding:.85rem 1rem;border:1px solid var(--line);border-radius:1rem;
+  background:var(--panel);color:var(--ink-soft);text-decoration:none
 }
-.feedback-btn:hover{border-color:var(--ink)}
-.feedback-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.feedback-link:hover{border-color:var(--ink)}
+.feedback-link:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+/* A light bulb (ideas, knowledge) in a yellow circle, sized like the disclaimer's ⚠. */
+.feedback-icon{flex:none;display:grid;place-items:center;width:1.6rem;height:1.6rem;margin-top:.05rem;border-radius:50%;background:var(--accent);color:var(--on-accent)}
+.feedback-icon svg{width:1.05rem;height:1.05rem;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.feedback-text{display:flex;flex-direction:column;align-items:flex-start;gap:.45rem;min-width:0}
+/* The arrow follows the last word, even when the text wraps on a phone: it is inline (a box would
+   wrap on its own), joined to the word by a word joiner (&#8288;) in the HTML. */
+.feedback-cta{font-weight:700;color:var(--ink)}
+.feedback-arrow{display:inline;margin-left:.45rem;padding:.28rem .36rem;border-radius:999px;line-height:1;background:var(--accent);color:var(--on-accent);box-decoration-break:clone;-webkit-box-decoration-break:clone}
 
 /* Calculators on result cards */
 .calc{margin-top:1.1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:.75rem;max-width:36rem}

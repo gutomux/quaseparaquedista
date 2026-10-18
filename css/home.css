@@ -74,7 +74,7 @@ a.home-audience[href]:hover{border-color:var(--ink)}
 
 /* Last on the page, below the feedback request, which then needs less space under it. */
 .home-instagram{max-width:52rem;margin:0 auto;padding:0 1.25rem 2.5rem;color:var(--ink-soft)}
-.feedback:not([hidden]):has(+ .home-instagram){padding-bottom:1rem}
+.feedback:not([hidden]):has(+ .home-instagram){--below:1rem}
 .home-instagram a{color:var(--ink);font-weight:700;text-decoration:none}
 .home-instagram a:hover{text-decoration:underline}
 .home-instagram a:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:.2rem}
