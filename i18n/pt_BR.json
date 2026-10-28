@@ -252,10 +252,18 @@
   "materials": {
     "meta": {
       "title": "Materiais de instrução",
-      "description": "Apostila do curso AFF, revisão de emergências e vídeos de todos os níveis do curso AFF."
+      "description": "Materiais da CBPq e da USPA: apostila, revisão de emergências e vídeos do curso AFF, o SIM e o Skydiver Update."
     },
     "heading": "Materiais de instrução",
     "intro": "Aqui você encontra (quase) todos  os materiais de apoio para o curso AFF da CBPq, que são: a apostila oficial, a revisão de emergências e os vídeos de todos os níveis. Aproveite, é tudo 0800!",
+    "tabs": {
+      "label": "Materiais por associação",
+      "cbpq": "CBPq (Brasil)",
+      "uspa": "USPA (EUA)"
+    },
+    "uspa": {
+      "intro": "Aqui estão os materiais oficiais da USPA, a associação de paraquedismo dos Estados Unidos: o manual do paraquedista (SIM), o informativo Skydiver Update e a página de downloads. Tudo em inglês, e tudo 0800!"
+    },
     "handbook": {
       "name": "Apostila AFF – CBPq",
       "title": "Apostila AFF – CBPq",
@@ -284,6 +292,24 @@
       },
       "watch": "Assistir no YouTube",
       "jumpTo": "Ir para o nível:"
+    },
+    "sim": {
+      "name": "Skydiver's Information Manual (SIM) – USPA",
+      "text": "O manual oficial da USPA, com as regras e recomendações do paraquedismo nos EUA. Abre no site da USPA."
+    },
+    "update": {
+      "name": "Skydiver Update e-Newsletter – USPA",
+      "title": "Skydiver Update – USPA",
+      "text": "O informativo da USPA: a edição mais recente aqui, e todas as anteriores no site da USPA.",
+      "source": "Skydiver Update e-Newsletter, USPA",
+      "latest": "Edição mais recente:",
+      "open": "Abrir esta edição no site da USPA",
+      "all": "Ver todas as edições",
+      "hintLink": "Abra no site da USPA."
+    },
+    "downloads": {
+      "name": "Downloads da USPA",
+      "text": "Formulários, documentos e outros arquivos oficiais da USPA. Abre no site da USPA."
     },
     "source": "Fonte:",
     "openPdf": "Abrir no site da CBPq",

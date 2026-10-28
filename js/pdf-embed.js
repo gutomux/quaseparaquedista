@@ -5,6 +5,9 @@
  * - Browsers without one (Chrome and Samsung Internet on Android) would only offer a download,
  *   so they frame Google's document viewer, which reads the file from the original address.
  *
+ * - A site that forbids framing its files (USPA) always goes through Google's viewer:
+ *   the page marks it with data-pdf-viewer="google".
+ *
  * Reading the file with PDF.js isn't possible: the owner's server doesn't allow other sites
  * to read its files (no CORS header), and the browser blocks it.
  */
@@ -21,11 +24,11 @@ export function embedUrl(pdfUrl, canShowPdf) {
 }
 
 /**
- * @param {HTMLElement} root Element with data-pdf="https://...".
+ * @param {HTMLElement} root Element with data-pdf="https://..." (and data-pdf-viewer="google" to always use Google's).
  * @param {string} title Accessible name for the frame, e.g. the page heading.
  */
 export function mountPdfEmbed(root, title) {
-  const canShowPdf = navigator.pdfViewerEnabled === true;
+  const canShowPdf = root.dataset.pdfViewer !== 'google' && navigator.pdfViewerEnabled === true;
   const frame = document.createElement('iframe');
   frame.className = 'pdf-frame';
   frame.title = title;

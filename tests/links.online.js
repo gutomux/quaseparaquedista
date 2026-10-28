@@ -15,7 +15,9 @@ const pages = readdirSync(ROOT).filter((f) => f.endsWith('.html'));
 const html = pages.map((f) => readFileSync(new URL(f, ROOT), 'utf8')).join('\n');
 
 const unique = (list) => [...new Set(list)];
-const pdfs = unique([...html.matchAll(/data-pdf="([^"]+)"/g)].map((m) => m[1]));
+// The USPA newsletter page learns its PDF (the latest issue) from a data file.
+const latestIssue = JSON.parse(readFileSync(new URL('data/uspa-update.json', ROOT), 'utf8'));
+const pdfs = unique([...[...html.matchAll(/data-pdf="([^"]+)"/g)].map((m) => m[1]), latestIssue.pdf]);
 const videos = unique([...html.matchAll(/youtube-nocookie\.com\/embed\/([\w-]+)/g)].map((m) => m[1]));
 
 const TIMEOUT_MS = 20000;

@@ -252,10 +252,18 @@
   "materials": {
     "meta": {
       "title": "Training materials",
-      "description": "The AFF course handbook, emergency review and videos of every AFF level."
+      "description": "CBPq and USPA materials: the AFF handbook, emergency review and videos, the SIM and the Skydiver Update."
     },
     "heading": "Training materials",
-    "intro": "Here you'll find (almost) all the support materials for the USPA AFF course: the official handbook, the emergency review and the videos of every level. Enjoy, it's all free!",
+    "intro": "Here you'll find (almost) all the support materials for the CBPq AFF course: the official handbook, the emergency review and the videos of every level. Enjoy, it's all free!",
+    "tabs": {
+      "label": "Materials by association",
+      "cbpq": "CBPq (Brazil)",
+      "uspa": "USPA (USA)"
+    },
+    "uspa": {
+      "intro": "Here are the official materials from USPA, the United States Parachute Association: the Skydiver's Information Manual (SIM), the Skydiver Update e-newsletter and the downloads page. Enjoy, it's all free!"
+    },
     "handbook": {
       "name": "AFF Handbook – CBPq",
       "title": "AFF Handbook – CBPq",
@@ -284,6 +292,24 @@
       },
       "watch": "Watch on YouTube",
       "jumpTo": "Jump to level:"
+    },
+    "sim": {
+      "name": "Skydiver's Information Manual (SIM) – USPA",
+      "text": "USPA's official manual, with the rules and recommendations for skydiving in the U.S. Opens on the USPA site."
+    },
+    "update": {
+      "name": "Skydiver Update e-Newsletter – USPA",
+      "title": "Skydiver Update – USPA",
+      "text": "USPA's e-newsletter: the latest issue here, and every past one on the USPA site.",
+      "source": "Skydiver Update e-Newsletter, USPA",
+      "latest": "Latest issue:",
+      "open": "Open this issue on the USPA site",
+      "all": "See all issues",
+      "hintLink": "Open it on the USPA site."
+    },
+    "downloads": {
+      "name": "USPA Downloads",
+      "text": "Forms, documents and other official USPA files. Opens on the USPA site."
     },
     "source": "Source:",
     "openPdf": "Open on the CBPq site",

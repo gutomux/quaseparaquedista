@@ -55,7 +55,8 @@ test('links between pages have no ".html" (GitHub Pages serves them without it)'
   for (const { href, pages: sub = [] } of MENU) for (const link of [href, ...sub]) assert.ok(!link.endsWith('.html'), link);
   for (const page of files) {
     const html = readFileSync(new URL(page, ROOT), 'utf8');
-    const old = [...html.matchAll(/href="([^"]+\.html[^"]*)"/g)].map((m) => m[1]);
+    // Only the site's own links: other sites (like USPA's SIM) may well end in .html.
+    const old = [...html.matchAll(/href="([^"]+\.html[^"]*)"/g)].map((m) => m[1]).filter((link) => !/^https?:/.test(link));
     assert.deepEqual(old, [], `${page} still links with .html`);
   }
 });

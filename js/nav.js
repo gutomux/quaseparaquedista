@@ -30,7 +30,7 @@ export const MENU = Object.freeze([
   { key: 'wingLoad', href: 'glossary#term-wing-loading' },
   { key: 'freefall', href: 'freefall' },
   { key: 'navigation', href: 'navigation' },
-  { key: 'materials', href: 'materiais-instrucao', pages: ['apostila-aff', 'revisao-emergencias-aff', 'aff-videos'] },
+  { key: 'materials', href: 'materiais-instrucao', pages: ['apostila-aff', 'revisao-emergencias-aff', 'aff-videos', 'uspa-update'] },
 ]);
 
 /**

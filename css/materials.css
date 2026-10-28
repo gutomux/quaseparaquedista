@@ -1,6 +1,20 @@
 /* Training materials: the list page, the PDF pages and the video page. Colors come from styles.css. */
 .mat-main .page-top{--title-size:clamp(1.4rem,calc((100vw - 6.5rem) / 8.1),3.25rem)}
 
+/* Tabs: one per association (CBPq, USPA). A segmented switch; the open one is filled in yellow. */
+.tab-list{display:flex;gap:.25rem;width:fit-content;max-width:100%;margin:0 0 1.25rem;padding:.25rem;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+.tab-list[hidden]{display:none}
+.tab-list [role="tab"]{
+  font:inherit;font-weight:700;font-size:.95rem;color:var(--ink-soft);background:none;border:0;border-radius:999px;
+  padding:.5rem 1.1rem;cursor:pointer;white-space:nowrap
+}
+.tab-list [role="tab"]:hover{color:var(--ink)}
+.tab-list [role="tab"][aria-selected="true"]{background:var(--accent);color:var(--on-accent)}
+.tab-list [role="tab"]:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+/* Without JavaScript both panels show; a little space between them. */
+.tab-panel + .tab-panel{margin-top:2rem}
+.tab-list:not([hidden]) ~ .tab-panel{margin-top:0}
+
 /* List of materials */
 .mat-list{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}
 .mat-card{
@@ -9,7 +23,9 @@
 }
 .mat-card:hover{border-color:var(--ink)}
 .mat-card:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
-.mat-card-text{display:flex;flex-direction:column;gap:.15rem}
+.mat-card-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:.15rem}
+/* Opens on another site (USPA). */
+.mat-card-ext{flex:none;font-size:1.2rem;font-weight:700;color:var(--ink-soft)}
 .mat-card-name{font-weight:700;font-size:1.1rem}
 .mat-card-desc{font-size:.92rem;color:var(--ink-soft)}
 
@@ -18,6 +34,9 @@
 .mat-source a{color:var(--ink);font-weight:700;text-decoration:none}
 .mat-source a:hover{color:var(--accent-ink)}
 .mat-source a:focus-visible,.mat-yt:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:.2rem}
+.mat-latest{margin:-.4rem 0 1rem;color:var(--ink-soft)}
+.mat-latest strong{color:var(--ink);text-transform:capitalize}
+.mat-latest[hidden],.pdf-embed[hidden],.pdf-hint[hidden],.mat-button[hidden]{display:none}
 .mat-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
 .mat-button{
   display:inline-block;font-weight:700;font-size:.95rem;color:var(--ink);text-decoration:none;

@@ -24,9 +24,9 @@ test('welcome page: each visitor card leads somewhere, with a call to action', (
 });
 
 test('material pages show where you are, linking back to the materials list', () => {
-  for (const page of ['apostila-aff.html', 'revisao-emergencias-aff.html', 'aff-videos.html']) {
+  for (const page of ['apostila-aff.html', 'revisao-emergencias-aff.html', 'aff-videos.html', 'uspa-update.html']) {
     const html = read(page);
-    assert.match(html, /<nav class="crumbs"[\s\S]*?<a href="materiais-instrucao"[\s\S]*?aria-current="page"/, page);
+    assert.match(html, /<nav class="crumbs"[\s\S]*?<a href="materiais-instrucao(#\w+)?"[\s\S]*?aria-current="page"/, page);
     assert.ok(html.indexOf('class="crumbs"') < html.indexOf('class="page-top"'), `${page}: the trail sits above the title`);
   }
 });

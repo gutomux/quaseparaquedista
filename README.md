@@ -7,7 +7,8 @@ Free skydiving tools for people who have never jumped, students and experienced 
 - **Glossary** (`glossary.html`): a searchable glossary of skydiving terms and acronyms.
 - **Freefall simulator** (`freefall.html`): how body position changes a jumper's flight.
 - **Navigation simulator** (`navigation.html`): plan and fly the CBPq landing pattern (holding area, points A, B and C, final approach) with left/right taps and the flare, then get a landing report.
-- **Training materials** (`materiais-instrucao.html`; its pages show a "Materiais de instrução ›" trail, and the videos page has shortcuts to each level): the CBPq AFF handbook (`apostila-aff.html`) and emergency review (`revisao-emergencias-aff.html`) shown inside the page straight from the CBPq site (no copies are stored here), and videos of AFF levels I to VII (`aff-videos.html`).
+- **Training materials** (`materiais-instrucao.html`; its pages show a "Materiais de instrução ›" trail, and the videos page has shortcuts to each level): the CBPq AFF handbook (`apostila-aff.html`) and emergency review (`revisao-emergencias-aff.html`) shown inside the page straight from the CBPq site (no copies are stored here), and videos of AFF levels I to VII (`aff-videos.html`). The list has two tabs, **CBPq (Brasil)** and **USPA (EUA)**, kept in the address (`materiais-instrucao#uspa`); with no tab in the address, Portuguese opens on CBPq and English on USPA. The USPA tab links the Skydiver's Information Manual and the USPA downloads page (they open on uspa.org, which forbids showing its pages inside other sites) and the **Skydiver Update** page (`uspa-update.html`), which shows the latest issue through Google's viewer and links to all issues.
+- **Latest Skydiver Update:** `data/uspa-update.json` names the latest issue. A GitHub Action (`.github/workflows/uspa-newsletter.yml`) runs `scripts/update-uspa-newsletter.mjs` every day; when USPA publishes a new issue, it updates the file, commits it and asks GitHub Pages to rebuild. To run it by hand: `node scripts/update-uspa-newsletter.mjs`, or "Run workflow" in the repository's Actions tab.
 
 In the glossary, type one letter and suggestions appear; pick one to see its definition, its name in the other language, and related entries. Each entry has its own link (for example `glossary.html#term-canopy`) and a **Compartilhar** button, and the browser's Back button returns to the previous entry.
 
@@ -76,14 +77,20 @@ js/navigation/dropzone.js The drop zone: fields, landing area, runway, roads, la
 js/navigation/report.js   Grading after landing: points ±100 ft, right turns after A, flare, distance to target. Pure
 js/navigation/view.js     Planning map, forward view (canvas), small map, digital/analog altimeter, report
 js/navigation/main.js     Plan → flight → report, settings, animation loop
-materiais-instrucao.html  Training materials list
+materiais-instrucao.html  Training materials, in two tabs: CBPq and USPA
 apostila-aff.html     CBPq AFF handbook, embedded from the CBPq site
 revisao-emergencias-aff.html  CBPq AFF emergency review, embedded from the CBPq site
 aff-videos.html       YouTube videos of AFF levels I to VII
+uspa-update.html      USPA Skydiver Update: the latest issue (from data/uspa-update.json) and a link to all
+data/uspa-update.json The latest Skydiver Update issue and its PDF address, updated daily
+scripts/update-uspa-newsletter.mjs  Finds the latest issue in USPA's file library and updates the data file
+.github/workflows/uspa-newsletter.yml  Runs that script every day and publishes a new issue
+js/tabs.js            The CBPq / USPA tabs on the training materials page
+js/latest-issue.js    Loads the latest issue onto the newsletter page, named by month
 css/materials.css     Styles for the training material pages
 js/page.js            Entry point for those pages: text, menu, and the PDF embed when the page has one
 js/pdf-embed.js       Frames a PDF from its original site: directly where the browser can show PDFs,
-                      through Google's document viewer on Android, which can't
+                      through Google's document viewer on Android, which can't (and always for USPA)
 tests/                Unit tests for search, data validation, i18n and the simulator
 ```
 

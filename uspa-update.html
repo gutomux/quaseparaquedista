@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <script src="js/page-lang.js?v=2026-10-28.1"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="" data-i18n-attr="content: materials.update.text">
+  <title>Skydiver Update – USPA</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪂</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,700..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="css/styles.css?v=2026-10-28.1">
+  <link rel="stylesheet" href="css/materials.css?v=2026-10-28.1">
+  <script type="module" src="js/page.js?v=2026-10-28.1"></script>
+</head>
+<body data-title-key="materials.update.title">
+  <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
+  <main class="mat-main">
+    <nav class="crumbs" data-i18n-attr="aria-label: nav.crumbs">
+      <a href="materiais-instrucao#uspa" data-i18n="nav.menu.materials.name">Materiais de instrução</a>
+      <span class="crumbs-sep" aria-hidden="true">›</span>
+      <span aria-current="page" data-i18n="materials.update.title"></span>
+    </nav>
+    <header class="page-top">
+      <h1 class="page-title" data-i18n="materials.update.title"></h1>
+      <nav class="site-nav" data-site-nav></nav>
+    </header>
+    <p class="mat-source"><span data-i18n="materials.source"></span> <a href="https://www.uspa.org/education/skydiver-update-e-newsletter" target="_blank" rel="noopener noreferrer" data-i18n="materials.update.source"></a></p>
+    <p class="mat-latest" data-latest-only><span data-i18n="materials.update.latest"></span> <strong data-latest-issue></strong></p>
+    <div class="mat-actions">
+      <a class="mat-button" href="https://www.uspa.org/education/skydiver-update-e-newsletter" target="_blank" rel="noopener noreferrer" data-latest-pdf data-latest-only><span data-i18n="materials.update.open"></span><span class="sr" data-i18n="feedback.newTab"></span></a>
+      <a class="mat-button" href="https://www.uspa.org/education/skydiver-update-e-newsletter" target="_blank" rel="noopener noreferrer"><span data-i18n="materials.update.all"></span><span class="sr" data-i18n="feedback.newTab"></span></a>
+    </div>
+    <!-- The latest issue comes from data/uspa-update.json (updated daily by a GitHub Action).
+         USPA forbids framing its files, so it always shows in Google's viewer. -->
+    <div class="pdf-embed" data-pdf-latest="data/uspa-update.json" data-pdf-viewer="google" data-latest-only></div>
+    <p class="pdf-hint" data-latest-only><span data-i18n="materials.hint"></span> <a href="https://www.uspa.org/education/skydiver-update-e-newsletter" target="_blank" rel="noopener noreferrer" data-latest-pdf data-i18n="materials.update.hintLink"></a></p>
+  </main>
+
+  <footer>
+    <p class="disclaimer" role="note" data-i18n="materials.disclaimer"></p>
+  </footer>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
-  <script src="js/page-lang.js?v=2026-10-13.49"></script>
+  <script src="js/page-lang.js?v=2026-10-28.1"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="" data-i18n-attr="content: materials.meta.description">
   <title>Materiais de instrução</title>
@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,700..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=2026-10-13.49">
-  <link rel="stylesheet" href="css/materials.css?v=2026-10-13.49">
-  <script type="module" src="js/page.js?v=2026-10-13.49"></script>
+  <link rel="stylesheet" href="css/styles.css?v=2026-10-28.1">
+  <link rel="stylesheet" href="css/materials.css?v=2026-10-28.1">
+  <script type="module" src="js/page.js?v=2026-10-28.1"></script>
 </head>
 <body data-title-key="materials.meta.title">
   <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
@@ -21,36 +21,82 @@
       <h1 class="page-title" data-i18n="materials.heading"></h1>
       <nav class="site-nav" data-site-nav></nav>
     </header>
-    <p class="intro" data-i18n="materials.intro"></p>
-    <ul class="mat-list">
-      <li>
-        <a class="mat-card" href="apostila-aff">
-          <span class="icon-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h11a3 3 0 0 1 3 3v12H8a3 3 0 0 1-3-3z"/><path d="M5 16.5a3 3 0 0 1 3-3h11M9 8.5h6"/></svg></span>
-          <span class="mat-card-text">
-            <span class="mat-card-name" data-i18n="materials.handbook.name"></span>
-            <span class="mat-card-desc" data-i18n="materials.handbook.text"></span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a class="mat-card" href="revisao-emergencias-aff">
-          <span class="icon-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 21 19.5H3z"/><path d="M12 10v4.2"/><circle cx="12" cy="17" r="1.3"/></svg></span>
-          <span class="mat-card-text">
-            <span class="mat-card-name" data-i18n="materials.emergencies.name"></span>
-            <span class="mat-card-desc" data-i18n="materials.emergencies.text"></span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a class="mat-card" href="aff-videos">
-          <span class="icon-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m10 9.5 5 2.5-5 2.5z"/></svg></span>
-          <span class="mat-card-text">
-            <span class="mat-card-name" data-i18n="materials.videos.name"></span>
-            <span class="mat-card-desc" data-i18n="materials.videos.text"></span>
-          </span>
-        </a>
-      </li>
-    </ul>
+    <!-- Two tabs, one per association (js/tabs.js). Without JavaScript, both lists show. -->
+    <div class="mat-tabs" data-tabs>
+      <div class="tab-list" role="tablist" data-i18n-attr="aria-label: materials.tabs.label" hidden>
+        <button type="button" role="tab" id="tab-cbpq" data-tab="cbpq" aria-controls="panel-cbpq" aria-selected="true" data-i18n="materials.tabs.cbpq">CBPq</button>
+        <button type="button" role="tab" id="tab-uspa" data-tab="uspa" aria-controls="panel-uspa" aria-selected="false" tabindex="-1" data-i18n="materials.tabs.uspa">USPA</button>
+      </div>
+
+      <section class="tab-panel" id="panel-cbpq" role="tabpanel" aria-labelledby="tab-cbpq">
+        <p class="intro" data-i18n="materials.intro"></p>
+        <ul class="mat-list">
+          <li>
+            <a class="mat-card" href="apostila-aff">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h11a3 3 0 0 1 3 3v12H8a3 3 0 0 1-3-3z"/><path d="M5 16.5a3 3 0 0 1 3-3h11M9 8.5h6"/></svg></span>
+              <span class="mat-card-text">
+                <span class="mat-card-name" data-i18n="materials.handbook.name"></span>
+                <span class="mat-card-desc" data-i18n="materials.handbook.text"></span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="mat-card" href="revisao-emergencias-aff">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 21 19.5H3z"/><path d="M12 10v4.2"/><circle cx="12" cy="17" r="1.3"/></svg></span>
+              <span class="mat-card-text">
+                <span class="mat-card-name" data-i18n="materials.emergencies.name"></span>
+                <span class="mat-card-desc" data-i18n="materials.emergencies.text"></span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="mat-card" href="aff-videos">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m10 9.5 5 2.5-5 2.5z"/></svg></span>
+              <span class="mat-card-text">
+                <span class="mat-card-name" data-i18n="materials.videos.name"></span>
+                <span class="mat-card-desc" data-i18n="materials.videos.text"></span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- USPA forbids showing its pages inside other sites, so the manual and downloads open there. -->
+      <section class="tab-panel" id="panel-uspa" role="tabpanel" aria-labelledby="tab-uspa">
+        <p class="intro" data-i18n="materials.uspa.intro"></p>
+        <ul class="mat-list">
+          <li>
+            <a class="mat-card" href="https://www.uspa.org/portals/0/FLIP/SIM/HTML5/index.html" target="_blank" rel="noopener noreferrer">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h11a3 3 0 0 1 3 3v12H8a3 3 0 0 1-3-3z"/><path d="M5 16.5a3 3 0 0 1 3-3h11M9 8.5h6"/></svg></span>
+              <span class="mat-card-text">
+                <span class="mat-card-name" data-i18n="materials.sim.name"></span>
+                <span class="mat-card-desc" data-i18n="materials.sim.text"></span>
+              </span>
+              <span class="mat-card-ext" aria-hidden="true">↗</span><span class="sr" data-i18n="feedback.newTab"></span>
+            </a>
+          </li>
+          <li>
+            <a class="mat-card" href="uspa-update">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h13v13a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2z"/><path d="M17 9.5h3v9a2 2 0 0 1-4 0M7.5 9h6M7.5 12.5h6M7.5 16h4"/></svg></span>
+              <span class="mat-card-text">
+                <span class="mat-card-name" data-i18n="materials.update.name"></span>
+                <span class="mat-card-desc" data-i18n="materials.update.text"></span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="mat-card" href="https://www.uspa.org/downloads" target="_blank" rel="noopener noreferrer">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5"/><path d="M5 19.5h14"/></svg></span>
+              <span class="mat-card-text">
+                <span class="mat-card-name" data-i18n="materials.downloads.name"></span>
+                <span class="mat-card-desc" data-i18n="materials.downloads.text"></span>
+              </span>
+              <span class="mat-card-ext" aria-hidden="true">↗</span><span class="sr" data-i18n="feedback.newTab"></span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
   </main>
 
   <footer>
