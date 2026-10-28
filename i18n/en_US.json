@@ -300,7 +300,7 @@
       "line1": "Navigation",
       "line2": "simulator"
     },
-    "intro": "You have just opened your canopy, done your visual and functional check, and are at 3,000 ft. Plan your navigation, then fly it down to a landing close to the target you planned. Click the points on the map, or use the buttons below to interact.",
+    "intro": "You have just opened your canopy and done your visual and functional check (all good, thank Jah!), then you look at your altimeter and you are at 3,000 ft. Plan your navigation, then fly it down to a landing close to the target you planned. Use the two buttons to turn, or click the map to look around.",
     "plan": {
       "title": "1. Plan your pattern",
       "seta": "The seta on the ground points the landing direction, into the wind.",
