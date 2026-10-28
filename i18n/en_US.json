@@ -107,7 +107,7 @@
       "line1": "Freefall",
       "line2": "simulator"
     },
-    "intro": "Use the buttons to interact with the skydiver. Try pressing more than one at the same time for different results.",
+    "intro": "The skydiver below is you in freefall. How do you want them to fly? Choose wisely.",
     "sceneLabel": "Animation of a skydiver in freefall, belly to earth, seen from the side.",
     "topView": "Top view",
     "groups": {
