@@ -428,6 +428,52 @@
       "tip": "Dica: comece cada curva um pouco antes do ponto e solte quando estiver alinhado com a próxima perna.",
       "again": "Voar de novo"
     },
+    "story": {
+      "button": "Compartilhar no Instagram",
+      "title": "Seu pouso, em formato de story",
+      "making": "Montando a imagem…",
+      "alt": "O seu relatório de pouso como um story do Instagram: a nota do pouso, o circuito visto de cima e os destaques.",
+      "share": "Compartilhar",
+      "download": "Baixar imagem",
+      "close": "Fechar",
+      "hint": "No celular, toque em Compartilhar e escolha Instagram › Story. Se não aparecer, baixe a imagem e adicione ao story pela galeria.",
+      "shareFailed": "Não deu para compartilhar daqui. Baixe a imagem e adicione ao story pela galeria.",
+      "mode": "Simulador de navegação",
+      "rank": {
+        "legendary": "Lendário!",
+        "epic": "Épico!",
+        "rare": "Raro!",
+        "almost": "Quase!",
+        "wasted": "Morridinha de leve pra sempre!"
+      },
+      "landed": "Pousou a {dist} m do alvo.",
+      "badges": {
+        "points": {
+          "all": "Passou pelos pontos A, B e C",
+          "some": {
+            "one": "Passou por {count} de 3 pontos",
+            "other": "Passou por {count} de 3 pontos"
+          }
+        },
+        "rightTurns": {
+          "zero": "Só curvas para a esquerda",
+          "one": "{count} curva para a direita no circuito",
+          "other": "{count} curvas para a direita no circuito"
+        },
+        "lowTurns": {
+          "one": "{count} curva forte abaixo de 300 pés",
+          "other": "{count} curvas fortes abaixo de 300 pés"
+        },
+        "flare": {
+          "good": "Flare na hora certa",
+          "high": "Flare cedo demais",
+          "low": "Flare tarde",
+          "none": "Esqueceu o flare",
+          "released": "Soltou o flare antes do chão"
+        }
+      },
+      "site": "quaseparaquedista.com.br"
+    },
     "disclaimer": "Essa ferramenta é um apoio ao seu curso de navegação, bastante simplificada. Siga SEMPRE o briefing e as orientações do seu instrutor de área de salto."
   }
 }

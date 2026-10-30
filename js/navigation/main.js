@@ -3,7 +3,7 @@
  *   plan:   paused at 3000 ft, the student picks the holding area, A, B and C from options;
  *           a wrong pick shows a hint, and the flight only starts when all four are right.
  *   flight: hold left/right to turn, hold the flare; real time, or 4× faster if the student picks it.
- *   report: after landing, what went well and what to work on.
+ *   report: after landing, what went well and what to work on, and a story image to share.
  */
 import { CONFIG } from '../config.js';
 import { loadMessages, createTranslator } from '../i18n.js';
@@ -52,6 +52,7 @@ async function init() {
   let points;
   let plan; // { stepIndex, placed, options }
   let flight = null;
+  let report = null;
   let paused = false;
   let last = null;
 
@@ -65,6 +66,7 @@ async function init() {
     points = patternPoints(run.setaHeading);
     plan = { stepIndex: 0, placed: {}, options: planOptions(points, PLAN_STEPS[0], run.setaHeading) };
     flight = null;
+    report = null;
     view.planMessage(t('navigation.plan.seta'), 'info');
     view.showPhase('plan');
     renderPlan();
@@ -96,7 +98,8 @@ async function init() {
     step(flight, real * scale);
     view.drawFlight({ flight, run, guides: settings.guides === 'visible', fast: scale > 1 });
     if (flight.landed) {
-      view.renderReport(buildReport(flight));
+      report = buildReport(flight);
+      view.renderReport(report);
       view.showPhase('report');
       return;
     }
@@ -128,6 +131,15 @@ async function init() {
       if (!paused) requestAnimationFrame(frame);
     },
     onAgain: startRun,
+    // The report as an Instagram story: drawn only when asked, from the flight just flown.
+    onStory: () => {
+      if (!report) return;
+      view.openStory(async () => {
+        const { drawStory } = await import('./story.js');
+        const canvas = await drawStory({ flight, run, report, t });
+        return new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.9));
+      }).catch((error) => console.error(error));
+    },
     onSetting: (input, value) => {
       const name = input.replace('nav-', '');
       settings[name] = value;

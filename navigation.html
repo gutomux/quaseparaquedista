@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
-  <script src="js/page-lang.js?v=2026-10-28.1"></script>
+  <script src="js/page-lang.js?v=2026-10-30.2"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Plan and fly the landing pattern to the target." data-i18n-attr="content: navigation.meta.description">
   <title>Navigation simulator</title>
@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,700..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=2026-10-28.1">
-  <link rel="stylesheet" href="css/navigation.css?v=2026-10-28.1">
-  <script type="module" src="js/navigation/main.js?v=2026-10-28.1"></script>
+  <link rel="stylesheet" href="css/styles.css?v=2026-10-30.2">
+  <link rel="stylesheet" href="css/navigation.css?v=2026-10-30.2">
+  <script type="module" src="js/navigation/main.js?v=2026-10-30.2"></script>
 </head>
 <body>
   <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
@@ -71,8 +71,24 @@
       <h2 id="report-title" data-i18n="navigation.report.title">Landing report</h2>
       <ul id="report-list" class="nav-report"></ul>
       <div id="report-notes" class="nav-notes"></div>
-      <button id="report-again" class="nav-primary" type="button" data-i18n="navigation.report.again">Fly again</button>
+      <div class="nav-report-actions">
+        <button id="report-again" class="nav-primary" type="button" data-i18n="navigation.report.again">Fly again</button>
+        <button id="report-share" class="nav-secondary" type="button" data-i18n="navigation.story.button">Share on Instagram</button>
+      </div>
     </section>
+
+    <!-- The report as an Instagram story: a preview, then share (phones) or download (js/navigation/story.js). -->
+    <dialog id="story" class="nav-story" aria-labelledby="story-title">
+      <h2 id="story-title" data-i18n="navigation.story.title">Your landing, as a story</h2>
+      <p class="nav-story-status" id="story-status" data-i18n="navigation.story.making">Making the image…</p>
+      <img id="story-image" alt="" hidden>
+      <div class="nav-story-actions">
+        <button id="story-share" class="nav-primary" type="button" data-i18n="navigation.story.share" hidden>Share</button>
+        <a id="story-download" class="nav-secondary" download="quaseparaquedista-pouso.jpg" data-i18n="navigation.story.download" hidden>Download</a>
+        <button id="story-close" class="nav-secondary" type="button" data-i18n="navigation.story.close">Close</button>
+      </div>
+      <p class="nav-story-hint" data-i18n="navigation.story.hint"></p>
+    </dialog>
 
     <details class="nav-settings">
       <summary data-i18n="navigation.settings.title">Settings</summary>

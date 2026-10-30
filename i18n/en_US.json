@@ -428,6 +428,52 @@
       "tip": "Tip: start each turn a little before the point, and let go once you line up with the next leg.",
       "again": "Fly again"
     },
+    "story": {
+      "button": "Share on Instagram",
+      "title": "Your landing, as a story",
+      "making": "Making the image…",
+      "alt": "Your landing report as an Instagram story: the landing grade, the pattern seen from above and the highlights.",
+      "share": "Share",
+      "download": "Download image",
+      "close": "Close",
+      "hint": "On a phone, tap Share and pick Instagram › Story. If it isn't there, download the image and add it to your story from your gallery.",
+      "shareFailed": "Couldn't share from here. Download the image and add it to your story from your gallery.",
+      "mode": "Navigation simulator",
+      "rank": {
+        "legendary": "Legendary!",
+        "epic": "Epic!",
+        "rare": "Rare!",
+        "almost": "Almost!",
+        "wasted": "Wasted!"
+      },
+      "landed": "Landed {dist} m from the target.",
+      "badges": {
+        "points": {
+          "all": "Hit points A, B and C",
+          "some": {
+            "one": "Hit {count} of 3 points",
+            "other": "Hit {count} of 3 points"
+          }
+        },
+        "rightTurns": {
+          "zero": "Left turns only",
+          "one": "{count} right turn in the pattern",
+          "other": "{count} right turns in the pattern"
+        },
+        "lowTurns": {
+          "one": "{count} sharp turn below 300 ft",
+          "other": "{count} sharp turns below 300 ft"
+        },
+        "flare": {
+          "good": "Flare right on time",
+          "high": "Flared too early",
+          "low": "Flared late",
+          "none": "Forgot to flare",
+          "released": "Let go of the flare too soon"
+        }
+      },
+      "site": "quaseparaquedista.com.br"
+    },
     "disclaimer": "This tool supports your canopy navigation course, and it is quite simplified. ALWAYS follow the briefing and the guidance of your drop zone instructor."
   }
 }

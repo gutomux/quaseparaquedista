@@ -25,7 +25,7 @@ const DZ = (() => {
  * corner, as at real drop zones. Only its direction changes with the wind. A circle around it
  * (`ring`, its radius as a share of the seta's length) makes it easy to find.
  */
-const SETA = { at: { x: 420, y: -420 }, length: 67, ring: 0.75 };
+export const SETA = { at: { x: 420, y: -420 }, length: 67, ring: 0.75 };
 /** The circle around the seta on a map, under the arrow. */
 function appendSetaRing(root, scale = 1) {
   const c = SETA.at;
@@ -125,7 +125,7 @@ const mx = (p) => p.x;
 const my = (p) => -p.y;
 
 /** The seta as a polygon on the ground: an arrow `length` meters long, centered on `at`. */
-function setaShape(at, heading, length = 70) {
+export function setaShape(at, heading, length = 70) {
   const f = unit(heading);
   const r = unit(heading + 90);
   const pt = (a, b) => ({ x: at.x + f.x * a + r.x * b, y: at.y + f.y * a + r.y * b });
@@ -217,6 +217,7 @@ export class NavigationView {
     this.pauseButton.addEventListener('click', h.onPause);
     for (const b of this.speedButtons) b.addEventListener('click', () => h.onSpeed(b.dataset.speed));
     this.root.querySelector('#report-again').addEventListener('click', h.onAgain);
+    this.root.querySelector('#report-share').addEventListener('click', h.onStory);
     this.root.querySelectorAll('[name="nav-guides"]').forEach((input) => {
       input.addEventListener('change', () => h.onSetting(input.name, input.value));
     });
@@ -892,5 +893,54 @@ export class NavigationView {
     else if (!report.clean && report.landing.grade !== 'missed') notes.push(t('praise'));
     if (report.landing.grade !== 'legendary') notes.push(t('tip'));
     this.reportNotes.replaceChildren(...notes.map((n) => el('p', '', n)));
+  }
+
+  /* ---------- Story (the report as an Instagram story) ---------- */
+
+  /**
+   * Open the story preview while the image is made; `make` resolves to the image as a Blob.
+   * Phones that can share files get "Share" (Instagram is in the share menu); every device gets
+   * "Download", the only option on most computers and inside Instagram's own browser.
+   */
+  async openStory(make) {
+    const dialog = this.root.querySelector('#story');
+    const image = dialog.querySelector('#story-image');
+    const status = dialog.querySelector('#story-status');
+    const share = dialog.querySelector('#story-share');
+    const download = dialog.querySelector('#story-download');
+    if (!this.storyBound) {
+      this.storyBound = true;
+      dialog.querySelector('#story-close').addEventListener('click', () => dialog.close());
+      dialog.addEventListener('close', () => {
+        if (this.storyUrl) URL.revokeObjectURL(this.storyUrl);
+        this.storyUrl = null;
+      });
+      share.addEventListener('click', async () => {
+        try {
+          await navigator.share({ files: [this.storyFile] });
+        } catch (error) {
+          // Closing the share menu is not an error; anything else leaves Download to use.
+          if (error.name !== 'AbortError') status.textContent = this.t('navigation.story.shareFailed');
+          status.hidden = error.name === 'AbortError';
+        }
+      });
+    }
+    image.hidden = true;
+    share.hidden = true;
+    download.hidden = true;
+    status.hidden = false;
+    status.textContent = this.t('navigation.story.making');
+    dialog.showModal();
+
+    const blob = await make();
+    this.storyFile = new File([blob], download.getAttribute('download'), { type: blob.type });
+    this.storyUrl = URL.createObjectURL(blob);
+    image.src = this.storyUrl;
+    image.alt = this.t('navigation.story.alt');
+    image.hidden = false;
+    download.href = this.storyUrl;
+    download.hidden = false;
+    share.hidden = !(navigator.canShare && navigator.canShare({ files: [this.storyFile] }));
+    status.hidden = true;
   }
 }
