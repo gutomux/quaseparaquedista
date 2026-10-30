@@ -26,16 +26,22 @@ const TIMEOUT_MS = 20000;
 const TEMPORARY = (status) => status === 429 || status >= 500;
 
 /**
- * fetch with a timeout and one retry, so a passing hiccup doesn't block a commit: no answer
- * at all, or a temporary answer. A missing file (404 and the like) fails straight away.
+ * Google's viewer sometimes answers "204 No Content" (a blank page) and then the document on
+ * the next try; the page already tries again when that happens (js/pdf-embed.js), so the check does too.
  */
-async function get(url, headers = {}) {
+const VIEWER_TEMPORARY = (status) => status === 204 || TEMPORARY(status);
+
+/**
+ * fetch with a timeout and retries (one by default), so a passing hiccup doesn't block a commit:
+ * no answer at all, or a temporary answer. A missing file (404 and the like) fails straight away.
+ */
+async function get(url, headers = {}, { attempts = 2, temporary = TEMPORARY } = {}) {
   for (let attempt = 1; ; attempt += 1) {
     try {
       const response = await fetch(url, { headers: { 'User-Agent': 'quaseparaquedista-link-check', ...headers }, signal: AbortSignal.timeout(TIMEOUT_MS) });
-      if (!TEMPORARY(response.status) || attempt >= 2) return response;
+      if (!temporary(response.status) || attempt >= attempts) return response;
     } catch (error) {
-      if (attempt >= 2) throw new Error(`${url} did not answer: ${error.message}`);
+      if (attempt >= attempts) throw new Error(`${url} did not answer: ${error.message}`);
     }
     await new Promise((resolve) => setTimeout(resolve, 2000));
   }
@@ -60,7 +66,7 @@ for (const pdf of pdfs) {
   // Google's viewer answers even for a missing file, so this only checks the viewer service
   // is up for this address; the test above checks the file itself.
   test(`Google's viewer (used on Android) is available for: ${pdf}`, async () => {
-    const response = await get(embedUrl(pdf, false));
+    const response = await get(embedUrl(pdf, false), {}, { attempts: 5, temporary: VIEWER_TEMPORARY });
     assert.equal(response.status, 200, `HTTP ${response.status}`);
     const name = decodeURIComponent(new URL(pdf).pathname.split('/').pop());
     assert.match(await response.text(), new RegExp(`<title>${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`), 'the viewer did not answer for this file');
