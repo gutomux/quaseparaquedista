@@ -502,5 +502,11 @@
     "linkedin": "LinkedIn",
     "instagram": "Instagram",
     "disclaimer": "As ferramentas do site são complementares ao seu aprendizado. Sempre tire suas dúvidas com um instrutor certificado."
+  },
+  "wingLoad": {
+    "meta": {
+      "title": "Carga alar",
+      "description": "Calcule a sua carga alar e veja os limites da CBPq por categoria."
+    }
   }
 }

@@ -64,13 +64,15 @@ test('links between pages have no ".html" (GitHub Pages serves them without it)'
   }
 });
 
-test('menu: the wing load item opens its glossary entry', () => {
-  const item = MENU.find((m) => m.key === 'wingLoad');
-  const [page, id] = item.href.split('#');
-  assert.equal(page, 'glossary');
+test('menu: wing load has its own page, built from its glossary entry (still there, with its calculator)', () => {
+  assert.equal(MENU.find((m) => m.key === 'wingLoad').href, 'wingload');
+  const script = readFileSync(new URL('../js/wingload.js', import.meta.url), 'utf8');
+  const id = script.match(/ENTRY_ID = '([\w-]+)'/)?.[1];
   const data = JSON.parse(readFileSync(new URL('../data/glossary.json', import.meta.url), 'utf8'));
   const entries = Array.isArray(data) ? data : data.entries;
-  assert.ok(entries.some((e) => e.id === id), `${id} exists in the glossary`);
+  const entry = entries.find((e) => e.id === id);
+  assert.ok(entry, `${id} exists in the glossary`);
+  assert.equal(entry.calculator, 'wing-loading', 'the glossary entry keeps its calculator');
 });
 
 test('site footer: every page script adds it, and its text exists in every locale', () => {

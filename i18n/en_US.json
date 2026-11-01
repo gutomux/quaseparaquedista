@@ -502,5 +502,11 @@
     "linkedin": "LinkedIn",
     "instagram": "Instagram",
     "disclaimer": "The tools on this site complement your training. Always take your questions to a certified instructor."
+  },
+  "wingLoad": {
+    "meta": {
+      "title": "Wing load",
+      "description": "Work out your wing load and see the CBPq limits per category."
+    }
   }
 }

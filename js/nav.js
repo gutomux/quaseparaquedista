@@ -28,8 +28,7 @@ export const LANGUAGES = Object.freeze({
 export const MENU = Object.freeze([
   { key: 'home', href: './' },
   { key: 'glossary', href: 'glossary', group: 'tools' },
-  // A shortcut to one glossary entry (with its calculator), not a page of its own.
-  { key: 'wingLoad', href: 'glossary#term-wing-loading', group: 'tools' },
+  { key: 'wingLoad', href: 'wingload', group: 'tools' },
   { key: 'freefall', href: 'freefall', group: 'tools' },
   { key: 'navigation', href: 'navigation', group: 'tools' },
   { key: 'materials', href: 'materiais-instrucao', pages: ['apostila-aff', 'revisao-emergencias-aff', 'aff-videos', 'uspa-update'], group: 'study' },

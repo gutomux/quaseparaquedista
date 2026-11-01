@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <script src="js/page-lang.js?v=2026-11-02.10"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="" data-i18n-attr="content: wingLoad.meta.description">
+  <title>Carga alar</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪂</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,700..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="css/styles.css?v=2026-11-02.10">
+  <script type="module" src="js/wingload.js?v=2026-11-02.10"></script>
+</head>
+<body data-title-key="wingLoad.meta.title">
+  <!-- Text below is replaced from i18n/<locale>.json on load (see data-i18n attributes). -->
+  <main>
+    <header class="page-top">
+      <h1 class="page-title" data-i18n="nav.menu.wingLoad.name">Wing load</h1>
+      <nav class="site-nav" data-site-nav></nav>
+    </header>
+    <!-- The definition comes from the glossary's "Carga alar" entry (data/glossary.json), so it's written once. -->
+    <p class="intro" id="wing-intro"></p>
+
+    <!-- The calculator and the CBPq limits table, the same as in the glossary entry (js/wingload.js). -->
+    <div id="result" class="result" aria-live="polite"></div>
+  </main>
+
+  <footer>
+    <p class="disclaimer" role="note" data-i18n="home.disclaimer"></p>
+  </footer>
+
+  <noscript><p class="noscript">This calculator needs JavaScript. / Esta calculadora precisa de JavaScript para funcionar.</p></noscript>
+</body>
+</html>
