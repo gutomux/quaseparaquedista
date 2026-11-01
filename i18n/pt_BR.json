@@ -202,6 +202,10 @@
         "name": "Materiais de instrução",
         "text": "Nunca tire ideias do furico. Consulte os materiais oficiais da CBPq. Obrigada, de nada."
       },
+      "about": {
+        "name": "Sobre nós",
+        "text": "Quem faz o QuaseParaquedista."
+      },
       "language": "Idioma"
     },
     "crumbs": "Você está em"
@@ -475,5 +479,25 @@
       "site": "quaseparaquedista.com.br"
     },
     "disclaimer": "Essa ferramenta é um apoio ao seu curso de navegação, bastante simplificada. Siga SEMPRE o briefing e as orientações do seu instrutor de área de salto."
+  },
+  "about": {
+    "meta": {
+      "title": "Sobre nós",
+      "description": "Quem faz o QuaseParaquedista: Augusto Ferreira e Kethlyn Karla."
+    },
+    "heading": "Sobre nós",
+    "intro": "QuaseParaquedista é um projeto de dois paraquedistas que dividem a vida, os ceus e resolveram juntar tudo num lugar só, de graça, pra ajudar quem está começando (e quem já salta) a revisar o paraquedismo.",
+    "photoAlt": "Augusto e Kethlyn sorrindo, abraçados, com macacão e equipamento de paraquedismo, na frente de um avião de salto.",
+    "augusto": {
+      "rating": "Coach TBBF (CBPq e USPA)",
+      "text": "Paraquedista, coach TBBF (CBPq e USPA) e profissional de TI com mais de 10 anos de experiência."
+    },
+    "kethlyn": {
+      "rating": "Categoria B (CBPq)",
+      "text": "Paraquedista, professora de português, copywriter e social media."
+    },
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "disclaimer": "As ferramentas do site são complementares ao seu aprendizado. Sempre tire suas dúvidas com um instrutor certificado."
   }
 }

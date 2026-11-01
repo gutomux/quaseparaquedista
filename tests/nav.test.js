@@ -8,7 +8,7 @@ const files = readdirSync(ROOT).filter((f) => f.endsWith('.html'));
 const pages = files.map((f) => f.replace(/\.html$/, ''));
 
 test('menu: Home comes first, then the tools', () => {
-  assert.deepEqual(MENU.map((m) => m.key), ['home', 'glossary', 'wingLoad', 'freefall', 'navigation', 'materials']);
+  assert.deepEqual(MENU.map((m) => m.key), ['home', 'glossary', 'wingLoad', 'freefall', 'navigation', 'materials', 'about']);
   assert.equal(MENU[0].href, './');
 });
 

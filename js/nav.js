@@ -31,6 +31,7 @@ export const MENU = Object.freeze([
   { key: 'freefall', href: 'freefall' },
   { key: 'navigation', href: 'navigation' },
   { key: 'materials', href: 'materiais-instrucao', pages: ['apostila-aff', 'revisao-emergencias-aff', 'aff-videos', 'uspa-update'] },
+  { key: 'about', href: 'sobre' },
 ]);
 
 /**

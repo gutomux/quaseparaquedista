@@ -202,6 +202,10 @@
         "name": "Training materials",
         "text": "Never pull ideas out of your behind. Check the official CBPq materials. Thanks, you're welcome."
       },
+      "about": {
+        "name": "About us",
+        "text": "Who makes QuaseParaquedista."
+      },
       "language": "Language"
     },
     "crumbs": "You are here"
@@ -475,5 +479,25 @@
       "site": "quaseparaquedista.com.br"
     },
     "disclaimer": "This tool supports your canopy navigation course, and it is quite simplified. ALWAYS follow the briefing and the guidance of your drop zone instructor."
+  },
+  "about": {
+    "meta": {
+      "title": "About us",
+      "description": "Who makes QuaseParaquedista: Augusto Ferreira and Kethlyn Karla."
+    },
+    "heading": "About us",
+    "intro": "QuaseParaquedista is a project by two skydivers who share their lives and the skies, and decided to bring it all into one free place, to help people starting out (and those who already jump) review skydiving.",
+    "photoAlt": "Augusto and Kethlyn smiling, arm in arm, in jumpsuits and skydiving gear, in front of a jump plane.",
+    "augusto": {
+      "rating": "TBBF Coach (CBPq and USPA)",
+      "text": "Skydiver, TBBF Coach (CBPq and USPA) and IT professional with more than 10 years of experience."
+    },
+    "kethlyn": {
+      "rating": "Category B (CBPq)",
+      "text": "Skydiver, Portuguese teacher, copywriter and social media."
+    },
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "disclaimer": "The tools on this site complement your training. Always take your questions to a certified instructor."
   }
 }
