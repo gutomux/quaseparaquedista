@@ -489,11 +489,9 @@
     "intro": "QuaseParaquedista é um projeto de dois paraquedistas que dividem a vida, os ceus e resolveram juntar tudo num lugar só, de graça, pra ajudar quem está começando (e quem já salta) a revisar o paraquedismo.",
     "photoAlt": "Augusto e Kethlyn sorrindo, abraçados, com macacão e equipamento de paraquedismo, na frente de um avião de salto.",
     "augusto": {
-      "rating": "Coach TBBF (CBPq e USPA)",
       "text": "Paraquedista, coach TBBF (CBPq e USPA) e profissional de TI com mais de 10 anos de experiência."
     },
     "kethlyn": {
-      "rating": "Categoria B (CBPq)",
       "text": "Paraquedista, professora de português, copywriter e social media."
     },
     "linkedin": "LinkedIn",
