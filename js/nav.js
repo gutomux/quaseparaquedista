@@ -22,18 +22,45 @@ export const LANGUAGES = Object.freeze({
 
 /**
  * Pages in the menu, in order. Pages under a section (e.g. the PDFs) mark that section.
+ * Items with a `group` are listed under that group's title (nav.menu.groups.*); Home has none.
  * Links have no ".html": GitHub Pages serves "/glossary" from glossary.html, and "./" is Home.
  */
 export const MENU = Object.freeze([
   { key: 'home', href: './' },
-  { key: 'glossary', href: 'glossary' },
+  { key: 'glossary', href: 'glossary', group: 'tools' },
   // A shortcut to one glossary entry (with its calculator), not a page of its own.
-  { key: 'wingLoad', href: 'glossary#term-wing-loading' },
-  { key: 'freefall', href: 'freefall' },
-  { key: 'navigation', href: 'navigation' },
-  { key: 'materials', href: 'materiais-instrucao', pages: ['apostila-aff', 'revisao-emergencias-aff', 'aff-videos', 'uspa-update'] },
-  { key: 'about', href: 'sobre' },
+  { key: 'wingLoad', href: 'glossary#term-wing-loading', group: 'tools' },
+  { key: 'freefall', href: 'freefall', group: 'tools' },
+  { key: 'navigation', href: 'navigation', group: 'tools' },
+  { key: 'materials', href: 'materiais-instrucao', pages: ['apostila-aff', 'revisao-emergencias-aff', 'aff-videos', 'uspa-update'], group: 'study' },
+  { key: 'about', href: 'sobre', group: 'about' },
 ]);
+
+/**
+ * Each menu item's icon (SVG paths on a 24 × 24 grid), the same as its tile on the welcome page;
+ * Home is a house and About us two people. A circle with r 1.3 is drawn filled.
+ */
+const MENU_ICONS = Object.freeze({
+  home: '<path d="M4 11.5 12 4l8 7.5"/><path d="M6.5 10v9.5h11V10"/><path d="M10 19.5v-5h4v5"/>',
+  glossary: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.8-4.8"/>',
+  wingLoad: '<circle cx="12" cy="6" r="2.5"/><path d="M7.5 9.5h9L19 20H5z"/>',
+  freefall: '<path d="M3 10.5a9 7 0 0 1 18 0"/><path d="M3 10.5 12 19l9-8.5M8.2 10l3.8 9 3.8-9"/><circle cx="12" cy="20.3" r="1.3"/>',
+  navigation: '<path d="M5 19h14"/><path d="M17 5v9H7"/><path d="m10 11-3 3 3 3"/><circle cx="17" cy="5" r="1.3"/>',
+  materials: '<path d="M4 5.5C6.5 4.2 9.5 4.2 12 6c2.5-1.8 5.5-1.8 8-.5v13c-2.5-1.3-5.5-1.3-8 .5-2.5-1.8-5.5-1.8-8-.5z"/><path d="M12 6v13.5"/>',
+  about: '<circle cx="9" cy="8" r="3"/><path d="M3.5 19.5c.4-3.2 2.6-5.5 5.5-5.5s5.1 2.3 5.5 5.5"/><path d="M15.5 5.3a3 3 0 0 1 0 5.4M17.5 14.3c1.8.7 2.8 2.7 3 5.2"/>',
+});
+
+/** Where the open menu dims the page behind it: phones (matches the CSS below 40rem). */
+const DIMMED = typeof window !== 'undefined' && window.matchMedia ? window.matchMedia('(max-width: 40rem)') : { matches: false };
+
+/** A small yellow icon tile for a menu item (decorative: the name says it all). */
+function menuIcon(key) {
+  const tile = el('span', 'icon-tile site-menu-icon');
+  tile.setAttribute('aria-hidden', 'true');
+  // Fixed markup from MENU_ICONS above, never page or user text.
+  tile.innerHTML = `<svg viewBox="0 0 24 24">${MENU_ICONS[key] || ''}</svg>`;
+  return tile;
+}
 
 /**
  * The page's name from a path or link, with or without ".html":
@@ -50,9 +77,10 @@ export function pageName(path) {
  */
 export function menuItems(currentPage) {
   const page = pageName(currentPage);
-  return MENU.map(({ key, href, pages = [] }) => ({
+  return MENU.map(({ key, href, pages = [], group = null }) => ({
     key,
     href,
+    group,
     // A shortcut into a page (with "#") is never marked: the page's own item is.
     current: href.includes('#') ? null : pageName(href) === page ? 'page' : pages.includes(page) ? 'true' : null,
   }));
@@ -114,14 +142,41 @@ export function mountSiteMenu(nav, t, currentFile = pageName(location.pathname))
   const list = el('ul', 'site-menu');
   list.id = 'site-menu';
   list.hidden = true;
+  // Items in a group go in their own list under the group's title, so screen readers hear
+  // "Ferramentas, list, 4 items".
+  let groupList = null;
+  let groupName = null;
   for (const item of menuItems(currentFile)) {
     const link = el('a');
     link.href = item.href;
     if (item.current) link.setAttribute('aria-current', item.current);
-    link.append(el('span', 'site-menu-name', t(`nav.menu.${item.key}.name`)), el('span', 'site-menu-text', t(`nav.menu.${item.key}.text`)));
+    // Names only: the menu is for finding your way, so it stays short (the home tiles describe each tool).
+    link.append(menuIcon(item.key), el('span', 'site-menu-name', t(`nav.menu.${item.key}.name`)));
+    // "Você está aqui" on the page you're on (or its section). Screen readers already hear that
+    // from aria-current, so the tag is for the eyes only.
+    if (item.current) {
+      const here = el('span', 'site-menu-here', t('nav.menu.here'));
+      here.setAttribute('aria-hidden', 'true');
+      link.append(here);
+    }
     const li = el('li');
     li.append(link);
-    list.append(li);
+    if (!item.group) {
+      list.append(li);
+      groupName = null;
+      continue;
+    }
+    if (item.group !== groupName) {
+      groupName = item.group;
+      const section = el('li', 'site-menu-group');
+      const title = el('span', 'site-menu-heading', t(`nav.menu.groups.${groupName}`));
+      title.id = `site-menu-${groupName}`;
+      groupList = el('ul');
+      groupList.setAttribute('aria-labelledby', title.id);
+      section.append(title, groupList);
+      list.append(section);
+    }
+    groupList.append(li);
   }
   list.append(languageSwitch(t));
   nav.replaceChildren(button, list);
@@ -132,12 +187,17 @@ export function mountSiteMenu(nav, t, currentFile = pageName(location.pathname))
     button.setAttribute('aria-label', label);
     button.title = label;
     list.hidden = !open;
+    // On a phone the page behind is dimmed and doesn't scroll while the menu is open (css: .site-menu-open).
+    document.documentElement.classList.toggle('site-menu-open', open);
   };
   setOpen(false);
-  button.addEventListener('click', () => {
+  button.addEventListener('click', (e) => {
     const open = list.hidden;
     setOpen(open);
-    if (open) list.querySelector('a').focus();
+    // Opened with the keyboard (Enter or Space: a click with no pointer, detail 0): move into the
+    // menu, on the page you're on. Opened with a tap or click: leave the focus on the button, so no
+    // outline appears on an item and makes it look like the current page.
+    if (open && e.detail === 0) (list.querySelector('a[aria-current]') || list.querySelector('a')).focus();
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !list.hidden) {
@@ -146,14 +206,114 @@ export function mountSiteMenu(nav, t, currentFile = pageName(location.pathname))
     }
   });
   document.addEventListener('click', (e) => {
-    if (!list.hidden && !nav.contains(e.target)) setOpen(false);
-  });
+    if (list.hidden || nav.contains(e.target)) return;
+    // On a phone the page is dimmed, so a tap there only closes the menu: it doesn't also press
+    // the link or button underneath (captured before the page sees it).
+    if (DIMMED.matches) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    setOpen(false);
+  }, true);
   // A link to a spot on the same page (e.g. a glossary entry) doesn't load a new page: close the menu.
   list.addEventListener('click', (e) => {
     if (e.target.closest('a')) setOpen(false);
   });
   list.addEventListener('focusout', (e) => {
     if (e.relatedTarget && !nav.contains(e.relatedTarget)) setOpen(false);
+  });
+  mountSiteBar(t, currentFile);
+}
+
+/**
+ * The top bar on computers (CSS shows it from 56rem wide and hides the ☰ there): the site name
+ * (goes home), the menu groups (a group with several items opens a small dropdown, one with a
+ * single item is a plain link named after the group) and the language switch. It stays at the
+ * top while the page scrolls. Built from MENU, like the ☰ menu, so both always match.
+ */
+function mountSiteBar(t, currentFile) {
+  if (document.querySelector('.site-bar')) return;
+  const items = menuItems(currentFile);
+  const groups = [];
+  for (const item of items.filter((i) => i.group)) {
+    const group = groups.find((g) => g.name === item.group);
+    if (group) group.items.push(item);
+    else groups.push({ name: item.group, items: [item] });
+  }
+
+  const bar = el('header', 'site-bar');
+  const inner = el('div', 'site-bar-inner');
+  const home = items.find((i) => i.key === 'home');
+  const brand = el('a', 'site-bar-brand', 'QuaseParaquedista');
+  brand.href = home.href;
+  if (home.current) brand.setAttribute('aria-current', home.current);
+  const nav = el('nav', 'site-bar-nav');
+  nav.setAttribute('aria-label', t('nav.menu.label'));
+  const list = el('ul', 'site-bar-links');
+
+  const dropdowns = [];
+  for (const group of groups) {
+    const li = el('li');
+    const title = t(`nav.menu.groups.${group.name}`);
+    const current = group.items.find((i) => i.current);
+    if (group.items.length === 1) {
+      const link = el('a', 'site-bar-link', title);
+      link.href = group.items[0].href;
+      if (current) link.setAttribute('aria-current', current.current);
+      li.append(link);
+    } else {
+      const button = el('button', 'site-bar-link site-bar-toggle', title);
+      button.type = 'button';
+      button.setAttribute('aria-expanded', 'false');
+      button.id = `site-bar-${group.name}`;
+      if (current) button.classList.add('is-current');
+      const caret = el('span', 'site-bar-caret', '▾');
+      caret.setAttribute('aria-hidden', 'true');
+      button.append(caret);
+      const menu = el('ul', 'site-bar-menu');
+      menu.hidden = true;
+      menu.setAttribute('aria-labelledby', button.id);
+      for (const item of group.items) {
+        const link = el('a');
+        link.href = item.href;
+        if (item.current) link.setAttribute('aria-current', item.current);
+        link.append(menuIcon(item.key), el('span', 'site-menu-name', t(`nav.menu.${item.key}.name`)));
+        const entry = el('li');
+        entry.append(link);
+        menu.append(entry);
+      }
+      const setOpen = (open) => {
+        button.setAttribute('aria-expanded', String(open));
+        menu.hidden = !open;
+      };
+      button.addEventListener('click', () => setOpen(menu.hidden));
+      menu.addEventListener('click', (e) => {
+        if (e.target.closest('a')) setOpen(false);
+      });
+      li.addEventListener('focusout', (e) => {
+        if (e.relatedTarget && !li.contains(e.relatedTarget)) setOpen(false);
+      });
+      dropdowns.push({ li, button, setOpen, isOpen: () => !menu.hidden });
+      li.append(button, menu);
+    }
+    list.append(li);
+  }
+  nav.append(list);
+
+  const lang = languageSwitch(t);
+  const switchGroup = lang.firstChild;
+  switchGroup.classList.add('site-bar-lang');
+  inner.append(brand, nav, switchGroup);
+  bar.append(inner);
+  document.body.prepend(bar);
+
+  // A dropdown closes with Esc (back to its button) or a click anywhere else.
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    for (const d of dropdowns) if (d.isOpen()) { d.setOpen(false); d.button.focus(); }
+  });
+  document.addEventListener('click', (e) => {
+    for (const d of dropdowns) if (d.isOpen() && !d.li.contains(e.target)) d.setOpen(false);
   });
 }
 

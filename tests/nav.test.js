@@ -44,10 +44,13 @@ test('every page has the same top: the title, then the menu, and no old back lin
 test('menu: every item has text in every locale', () => {
   for (const locale of ['en_US', 'pt_BR']) {
     const { nav } = JSON.parse(readFileSync(new URL(`../i18n/${locale}.json`, import.meta.url), 'utf8'));
-    for (const key of ['label', 'open', 'close']) assert.ok(nav.menu[key], `${locale}: nav.menu.${key}`);
-    for (const { key } of MENU) {
-      assert.ok(nav.menu[key]?.name && nav.menu[key]?.text, `${locale}: nav.menu.${key}`);
-    }
+    for (const key of ['label', 'open', 'close', 'here']) assert.ok(nav.menu[key], `${locale}: nav.menu.${key}`);
+    for (const group of new Set(MENU.map((m) => m.group).filter(Boolean))) assert.ok(nav.menu.groups?.[group], `${locale}: nav.menu.groups.${group}`);
+    for (const { key } of MENU) assert.ok(nav.menu[key]?.name, `${locale}: nav.menu.${key}.name`);
+    // Descriptions are only for the welcome page tiles (the menu shows names only).
+    const tiles = [...readFileSync(new URL('../index.html', import.meta.url), 'utf8').matchAll(/data-i18n="nav\.menu\.(\w+)\.text"/g)].map((m) => m[1]);
+    assert.ok(tiles.length >= 5, 'the tiles describe the tools');
+    for (const key of tiles) assert.ok(nav.menu[key]?.text, `${locale}: nav.menu.${key}.text`);
   }
 });
 

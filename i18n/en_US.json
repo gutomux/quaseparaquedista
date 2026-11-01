@@ -178,9 +178,14 @@
       "label": "Site menu",
       "open": "Open the menu",
       "close": "Close the menu",
+      "groups": {
+        "tools": "Tools",
+        "study": "Study Corner",
+        "about": "About Us"
+      },
+      "here": "You are here",
       "home": {
-        "name": "Home",
-        "text": "The QuaseParaquedista.com.br home page."
+        "name": "Home"
       },
       "glossary": {
         "name": "Skydiving glossary",
@@ -203,8 +208,7 @@
         "text": "Never pull ideas out of your behind. Check the official CBPq materials. Thanks, you're welcome."
       },
       "about": {
-        "name": "About us",
-        "text": "Who makes QuaseParaquedista."
+        "name": "About us"
       },
       "language": "Language"
     },

@@ -2,7 +2,7 @@
 
 Free skydiving tools for people who have never jumped, students and experienced jumpers, in **English (en_US)** and **Brazilian Portuguese (pt_BR)**:
 
-- **Every page** has the same top: its title, and a ☰ menu at the right (Início, Glossário de paraquedismo, Carga alar, Simulador de queda livre, Simulador de navegação, Materiais de instrução; Carga alar opens that glossary entry, with its calculator), ending with a PT | EN language switch that is remembered on the device.
+- **Every page** has the same navigation, built from `MENU` in `js/nav.js`: on a phone, a ☰ menu at the top right with names only (no descriptions), a yellow icon per item, Início on top and three titled groups (Ferramentas, Cantinho de Estudo, Sobre Nós), the page you are on highlighted with "Você está aqui", the page behind dimmed, and a PT | EN switch at the end; on a computer (56rem and wider), a top bar fixed while scrolling, with the site name (goes home), Ferramentas ▾ (a dropdown with the four tools), Cantinho de Estudo, Sobre Nós and PT | EN. The language choice is remembered on the device. The material pages show a "QuaseParaquedista › Materiais de instrução ›" trail above their title.
 - **Every page** ends with the same site footer (`mountSiteFooter` in `js/nav.js`, like the menu): the name, buttons for About us, the suggestion form and Instagram, and "Feito por paraquedistas, para paraquedistas." Above it, each page keeps its own disclaimer, a quiet ⚠ note.
 - **Welcome page** (`index.html`): cards linking to each tool right below the welcome text, then who the site is for (each card linking to the tool that fits) and the disclaimer.
 - **Glossary** (`glossary.html`): a searchable glossary of skydiving terms and acronyms.

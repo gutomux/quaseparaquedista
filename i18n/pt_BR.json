@@ -178,9 +178,14 @@
       "label": "Menu do site",
       "open": "Abrir o menu",
       "close": "Fechar o menu",
+      "groups": {
+        "tools": "Ferramentas",
+        "study": "Cantinho de Estudo",
+        "about": "Sobre Nós"
+      },
+      "here": "Você está aqui",
       "home": {
-        "name": "Início",
-        "text": "Página inicial do QuaseParaquedista.com.br."
+        "name": "Início"
       },
       "glossary": {
         "name": "Glossário de paraquedismo",
@@ -203,8 +208,7 @@
         "text": "Nunca tire ideias do furico. Consulte os materiais oficiais da CBPq. Obrigada, de nada."
       },
       "about": {
-        "name": "Sobre nós",
-        "text": "Quem faz o QuaseParaquedista."
+        "name": "Sobre nós"
       },
       "language": "Idioma"
     },
