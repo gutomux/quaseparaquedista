@@ -7,13 +7,14 @@ import { CONFIG } from './config.js';
 import { loadMessages, createTranslator } from './i18n.js';
 import { currentLocale } from './locale.js';
 import { applyTranslations } from './view.js';
-import { mountSiteMenu } from './nav.js';
+import { mountSiteMenu, mountSiteFooter } from './nav.js';
 
 async function init() {
   const locale = currentLocale(CONFIG);
   const t = createTranslator(await loadMessages(CONFIG.i18nPath, locale), locale);
   applyTranslations(document, t, document.body.dataset.titleKey);
   mountSiteMenu(document.querySelector('[data-site-nav]'), t);
+  mountSiteFooter(t);
 
   const tabs = document.querySelector('[data-tabs]');
   if (tabs) {

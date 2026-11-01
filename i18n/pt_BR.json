@@ -210,6 +210,12 @@
     },
     "crumbs": "Você está em"
   },
+  "footer": {
+    "label": "Links do site",
+    "feedback": "Enviar sugestão",
+    "instagram": "Instagram",
+    "sign": "Feito por paraquedistas, para paraquedistas."
+  },
   "home": {
     "meta": {
       "title": "QuaseParaquedista",
@@ -233,11 +239,6 @@
         "cta": "Enviar uma sugestão"
       }
     },
-    "instagram": {
-      "text": "Me segue lá no "
-    },
-    "feedbackHint": "Dê seus pitacos e nos ajude a melhorar o site pra ajudar toda a comunidade.",
-    "feedbackButton": "Enviar sugestão ou correção",
     "disclaimer": "Essas ferramentas são complementares ao seu aprendizado. Sempre tire suas dúvidas com um instrutor certificado.",
     "carousel": {
       "label": "Fotos do Instagram @quaseparaquedista",

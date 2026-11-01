@@ -69,3 +69,14 @@ test('menu: the wing load item opens its glossary entry', () => {
   const entries = Array.isArray(data) ? data : data.entries;
   assert.ok(entries.some((e) => e.id === id), `${id} exists in the glossary`);
 });
+
+test('site footer: every page script adds it, and its text exists in every locale', () => {
+  for (const script of ['page.js', 'home.js', 'main.js', 'freefall/main.js', 'navigation/main.js']) {
+    const code = readFileSync(new URL(`../js/${script}`, import.meta.url), 'utf8');
+    assert.match(code, /mountSiteFooter\(t\)/, `${script} adds the site footer`);
+  }
+  for (const locale of ['pt_BR', 'en_US']) {
+    const footer = JSON.parse(readFileSync(new URL(`../i18n/${locale}.json`, import.meta.url), 'utf8')).footer;
+    for (const key of ['label', 'feedback', 'instagram', 'sign']) assert.ok(footer?.[key], `${locale}: footer.${key}`);
+  }
+});

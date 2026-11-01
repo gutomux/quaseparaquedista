@@ -9,7 +9,7 @@ import { CONFIG } from '../config.js';
 import { loadMessages, createTranslator } from '../i18n.js';
 import { currentLocale } from '../locale.js';
 import { applyTranslations } from '../view.js';
-import { mountSiteMenu } from '../nav.js';
+import { mountSiteMenu, mountSiteFooter } from '../nav.js';
 import { patternPoints, planOptions, newRun, PLAN_STEPS } from './pattern.js';
 import { createFlight, step, setTurn, setFlare, setFast, timeScale } from './flight.js';
 import { buildReport } from './report.js';
@@ -41,6 +41,7 @@ async function init() {
   const t = createTranslator(await loadMessages(CONFIG.i18nPath, locale), locale);
   applyTranslations(document, t, 'navigation.meta.title');
   mountSiteMenu(document.querySelector('[data-site-nav]'), t);
+  mountSiteFooter(t);
 
   const view = new NavigationView(document, t);
   const settings = { guides: loadSetting('guides', 'visible'), speed: loadSetting('speed', 'regular') };

@@ -9,6 +9,7 @@
 
 import { CONFIG } from './config.js';
 import { switchLocale } from './locale.js';
+import { isFeedbackFormUrl } from './feedback.js';
 
 /**
  * Languages in the switch: a short label, and the language's own name (read by screen readers,
@@ -154,4 +155,57 @@ export function mountSiteMenu(nav, t, currentFile = pageName(location.pathname))
   list.addEventListener('focusout', (e) => {
     if (e.relatedTarget && !nav.contains(e.relatedTarget)) setOpen(false);
   });
+}
+
+/** The project's Instagram, linked from the site footer. */
+export const INSTAGRAM_URL = 'https://www.instagram.com/quaseparaquedista/';
+
+const SVG_NS = 'http://www.w3.org/2000/svg';
+/** The Instagram symbol, drawn like the site's other line icons. */
+function instagramIcon() {
+  const icon = document.createElementNS(SVG_NS, 'svg');
+  icon.setAttribute('viewBox', '0 0 24 24');
+  icon.setAttribute('aria-hidden', 'true');
+  for (const [tag, attrs] of [['rect', { x: 3, y: 3, width: 18, height: 18, rx: 5 }], ['circle', { cx: 12, cy: 12, r: 4.2 }], ['circle', { cx: 17.3, cy: 6.7, r: 1.15, class: 'dot' }]]) {
+    const shape = document.createElementNS(SVG_NS, tag);
+    for (const [k, v] of Object.entries(attrs)) shape.setAttribute(k, v);
+    icon.append(shape);
+  }
+  return icon;
+}
+
+/**
+ * The site footer, the last thing on every page (after the page's own disclaimer): the name,
+ * links to About us, the suggestion form and Instagram, and a signature. Defined once, here,
+ * like the menu; each page's script calls it. Text comes from footer.* in the i18n files.
+ * @param {Function} t Translator from createTranslator().
+ */
+export function mountSiteFooter(t) {
+  if (document.querySelector('.site-footer')) return;
+  const newTab = (link) => {
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.append(el('span', 'sr', ` ${t('feedback.newTab')}`));
+    return link;
+  };
+  const pill = (href, text) => {
+    const link = el('a', 'sf-pill', text);
+    link.href = href;
+    return link;
+  };
+
+  const links = el('nav', 'sf-links');
+  links.setAttribute('aria-label', t('footer.label'));
+  links.append(pill('sobre', t('nav.menu.about.name')));
+  // The suggestion form, only when one is configured (as on the welcome page).
+  if (isFeedbackFormUrl(CONFIG.feedbackFormUrl)) links.append(newTab(pill(CONFIG.feedbackFormUrl.trim(), t('footer.feedback'))));
+  const instagram = newTab(pill(INSTAGRAM_URL, t('footer.instagram')));
+  instagram.prepend(instagramIcon());
+  links.append(instagram);
+
+  const inner = el('div', 'sf-inner');
+  inner.append(el('p', 'sf-brand', 'QuaseParaquedista'), links, el('p', 'sf-sign', t('footer.sign')));
+  const footer = el('footer', 'site-footer');
+  footer.append(inner);
+  document.body.append(footer);
 }

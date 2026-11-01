@@ -9,7 +9,7 @@ import { loadGlossary } from './data.js';
 import { createIndex } from './search.js';
 import { GlossaryView, supportsFlagEmoji } from './view.js';
 import { GlossaryController } from './controller.js';
-import { mountSiteMenu } from './nav.js';
+import { mountSiteMenu, mountSiteFooter } from './nav.js';
 
 /**
  * The open entry lives in the address: glossary#term-canopy. Opening an entry adds a
@@ -53,6 +53,7 @@ async function init() {
     window.addEventListener('popstate', () => controller.openFromRoute(hashRouter().current()));
     controller.start();
     mountSiteMenu(document.querySelector('[data-site-nav]'), t);
+    mountSiteFooter(t);
   } catch (error) {
     console.error(error);
     // Interface text may be what failed to load, so fall back to English here.

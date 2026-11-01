@@ -1,6 +1,6 @@
 /* Welcome page. Colors come from the tokens in styles.css. */
 /* A bit wider than the other pages, to fit the photos beside the cards. */
-.home,.home ~ footer,.home ~ .feedback{max-width:52rem}
+.home,.home ~ footer:not(.site-footer){max-width:52rem}
 /* Poster header: two jumpers in freefall over QUASE / PARAQUEDISTA, printed on paper. The poster is
    portrait and already carries the name, so it is shown whole (contain), centered on its own paper
    color, and the page's h1 is kept for screen readers only. The height keeps the name readable on a
@@ -72,9 +72,3 @@ a.home-audience[href]:hover{border-color:var(--ink)}
 .carousel-toggle:focus-visible{outline:3px solid var(--focus);outline-offset:1px}
 
 
-/* Last on the page, below the feedback request, which then needs less space under it. */
-.home-instagram{max-width:52rem;margin:0 auto;padding:0 1.25rem 2.5rem;color:var(--ink-soft)}
-.feedback:not([hidden]):has(+ .home-instagram){--below:1rem}
-.home-instagram a{color:var(--ink);font-weight:700;text-decoration:none}
-.home-instagram a:hover{text-decoration:underline}
-.home-instagram a:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:.2rem}

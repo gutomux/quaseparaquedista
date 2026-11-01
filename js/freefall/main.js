@@ -9,7 +9,7 @@ import { currentLocale } from '../locale.js';
 import { applyTranslations } from '../view.js';
 import { CONTROLS, GROUPS, NEUTRAL, SPEED, isOn, toggle, activeControls, comboNote, describe, createState, step } from './sim.js';
 import { FreefallView } from './view.js';
-import { mountSiteMenu } from '../nav.js';
+import { mountSiteMenu, mountSiteFooter } from '../nav.js';
 
 /** The button the first-visit tip suggests, and where its dismissal is remembered. */
 const TIP_CONTROL = 'legsStretch';
@@ -41,6 +41,7 @@ async function init() {
   const t = createTranslator(await loadMessages(CONFIG.i18nPath, locale), locale);
   applyTranslations(document, t, 'freefall.meta.title');
   mountSiteMenu(document.querySelector('[data-site-nav]'), t);
+  mountSiteFooter(t);
 
   const view = new FreefallView(document, t, CONTROLS, GROUPS);
   let pose = { ...NEUTRAL };

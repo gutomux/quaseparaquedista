@@ -210,6 +210,12 @@
     },
     "crumbs": "You are here"
   },
+  "footer": {
+    "label": "Site links",
+    "feedback": "Send a suggestion",
+    "instagram": "Instagram",
+    "sign": "Made by skydivers, for skydivers."
+  },
   "home": {
     "meta": {
       "title": "QuaseParaquedista",
@@ -233,11 +239,6 @@
         "cta": "Send a suggestion"
       }
     },
-    "instagram": {
-      "text": "Follow me over on "
-    },
-    "feedbackHint": "Share your two cents and help us make the site better for the whole community.",
-    "feedbackButton": "Send a suggestion or correction",
     "disclaimer": "These tools complement your training. Always take your questions to a certified instructor.",
     "carousel": {
       "label": "Photos from Instagram @quaseparaquedista",

@@ -117,15 +117,41 @@ mark{background:var(--mark);color:inherit;border-radius:.2rem;padding:0 .05em}
 .share-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 .share-status{font-size:.9rem;color:var(--ink-soft);overflow-wrap:anywhere}
 .also{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;font-size:.95rem;color:var(--ink-soft)}
-footer{max-width:44rem;margin:0 auto;padding:0 1.25rem 2.5rem}
-.disclaimer{
-  margin:0;display:flex;gap:.7rem;align-items:flex-start;padding:.85rem 1rem;border:1px solid var(--line);border-radius:1rem;
-  background:var(--panel);color:var(--ink-soft);font-size:.95rem
-}
+/* The page's own footer: its disclaimer, above the site footer. */
+footer{max-width:44rem;margin:0 auto;padding:0 1.25rem 1.75rem}
+/* The disclaimer is a quiet note (no card), so it doesn't compete with the tools. */
+.disclaimer{margin:0;display:flex;gap:.7rem;align-items:center;color:var(--ink-soft);font-size:.9rem}
 /* A ⚠ warning triangle: the "!" drawn inside a yellow triangle. */
 .disclaimer::before{
-  content:"!";flex:none;display:grid;place-items:center;width:1.6rem;height:1.4rem;padding-top:.2rem;margin-top:.05rem;
-  font-weight:700;font-size:.85rem;color:var(--on-accent);background:var(--accent);clip-path:polygon(50% 0,100% 100%,0 100%)
+  content:"!";flex:none;display:grid;place-items:center;width:1.35rem;height:1.2rem;padding-top:.2rem;
+  font-weight:700;font-size:.75rem;color:var(--on-accent);background:var(--accent);clip-path:polygon(50% 0,100% 100%,0 100%)
+}
+
+/*
+ * The site footer (js/nav.js, mountSiteFooter): a band across the bottom of every page with the
+ * name, About us / suggestion / Instagram buttons (44 px tall, easy to tap) and a signature.
+ * Stacked and centered on a phone; one row on a computer.
+ */
+footer.site-footer{
+  max-width:none;margin:0;padding:1.75rem 1.25rem calc(2rem + env(safe-area-inset-bottom, 0px));
+  border-top:1px solid var(--line);background:var(--panel)
+}
+.sf-inner{max-width:52rem;margin:0 auto;display:grid;gap:.9rem;justify-items:center;text-align:center}
+.sf-brand{margin:0;font-family:var(--display);font-stretch:112%;font-weight:800;font-size:1.15rem;color:var(--ink)}
+.sf-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem}
+.sf-pill{
+  display:inline-flex;align-items:center;gap:.45rem;min-height:2.75rem;padding:0 1.1rem;border-radius:999px;
+  border:2px solid var(--line);color:var(--ink);font-weight:700;text-decoration:none;background:var(--sky-low)
+}
+.sf-pill:hover{border-color:var(--accent);color:var(--accent-ink)}
+.sf-pill:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.sf-pill svg{width:1.2rem;height:1.2rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sf-pill svg .dot{fill:currentColor;stroke:none}
+.sf-sign{margin:0;font-size:.9rem;color:var(--ink-soft)}
+@media (min-width:52rem){
+  .sf-inner{grid-template-columns:1fr auto;justify-items:start;text-align:left;align-items:center;gap:.25rem 2rem}
+  .sf-sign{grid-column:1;grid-row:2}
+  .sf-links{grid-column:2;grid-row:1 / span 2;justify-content:flex-end}
 }
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media (max-width:480px){
