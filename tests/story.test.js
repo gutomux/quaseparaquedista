@@ -18,14 +18,25 @@ test('story: a clean flight shows only good badges, and no sharp-turn badge', ()
 });
 
 test('story: serious mistakes are red badges, things to improve are not', () => {
-  const { badges } = storyContent(report({
+  const { badges, causes } = storyContent(report({
     points: [point('A', true), point('B', false), point('C', true)],
-    rightTurns: 1, lowTurns: 2, flare: 'high', landing: { distM: 34, grade: 'missed' },
+    rightTurns: 1, flare: 'high', landing: { distM: 34, grade: 'missed' },
   }));
   assert.deepEqual(badges.map((b) => [b.kind, b.key, b.params?.count]), [
-    ['off', 'points.some', 2], ['alert', 'rightTurns', 1], ['alert', 'lowTurns', 2], ['off', 'flare.high', undefined],
+    ['off', 'points.some', 2], ['alert', 'rightTurns', 1], ['off', 'flare.high', undefined],
   ]);
-  assert.equal(storyContent(report({ flare: 'released' })).badges.at(-1).kind, 'alert', 'letting go of the flare is serious');
+  assert.deepEqual(causes, [], 'a right turn is red, but not "wasted"');
+});
+
+test('story: when "wasted", what caused it moves to the top, out of the list', () => {
+  const low = storyContent(report({ lowTurns: 2 }));
+  assert.deepEqual(low.causes.map((b) => [b.kind, b.key, b.params?.count]), [['alert', 'lowTurns', 2]]);
+  assert.deepEqual(low.badges.map((b) => b.key), ['points.all', 'rightTurns.zero', 'flare.good']);
+  const flare = storyContent(report({ flare: 'released' }));
+  assert.deepEqual(flare.causes.map((b) => b.key), ['flare.released']);
+  assert.deepEqual(flare.badges.map((b) => b.key), ['points.all', 'rightTurns.zero']);
+  const both = storyContent(report({ lowTurns: 1, flare: 'released' }));
+  assert.deepEqual(both.causes.map((b) => b.key), ['lowTurns', 'flare.released']);
 });
 
 test('story: the rank follows the distance, in game tiers', () => {
