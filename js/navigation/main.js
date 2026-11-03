@@ -4,6 +4,7 @@
  *           a wrong pick shows a hint, and the flight only starts when all four are right.
  *   flight: hold left/right to turn, hold the flare; real time, or 4× faster if the student picks it.
  *   report: after landing, what went well and what to work on, and a story image to share.
+ * Each flight and its result (the story's rank) are counted in GoatCounter (js/analytics.js).
  */
 import { CONFIG } from '../config.js';
 import { loadMessages, createTranslator } from '../i18n.js';
@@ -14,6 +15,8 @@ import { patternPoints, planOptions, newRun, PLAN_STEPS } from './pattern.js';
 import { createFlight, step, setTurn, setFlare, setFast, timeScale } from './flight.js';
 import { buildReport } from './report.js';
 import { NavigationView } from './view.js';
+import { storyContent } from './story.js';
+import { track, navPlayEvents, NAV_RESULTS } from '../analytics.js';
 
 /** Longest simulated step per frame, so a hidden tab doesn't jump the canopy. */
 const MAX_DT = 0.05;
@@ -56,6 +59,8 @@ async function init() {
   let report = null;
   let paused = false;
   let last = null;
+  /** Flights started in this visit (since the page opened), for the visitor counter. */
+  let flights = 0;
 
   const renderPlan = () => {
     const stepName = PLAN_STEPS[plan.stepIndex] || null;
@@ -100,6 +105,9 @@ async function init() {
     view.drawFlight({ flight, run, guides: settings.guides === 'visible', fast: scale > 1 });
     if (flight.landed) {
       report = buildReport(flight);
+      // Count the result with the same rank the story shows (Lendário … Morridinha).
+      const result = NAV_RESULTS[storyContent(report).rank];
+      if (result) track(result);
       view.renderReport(report);
       view.showPhase('report');
       return;
@@ -109,6 +117,8 @@ async function init() {
 
   function startFlight() {
     flight = setFast(createFlight(run, points), settings.speed === 'fast');
+    flights += 1;
+    navPlayEvents(flights).forEach((event) => track(event));
     paused = false;
     last = null;
     view.setPaused(false);

@@ -84,3 +84,14 @@ for (const id of videos) {
     assert.ok(title, 'no title returned');
   });
 }
+
+// The visitor counter's script (GoatCounter), read from the pages like the rest.
+const counters = unique([...html.matchAll(/data-goatcounter="[^"]+"\s+async\s+src="([^"]+)"/g)].map((m) => m[1]));
+
+for (const script of counters) {
+  test(`visitor counter script loads: ${script}`, async () => {
+    const response = await get(script);
+    assert.equal(response.status, 200, `HTTP ${response.status}`);
+    assert.match(response.headers.get('content-type') || '', /javascript/i, 'not served as a script');
+  });
+}

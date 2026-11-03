@@ -56,6 +56,7 @@ i18n/en_US.json       Interface text in English
 i18n/pt_BR.json       Interface text in Brazilian Portuguese
 js/config.js          Settings: paths, supported locales, default locale, limits
 js/i18n.js            Locale detection, loading interface text, translating keys
+js/analytics.js       Visitor counter events (GoatCounter): navigation flights and results
 js/page-lang.js       Loaded first on every page: sets the page language and stops browser translation
                       when the page is already in the visitor's language (keep its list in sync with config.js)
 js/data.js            Loads, validates and localizes glossary.json
@@ -184,6 +185,16 @@ The rules live in `js/freefall/sim.js`: `CONTROLS` lists the buttons and `EFFECT
 
 The pattern: the holding area is where the seta points (upwind); A (1,000 ft) → downwind leg → B (600 ft) → left turn → C (300 ft) → left turn → final into the wind → target. Point positions are computed from the flight model (canopy 32 km/h, glide 3.2:1, wind 10 km/h, in `js/navigation/pattern.js`), so a perfectly flown pattern passes over each point at its altitude. The legs always meet at 90°: the canopy corrects for the drift and holds the line it points along (the wind only speeds it up or slows it down), as students are taught for a crosswind. Setting (remembered on the device): points A, B and C visible or hidden during the flight.
 
+## Visitor counter
+
+Visits are counted with [GoatCounter](https://www.goatcounter.com) (no cookies, so no consent banner). The numbers are on the dashboard at **https://quaseparaquedista.goatcounter.com**.
+
+- **Pages:** every page loads GoatCounter's script at the end of its `<head>`, `async`, so the page never waits for it. It counts each page view, with where the visitor came from, the country and the device. A new page must have the same line (a test checks every page).
+- **Navigation simulator:** each flight counts as the event `navegacao/voo`. Its visitors and count give plays per visitor. `navegacao/voos-2-ou-mais` (and 3, 5, 10) count visitors who flew that many times in one visit. Each landing counts its rank, the same one the story shows: `navegacao/resultado-lendario`, `-epico`, `-raro`, `-quase` and `-morridinha`. The events live in `js/analytics.js`.
+- **It never breaks the site:** if the script is blocked (ad blockers), slow or offline, those visits just aren't counted.
+- **Testing on a computer isn't counted:** GoatCounter ignores `localhost` and `file://` (the browser console says "not counting because of: localhost").
+- **Links on Instagram:** add `?ref=` to a link (for example `quaseparaquedista.com.br/?ref=ig-bio`) and the dashboard shows it as the source.
+
 ## Suggestions and corrections
 
 The "Suggest an entry or correction" button opens a Google Form in a new tab. Visitors don't need any account, and every response lands in the form's Google Sheet.
@@ -216,7 +227,7 @@ Uses Node's built-in test runner (Node 18 or newer), so there is nothing to inst
 
 ## Checking embedded resources
 
-The training material pages embed resources from other sites: the CBPq PDFs and the YouTube videos. If one is moved or removed, its page breaks without any change here, so they are checked online:
+The training material pages embed resources from other sites: the CBPq PDFs and the YouTube videos, plus the visitor counter's script. If one is moved or removed, its page breaks without any change here, so they are checked online:
 
 ```
 npm run test:links
