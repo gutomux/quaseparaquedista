@@ -3276,6 +3276,26 @@
       }
     },
     {
+      "id": "term-diver",
+      "type": "term",
+      "translations": {
+        "en_US": {
+          "term": "Diver",
+          "definition": "Following the floater logic, the diver is the jumper who exits the aircraft last and dives down to the formation.",
+          "aliases": [
+            "Diver"
+          ]
+        },
+        "pt_BR": {
+          "term": "Diver",
+          "definition": "Seguindo a lógica do  floater, diver é a função do paraquedista que sai por último da aeronave e mergulha para a formação.",
+          "aliases": [
+            "Diver"
+          ]
+        }
+      }
+    },
+    {
       "id": "term-dock",
       "type": "term",
       "translations": {
