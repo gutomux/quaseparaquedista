@@ -2,13 +2,14 @@
  * Online checks: the external resources the pages embed still load.
  * Run with `npm run test:links`; the pre-commit hook runs them before every commit.
  *
- * The addresses are read from the HTML pages, so new or changed resources are
- * checked without editing this file.
+ * The addresses are read from the HTML pages and from the links in the i18n texts, so new or
+ * changed resources are checked without editing this file.
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { embedUrl } from '../js/pdf-embed.js';
+import { parseRich } from '../js/view.js';
 
 const ROOT = new URL('../', import.meta.url);
 const pages = readdirSync(ROOT).filter((f) => f.endsWith('.html'));
@@ -19,6 +20,15 @@ const unique = (list) => [...new Set(list)];
 const latestIssue = JSON.parse(readFileSync(new URL('data/uspa-update.json', ROOT), 'utf8'));
 const pdfs = unique([...[...html.matchAll(/data-pdf="([^"]+)"/g)].map((m) => m[1]), latestIssue.pdf]);
 const videos = unique([...html.matchAll(/youtube-nocookie\.com\/embed\/([\w-]+)/g)].map((m) => m[1]));
+
+/**
+ * PDFs linked from the texts (e.g. the travel guide's AAD cards and manuals): their links are
+ * written in the i18n files ([text](https://….pdf)), in every language, not in the HTML.
+ */
+const texts = (value) => (typeof value === 'string' ? [value] : Object.values(value).flatMap(texts));
+const locales = readdirSync(new URL('i18n/', ROOT)).filter((f) => f.endsWith('.json'));
+const linkedPdfs = unique(locales.flatMap((file) => texts(JSON.parse(readFileSync(new URL(`i18n/${file}`, ROOT), 'utf8')))
+  .flatMap((text) => parseRich(text).filter((p) => p.type === 'link' && /\.pdf([?#]|$)/i.test(p.href)).map((p) => p.href))));
 
 const TIMEOUT_MS = 20000;
 
@@ -50,18 +60,27 @@ async function get(url, headers = {}, { attempts = 2, temporary = TEMPORARY } = 
 test('the pages still list the resources to check', () => {
   assert.ok(pdfs.length >= 2, `found PDFs: ${pdfs.join(', ')}`);
   assert.ok(videos.length >= 7, `found videos: ${videos.join(', ')}`);
+  assert.ok(linkedPdfs.length >= 5, `found PDFs linked from the texts: ${linkedPdfs.join(', ')}`);
 });
 
+/** The address answers with a PDF: served as one, and starting like one. */
+async function checkPdf(pdf) {
+  const response = await get(pdf, { Range: 'bytes=0-1023' });
+  assert.ok([200, 206].includes(response.status), `HTTP ${response.status}`);
+  assert.match(response.headers.get('content-type') || '', /pdf/i, 'not served as a PDF');
+  const reader = response.body.getReader();
+  const { value } = await reader.read();
+  await reader.cancel();
+  assert.equal(Buffer.from(value.subarray(0, 4)).toString(), '%PDF', 'the file does not start like a PDF');
+}
+
+// Linked PDFs open on their own site in a new tab, so only the file is checked (no Google viewer).
+for (const pdf of linkedPdfs) {
+  test(`linked PDF loads from its site: ${pdf}`, () => checkPdf(pdf));
+}
+
 for (const pdf of pdfs) {
-  test(`PDF loads from its site: ${pdf}`, async () => {
-    const response = await get(pdf, { Range: 'bytes=0-1023' });
-    assert.ok([200, 206].includes(response.status), `HTTP ${response.status}`);
-    assert.match(response.headers.get('content-type') || '', /pdf/i, 'not served as a PDF');
-    const reader = response.body.getReader();
-    const { value } = await reader.read();
-    await reader.cancel();
-    assert.equal(Buffer.from(value.subarray(0, 4)).toString(), '%PDF', 'the file does not start like a PDF');
-  });
+  test(`PDF loads from its site: ${pdf}`, () => checkPdf(pdf));
 
   // Google's viewer answers even for a missing file, so this only checks the viewer service
   // is up for this address; the test above checks the file itself.

@@ -239,7 +239,7 @@ The training material pages embed resources from other sites: the CBPq PDFs and 
 npm run test:links
 ```
 
-The checks read the addresses from the HTML pages, so new resources are covered automatically. For each PDF: the address answers, it is served as a PDF and starts like one, and Google's viewer (used on Android) answers for it. For each video: it is public and embedding is allowed.
+The checks read the addresses from the HTML pages, and the PDFs linked from texts in the i18n files (the travel guide's AAD cards and manuals, written as `[text](https://….pdf)`), so new resources are covered automatically. A linked PDF must answer, be served as a PDF and start like one. For each PDF: the address answers, it is served as a PDF and starts like one, and Google's viewer (used on Android) answers for it. For each video: it is public and embedding is allowed.
 
 **Before every commit**, a git hook (`.githooks/pre-commit`) runs `npm test` and then `npm run test:links`; if either fails, the commit stops and lists what failed. The hook is switched on by `npm install` (the `prepare` script runs `git config core.hooksPath .githooks`); in a fresh copy of the repository, run `npm install` once. To commit anyway, for example offline or while a site is briefly down, use `git commit --no-verify`.
 
