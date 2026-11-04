@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { parseRich } from '../js/view.js';
 import { loadChecks, saveChecks, CHECKS_KEY } from '../js/checklist.js';
 
-const html = readFileSync(new URL('../travelling.html', import.meta.url), 'utf8');
+const html = readFileSync(new URL('../traveling.html', import.meta.url), 'utf8');
 const messages = (locale) => JSON.parse(readFileSync(new URL(`../i18n/${locale}.json`, import.meta.url), 'utf8'));
 const get = (obj, key) => key.split('.').reduce((o, k) => o?.[k], obj);
 const plainKeys = [...html.matchAll(/data-i18n="([^"]+)"/g)].map((m) => m[1]);

@@ -32,7 +32,7 @@ export const MENU = Object.freeze([
   { key: 'freefall', href: 'freefall', group: 'tools' },
   { key: 'navigation', href: 'navigation', group: 'tools' },
   { key: 'materials', href: 'materiais-instrucao', pages: ['apostila-aff', 'revisao-emergencias-aff', 'aff-videos', 'uspa-update'], group: 'study' },
-  { key: 'travel', href: 'travelling', group: 'guides' },
+  { key: 'travel', href: 'traveling', group: 'guides' },
   { key: 'about', href: 'sobre', group: 'about' },
 ]);
 

@@ -209,7 +209,7 @@
         "text": "Never pull ideas out of your behind. Check the official CBPq materials. Thanks, you're welcome."
       },
       "travel": {
-        "name": "Travelling with your rig"
+        "name": "Traveling with your rig"
       },
       "about": {
         "name": "About us"
@@ -515,10 +515,10 @@
   },
   "travel": {
     "meta": {
-      "title": "Flying with your parachute",
+      "title": "Traveling with your parachute",
       "description": "How to take your skydiving rig on a plane: carry-on or checked, the AAD (CYPRES, Vigil, MarS M2) in the X-ray, documents to print and what to say at security."
     },
-    "heading": "How to fly with your own parachute",
+    "heading": "Traveling with your own parachute on a commercial flight",
     "intro": "Carry-on or checked bag, the AAD (Automatic Activation Device) in the X-ray, the papers you should print and what to say when the security officer gives your backpack a funny look.",
     "summary": {
       "1": "A parachute is **not a prohibited item** in Brazil (ANAC) or in the US (TSA), with or without an AAD, carried on or checked.",
@@ -688,7 +688,7 @@
       "7": "Vigil: [Transportation regulation (lithium batteries)](https://www.vigil.aero/_files/ugd/ac507a_f7f2ed034924475cbae726d306583a3f.pdf)",
       "8": "MarS: [m2 multi manual](https://www.m2aad.com/wp-content/uploads/2018/12/manual_m2_multi_en_10_17_09_web-1.pdf) (X-Ray Card on page 41)",
       "9": "MarS: [m2 manual](https://www.marsjev.com/media/cache/file/e1/manual_en_04_14_06.pdf) (X-Ray Card on page 35)",
-      "10": "SkyPoint: [Travelling with your skydiving gear (in Portuguese)](https://skypoint.com.br/artigos/geral/viajar-com-equipamento-paraquedismo/)",
+      "10": "SkyPoint: [Traveling with your skydiving gear (in Portuguese)](https://skypoint.com.br/artigos/geral/viajar-com-equipamento-paraquedismo/)",
       "title": "Sources"
     },
     "disclaimer": "Rules change. This guide sums up the sources above and doesn't replace checking with the airline, the airport and your AAD's manufacturer.",
