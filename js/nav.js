@@ -88,6 +88,11 @@ export function menuItems(currentPage) {
   }));
 }
 
+/** Space left under the menu's top edge on the visible screen, keeping a 12 px gap at the bottom. */
+export function menuMaxHeight(screenHeight, menuTop, gap = 12) {
+  return Math.floor(screenHeight - menuTop - gap);
+}
+
 /** "Idioma: PT | EN" at the end of the menu; the current language is pressed. */
 function languageSwitch(t) {
   const li = el('li', 'site-lang');
@@ -183,6 +188,17 @@ export function mountSiteMenu(nav, t, currentFile = pageName(location.pathname))
   list.append(languageSwitch(t));
   nav.replaceChildren(button, list);
 
+  // The menu ends at the bottom of the visible screen and scrolls inside when it's taller: on a
+  // phone the page behind doesn't scroll, so items below the edge (Sobre nós, the languages)
+  // would be out of reach. The visible height changes as a phone browser shows or hides its address bar.
+  const fitToScreen = () => {
+    if (list.hidden) return;
+    const screenHeight = window.visualViewport?.height ?? window.innerHeight;
+    list.style.maxHeight = `${Math.max(menuMaxHeight(screenHeight, list.getBoundingClientRect().top), 0)}px`;
+  };
+  window.visualViewport?.addEventListener('resize', fitToScreen);
+  window.addEventListener('resize', fitToScreen);
+
   const setOpen = (open) => {
     const label = t(open ? 'nav.menu.close' : 'nav.menu.open');
     button.setAttribute('aria-expanded', String(open));
@@ -191,6 +207,10 @@ export function mountSiteMenu(nav, t, currentFile = pageName(location.pathname))
     list.hidden = !open;
     // On a phone the page behind is dimmed and doesn't scroll while the menu is open (css: .site-menu-open).
     document.documentElement.classList.toggle('site-menu-open', open);
+    if (open) {
+      list.scrollTop = 0;
+      fitToScreen();
+    }
   };
   setOpen(false);
   button.addEventListener('click', (e) => {

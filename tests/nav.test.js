@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
-import { MENU, menuItems, pageName } from '../js/nav.js';
+import { MENU, menuItems, pageName, menuMaxHeight } from '../js/nav.js';
 
 const ROOT = new URL('../', import.meta.url);
 const files = readdirSync(ROOT).filter((f) => f.endsWith('.html'));
@@ -84,4 +84,15 @@ test('site footer: every page script adds it, and its text exists in every local
     const footer = JSON.parse(readFileSync(new URL(`../i18n/${locale}.json`, import.meta.url), 'utf8')).footer;
     for (const key of ['label', 'feedback', 'instagram', 'sign']) assert.ok(footer?.[key], `${locale}: footer.${key}`);
   }
+});
+
+test('menu: on a short screen it ends at the bottom edge (and scrolls inside), with a small gap', () => {
+  // A phone 640 px tall, the menu starting 80 px from the top: 548 px, the rest scrolls.
+  assert.equal(menuMaxHeight(640, 80), 548);
+  assert.equal(menuMaxHeight(700.6, 80.2), 608);
+  const css = readFileSync(new URL('../css/styles.css', import.meta.url), 'utf8');
+  const rule = css.match(/\.site-menu\{[^}]*\}/)[0];
+  assert.match(rule, /overflow-y:auto/, 'the menu scrolls inside');
+  assert.match(rule, /overscroll-behavior:contain/, 'scrolling the menu never scrolls the page');
+  assert.match(rule, /max-height:/, 'a height limit even before the script measures the screen');
 });
