@@ -1,6 +1,6 @@
 /**
  * Entry point for the simple content pages (training materials, PDFs, videos):
- * detect the locale, fill in the text and the site menu, then the tabs and the PDF if the page has them.
+ * detect the locale, fill in the text and the site menu, then the tabs, the boxes to tick and the PDF if the page has them.
  * The page names its title key with <body data-title-key="...">.
  */
 import { CONFIG } from './config.js';
@@ -20,6 +20,12 @@ async function init() {
   if (tabs) {
     const { mountTabs } = await import('./tabs.js');
     mountTabs(tabs, locale);
+  }
+
+  // Boxes to tick (the travel guide), remembered on the device.
+  if (document.querySelector('[data-checklist]')) {
+    const { mountChecklists } = await import('./checklist.js');
+    mountChecklists(document);
   }
 
   // The USPA newsletter page learns its PDF (the latest issue) from a data file first.

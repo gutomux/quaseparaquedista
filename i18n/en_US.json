@@ -181,6 +181,7 @@
       "groups": {
         "tools": "Tools",
         "study": "Study Corner",
+        "guides": "Guides",
         "about": "About Us"
       },
       "here": "You are here",
@@ -206,6 +207,9 @@
       "materials": {
         "name": "Training materials",
         "text": "Never pull ideas out of your behind. Check the official CBPq materials. Thanks, you're welcome."
+      },
+      "travel": {
+        "name": "Travelling with your rig"
       },
       "about": {
         "name": "About us"
@@ -507,6 +511,189 @@
     "meta": {
       "title": "Wing load",
       "description": "Work out your wing load and see the CBPq limits per category."
+    }
+  },
+  "travel": {
+    "meta": {
+      "title": "Flying with your parachute",
+      "description": "How to take your skydiving rig on a plane: carry-on or checked, the AAD (CYPRES, Vigil, MarS M2) in the X-ray, documents to print and what to say at security."
+    },
+    "heading": "How to fly with your own parachute",
+    "intro": "Carry-on or checked bag, the AAD (Automatic Activation Device) in the X-ray, the papers you should print and what to say when the security officer gives your backpack a funny look.",
+    "summary": {
+      "1": "A parachute is **not a prohibited item** in Brazil (ANAC) or in the US (TSA), with or without an AAD, carried on or checked.",
+      "2": "Prefer to take it **as carry-on**, in a backpack just for the rig.",
+      "3": "**Print the X-ray card** of your AAD (CYPRES, Vigil or MarS M2) and the manufacturer's statements.",
+      "4": "**Arrive early.** Screening can take a while, and you need to be there if they open the rig.",
+      "5": "Nobody should pull any handle. If it has to be opened, **you stay with it and help**.",
+      "title": "Quick summary"
+    },
+    "toc": {
+      "title": "On this page",
+      "can": "Can you take a parachute on a plane?",
+      "bags": "Carry-on or checked?",
+      "aad": "The AAD in the X-ray: cutter and battery",
+      "docs": "Documents to print",
+      "security": "At the security checkpoint",
+      "gear": "Altimeter, helmet and other gear",
+      "checklist": "Checklist before leaving home",
+      "sources": "Sources"
+    },
+    "can": {
+      "title": "1. Can you take a parachute on a plane?",
+      "text": "Yes. In Brazil and abroad.",
+      "brazil": {
+        "1": "ANAC's [Informativo SIA 29/20](https://www.gov.br/anac/pt-br/centrais-de-conteudo/aeroportos-e-aerodromos/informativos-sia/2020-29) (in Portuguese) covers exactly this. The list of items prohibited in departure areas (Annex 1 of ANAC Resolution 515/2019) **does not include parachute equipment**. So, from an aviation security point of view, it can go as carry-on.",
+        "2": "The notice also says what to expect:",
+        "title": "In Brazil (ANAC)",
+        "list": {
+          "1": "The X-ray image may raise questions, because airport security staff almost never see a parachute.",
+          "2": "If they think it necessary, they may use the explosive trace detector or search it by hand.",
+          "3": "For a hand search, **the passenger must be present**, whether the bag is carried on or checked.",
+          "4": "That's why ANAC recommends getting to the airport **as early as possible**."
+        }
+      },
+      "usa": {
+        "title": "In the United States (TSA)",
+        "text": "According to [USPA](https://www.uspa.org/traveling-with-equipment), the TSA has national guidance for its officers: parachutes are allowed **carried on and checked, with or without an AAD**. Officers may not touch or pull the handles, or force the rig open. If it has to be opened, the owner must be present, may help, and may repack it afterwards."
+      },
+      "airline": "**Note:** the authorities allow it, but **the airline may have its own rules** (usually on weight, size and excess baggage). Check your airline's rules before you travel."
+    },
+    "bags": {
+      "title": "2. Carry-on or checked?",
+      "text": "Both are allowed, but the general advice is to **carry it on**.",
+      "cabin": {
+        "1": "The rig never leaves your side.",
+        "2": "No risk of it getting lost, knocked around or soaked by someone else's bag.",
+        "3": "If they need to inspect it, you're already there.",
+        "4": "Use a backpack just for the rig and **put nothing else in it**: other objects make the X-ray image harder to read.",
+        "title": "Carry-on (recommended)"
+      },
+      "checked": {
+        "1": "Use a dedicated bag. Helmet and jumpsuit can go with it.",
+        "2": "Leave the **AAD card on top** of the rig.",
+        "3": "If the bag sets off an alert, security pages you over the speakers. **Stay near check-in** for about 30 to 45 minutes after dropping it off.",
+        "4": "In the US, if the TSA can't find you, the rig **doesn't fly**.",
+        "5": "The airline's liability limit is far below what a rig is worth.",
+        "title": "Checked"
+      },
+      "remove": {
+        "title": "What to take out of the carry-on",
+        "text": "USPA lists items that draw attention in the X-ray and are better checked, if you can: **lead weights, hook knife and flotation device**. Other than that, keep the backpack for the parachute only."
+      }
+    },
+    "aad": {
+      "title": "3. The AAD in the X-ray: cutter and battery",
+      "text": "The AAD (Automatic Activation Device, such as the CYPRES, the Vigil or the MarS M2) is the device that opens the reserve by itself if you are still in freefall below a safe altitude. It's what makes the officer suspicious: a small electronic box, cables and a cutter. The manufacturers publish documents to explain it.",
+      "parts": {
+        "label": "Parts in the X-ray",
+        "cypres": "Processing unit, cutter, cutter cable, cable and control unit.",
+        "vigil": "Main unit, cutter, cutter wire, wire and control unit.",
+        "mars": "Central unit, control unit, cutter, control unit cable and cutter cable."
+      },
+      "cutter": {
+        "label": "Cutter",
+        "cypres": "Declared *not* dangerous goods by the LBA (Germany). There are statements from BAM, DGAC (France), UK CAA, NZ CAA, TSA and CASA (Australia).",
+        "vigil": "US DOT classification (ref. EX2002030123, \"Not Regulated as Class 1\"). The Belgian Ministry of Economy excluded the cutter from Class 1 explosives.",
+        "mars": "Stainless steel cutter, with a 16-year life from manufacture. According to the manufacturer's X-ray card, no part of the device is subject to transport rules. MarS doesn't publish a transport certificate for the cutter, as CYPRES and Vigil do."
+      },
+      "battery": {
+        "label": "Lithium battery",
+        "cypres": "0.99 g of lithium per cell, built into the device. According to the manufacturer, it is not affected by the 2015 lithium battery rules.",
+        "vigil": "2 lithium AA cells inside the device (UN3091), less than 1 g per cell and less than 2 g in total, inside the sealed metal case.",
+        "mars": "Internal battery, inside the central unit, made to last the device's whole life without replacement. The manual doesn't state the lithium content."
+      },
+      "print": {
+        "label": "To print",
+        "cypres": "[Airport Security Card](https://www.cypres.aero/wp-content/uploads/2024/05/12101007-Sicherheitskontrollkarte-2024-05.pdf) and the [authorities' statements](https://www.cypres.aero/airtravel/).",
+        "vigil": "[X-Ray Card](https://www.vigil.aero/_files/ugd/ac507a_e4293d39444d431cafeb05da082f6a46.pdf), the [battery letter](https://www.vigil.aero/_files/ugd/ac507a_f7f2ed034924475cbae726d306583a3f.pdf) and the [other documents](https://www.vigil.aero/airport-security-documents).",
+        "mars": "The X-Ray Card is at the end of the manual: page 41 of the [m2 multi manual](https://www.m2aad.com/wp-content/uploads/2018/12/manual_m2_multi_en_10_17_09_web-1.pdf) or page 35 of the [m2 manual](https://www.marsjev.com/media/cache/file/e1/manual_en_04_14_06.pdf)."
+      },
+      "note": "The cards show X-ray images of the AAD inside a rig, with each part numbered. It's exactly what the officer will see on the screen.",
+      "sameDay": "Jumped on the day you travel? **Check that the AAD is off before boarding.** If it's still on, switch it off manually.",
+      "m2": "**M2 owners:** since MarS doesn't publish a cutter certificate, the only paper you have to show at security is the X-Ray Card from the manual. Print it and take it with you."
+    },
+    "docs": {
+      "1": "Your AAD's X-ray card (CYPRES, Vigil or MarS M2).",
+      "2": "The manufacturer's and authorities' statements on the cutter and the battery.",
+      "3": "Flying in Brazil: [ANAC's Informativo SIA 29/20](https://www.gov.br/anac/pt-br/centrais-de-conteudo/aeroportos-e-aerodromos/informativos-sia/2020-29).",
+      "4": "Flying in the US: the TSA page on parachutes (\"What Can I Bring?\") and the TSA letter for skydivers, both pointed to by [USPA](https://www.uspa.org/traveling-with-equipment).",
+      "5": "The airline's sports equipment policy, if it has one.",
+      "title": "4. Documents to print",
+      "text": "Paper in hand settles a lot of conversations. Take printed copies (and a copy on your phone):",
+      "xray": {
+        "cypres": "CYPRES: [Airport Security Card](https://www.cypres.aero/wp-content/uploads/2024/05/12101007-Sicherheitskontrollkarte-2024-05.pdf)",
+        "vigil": "Vigil: [X-Ray Card](https://www.vigil.aero/_files/ugd/ac507a_e4293d39444d431cafeb05da082f6a46.pdf)",
+        "mars": "MarS M2: the X-Ray Card is on page 41 of the [m2 multi manual](https://www.m2aad.com/wp-content/uploads/2018/12/manual_m2_multi_en_10_17_09_web-1.pdf) or page 35 of the [m2 manual](https://www.marsjev.com/media/cache/file/e1/manual_en_04_14_06.pdf)"
+      },
+      "statements": {
+        "cypres": "CYPRES: [authorities' statements](https://www.cypres.aero/airtravel/)",
+        "vigil": "Vigil: [battery letter](https://www.vigil.aero/_files/ugd/ac507a_f7f2ed034924475cbae726d306583a3f.pdf) and [other documents](https://www.vigil.aero/airport-security-documents)",
+        "mars": "MarS M2: MarS doesn't publish a cutter certificate, so take the X-Ray Card from the manual"
+      }
+    },
+    "security": {
+      "title": "5. At the security checkpoint",
+      "before": {
+        "1": "**Secure the reserve handle**: run the chest strap over it or use a loop or cable tie, so nobody pulls it by accident. **Remember to remove it before jumping!**",
+        "2": "Put the rig backpack in the tray on its own.",
+        "3": "Keep the papers at hand, not at the bottom of a bag.",
+        "title": "Before you reach the X-ray"
+      },
+      "inspection": {
+        "1": "Stay calm and friendly. And **no jokes** about what's in the backpack.",
+        "2": "Explain what it is and show the AAD card.",
+        "3": "Ask them **not to touch the handles** and offer to help.",
+        "4": "If it has to be opened, ask for a space to open and close the rig. Sometimes it's enough to open the pilot chute pouch and show the bag with the packed canopy.",
+        "5": "If the conversation gets stuck, ask for the **supervisor**, who usually has more training.",
+        "title": "If they ask to inspect it"
+      },
+      "say": "A simple explanation helps: \"This is a sport parachute. This small box is a safety device that opens the reserve by itself in an emergency. Here is the manufacturer's card with the X-ray image. I can help open it; I only ask that you don't pull the handles.\"",
+      "usa": {
+        "title": "In the US, if there's a problem",
+        "text": "USPA advises asking for the supervisor and asking them to check the *Parachute Screening section of the Screening Checkpoint Standard Operating Procedure*. Write down the airport, date, time, airline, flight number and the officers' names."
+      },
+      "residue": "**Watch out for residue:** USPA tested rigs with AADs in explosive detectors and they didn't set them off. But everyday things can trigger the trace detector: lawn fertilizer, fireworks, gunshot residue and even hand lotion. Avoid handling them before you handle the rig.",
+      "time": {
+        "title": "How much extra time?",
+        "text": "USPA suggests arriving **at least 30 minutes before** the time the airline recommends. SkyPoint says 45 minutes. ANAC says \"as early as possible\". When in doubt, arrive early."
+      }
+    },
+    "gear": {
+      "1": "**Analog altimeter:** in the pressurized cabin it may go past the end of its scale. When you arrive, check that the needle goes back to zero.",
+      "2": "**Digital and audible altimeters:** switch them off for the trip and check the settings when you switch them on again. Long trips can drain the battery.",
+      "3": "**Helmet:** carry it in a padded case so it doesn't crack. A loose helmet is easy to lose.",
+      "4": "**Keep it dry:** wrap the rig in one or two garbage bags. A leaking bottle in the bag next to it can soak your reserve.",
+      "title": "6. Altimeter, helmet and other gear"
+    },
+    "checklist": {
+      "1": "Checked the airline's rules (weight, size, sports equipment).",
+      "2": "Rig alone in its own backpack, wrapped in a plastic bag.",
+      "3": "Reserve handle secured (with a note to free it before the first jump).",
+      "4": "Hook knife, weights and flotation device out of the carry-on.",
+      "5": "AAD X-ray card and statements printed.",
+      "6": "ANAC notice (Brazil) or TSA pages (US) printed.",
+      "7": "AAD and digital altimeter switched off. Helmet in its case.",
+      "8": "Arriving at the airport with at least 30 to 45 extra minutes.",
+      "9": "If jumping outside Brazil: reserve repack in date and the insurance the dropzone requires.",
+      "title": "7. Checklist before leaving home"
+    },
+    "sources": {
+      "1": "ANAC: [Informativo SIA 29/20, carrying parachute equipment as carry-on (in Portuguese)](https://www.gov.br/anac/pt-br/centrais-de-conteudo/aeroportos-e-aerodromos/informativos-sia/2020-29)",
+      "2": "USPA: [Traveling with Parachutes](https://www.uspa.org/traveling-with-equipment)",
+      "3": "CYPRES: [Travel Documents](https://www.cypres.aero/airtravel/)",
+      "4": "CYPRES: [Airport Security Card (2024-05)](https://www.cypres.aero/wp-content/uploads/2024/05/12101007-Sicherheitskontrollkarte-2024-05.pdf)",
+      "5": "Vigil: [Airport Security Documents](https://www.vigil.aero/airport-security-documents)",
+      "6": "Vigil: [X-Ray Card](https://www.vigil.aero/_files/ugd/ac507a_e4293d39444d431cafeb05da082f6a46.pdf)",
+      "7": "Vigil: [Transportation regulation (lithium batteries)](https://www.vigil.aero/_files/ugd/ac507a_f7f2ed034924475cbae726d306583a3f.pdf)",
+      "8": "MarS: [m2 multi manual](https://www.m2aad.com/wp-content/uploads/2018/12/manual_m2_multi_en_10_17_09_web-1.pdf) (X-Ray Card on page 41)",
+      "9": "MarS: [m2 manual](https://www.marsjev.com/media/cache/file/e1/manual_en_04_14_06.pdf) (X-Ray Card on page 35)",
+      "10": "SkyPoint: [Travelling with your skydiving gear (in Portuguese)](https://skypoint.com.br/artigos/geral/viajar-com-equipamento-paraquedismo/)",
+      "title": "Sources"
+    },
+    "disclaimer": "Rules change. This guide sums up the sources above and doesn't replace checking with the airline, the airport and your AAD's manufacturer.",
+    "checks": {
+      "reset": "Untick all"
     }
   }
 }

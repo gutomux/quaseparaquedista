@@ -32,12 +32,14 @@ export const MENU = Object.freeze([
   { key: 'freefall', href: 'freefall', group: 'tools' },
   { key: 'navigation', href: 'navigation', group: 'tools' },
   { key: 'materials', href: 'materiais-instrucao', pages: ['apostila-aff', 'revisao-emergencias-aff', 'aff-videos', 'uspa-update'], group: 'study' },
+  { key: 'travel', href: 'travelling', group: 'guides' },
   { key: 'about', href: 'sobre', group: 'about' },
 ]);
 
 /**
  * Each menu item's icon (SVG paths on a 24 × 24 grid), the same as its tile on the welcome page;
- * Home is a house and About us two people. A circle with r 1.3 is drawn filled.
+ * Home is a house, the travel guide an airplane seen from above and About us two people.
+ * A circle with r 1.3 is drawn filled.
  */
 const MENU_ICONS = Object.freeze({
   home: '<path d="M4 11.5 12 4l8 7.5"/><path d="M6.5 10v9.5h11V10"/><path d="M10 19.5v-5h4v5"/>',
@@ -46,6 +48,7 @@ const MENU_ICONS = Object.freeze({
   freefall: '<path d="M3 10.5a9 7 0 0 1 18 0"/><path d="M3 10.5 12 19l9-8.5M8.2 10l3.8 9 3.8-9"/><circle cx="12" cy="20.3" r="1.3"/>',
   navigation: '<path d="M5 19h14"/><path d="M17 5v9H7"/><path d="m10 11-3 3 3 3"/><circle cx="17" cy="5" r="1.3"/>',
   materials: '<path d="M4 5.5C6.5 4.2 9.5 4.2 12 6c2.5-1.8 5.5-1.8 8-.5v13c-2.5-1.3-5.5-1.3-8 .5-2.5-1.8-5.5-1.8-8-.5z"/><path d="M12 6v13.5"/>',
+  travel: '<path d="M12 3c.9 0 1.5.8 1.5 1.8V9.5l7 4v2l-7-2v4.2l2 1.6V21L12 20l-3.5 1v-1.7l2-1.6v-4.2l-7 2v-2l7-4V4.8C10.5 3.8 11.1 3 12 3z"/>',
   about: '<circle cx="9" cy="8" r="3"/><path d="M3.5 19.5c.4-3.2 2.6-5.5 5.5-5.5s5.1 2.3 5.5 5.5"/><path d="M15.5 5.3a3 3 0 0 1 0 5.4M17.5 14.3c1.8.7 2.8 2.7 3 5.2"/>',
 });
 

@@ -2,7 +2,7 @@
 
 Free skydiving tools for people who have never jumped, students and experienced jumpers, in **English (en_US)** and **Brazilian Portuguese (pt_BR)**:
 
-- **Every page** has the same navigation, built from `MENU` in `js/nav.js`: on a phone, a ☰ menu at the top right with names only (no descriptions), a yellow icon per item, Início on top and three titled groups (Ferramentas, Cantinho de Estudo, Sobre Nós), the page you are on highlighted with "Você está aqui", the page behind dimmed, and a PT | EN switch at the end; on a computer (56rem and wider), a top bar fixed while scrolling, with the site name (goes home), Ferramentas ▾ (a dropdown with the four tools), Cantinho de Estudo, Sobre Nós and PT | EN. The language choice is remembered on the device. The material pages show a "QuaseParaquedista › Materiais de instrução ›" trail above their title.
+- **Every page** has the same navigation, built from `MENU` in `js/nav.js`: on a phone, a ☰ menu at the top right with names only (no descriptions), a yellow icon per item, Início on top and four titled groups (Ferramentas, Cantinho de Estudo, Guias, Sobre Nós), the page you are on highlighted with "Você está aqui", the page behind dimmed, and a PT | EN switch at the end; on a computer (56rem and wider), a top bar fixed while scrolling, with the site name (goes home), Ferramentas ▾ (a dropdown with the four tools), Cantinho de Estudo, Guias, Sobre Nós and PT | EN. The language choice is remembered on the device. The material pages show a "QuaseParaquedista › Materiais de instrução ›" trail above their title.
 - **Every page** ends with the same site footer (`mountSiteFooter` in `js/nav.js`, like the menu): the name, buttons for About us, the suggestion form and Instagram, and "Feito por paraquedistas, para paraquedistas." Above it, each page keeps its own disclaimer, a quiet ⚠ note.
 - **Welcome page** (`index.html`): cards linking to each tool right below the welcome text, then who the site is for (each card linking to the tool that fits) and the disclaimer.
 - **Glossary** (`glossary.html`): a searchable glossary of skydiving terms and acronyms.
@@ -10,6 +10,7 @@ Free skydiving tools for people who have never jumped, students and experienced 
 - **Freefall simulator** (`freefall.html`): how body position changes a jumper's flight.
 - **Navigation simulator** (`navigation.html`): plan and fly the CBPq landing pattern (holding area, points A, B and C, final approach) with left/right taps and the flare, then get a landing report. The report can be shared as an Instagram story: a preview of a 1080 × 1920 image styled like a game's results screen (a sky photo, `images/instagram/backgroundImage-web.jpg`, a smaller copy of `backgroundImage.png`; at the top the address and "Simulador de navegação" in white Space Mono, then a blank line; a rank in its tier color, Lendário ≤ 5 m, Épico ≤ 10 m, Raro ≤ 20 m, Quase! beyond, with the distance under it; the pattern flown from above; and badges. A sharp turn below 300 ft or letting go of the flare makes it "Morridinha de leve pra sempre!" whatever the distance: the mistake shows in red above the rank, the rank is white, and the picture `images/instagram/morridinhadeleve.jpeg` replaces the map), then Share (the phone's share menu, where Instagram is) or Download.
 - **Training materials** (`materiais-instrucao.html`; its pages show a "Materiais de instrução ›" trail, and the videos page has shortcuts to each level): the CBPq AFF handbook (`apostila-aff.html`) and emergency review (`revisao-emergencias-aff.html`) shown inside the page straight from the CBPq site (no copies are stored here), and videos of AFF levels I to VII (`aff-videos.html`). The list has two tabs, **CBPq (Brasil)** and **USPA (EUA)**, kept in the address (`materiais-instrucao#uspa`); with no tab in the address, Portuguese opens on CBPq and English on USPA. The USPA tab links the Skydiver's Information Manual and the USPA downloads page (they open on uspa.org, which forbids showing its pages inside other sites) and the **Skydiver Update** page (`uspa-update.html`), which shows the latest issue through Google's viewer and links to all issues.
+- **Travelling with your rig** (`travelling.html`, "Viajar com paraquedas" under **Guias** in the menu): how to fly with your own parachute, carry-on or checked, the AAD (CYPRES, Vigil, MarS M2) in the X-ray, documents to print, the security checkpoint, gear, a checklist and the sources. The documents list and the checklist are real checkboxes (tap the box or its text); `js/checklist.js` remembers the ticks on the device, and a **Desmarcar tudo** button under each list clears it. All its text is in the i18n files under `travel`, with bold and links written as described in "Editing interface text". Styles: `css/travel.css`.
 - **About us** (`sobre.html`, last in the menu): who makes the site, Augusto Ferreira and Kethlyn Karla, with their photo (`images/aboutUs/AugustoEKethlyn-web.jpg`, a resized copy of `AugustoEKethlyn.jpg`, cropped to a square by CSS) and a card for each.
 - **Latest Skydiver Update:** `data/uspa-update.json` names the latest issue. A GitHub Action (`.github/workflows/uspa-newsletter.yml`) runs `scripts/update-uspa-newsletter.mjs` every day; when USPA publishes a new issue, it updates the file, commits it and asks GitHub Pages to rebuild. To run it by hand: `node scripts/update-uspa-newsletter.mjs`, or "Run workflow" in the repository's Actions tab.
 
@@ -84,8 +85,11 @@ js/navigation/main.js     Plan → flight → report, settings, animation loop
 js/navigation/story.js    The landing report as an Instagram story (1080 × 1920 canvas): mode, rank, map, badges, site
 materiais-instrucao.html  Training materials, in two tabs: CBPq and USPA
 sobre.html            About us: who makes the site
+travelling.html       Travel guide: flying with your parachute
 wingload.html         Wing load calculator page (js/wingload.js)
 css/about.css         Styles for the About us page
+css/travel.css        Styles for the travel guide
+js/checklist.js       Boxes to tick (travel guide), remembered on the device
 apostila-aff.html     CBPq AFF handbook, embedded from the CBPq site
 revisao-emergencias-aff.html  CBPq AFF emergency review, embedded from the CBPq site
 aff-videos.html       YouTube videos of AFF levels I to VII
@@ -147,6 +151,8 @@ The math lives in `js/calculators.js` (tested in `tests/calculators.test.js`), t
 ## Editing interface text
 
 Change the wording in `i18n/en_US.json` or `i18n/pt_BR.json`. Both files must have the same keys. Text can use `{placeholders}`, and counts use `one` / `other` forms, which are picked with `Intl.PluralRules`.
+
+Long texts shown with `data-i18n-rich` (the travel guide) can also use **bold** as `**text**`, *emphasis* as `*text*` and links as `[link text](https://…)`. Links to other sites open in a new tab. Only `https://` and `#section` addresses become links. Texts shown with plain `data-i18n` show those characters as they are.
 
 ## Adding a language
 

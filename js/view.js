@@ -25,8 +25,51 @@ function appendSegments(parent, segments) {
 }
 
 /**
- * Fill every element marked with data-i18n (text) or data-i18n-attr
- * ("attribute:key; attribute:key") with the current locale's text.
+ * The formatting long texts may use (e.g. the travel guide): **bold**, *emphasis* and
+ * [link text](address). Addresses must start with https:// or # (a place on the page).
+ */
+const RICH = /\*\*(.+?)\*\*|\*(.+?)\*|\[([^\]]+)\]\(((?:https:\/\/|#)[^)\s]+)\)/g;
+
+/**
+ * Splits a text with that formatting into pieces.
+ * @returns {Array<{type: 'text'|'strong'|'em'|'link', text: string, href?: string}>}
+ */
+export function parseRich(text) {
+  const parts = [];
+  let at = 0;
+  for (const m of String(text).matchAll(RICH)) {
+    if (m.index > at) parts.push({ type: 'text', text: text.slice(at, m.index) });
+    if (m[1] !== undefined) parts.push({ type: 'strong', text: m[1] });
+    else if (m[2] !== undefined) parts.push({ type: 'em', text: m[2] });
+    else parts.push({ type: 'link', text: m[3], href: m[4] });
+    at = m.index + m[0].length;
+  }
+  if (at < String(text).length) parts.push({ type: 'text', text: String(text).slice(at) });
+  return parts;
+}
+
+/**
+ * Fills a node with a formatted text, built element by element (never innerHTML).
+ * Links to other sites open in a new tab and say so to screen readers.
+ */
+function renderRich(node, text, t) {
+  node.replaceChildren(...parseRich(text).map(({ type, text: part, href }) => {
+    if (type === 'text') return document.createTextNode(part);
+    if (type !== 'link') return el(type, '', part);
+    const link = el('a', '', part);
+    link.href = href;
+    if (!href.startsWith('#')) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.append(el('span', 'sr', ` ${t('feedback.newTab')}`));
+    }
+    return link;
+  }));
+}
+
+/**
+ * Fill every element marked with data-i18n (text), data-i18n-rich (formatted text, see parseRich)
+ * or data-i18n-attr ("attribute:key; attribute:key") with the current locale's text.
  * Shared with the freefall page, which passes its own title key.
  */
 export function applyTranslations(root, t, titleKey = 'meta.title') {
@@ -35,6 +78,9 @@ export function applyTranslations(root, t, titleKey = 'meta.title') {
   doc.title = t(titleKey);
   root.querySelectorAll('[data-i18n]').forEach((node) => {
     node.textContent = t(node.dataset.i18n);
+  });
+  root.querySelectorAll('[data-i18n-rich]').forEach((node) => {
+    renderRich(node, t(node.dataset.i18nRich), t);
   });
   root.querySelectorAll('[data-i18n-attr]').forEach((node) => {
     node.dataset.i18nAttr.split(';').forEach((pair) => {

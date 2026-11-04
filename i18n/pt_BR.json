@@ -181,6 +181,7 @@
       "groups": {
         "tools": "Ferramentas",
         "study": "Cantinho de Estudo",
+        "guides": "Guias",
         "about": "Sobre Nós"
       },
       "here": "Você está aqui",
@@ -206,6 +207,9 @@
       "materials": {
         "name": "Materiais de instrução",
         "text": "Nunca tire ideias do furico. Consulte os materiais oficiais da CBPq. Obrigada, de nada."
+      },
+      "travel": {
+        "name": "Viajar com paraquedas"
       },
       "about": {
         "name": "Sobre nós"
@@ -507,6 +511,189 @@
     "meta": {
       "title": "Carga alar",
       "description": "Calcule a sua carga alar e veja os limites da CBPq por categoria."
+    }
+  },
+  "travel": {
+    "meta": {
+      "title": "Viajar de avião com seu paraquedas",
+      "description": "Como levar seu equipamento de paraquedismo no avião: bagagem de mão ou despachada, DAA (CYPRES, Vigil, MarS M2) no raio-X, documentos para imprimir e o que dizer na segurança."
+    },
+    "heading": "Como viajar de avião levando seu próprio paraquedas",
+    "intro": "Bagagem de mão ou despachada, o DAA (Dispositivo de Abertura Automático) no raio-X, os papéis que você deve imprimir e o que falar quando o agente de segurança olhar torto pra sua mochila.",
+    "summary": {
+      "1": "Paraquedas **não é item proibido** no Brasil (ANAC) nem nos EUA (TSA), com ou sem DAA, na mão ou despachado.",
+      "2": "Prefira levar **como bagagem de mão**, numa mochila só para o equipamento.",
+      "3": "**Imprima o cartão de raio-X** do seu DAA (CYPRES, Vigil ou MarS M2) e as declarações do fabricante.",
+      "4": "**Chegue cedo.** A inspeção pode demorar e você precisa estar presente se abrirem o equipamento.",
+      "5": "Ninguém deve puxar punho nenhum. Se precisar abrir, **você acompanha e ajuda**.",
+      "title": "Resumo rápido"
+    },
+    "toc": {
+      "title": "Nesta página",
+      "can": "Pode levar paraquedas no avião?",
+      "bags": "Bagagem de mão ou despachada?",
+      "aad": "O DAA no raio-X: cortador (cutter) e bateria",
+      "docs": "Documentos para imprimir",
+      "security": "Na inspeção de segurança",
+      "gear": "Altímetro, capacete e outros acessórios",
+      "checklist": "Checklist antes de sair de casa",
+      "sources": "Fontes"
+    },
+    "can": {
+      "title": "1. Pode levar paraquedas no avião?",
+      "text": "Pode. E isso vale tanto aqui quanto lá fora.",
+      "brazil": {
+        "1": "O [Informativo SIA 29/20](https://www.gov.br/anac/pt-br/centrais-de-conteudo/aeroportos-e-aerodromos/informativos-sia/2020-29) da ANAC trata exatamente disso. A lista de itens proibidos nas salas de embarque (Anexo 1 da Resolução ANAC nº 515/2019) **não inclui equipamento de paraquedas**. Então, do ponto de vista da segurança da aviação, ele pode ir como bagagem de mão.",
+        "2": "O informativo também avisa o que esperar:",
+        "title": "No Brasil (ANAC)",
+        "list": {
+          "1": "A imagem do raio-X pode gerar dúvida, porque o profissional de segurança do aeroporto quase nunca vê um paraquedas.",
+          "2": "Se achar necessário, ele pode passar o detector de traços de explosivos ou fazer inspeção manual.",
+          "3": "Para inspeção manual, **o passageiro precisa estar presente**, seja bagagem de mão ou despachada.",
+          "4": "Por isso, a ANAC recomenda chegar ao aeroporto com **a maior antecedência possível**."
+        }
+      },
+      "usa": {
+        "title": "Nos Estados Unidos (TSA)",
+        "text": "Segundo a [USPA](https://www.uspa.org/traveling-with-equipment), a TSA tem orientação nacional para seus agentes: paraquedas são permitidos **na mão e despachados, com ou sem DAA**. O agente não pode tocar nem puxar os punhos, nem abrir o equipamento à força. Se for preciso abrir, o dono tem que estar presente, pode ajudar e pode dobrar de novo depois."
+      },
+      "airline": "**Atenção:** a autoridade libera, mas **a companhia aérea pode ter regras próprias** (normalmente sobre peso, tamanho e excesso de bagagem). Confira as regras da sua companhia antes de viajar."
+    },
+    "bags": {
+      "title": "2. Bagagem de mão ou despachada?",
+      "text": "As duas são permitidas, mas a recomendação geral é **levar na mão**.",
+      "cabin": {
+        "1": "O equipamento não sai do seu lado.",
+        "2": "Sem risco de extravio, de pancada ou de molhar com a mala dos outros.",
+        "3": "Se precisarem inspecionar, você já está ali.",
+        "4": "Use uma mochila só para o equipamento e **não coloque mais nada junto**: outros objetos atrapalham a imagem do raio-X.",
+        "title": "Bagagem de mão (recomendado)"
+      },
+      "checked": {
+        "1": "Use uma mala dedicada. Capacete e macacão podem ir junto.",
+        "2": "Deixe o **cartão do DAA por cima** do equipamento.",
+        "3": "Se a mala der alerta, a segurança chama você pelo sistema de som. **Fique perto do check-in** por uns 30 a 45 minutos depois de despachar.",
+        "4": "Nos EUA, se a TSA não te encontrar, o equipamento **não embarca**.",
+        "5": "O limite de indenização da companhia é bem menor que o valor de um equipamento.",
+        "title": "Despachada"
+      },
+      "remove": {
+        "title": "O que tirar da mochila de mão",
+        "text": "A USPA lista itens que chamam atenção no raio-X e que é melhor despachar, se der: **pesos de chumbo, hook knife (faquinha) e colete de flutuação**. Fora isso, mantenha a mochila só com o paraquedas."
+      }
+    },
+    "aad": {
+      "title": "3. O DAA no raio-X: cortador (cutter) e bateria",
+      "text": "O DAA (Dispositivo de Abertura Automático, como o CYPRES, o Vigil ou o MarS M2) é o aparelho que abre o reserva sozinho se você ainda estiver em queda livre abaixo de uma altitude de segurança. É ele que deixa o agente desconfiado: uma caixinha eletrônica, cabos e um cortador (cutter). Os fabricantes publicam documentos para explicar isso.",
+      "parts": {
+        "label": "Componentes no raio-X",
+        "cypres": "Unidade central, cortador (cutter), cabo do cortador, cabo e unidade de controle.",
+        "vigil": "Unidade principal, cortador (cutter), fio do cortador, fio e unidade de controle.",
+        "mars": "Unidade central, unidade de controle, cortador (cutter), cabo da unidade de controle e cabo do cortador."
+      },
+      "cutter": {
+        "label": "Cortador (cutter)",
+        "cypres": "Declarado como *não* sendo mercadoria perigosa pela LBA (Alemanha). Há declarações de BAM, DGAC (França), UK CAA, NZ CAA, TSA e CASA (Austrália).",
+        "vigil": "Classificação do DOT dos EUA (ref. EX2002030123, \"Not Regulated as Class 1\"). O Ministério da Economia da Bélgica excluiu o cortador (cutter) da Classe 1 de explosivos.",
+        "mars": "Cortador (cutter) de aço inox, com vida útil de 16 anos a partir da fabricação. Segundo o cartão de raio-X do fabricante, nenhuma peça do aparelho está sujeita a regras de transporte. A MarS não publica certificado de transporte do cortador (cutter), como fazem CYPRES e Vigil."
+      },
+      "battery": {
+        "label": "Bateria de lítio",
+        "cypres": "0,99 g de lítio por célula, embutida no aparelho. Segundo o fabricante, não é afetada pelas regras de baterias de lítio de 2015.",
+        "vigil": "2 pilhas AA de lítio dentro do equipamento (UN3091), menos de 1 g por célula e menos de 2 g no total, dentro da caixa metálica selada.",
+        "mars": "Bateria interna, dentro da unidade central, feita para durar toda a vida útil do aparelho sem troca. O manual não informa o teor de lítio."
+      },
+      "print": {
+        "label": "Para imprimir",
+        "cypres": "[Airport Security Card](https://www.cypres.aero/wp-content/uploads/2024/05/12101007-Sicherheitskontrollkarte-2024-05.pdf) e as [declarações das autoridades](https://www.cypres.aero/airtravel/).",
+        "vigil": "[X-Ray Card](https://www.vigil.aero/_files/ugd/ac507a_e4293d39444d431cafeb05da082f6a46.pdf), a [carta sobre as baterias](https://www.vigil.aero/_files/ugd/ac507a_f7f2ed034924475cbae726d306583a3f.pdf) e os [demais documentos](https://www.vigil.aero/airport-security-documents).",
+        "mars": "O X-Ray Card fica no fim do manual: página 41 do [manual do m2 multi](https://www.m2aad.com/wp-content/uploads/2018/12/manual_m2_multi_en_10_17_09_web-1.pdf) ou página 35 do [manual do m2](https://www.marsjev.com/media/cache/file/e1/manual_en_04_14_06.pdf)."
+      },
+      "note": "Os cartões mostram imagens de raio-X do DAA dentro de um equipamento, com cada componente numerado. É exatamente o que o agente vai ver na tela.",
+      "sameDay": "Saltou no mesmo dia da viagem? **Confira se o DAA está desligado antes de embarcar.** Se ainda estiver ligado, desligue manualmente.",
+      "m2": "**Dono de M2:** como a MarS não publica certificado do cortador (cutter), o único papel que você tem para mostrar na segurança é o X-Ray Card do manual. Imprima ele e leve junto."
+    },
+    "docs": {
+      "1": "Cartão de raio-X do seu DAA (CYPRES, Vigil ou MarS M2).",
+      "2": "Declarações do fabricante e das autoridades sobre o cortador (cutter) e a bateria.",
+      "3": "Voo no Brasil: o [Informativo SIA 29/20 da ANAC](https://www.gov.br/anac/pt-br/centrais-de-conteudo/aeroportos-e-aerodromos/informativos-sia/2020-29).",
+      "4": "Voo nos EUA: a página da TSA sobre paraquedas (\"What Can I Bring?\") e a carta da TSA para paraquedistas, ambas indicadas pela [USPA](https://www.uspa.org/traveling-with-equipment).",
+      "5": "A política da companhia aérea sobre equipamento esportivo, se ela tiver uma.",
+      "title": "4. Documentos para imprimir",
+      "text": "Papel na mão resolve muita conversa. Leve impresso (e uma cópia no celular):",
+      "xray": {
+        "cypres": "CYPRES: [Airport Security Card](https://www.cypres.aero/wp-content/uploads/2024/05/12101007-Sicherheitskontrollkarte-2024-05.pdf)",
+        "vigil": "Vigil: [X-Ray Card](https://www.vigil.aero/_files/ugd/ac507a_e4293d39444d431cafeb05da082f6a46.pdf)",
+        "mars": "MarS M2: o X-Ray Card fica na página 41 do [manual do m2 multi](https://www.m2aad.com/wp-content/uploads/2018/12/manual_m2_multi_en_10_17_09_web-1.pdf) ou na página 35 do [manual do m2](https://www.marsjev.com/media/cache/file/e1/manual_en_04_14_06.pdf)"
+      },
+      "statements": {
+        "cypres": "CYPRES: [declarações das autoridades](https://www.cypres.aero/airtravel/)",
+        "vigil": "Vigil: [carta sobre as baterias](https://www.vigil.aero/_files/ugd/ac507a_f7f2ed034924475cbae726d306583a3f.pdf) e [demais documentos](https://www.vigil.aero/airport-security-documents)",
+        "mars": "MarS M2: a MarS não publica certificado do cortador (cutter), então leve o X-Ray Card do manual"
+      }
+    },
+    "security": {
+      "title": "5. Na inspeção de segurança",
+      "before": {
+        "1": "**Prenda o punho do reserva**: passe a barrigueira (peitoral) por cima ou use um laço ou abraçadeira, para ninguém puxar sem querer. **Lembre de tirar antes de saltar!**",
+        "2": "Coloque a mochila do equipamento sozinha na bandeja.",
+        "3": "Deixe os papéis à mão, não no fundo da mala.",
+        "title": "Antes de chegar no raio-X"
+      },
+      "inspection": {
+        "1": "Fique calmo e simpático. E **nada de piada** sobre o que tem na mochila.",
+        "2": "Explique o que é e mostre o cartão do DAA.",
+        "3": "Peça para **não tocarem nos punhos** e ofereça ajuda.",
+        "4": "Se precisar abrir, peça um espaço para abrir e fechar o equipamento. Às vezes basta abrir o pilotinho e mostrar o bag com o velame dobrado.",
+        "5": "Se a conversa travar, peça para chamar o **supervisor**, que costuma ter mais treinamento.",
+        "title": "Se pedirem para inspecionar"
+      },
+      "say": "Uma explicação simples ajuda: \"É um paraquedas esportivo. Essa caixinha é um dispositivo de segurança que abre o reserva sozinho em emergência. Aqui está o cartão do fabricante com a imagem do raio-X. Posso ajudar a abrir, só peço que não puxem os punhos.\"",
+      "usa": {
+        "title": "Nos EUA, se der problema",
+        "text": "A USPA orienta pedir o supervisor e pedir que ele consulte a seção de inspeção de paraquedas do procedimento operacional padrão do checkpoint (*Parachute Screening section of the Screening Checkpoint Standard Operating Procedure*). Anote aeroporto, data, horário, companhia, número do voo e nome dos agentes."
+      },
+      "residue": "**Cuidado com resíduos:** a USPA testou equipamentos com DAA em detectores de explosivos e eles não dispararam. Mas coisas do dia a dia podem dar alerta no detector de traços: fertilizante de grama, fogos de artifício, resíduo de arma de fogo e até hidratante para as mãos. Evite mexer nisso antes de manusear o equipamento.",
+      "time": {
+        "title": "Quanto tempo a mais?",
+        "text": "A USPA sugere chegar **pelo menos 30 minutos antes** do horário que a companhia recomenda. A SkyPoint fala em 45 minutos. A ANAC diz \"a maior antecedência possível\". Na dúvida, chegue cedo."
+      }
+    },
+    "gear": {
+      "1": "**Altímetro analógico:** com a cabine pressurizada ele pode passar do limite da escala. Ao chegar, confira se o ponteiro volta pro zero.",
+      "2": "**Altímetro digital e audível:** desligue para a viagem e confira as configurações quando ligar de novo. Viagens longas podem gastar bateria.",
+      "3": "**Capacete:** leve numa capa acolchoada para não trincar. Capacete solto se perde fácil.",
+      "4": "**Proteja da água:** embrulhe o equipamento em um ou dois sacos de lixo. Uma garrafa que vaza na mala ao lado pode encharcar seu reserva.",
+      "title": "6. Altímetro, capacete e outros acessórios"
+    },
+    "checklist": {
+      "1": "Conferi as regras da companhia aérea (peso, tamanho, equipamento esportivo).",
+      "2": "Equipamento sozinho numa mochila própria, embrulhado em saco plástico.",
+      "3": "Punho do reserva preso (e anotado pra soltar antes do primeiro salto).",
+      "4": "Hook knife, pesos e colete de flutuação fora da bagagem de mão.",
+      "5": "Cartão de raio-X do DAA e declarações impressos.",
+      "6": "Informativo da ANAC (Brasil) ou páginas da TSA (EUA) impressos.",
+      "7": "DAA e altímetro digital desligados. Capacete na capa.",
+      "8": "Chegada ao aeroporto com folga de pelo menos 30 a 45 minutos a mais.",
+      "9": "Se for saltar fora do Brasil: dobragem do reserva dentro da validade e seguro exigido pela área de salto.",
+      "title": "7. Checklist antes de sair de casa"
+    },
+    "sources": {
+      "1": "ANAC: [Informativo SIA 29/20, Transporte de equipamento de paraquedas como bagagem de mão](https://www.gov.br/anac/pt-br/centrais-de-conteudo/aeroportos-e-aerodromos/informativos-sia/2020-29)",
+      "2": "USPA: [Traveling with Parachutes](https://www.uspa.org/traveling-with-equipment)",
+      "3": "CYPRES: [Travel Documents](https://www.cypres.aero/airtravel/)",
+      "4": "CYPRES: [Airport Security Card (2024-05)](https://www.cypres.aero/wp-content/uploads/2024/05/12101007-Sicherheitskontrollkarte-2024-05.pdf)",
+      "5": "Vigil: [Airport Security Documents](https://www.vigil.aero/airport-security-documents)",
+      "6": "Vigil: [X-Ray Card](https://www.vigil.aero/_files/ugd/ac507a_e4293d39444d431cafeb05da082f6a46.pdf)",
+      "7": "Vigil: [Transportation regulation (baterias de lítio)](https://www.vigil.aero/_files/ugd/ac507a_f7f2ed034924475cbae726d306583a3f.pdf)",
+      "8": "MarS: [Manual do m2 multi](https://www.m2aad.com/wp-content/uploads/2018/12/manual_m2_multi_en_10_17_09_web-1.pdf) (X-Ray Card na página 41)",
+      "9": "MarS: [Manual do m2](https://www.marsjev.com/media/cache/file/e1/manual_en_04_14_06.pdf) (X-Ray Card na página 35)",
+      "10": "SkyPoint: [Viajar com seu equipamento de paraquedismo](https://skypoint.com.br/artigos/geral/viajar-com-equipamento-paraquedismo/)",
+      "title": "Fontes"
+    },
+    "disclaimer": "Regras mudam. Este guia resume as fontes acima e não substitui a consulta à companhia aérea, ao aeroporto e ao fabricante do seu DAA.",
+    "checks": {
+      "reset": "Desmarcar tudo"
     }
   }
 }
